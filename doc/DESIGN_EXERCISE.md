@@ -30,6 +30,7 @@ by Marcus Oertle, Brandon Guo, Yashas Manjunatha
 
 ## Use cases
 1. Apply the rules to a middle cell: set the next state of a cell to dead by counting its number of neighbors using the Game of Life rules for a cell in the middle (i.e., with all its neighbors)
+
 ```java
 // within manager class:
 Grid new_Grid = Grid(current_Grid);
@@ -39,7 +40,9 @@ new_Grid.update(current_Grid);
 // for each cell in 2-D arrayList:
 new_id = cell.update(neighbour info) //returns new state of cell
 ```
+
 2. Apply the rules to an edge cell: set the next state of a cell to live by counting its number of neighbors using the Game of Life rules for a cell on the edge (i.e., with some of its neighbors missing)
+
 ```java
 // within manager class:
 Grid new_Grid = Grid(current_Grid);
