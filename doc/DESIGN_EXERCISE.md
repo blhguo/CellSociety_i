@@ -53,16 +53,21 @@ new_Grid.update(current_Grid);
 new_id = cell.update(neighbour info) //returns new state of cell
 ```
 3. Move to the next generation: update all cells in a simulation from their current state to their next state and display the result graphically
+
 ```java
 current_Grid = new_Grid;
 Visuals.display(current_Grid);
 ```
+
 4. Set a simulation parameter: set the value of a parameter, probCatch, for a simulation, Fire, based on the value given in an XML fire
+
 ```java
 // in manager class
 parseFile(fileName); // updates parameters as it reads them
 ```
+
 5. Switch simulations: use the GUI to change the current simulation from Game of Life to Wator
+
 ```java
 parseFile(fileName); // updates parameters as it reads them
 Grid current_Grid = new Grid(parameters from parse file);
