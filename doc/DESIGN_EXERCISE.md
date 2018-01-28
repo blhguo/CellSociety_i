@@ -23,7 +23,7 @@ by Marcus Oertle, Brandon Guo, Yashas Manjunatha
 5. How is the GUI updated after all the cells have been updated?
 	- The visuals class can be passed a grid and update the GUI. So after the manager class creates a new grid object and updates it with its update function, that grid can be passed to the visuals class to update the GUI.
 
-![Design of Relationships](P2CS308.jpg "A basic design of relationships")
+![Design of Relationships](P2CS308.png "A basic design of relationships")
 
 ## CRC Cards
 ![CRC Cards](crc.jpg "CRC Cards")
