@@ -43,11 +43,14 @@ Architecture of Design:
 
 ### User Interface
 * Main menu:
+
  > - Start button
  > - Simulation type selection from drop down list
  > - Text field option to load user's custom XML file
  > - "File not found" displayed if file is not found after pressing start
+
 * During simulation:
+
  > - Play button (resumes the simulation)
  > - Pause button (pauses the simulation)
  > - Speed up button (increase simulation speeed)
@@ -58,6 +61,7 @@ Architecture of Design:
 ![User Interface](UserInterfaceCellSociety.png "GUI Design V1.0")
 
 * Errors Reported to User
+
  > - Input data file not found
  > - Data file not formatted correctly
 
@@ -93,6 +97,8 @@ Architecture of Design:
 
 #### Use Cases
 * Apply the rules to a middle cell: set the next state of a cell to dead by counting its number of neighbors using the Game of Life rules for a cell in the middle (i.e., with all its neighbors)
+
+
 ```java
 // within manager class:
 Grid new_Grid = Grid(current_Grid);
@@ -102,7 +108,10 @@ new_Grid.update(current_Grid);
 // for each cell in 2-D arrayList:
 new_id = cell.update(neighbour info) //returns new state of cell
 ```
+
 * Apply the rules to an edge cell: set the next state of a cell to live by counting its number of neighbors using the Game of Life rules for a cell on the edge (i.e., with some of its neighbors missing)
+
+
 ```java
 // within manager class:
 Grid new_Grid = Grid(current_Grid);
@@ -113,16 +122,22 @@ new_Grid.update(current_Grid);
 new_id = cell.update(neighbour info) //returns new state of cell
 ```
 * Move to the next generation: update all cells in a simulation from their current state to their next state and display the result graphically
+
+
 ```java
 current_Grid = new_Grid;
 Visuals.display(current_Grid);
 ```
 * Set a simulation parameter: set the value of a parameter, probCatch, for a simulation, Fire, based on the value given in an XML fire
+
+
 ```java
 // in manager class
 parseFile(fileName); // updates parameters as it reads them
 ```
 * Switch simulations: use the GUI to change the current simulation from Game of Life to Wator
+
+
 ```java
 parseFile(fileName); // updates parameters as it reads them
 Grid current_Grid = new Grid(parameters from parse file);
@@ -145,18 +160,23 @@ Visuals.display(current_Grid);
 
 ### Team Responsibilities
 * Front end 
+
  > - Manager class
  > - Graphics (visuals class)
  > - *Roles*:
      * Primary: Brandon Guo
      * Secondary: Yashas Manjunatha
+
 * Back end
+
  > - Grid class
  > - Cell class
  > - *Roles*:
         * Primary: Yashas Manjunatha
         * Secondary: Marcus Oertle
+
 * XML
+
  > - Generates all required XML files
  > - Ensures integration with XML files
  > - After completion, helps both front end and back end with anything they need
@@ -164,5 +184,6 @@ Visuals.display(current_Grid);
  > - *Roles*:
         * Primary: Marcus Oertle
         * Secondary: Brandon Guo
+
 
 *Note*: Primary is the one responsible for seeing the section through to completion, secondary is the "checks and balances" to ensure that it is getting done or to offer assistance on the section when required.
