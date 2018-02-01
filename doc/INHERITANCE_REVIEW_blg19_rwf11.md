@@ -17,9 +17,9 @@ PART 2
 PART 3
 
 1. * Returns a scene given a 2D cell array
-* Allows for choice of file
-* Allows for type of simulation
-* Creates interactive drop menus
-* Creates interactive buttons to progress the simulation
+ * Allows for choice of file
+ * Allows for type of simulation
+ * Creates interactive drop menus
+ * Creates interactive buttons to progress the simulation
 2. I'm most excited to work on the encapsulation of the operations and functions of the simulations and especially visualizer. Aside from that, making scalable scenes and visuals seems to be pretty interesting and exciting. 
 3. I'm most worried about properly implementing inheritance and encapsulation; while I have some conception of what's going on, it's difficult for me to understand precisely what's "good" and what's "bad", aside from what my intuition tells me. 
