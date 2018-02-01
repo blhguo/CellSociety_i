@@ -101,7 +101,7 @@ public class XMLreader {
 	}
 	
 	private String[][] fillEmpty(String[][] typeArray) {
-		String empty = "empty";
+		String empty = "e";
 		for(int i = 0; i<typeArray[0].length; i++)
 		{
 		    for(int j = 0; j<typeArray[1].length; j++)
