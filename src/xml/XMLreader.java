@@ -43,116 +43,130 @@ public class XMLreader {
 			doc.getDocumentElement().normalize();
 			//System.out.print("Root element: ");
 			//System.out.println(doc.getDocumentElement().getNodeName());
-			
+
+			// Get simulation information
 			// Get simulation information
 			NodeList nameList = doc.getElementsByTagName("name");
 			String name = getStringValue(nameList);
-			
+
 			NodeList titleList = doc.getElementsByTagName("title");
 			String title = getStringValue(titleList);
-			
+
 			NodeList authorList = doc.getElementsByTagName("author");
 			String author = getStringValue(authorList);
-			
+
 			NodeList shapeList = doc.getElementsByTagName("cell_shape");
 			String cell_shape = getStringValue(shapeList);
-			
+
 			NodeList cell_xsizeList = doc.getElementsByTagName("cell_xsize");
 			String cell_xsizeString = getStringValue(cell_xsizeList);
 			int cell_xsize = Integer.parseInt(cell_xsizeString);
-			
+
 			NodeList cell_ysizeList = doc.getElementsByTagName("cell_ysize");
 			String cell_ysizeString = getStringValue(cell_ysizeList);
 			int cell_ysize = Integer.parseInt(cell_ysizeString);
-			
+
 			NodeList grid_xList = doc.getElementsByTagName("grid_x");
 			String grid_xString = getStringValue(grid_xList);
 			int grid_x = Integer.parseInt(grid_xString);
-			
+
 			NodeList grid_yList = doc.getElementsByTagName("grid_y");
 			String grid_yString = getStringValue(grid_yList);
 			int grid_y = Integer.parseInt(grid_yString);
-			
+
+
 			int numCellsX = (int) grid_x / cell_xsize;
 			int numCellsY = (int) grid_y / cell_ysize;
-			
-			// Get all cell information
-			NodeList nList = doc.getElementsByTagName("cell");
-			String[][] typeArray = new String[numCellsX][numCellsY];
-			//System.out.println("----------------------------");
 
-			for (int temp = 0; temp < nList.getLength(); temp++) {
-				Node nNode = nList.item(temp);
-				//System.out.println("\nCurrent Element :");
-				//System.out.print(nNode.getNodeName());
-
-				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element eElement = (Element) nNode;
-					NodeList typeList = eElement.getElementsByTagName("type");
-					NodeList xList = eElement.getElementsByTagName("x");
-					NodeList yList = eElement.getElementsByTagName("y");
-
-					// get type
-					String type = getStringValue(typeList);;
-
-					// get x position
-					String xString = getStringValue(xList);
-					int x = Integer.parseInt(xString);
-
-					// get y position
-					String yString = getStringValue(yList);
-					int y = Integer.parseInt(yString);
-					
-					// add type to array
-					typeArray[x][y] = type;
-				}
-			}
+			String[][] typeArray = getCellArray(doc, numCellsX, numCellsY);
 			typeArray = fillEmpty(typeArray);
-			return new SimulationSetup(name, title, author, cell_shape, cell_xsize, cell_ysize, grid_x, grid_y, typeArray);
+			return new SimulationSetup(name, title, author, cell_shape, cell_xsize, 
+										cell_ysize, grid_x, grid_y, typeArray);
 		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;		
+			return null;
+		}	
 	}
-	
-	
+
+
 	/**
 	 * Fills empty array slots with "e" for "empty"
-	 	* Used by:
-	 	* read()
-		* inputs: 
-		* @param typeArray (double array of types)
-		* returns:
-		* @return typeArray (the modified double array of types)
+	 * Used by:
+	 * read()
+	 * inputs: 
+	 * @param typeArray (double array of types)
+	 * returns:
+	 * @return typeArray (the modified double array of types)
 	 */
 	private String[][] fillEmpty(String[][] typeArray) {
 		String empty = "e";
 		for(int i = 0; i<typeArray[0].length; i++)
 		{
-		    for(int j = 0; j<typeArray[1].length; j++)
-		    {
-		        if(typeArray[i][j] == null) {
-		        	typeArray[i][j] = empty;
-		        }
-		    }
+			for(int j = 0; j<typeArray[1].length; j++)
+			{
+				if(typeArray[i][j] == null) {
+					typeArray[i][j] = empty;
+				}
+			}
 		}
 		return typeArray;
 	}
-	
+
 
 	/**
 	 * Creates string from NodeList (assumes single length NodeLists)
-	 	* Used by:
-	 	* read()
-		* inputs: 
-		* @param list (NodeList of 1 value containing the string to parse out)
-		* returns:
-		* @return s (the parsed out string)
+	 * Used by:
+	 * read()
+	 * inputs: 
+	 * @param list (NodeList of 1 value containing the string to parse out)
+	 * returns:
+	 * @return s (the parsed out string)
 	 */
 	private String getStringValue(NodeList list) {
 		Node node1 = list.item(0);
 		Element e = (Element) node1;
 		String s = e.getTextContent();
 		return s;
+	}
+
+	/**
+	 * Creates string from NodeList (assumes single length NodeLists)
+	 * Used by:
+	 * read()
+	 * inputs: 
+	 * @param doc (Document)
+	 * @param numCellsX (number of cells in x direction)
+	 * @param numCellsY (number of cells in y direction)
+	 * returns:
+	 * @return typeArray (double array of cell type data)
+	 */
+	private String[][] getCellArray(Document doc, int numCellsX, int numCellsY){
+		NodeList nList = doc.getElementsByTagName("cell");
+		String[][] typeArray = new String[numCellsX][numCellsY];
+
+		for (int temp = 0; temp < nList.getLength(); temp++) {
+			Node nNode = nList.item(temp);
+
+			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+				Element eElement = (Element) nNode;
+				NodeList typeList = eElement.getElementsByTagName("type");
+				NodeList xList = eElement.getElementsByTagName("x");
+				NodeList yList = eElement.getElementsByTagName("y");
+
+				// get type
+				String type = getStringValue(typeList);;
+
+				// get x position
+				String xString = getStringValue(xList);
+				int x = Integer.parseInt(xString);
+
+				// get y position
+				String yString = getStringValue(yList);
+				int y = Integer.parseInt(yString);
+
+				// add type to array
+				typeArray[x][y] = type;
+			}
+		}
+		return typeArray;
 	}
 }
