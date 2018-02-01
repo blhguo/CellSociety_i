@@ -11,6 +11,21 @@ import java.io.File;
  * XML Reader
  * @author Marcus Oertle
  * 
+ * input:
+ * @param filename (the name of the file to be read)
+ * returns:
+ * a new SimulationSetup class
+ * 
+ * Use:
+ * Parses XML file for:
+ * name
+ * title
+ * author
+ * cell shape
+ * cell x and y size
+ * grid x and y size
+ * list of all types of cells and their locations
+ * 
  * Based on:
  * XML tutorial at:
  * https://www.tutorialspoint.com/java_xml/java_dom_query_document.htm
@@ -100,6 +115,16 @@ public class XMLreader {
 		return null;		
 	}
 	
+	
+	/**
+	 * Fills empty array slots with "e" for "empty"
+	 	* Used by:
+	 	* read()
+		* inputs: 
+		* @param typeArray (double array of types)
+		* returns:
+		* @return typeArray (the modified double array of types)
+	 */
 	private String[][] fillEmpty(String[][] typeArray) {
 		String empty = "e";
 		for(int i = 0; i<typeArray[0].length; i++)
@@ -113,7 +138,17 @@ public class XMLreader {
 		}
 		return typeArray;
 	}
+	
 
+	/**
+	 * Creates string from NodeList (assumes single length NodeLists)
+	 	* Used by:
+	 	* read()
+		* inputs: 
+		* @param list (NodeList of 1 value containing the string to parse out)
+		* returns:
+		* @return s (the parsed out string)
+	 */
 	private String getStringValue(NodeList list) {
 		Node node1 = list.item(0);
 		Element e = (Element) node1;

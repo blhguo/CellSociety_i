@@ -2,6 +2,25 @@ package xml;
 
 import java.util.Arrays;
 
+/**
+ * Simulation Setup
+ * @author Marcus Oertle
+ * 
+ * inputs:
+ * @param n (name)
+ * @param t (title)
+ * @param a (author)
+ * @param s (cell shape)
+ * @param xSize (cell x size)
+ * @param ySize (cell y size)
+ * @param gridX (grid x size)
+ * @param gridY (grid y size)
+ * @param typeArray (double array of cell types)
+ * 
+ * returns:
+ * none
+ */
+
 public class SimulationSetup {
 	private String name;
 	private String title;
@@ -26,42 +45,72 @@ public class SimulationSetup {
 		cellArray = typeArray;
 	}
 	
+	/**
+	 * returns the name of the simulation
+	 */
 	public String getName() {
 		return name;
 	}
 	
+	/**
+	 * returns the title of the simulation
+	 */
 	public String getTitle() {
 		return title;
 	}
 	
+	/**
+	 * returns the author of the simulation
+	 */
 	public String getAuthor() {
 		return author;
 	}
 	
+	/**
+	 * returns the cell shape of the simulation
+	 */
 	public String getShape() {
 		return cell_shape;
 	}
 	
+	/**
+	 * returns the cell x size of the simulation
+	 */
 	public int getCellX() {
 		return cell_xsize;
 	}
 	
+	/**
+	 * returns the cell y size of the simulation
+	 */
 	public int getCellY() {
 		return cell_ysize;
 	}
 	
+	/**
+	 * returns the grid x size of the simulation
+	 */
 	public int getGridX() {
 		return grid_x;
 	}
 	
+	/**
+	 * returns the grid y size of the simulation
+	 */
 	public int getGridY() {
 		return grid_y;
 	}
 	
+	/**
+	 * returns the cell array of the simulation
+	 */
 	public String[][] getArray() {
 		return cellArray;
 	}
 	
+	/**
+	 * prints all stored info about the simulation
+	 */
 	public void printInfo() {
 		System.out.print("name = ");
 		System.out.println(name);
