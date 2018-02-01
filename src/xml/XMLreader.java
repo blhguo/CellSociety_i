@@ -129,7 +129,7 @@ public class XMLreader {
 	}
 
 	/**
-	 * Creates string from NodeList (assumes single length NodeLists)
+	 * Creates a string array for cells
 	 * Used by:
 	 * read()
 	 * inputs: 
