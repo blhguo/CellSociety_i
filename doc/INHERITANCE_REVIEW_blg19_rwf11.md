@@ -16,7 +16,8 @@ PART 2
 
 PART 3
 
-1. * Returns a scene given a 2D cell array
+1. Use Cases
+ * Returns a scene given a 2D cell array
  * Allows for choice of file
  * Allows for type of simulation
  * Creates interactive drop menus
