@@ -9,8 +9,8 @@ public class XMLtester {
 	 * Prints results
 	 */
 	public static void main (String[] args) {
-		String fileName = "data/game_of_life.xml";
-		//String fileName = "data/segregation.xml";
+		//String fileName = "data/game_of_life.xml";
+		String fileName = "data/segregation.xml";
 		XMLreader xml_reader = new XMLreader();
 		SimulationSetup simInfo = xml_reader.read(fileName);
 		simInfo.printInfo();

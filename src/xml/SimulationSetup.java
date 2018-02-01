@@ -109,6 +109,13 @@ public class SimulationSetup {
 	}
 	
 	/**
+	 * returns the threshold array of the simulation
+	 */
+	public double[][] getThreshold(){
+		return new double[0][0];
+	}
+	
+	/**
 	 * prints all stored info about the simulation
 	 */
 	public void printInfo() {

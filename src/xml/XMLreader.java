@@ -78,15 +78,62 @@ public class XMLreader {
 			int numCellsX = (int) grid_x / cell_xsize;
 			int numCellsY = (int) grid_y / cell_ysize;
 
-			String[][] typeArray = getCellArray(doc, numCellsX, numCellsY);
+			NodeList nList = doc.getElementsByTagName("cell");
+			String[][] typeArray = new String[numCellsX][numCellsY];
+			double[][] thresholdArray = new double[numCellsX][numCellsY];
+
+			for (int temp = 0; temp < nList.getLength(); temp++) {
+				Node nNode = nList.item(temp);
+
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) nNode;
+					NodeList typeList = eElement.getElementsByTagName("type");
+					NodeList xList = eElement.getElementsByTagName("x");
+					NodeList yList = eElement.getElementsByTagName("y");
+
+					// get type
+					String type = getStringValue(typeList);;
+
+					// get x position
+					String xString = getStringValue(xList);
+					int x = Integer.parseInt(xString);
+
+					// get y position
+					String yString = getStringValue(yList);
+					int y = Integer.parseInt(yString);
+
+					// add type to array
+					typeArray[x][y] = type;
+
+					// get other data
+					if(name.equals("segregation")){
+						NodeList thresholdList = eElement.getElementsByTagName("threshold");
+						String thresholdString = getStringValue(thresholdList);
+						double threshold = Double.parseDouble(thresholdString);
+						thresholdArray[x][y] = threshold;
+					}
+
+				}
+			}
 			typeArray = fillEmpty(typeArray);
-			return new SimulationSetup(name, title, author, cell_shape, cell_xsize, 
-										cell_ysize, grid_x, grid_y, typeArray);
+			if(name.equals("segregation")){
+				return new SegregationSimSetup(name, title, author, cell_shape, cell_xsize, 
+						cell_ysize, grid_x, grid_y, typeArray, thresholdArray);
+			}
+			else{
+				return new SimulationSetup(name, title, author, cell_shape, cell_xsize, 
+						cell_ysize, grid_x, grid_y, typeArray);
+			}
 		} catch (Exception e) {
 			return null;
 		}	
 	}
 
+	private SimulationSetup simCreator(String n, String t, String a, String s, int xSize, int ySize, 
+			int gridX, int gridY, String[][] typeArray){
+		
+		return null;
+	}
 
 	/**
 	 * Fills empty array slots with "e" for "empty"
@@ -126,47 +173,5 @@ public class XMLreader {
 		Element e = (Element) node1;
 		String s = e.getTextContent();
 		return s;
-	}
-
-	/**
-	 * Creates a string array for cells
-	 * Used by:
-	 * read()
-	 * inputs: 
-	 * @param doc (Document)
-	 * @param numCellsX (number of cells in x direction)
-	 * @param numCellsY (number of cells in y direction)
-	 * returns:
-	 * @return typeArray (double array of cell type data)
-	 */
-	private String[][] getCellArray(Document doc, int numCellsX, int numCellsY){
-		NodeList nList = doc.getElementsByTagName("cell");
-		String[][] typeArray = new String[numCellsX][numCellsY];
-
-		for (int temp = 0; temp < nList.getLength(); temp++) {
-			Node nNode = nList.item(temp);
-
-			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-				Element eElement = (Element) nNode;
-				NodeList typeList = eElement.getElementsByTagName("type");
-				NodeList xList = eElement.getElementsByTagName("x");
-				NodeList yList = eElement.getElementsByTagName("y");
-
-				// get type
-				String type = getStringValue(typeList);;
-
-				// get x position
-				String xString = getStringValue(xList);
-				int x = Integer.parseInt(xString);
-
-				// get y position
-				String yString = getStringValue(yList);
-				int y = Integer.parseInt(yString);
-
-				// add type to array
-				typeArray[x][y] = type;
-			}
-		}
-		return typeArray;
 	}
 }

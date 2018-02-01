@@ -13,48 +13,56 @@
 		<type>x</type>
 		<x>0</x>
 		<y>0</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>x</type>
 		<x>1</x>
 		<y>0</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>o</type>
 		<x>2</x>
 		<y>0</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>x</type>
 		<x>3</x>
 		<y>0</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>o</type>
 		<x>4</x>
 		<y>0</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>o</type>
 		<x>1</x>
 		<y>1</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>o</type>
 		<x>2</x>
 		<y>1</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>o</type>
 		<x>3</x>
 		<y>1</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	
@@ -62,72 +70,84 @@
 		<type>o</type>
 		<x>4</x>
 		<y>1</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>x</type>
 		<x>0</x>
 		<y>2</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>x</type>
 		<x>1</x>
 		<y>2</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>x</type>
 		<x>0</x>
 		<y>3</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>o</type>
 		<x>1</x>
 		<y>3</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>x</type>
 		<x>2</x>
 		<y>3</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>x</type>
 		<x>3</x>
 		<y>3</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>x</type>
 		<x>4</x>
 		<y>3</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>x</type>
 		<x>0</x>
 		<y>4</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>o</type>
 		<x>1</x>
 		<y>4</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>o</type>
 		<x>2</x>
 		<y>4</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 	<cell>
 		<type>o</type>
 		<x>4</x>
 		<y>4</y>
+		<threshold>0.3</threshold>
 	</cell>
 	
 </simulation>
