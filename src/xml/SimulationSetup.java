@@ -30,10 +30,9 @@ public class SimulationSetup {
 	private int cell_ysize;
 	private int grid_x;
 	private int grid_y;
-	private String[][] cellArray;
 	
 	public SimulationSetup(String n, String t, String a, String s, int xSize, int ySize, 
-			int gridX, int gridY, String[][] typeArray) {
+			int gridX, int gridY) {
 		name =  n;
 		title = t;
 		author = a;
@@ -42,7 +41,6 @@ public class SimulationSetup {
 		cell_ysize = ySize;
 		grid_x = gridX;
 		grid_y = gridY;
-		cellArray = typeArray;
 	}
 	
 	/**
@@ -100,21 +98,7 @@ public class SimulationSetup {
 	public int getGridY() {
 		return grid_y;
 	}
-	
-	/**
-	 * returns the cell array of the simulation
-	 */
-	public String[][] getArray() {
-		return cellArray;
-	}
-	
-	/**
-	 * returns the threshold array of the simulation
-	 */
-	public double[][] getThreshold(){
-		return new double[0][0];
-	}
-	
+		
 	/**
 	 * prints all stored info about the simulation
 	 */
@@ -142,16 +126,5 @@ public class SimulationSetup {
 		
 		System.out.print("grid_y = ");
 		System.out.println(grid_y);
-		
-		System.out.println("cellArray = ");
-		for(int i = 0; i<cellArray[1].length; i++)
-		{
-		    for(int j = 0; j<cellArray[0].length; j++)
-		    {
-		        System.out.print(cellArray[j][i]);
-		        System.out.print(" ");
-		    }
-		    System.out.println("");
-		}
 	}
 }

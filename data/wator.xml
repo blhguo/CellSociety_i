@@ -13,14 +13,18 @@
 		<type>fish</type>
 		<x>0</x>
 		<y>0</y>
-		<chrononThreshold>5</chrononThreshold>
+		<reproductionThreshold>5</reproductionThreshold>
 		<gainedEnergy>0</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
 		<type>shark</type>
 		<x>1</x>
 		<y>0</y>
-		<chrononThreshold>5</chrononThreshold>
+		<reproductionThreshold>5</reproductionThreshold>
 		<gainedEnergy>1</gainedEnergy>
+		<energy>5</energy>
+		
 	</cell>
+</simulation>
