@@ -1,13 +1,7 @@
 package xml;
 
-import xml.SimSetups.FireSimSetup;
-import xml.SimSetups.GOLSimSetup;
-import xml.SimSetups.SegregationSimSetup;
-import xml.SimSetups.WatorSimSetup;
-import xml.readers.FireXMLreader;
-import xml.readers.GOLXMLreader;
-import xml.readers.SegregationXMLreader;
-import xml.readers.WatorXMLreader;
+import xml.SimSetups.*;
+import xml.readers.*;
 
 public class XMLtester {
 	private final static String gol = "data/game_of_life.xml";
