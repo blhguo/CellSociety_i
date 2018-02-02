@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation>
+	<name>fire</name>
+	<title>Fire</title>
+	<author>?</author>
+	<cell_shape>square</cell_shape>
+	<cell_xsize>40</cell_xsize>
+	<cell_ysize>40</cell_ysize>
+	<grid_x>360</grid_x>
+	<grid_y>360</grid_y>
+	<fireProb>0.15</fireProb>
+	<lightningProb>0.01</lightningProb>
+	<emptyTreeProb>0.1</emptyTreeProb>fir
+
+	<cell>
+		<type>tree</type>
+		<x>0</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>fire</type>
+		<x>1</x>
+		<y>0</y>	
+	</cell>
+</simulation>
