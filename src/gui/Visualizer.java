@@ -21,7 +21,7 @@ public class Visualizer {
 	private Group CreateRoot(Cell[][] cellArray, int width, int height) {//cell abstract class hasn't been created yet
 		Group addition = new Group();
 		for (int i = 0; i < cellArray[0].length; i++) {
-			for (int j = 0; j < cellArray[1].lengt; j++) {
+			for (int j = 0; j < cellArray[1].length; j++) {
 				addition.getChildren().add(GenerateCell(cellArray[i][j], width, height, i, j));
 			}
 		}
@@ -30,6 +30,6 @@ public class Visualizer {
 	
 	private Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
 		Rectangle Image = new Rectangle((width * i + XPADDING), (height * j + YPADDING), width, height);
-		Image.setFill(BufferCell.getDisplayColor);
+		Image.setFill(BufferCell.getDisplayColor());
 	}
 }
