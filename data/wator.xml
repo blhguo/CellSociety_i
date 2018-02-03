@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation>
+	<name>wator</name>
+	<title>Wa-Tor World</title>
+	<author>A.K. Dewdney</author>
+	<cell_shape>square</cell_shape>
+	<cell_xsize>40</cell_xsize>
+	<cell_ysize>40</cell_ysize>
+	<grid_x>200</grid_x>
+	<grid_y>200</grid_y>
+
+	<cell>
+		<type>fish</type>
+		<x>0</x>
+		<y>0</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>shark</type>
+		<x>1</x>
+		<y>0</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>1</gainedEnergy>
+		<energy>5</energy>
+		
+	</cell>
+</simulation>

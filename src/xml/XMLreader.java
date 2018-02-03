@@ -41,10 +41,7 @@ public class XMLreader {
 			DocumentBuilder dB = dbF.newDocumentBuilder();
 			Document doc = dB.parse(file);
 			doc.getDocumentElement().normalize();
-			//System.out.print("Root element: ");
-			//System.out.println(doc.getDocumentElement().getNodeName());
 
-			// Get simulation information
 			// Get simulation information
 			NodeList nameList = doc.getElementsByTagName("name");
 			String name = getStringValue(nameList);
@@ -73,15 +70,9 @@ public class XMLreader {
 			NodeList grid_yList = doc.getElementsByTagName("grid_y");
 			String grid_yString = getStringValue(grid_yList);
 			int grid_y = Integer.parseInt(grid_yString);
-
-
-			int numCellsX = (int) grid_x / cell_xsize;
-			int numCellsY = (int) grid_y / cell_ysize;
-
-			String[][] typeArray = getCellArray(doc, numCellsX, numCellsY);
-			typeArray = fillEmpty(typeArray);
+			
 			return new SimulationSetup(name, title, author, cell_shape, cell_xsize, 
-										cell_ysize, grid_x, grid_y, typeArray);
+					cell_ysize, grid_x, grid_y);
 		} catch (Exception e) {
 			return null;
 		}	
@@ -97,7 +88,7 @@ public class XMLreader {
 	 * returns:
 	 * @return typeArray (the modified double array of types)
 	 */
-	private String[][] fillEmpty(String[][] typeArray) {
+	protected String[][] fillEmpty(String[][] typeArray) {
 		String empty = "e";
 		for(int i = 0; i<typeArray[0].length; i++)
 		{
@@ -121,52 +112,10 @@ public class XMLreader {
 	 * returns:
 	 * @return s (the parsed out string)
 	 */
-	private String getStringValue(NodeList list) {
+	protected String getStringValue(NodeList list) {
 		Node node1 = list.item(0);
 		Element e = (Element) node1;
 		String s = e.getTextContent();
 		return s;
-	}
-
-	/**
-	 * Creates a string array for cells
-	 * Used by:
-	 * read()
-	 * inputs: 
-	 * @param doc (Document)
-	 * @param numCellsX (number of cells in x direction)
-	 * @param numCellsY (number of cells in y direction)
-	 * returns:
-	 * @return typeArray (double array of cell type data)
-	 */
-	private String[][] getCellArray(Document doc, int numCellsX, int numCellsY){
-		NodeList nList = doc.getElementsByTagName("cell");
-		String[][] typeArray = new String[numCellsX][numCellsY];
-
-		for (int temp = 0; temp < nList.getLength(); temp++) {
-			Node nNode = nList.item(temp);
-
-			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-				Element eElement = (Element) nNode;
-				NodeList typeList = eElement.getElementsByTagName("type");
-				NodeList xList = eElement.getElementsByTagName("x");
-				NodeList yList = eElement.getElementsByTagName("y");
-
-				// get type
-				String type = getStringValue(typeList);;
-
-				// get x position
-				String xString = getStringValue(xList);
-				int x = Integer.parseInt(xString);
-
-				// get y position
-				String yString = getStringValue(yList);
-				int y = Integer.parseInt(yString);
-
-				// add type to array
-				typeArray[x][y] = type;
-			}
-		}
-		return typeArray;
 	}
 }
