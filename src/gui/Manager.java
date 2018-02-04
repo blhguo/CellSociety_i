@@ -132,8 +132,4 @@ public class Manager extends Application {
 		Application.launch(args);
 	}
 
-	public static void startSim() {
-		
-		
-	}
 }

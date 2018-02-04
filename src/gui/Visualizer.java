@@ -54,7 +54,6 @@ public class Visualizer {
         				fileName = "data/" + fileName;		
         				try {
         					Manager.callXMLreader(fileName);
-        					Manager.startSim();
 							//stage.setScene(setupScene (width, height, background, cellArray, cell_width, cell_height));
 						} catch (Exception e1) {
 							e1.printStackTrace();
