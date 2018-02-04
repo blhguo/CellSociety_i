@@ -1,5 +1,7 @@
 package gui;
 
+import java.io.File;
+
 import grid.FireSimGrid;
 import grid.GOLSimGrid;
 import grid.Grid;
@@ -8,10 +10,14 @@ import grid.WatorSimGrid;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import xml.SimSetups.FireSimSetup;
@@ -25,9 +31,9 @@ import xml.readers.WatorXMLreader;
 
 public class Manager extends Application {
 
-	int width = 10;
-	int height = 10;
-	static Grid myGrid;
+	int width = 100; //TODO
+	int height = 100; //TODO
+	Grid myGrid;
 	//Grid CellArray; //TODO
 	int cell_Width; //TODO
 	int cell_Height; //TODO
@@ -60,6 +66,27 @@ public class Manager extends Application {
 		TheStage = stage;
 		Scene myScene = visualizer.setupMenu(width, height, BACKGROUND, TheStage);
 		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
+        FileChooser fileChooser = new FileChooser();
+        Button openButton = new Button("Open a File...");
+        
+        openButton.setOnAction(
+        	new EventHandler<ActionEvent>() {
+        		@Override
+        		public void handle(final ActionEvent e) {
+        			File file = fileChooser.showOpenDialog(stage);
+        			if (file != null) {
+        				fileName = file.getName();
+        				fileName = "data/" + fileName;		
+        				try {
+        					callXMLreader(fileName);
+							stage.setScene(visualizer.setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}	
+        			}
+        		}
+        	});
+        myScene.getRoot().getChildrenUnmodifiable().add(openButton);
 		TheStage.setScene(myScene);
 		TheStage.setTitle(TITLE);
 		TheStage.show();
@@ -98,8 +125,8 @@ public class Manager extends Application {
 		//TODO: call grid, call start
 		Scene myScene_Buffer;
 		try {
-			CellArray.updateGrid();
-			myScene_Buffer = visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
+			myGrid.updateGrid();
+			myScene_Buffer = visualizer.setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height);
 			myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 			TheStage.setScene(myScene_Buffer);
 			TheStage.show();
@@ -110,30 +137,38 @@ public class Manager extends Application {
 		}
 	}
 	
-	public static void callXMLreader(String file){
+	public void callXMLreader(String file){
 		if(file.equals("data/segregation.xml")) {
 		    SegregationXMLreader xml_reader = new SegregationXMLreader();
 		    SegregationSimSetup simInfo = xml_reader.read(file);
 		    myGrid = new SegregationSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray(), simInfo.getThreshold());
 		    simInfo.printInfo();
+		    cell_Width = simInfo.getCellX();
+		    cell_Height = simInfo.getCellY();
 		}
 		else if(file.equals("data/wator.xml")) {
 		    WatorXMLreader xml_reader = new WatorXMLreader();
 		    WatorSimSetup simInfo = xml_reader.read(file);
 		    myGrid = new WatorSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray(), simInfo.getReproduction());
 		    simInfo.printInfo();
+		    cell_Width = simInfo.getCellX();
+		    cell_Height = simInfo.getCellY();
 		}
 		else if(file.equals("data/fire.xml")) {
 		    FireXMLreader xml_reader = new FireXMLreader();
 		    FireSimSetup simInfo = xml_reader.read(file);
 		    myGrid = new FireSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb());
 		    simInfo.printInfo();
+		    cell_Width = simInfo.getCellX();
+		    cell_Height = simInfo.getCellY();
 		}
 		else {
 		    GOLXMLreader xml_reader = new GOLXMLreader();
 		    GOLSimSetup simInfo = xml_reader.read(file);
 		    myGrid = new GOLSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray());
 		    simInfo.printInfo();
+		    cell_Width = simInfo.getCellX();
+		    cell_Height = simInfo.getCellY();
 		}
 	}
 	
