@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 
+import grid.Grid;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -15,7 +16,7 @@ public class Manager extends Application {
 
 	int width = 10;
 	int height = 10;
-	Cell[][] CellArray = new Cell[][] //TODO
+	Grid CellArray; //TODO
 	int cell_Width; //TODO
 	int cell_Height; //TODO
     public static final Paint BACKGROUND = Color.WHITE;
@@ -25,13 +26,19 @@ public class Manager extends Application {
 	private KeyFrame frame;
 	private Timeline animation;
 	
+	private Grid[] myPossibleSims = { 
+	        new FireSimGrid(sim_width, sim_height, cellArray, probCatch, probLightning),
+	        new GOLSimGrid(sim_width, sim_height, cellArray),
+	        new SegregationSimGrid(sim_width, sim_height, cellArray, x_threshold, o_threshold),
+	        new WatorSimGrid(sim_width, sim_height, cellArray, fish_threshold, shark_threshold)
+	};
 	
 	
 	@Override
 	public void start(Stage stage) throws Exception {
 		//add code to parse and create grid
 		
-		CellArray = new Cell[][] //TODO
+		CellArray = myPossibleSims[0];
 		cell_Width; //TODO
 		cell_Height; //TODO
 		
