@@ -1,13 +1,12 @@
 package gui;
 
-import java.awt.Color;
-
 import grid.Grid;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -26,24 +25,24 @@ public class Manager extends Application {
 	private KeyFrame frame;
 	private Timeline animation;
 	
-	private Grid[] myPossibleSims = { 
+	/*private Grid[] myPossibleSims = { 
 	        new FireSimGrid(sim_width, sim_height, cellArray, probCatch, probLightning),
 	        new GOLSimGrid(sim_width, sim_height, cellArray),
 	        new SegregationSimGrid(sim_width, sim_height, cellArray, x_threshold, o_threshold),
 	        new WatorSimGrid(sim_width, sim_height, cellArray, fish_threshold, shark_threshold)
 	};
-	
+	*/
 	
 	@Override
 	public void start(Stage stage) throws Exception {
 		//add code to parse and create grid
 		
-		CellArray = myPossibleSims[0];
-		cell_Width; //TODO
-		cell_Height; //TODO
+		//CellArray = myPossibleSims[0];
+		//cell_Width; //TODO
+		//cell_Height; //TODO
 		
 		TheStage = stage;
-		Scene myScene = Visualizer.setupMenu(width, height, BACKGROUND, CellArray, cell_Width, cell_Height, TheStage);
+		Scene myScene = Visualizer.setupMenu(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height, TheStage);
 		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 		TheStage.setScene(myScene);
 		TheStage.setTitle(TITLE);
@@ -81,12 +80,19 @@ public class Manager extends Application {
 	
 	private void step () {
 		//TODO: call grid, call start
-		Scene myScene_Buffer = Visualizer.setupScene(width, height, BACKGROUND, CellArray, cell_Width, cell_Height);
+		Scene myScene_Buffer = null;
+		try {
+			myScene_Buffer = Visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 		TheStage.setScene(myScene_Buffer);
 		TheStage.show();
 	}
 	
-	
-
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
 }
