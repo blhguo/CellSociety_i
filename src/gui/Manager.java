@@ -157,7 +157,7 @@ public class Manager extends Application {
 		else if(file.equals("data/fire.xml")) {
 		    FireXMLreader xml_reader = new FireXMLreader();
 		    FireSimSetup simInfo = xml_reader.read(file);
-		    myGrid = new FireSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb());
+		    myGrid = new FireSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
 		    simInfo.printInfo();
 		    cell_Width = simInfo.getCellX();
 		    cell_Height = simInfo.getCellY();
