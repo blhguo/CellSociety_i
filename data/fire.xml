@@ -2,7 +2,7 @@
 <simulation>
 	<name>fire</name>
 	<title>Fire</title>
-	<author>?</author>
+	<author>Angela B. Shiflet</author>
 	<cell_shape>square</cell_shape>
 	<cell_xsize>10</cell_xsize>
 	<cell_ysize>10</cell_ysize>

@@ -17,7 +17,7 @@ public class XMLmaker {
 	private final static String golAuthor = "John Horton Conway";
 	private final static String segAuthor = "Thomas Schelling";
 	private final static String watorAuthor = "A.K. Dewdney";
-	private final static String fireAuthor =  "?";
+	private final static String fireAuthor =  "Angela B. Shiflet";
 
 	// CHANGE THIS
 	private final static String sim = wator;
@@ -71,8 +71,8 @@ public class XMLmaker {
 		writer.println("\t" + "<cell_shape>" + shape + "</cell_shape>");
 		writer.println("\t" + "<cell_xsize>" + cellx + "</cell_xsize>");
 		writer.println("\t" + "<cell_ysize>" + celly + "</cell_ysize>");
-		writer.println("\t" + "<gird_x>" + gridx + "</grid_x>");
-		writer.println("\t" + "<gird_y>" + gridy + "</grid_y>");
+		writer.println("\t" + "<grid_x>" + gridx + "</grid_x>");
+		writer.println("\t" + "<grid_y>" + gridy + "</grid_y>");
 		
 		if(sim.equals(gol)){
 
@@ -116,6 +116,8 @@ public class XMLmaker {
 					writer.println("\t" + "\t" + "<reproductionThreshold>" + rT + "</reproductionThreshold>");
 					writer.println("\t" + "\t" + "<gainedEnergy>" + gE + "</gainedEnergy>");
 					writer.println("\t" + "\t" + "<energy>" + e + "</energy>");
+					writer.println("\t" + "</cell>");
+					writer.println("");
 				}
 			}
 		}
@@ -165,5 +167,6 @@ public class XMLmaker {
 		}
 		writer.print("</simulation>");
 		writer.close();
+		System.out.println("Done.");
 	}
 }
