@@ -6,7 +6,7 @@ import cell.firesim.TreeCell;
 
 public class FireSimGrid extends Grid {
 
-	public FireSimGrid(int width, int height, String[][] cellArray, double probCatch, double probLightning) {
+	public FireSimGrid(int width, int height, String[][] cellArray, double probCatch, double probLightning, double probGrow) {
 		super(width, height);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
@@ -15,13 +15,15 @@ public class FireSimGrid extends Grid {
 						this.myGrid[i][j] = new FireCell();
 						break;
 					case "tree": 
-						TreeCell newCell = new TreeCell();
-						newCell.setProbCatch(probCatch);
-						newCell.setProbLightning(probLightning);
-						this.myGrid[i][j] = newCell;
+						TreeCell newTreeCell = new TreeCell();
+						newTreeCell.setProbCatch(probCatch);
+						newTreeCell.setProbLightning(probLightning);
+						this.myGrid[i][j] = newTreeCell;
 						break;
 					default: 
-						this.myGrid[i][j] = new EmptyCell();
+						EmptyCell newEmptyCell = new EmptyCell();
+						newEmptyCell.setProbGrow(probGrow);
+						this.myGrid[i][j] = newEmptyCell;
 						break;
 				}
 			}
