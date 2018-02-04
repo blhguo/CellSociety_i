@@ -27,7 +27,6 @@ public class Visualizer {
 	private static final int XPADDING = 10; //when creating cells, the x-margin between cell
 	private static final int YPADDING = 10; //when creating cells, the y-margin between cell
 	private static final int MENU_PAD = 10;
-	private String fileName;
 
 	public Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height) throws Exception {
 		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));

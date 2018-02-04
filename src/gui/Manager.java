@@ -2,6 +2,7 @@ package gui;
 
 import java.io.File;
 
+import cell.Cell;
 import grid.FireSimGrid;
 import grid.GOLSimGrid;
 import grid.Grid;
@@ -12,11 +13,18 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -43,8 +51,11 @@ public class Manager extends Application {
 	private String fileName = "";
 	public double SECOND_DELAY = 1000.0;
 	private KeyFrame frame;
-	private Timeline animation;
-	Visualizer visualizer = new Visualizer();
+	private Timeline animation;	
+	private static final int XPADDING = 10; //when creating cells, the x-margin between cell
+	private static final int YPADDING = 10; //when creating cells, the y-margin between cell
+	private static final int MENU_PAD = 10;
+	//Visualizer visualizer = new Visualizer();
 	
 	/*private Grid[] myPossibleSims = { 
 	        new FireSimGrid(sim_width, sim_height, cellArray, probCatch, probLightning),
@@ -64,7 +75,7 @@ public class Manager extends Application {
 		//cell_Height; //TODO
 		
 		TheStage = stage;
-		Scene myScene = visualizer.setupMenu(width, height, BACKGROUND, TheStage);
+		Scene myScene = setupMenu(width, height, BACKGROUND, TheStage);
 		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
         FileChooser fileChooser = new FileChooser();
         Button openButton = new Button("Open a File...");
@@ -79,14 +90,14 @@ public class Manager extends Application {
         				fileName = "data/" + fileName;		
         				try {
         					callXMLreader(fileName);
-							stage.setScene(visualizer.setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
+							stage.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
 						} catch (Exception e1) {
 							e1.printStackTrace();
 						}	
         			}
         		}
         	});
-        myScene.getRoot().getChildrenUnmodifiable().add(openButton);
+        
 		TheStage.setScene(myScene);
 		TheStage.setTitle(TITLE);
 		TheStage.show();
@@ -126,7 +137,7 @@ public class Manager extends Application {
 		Scene myScene_Buffer;
 		try {
 			myGrid.updateGrid();
-			myScene_Buffer = visualizer.setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height);
+			myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height);
 			myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 			TheStage.setScene(myScene_Buffer);
 			TheStage.show();
@@ -170,6 +181,40 @@ public class Manager extends Application {
 		    cell_Width = simInfo.getCellX();
 		    cell_Height = simInfo.getCellY();
 		}
+	}
+
+	public Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height) throws Exception {
+		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));
+		Scene scene = new Scene(root, width, height, background);
+		return scene;	
+	}
+	
+	public Scene setupMenu (int width, int height, Paint background, Stage stage) throws Exception {
+    	VBox splash = new VBox ();
+        splash.setPadding(new Insets(MENU_PAD, MENU_PAD, MENU_PAD, MENU_PAD));
+        splash.setSpacing(MENU_PAD);
+        Label lbl = new Label("Cell Society Simulation");
+        lbl.setFont(Font.font("Amble CN", FontWeight.BOLD, 24));
+        splash.getChildren().add(lbl);
+
+        Scene scene = new Scene(splash);
+        return scene;
+	}
+	
+	public Group CreateRoot(Cell[][] cellArray, int width, int height) {//cell abstract class hasn't been created yet
+		Group addition = new Group();
+		for (int i = 0; i < cellArray[0].length; i++) {
+			for (int j = 0; j < cellArray[1].length; j++) {
+				addition.getChildren().add(GenerateCell(cellArray[i][j], width, height, i, j));
+			}
+		}
+		return addition;
+	}
+	
+	private Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
+		Rectangle Image = new Rectangle((width * i + XPADDING), (height * j + YPADDING), width, height);
+		Image.setFill(BufferCell.getDisplayColor());
+		return Image;
 	}
 	
 	public static void main(String[] args) {
