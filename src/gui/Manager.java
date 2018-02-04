@@ -63,7 +63,7 @@ public class Manager extends Application {
         animation = new Timeline();
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.getKeyFrames().add(frame);
-        animation.play();   
+        animation.play();
 	}
 	
 	private void handleKeyInput(KeyCode code) {
@@ -93,10 +93,12 @@ public class Manager extends Application {
 		//TODO: call grid, call start
 		Scene myScene_Buffer;
 		try {
-			//myScene_Buffer = visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
-			//myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
-			//TheStage.setScene(myScene_Buffer);
-			//TheStage.show();
+			CellArray.updateGrid();
+			myScene_Buffer = visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
+			myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
+			TheStage.setScene(myScene_Buffer);
+			TheStage.show();
+			
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
