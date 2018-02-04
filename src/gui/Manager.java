@@ -1,6 +1,10 @@
 package gui;
 
+import grid.FireSimGrid;
+import grid.GOLSimGrid;
 import grid.Grid;
+import grid.SegregationSimGrid;
+import grid.WatorSimGrid;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -23,7 +27,8 @@ public class Manager extends Application {
 
 	int width = 10;
 	int height = 10;
-	Grid CellArray; //TODO
+	static Grid myGrid;
+	//Grid CellArray; //TODO
 	int cell_Width; //TODO
 	int cell_Height; //TODO
     public static final Paint BACKGROUND = Color.WHITE;
@@ -107,21 +112,25 @@ public class Manager extends Application {
 		if(file.equals("data/segregation.xml")) {
 		    SegregationXMLreader xml_reader = new SegregationXMLreader();
 		    SegregationSimSetup simInfo = xml_reader.read(file);
+		    myGrid = new SegregationSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray(), simInfo.getThreshold());
 		    simInfo.printInfo();
 		}
 		else if(file.equals("data/wator.xml")) {
 		    WatorXMLreader xml_reader = new WatorXMLreader();
 		    WatorSimSetup simInfo = xml_reader.read(file);
+		    myGrid = new WatorSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray(), simInfo.getReproduction());
 		    simInfo.printInfo();
 		}
 		else if(file.equals("data/fire.xml")) {
 		    FireXMLreader xml_reader = new FireXMLreader();
 		    FireSimSetup simInfo = xml_reader.read(file);
+		    myGrid = new FireSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb());
 		    simInfo.printInfo();
 		}
 		else {
 		    GOLXMLreader xml_reader = new GOLXMLreader();
 		    GOLSimSetup simInfo = xml_reader.read(file);
+		    myGrid = new GOLSimGrid(simInfo.getGridX(), simInfo.getGridY(), simInfo.getArray());
 		    simInfo.printInfo();
 		}
 	}
