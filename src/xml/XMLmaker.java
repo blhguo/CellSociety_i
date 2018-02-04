@@ -1,31 +1,97 @@
 package xml;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.Random;
+
 public class XMLmaker {
-	private final static String gol = "gol";
-	private final static String seg = "seg";
+	private final static String gol = "game_of_life";
+	private final static String seg = "segregation";
 	private final static String wator = "wator";
 	private final static String fire =  "fire";
-	
-	private final static String sim = fire;
+
+	// CHANGE THIS
+	private final static String sim = wator;
 	private final static int gridx = 400;
 	private final static int gridy = 400;
 	private final static int cellx = 10;
 	private final static int celly = 10;
-	
-	
-	
-	public static void main (String[] args) {
+	private final static String title = "";
+	private final static String author = "";
+	private final static String shape = "square";
+
+	// wator world specific
+	private final static double fishProp = 0.3;
+	private final static double sharkProp = 0.3;
+	private final static int rtShark = 5;
+	private final static int rtFish = 5;
+	private final static int eShark = 5;
+	private final static int eFish = 5;
+	private final static int geShark = 1;
+	private final static int geFish = 0;
+
+
+	public static void main (String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 		int numCellsX = (int) gridx / cellx;
 		int numCellsY = (int) gridy / celly;
+		String fileName = sim + ".txt";
+		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+		writer.println("<" + '?' + "xml version" + '=' + '"'+ "1.0" + '"' + " encoding=" + '"' + "UTF-8" + '"' + '?' + ">");
+		writer.println("<simulation>");
+		writer.println("\t" + "<name>" + sim + "</name>");
+		writer.println("\t" + "<titile>" + title + "</title>");
+		writer.println("\t" + "<author>" + author + "</author>");
+		writer.println("\t" + "<cell_shape>" + shape + "</cell_shape>");
+		writer.println("\t" + "<cell_xsize>" + cellx + "</cell_xsize>");
+		writer.println("\t" + "<cell_ysize>" + celly + "</cell_ysize>");
+		writer.println("\t" + "<gird_x>" + gridx + "</grid_x>");
+		writer.println("\t" + "<gird_y>" + gridy + "</grid_y>");
 		
 		if(sim.equals(gol)){
-			
+
 		}
 		else if(sim.equals(seg)){
-			
+
 		}
 		else if(sim.equals(wator)){
-			
+			double fishNum = 999 * fishProp;
+			double sharkNum = 999 * sharkProp + fishNum;
+			for(int i = 0; i < numCellsX; i++){
+				for(int j = 0; j < numCellsY; j++){
+					Random rand = new Random();
+					int  n = rand.nextInt(1000);
+					String wType = "";
+					int rT = 0;
+					int gE = 0;
+					int e = 0;
+
+					if(n < fishNum){
+						wType = "fish";
+						rT = rtFish;
+						gE = geFish;
+						e = eFish;
+
+					}
+					else if(n > fishNum && n < sharkNum){
+						wType = "shark";
+						rT = rtShark;
+						gE = geShark;
+						e = eShark;
+					}
+					else{
+						wType = "empty";
+					}
+
+					writer.println("\t" + "<cell>");
+					writer.println("\t" + "\t" + "<type>" + wType + "</type>");
+					writer.println("\t" + "\t" + "<x>" + i + "</x>");
+					writer.println("\t" + "\t" + "<y>" + j + "</y>");
+					writer.println("\t" + "\t" + "<reproductionThreshold>" + rT + "</reproductionThreshold>");
+					writer.println("\t" + "\t" + "<gainedEnergy>" + gE + "</gainedEnergy>");
+					writer.println("\t" + "\t" + "<energy>" + e + "</energy>");
+				}
+			}
 		}
 		else if(sim.equals(fire)){			
 			for(int i = 0; i < numCellsX; i++){
@@ -42,7 +108,7 @@ public class XMLmaker {
 				System.out.println("\t" + "</cell>");
 				System.out.println("");
 			}
-			
+
 			for(int i = 0; i < numCellsY; i++){
 				System.out.println("\t" + "<cell>");
 				System.out.println("\t" + "\t" + "<type>empty</type>");
@@ -57,7 +123,7 @@ public class XMLmaker {
 				System.out.println("\t" + "</cell>");
 				System.out.println("");
 			}
-			
+
 			System.out.println("\t" + "<cell>");
 			System.out.println("\t" + "\t" + "<type>fire</type>");
 			int centerX = (int) (numCellsX-1)/2;
@@ -65,11 +131,12 @@ public class XMLmaker {
 			System.out.println("\t" + "\t" + "<x>" + centerX + "</x>");
 			System.out.println("\t" + "\t" + "<y>" + centerY + "</y>");
 			System.out.println("\t" + "</cell>");
-			
-			
+
+
 		}
 		else{
 			System.out.println("Error, invalid sim type");
 		}
+		writer.close();
 	}
 }
