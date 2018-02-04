@@ -53,7 +53,7 @@ public class Manager extends Application {
 		//cell_Height; //TODO
 		
 		TheStage = stage;
-		Scene myScene = visualizer.setupMenu(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height, TheStage);
+		Scene myScene = visualizer.setupMenu(width, height, BACKGROUND, TheStage);
 		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 		TheStage.setScene(myScene);
 		TheStage.setTitle(TITLE);
@@ -93,13 +93,10 @@ public class Manager extends Application {
 		//TODO: call grid, call start
 		Scene myScene_Buffer;
 		try {
-			myScene_Buffer = visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
-			myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
-			TheStage.setScene(myScene_Buffer);
-			TheStage.show();
-		Scene myScene_Buffer = null;
-		try {
-			myScene_Buffer = Visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
+			//myScene_Buffer = visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
+			//myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
+			//TheStage.setScene(myScene_Buffer);
+			//TheStage.show();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -131,5 +128,10 @@ public class Manager extends Application {
 	
 	public static void main(String[] args) {
 		Application.launch(args);
+	}
+
+	public static void startSim() {
+		
+		
 	}
 }

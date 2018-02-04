@@ -34,7 +34,7 @@ public class Visualizer {
 		return scene;	
 	}
 	
-	public Scene setupMenu (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height, Stage stage) throws Exception {
+	public Scene setupMenu (int width, int height, Paint background, Stage stage) throws Exception {
     	VBox splash = new VBox ();
         splash.setPadding(new Insets(MENU_PAD, MENU_PAD, MENU_PAD, MENU_PAD));
         splash.setSpacing(MENU_PAD);
@@ -54,7 +54,8 @@ public class Visualizer {
         				fileName = "data/" + fileName;		
         				try {
         					Manager.callXMLreader(fileName);
-							stage.setScene(setupScene (width, height, background, cellArray, cell_width, cell_height));
+        					Manager.startSim();
+							//stage.setScene(setupScene (width, height, background, cellArray, cell_width, cell_height));
 						} catch (Exception e1) {
 							e1.printStackTrace();
 						}
