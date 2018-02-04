@@ -68,7 +68,7 @@ public class FireSimSetup extends SimulationSetup{
 	/**
 	 * returns the energy of each cell of the simulation (for initial state)
 	 */
-	public double getEmptyTreeProb() {
+	public double getProbGrow() {
 		return emptyTreeProb;
 	}
 	

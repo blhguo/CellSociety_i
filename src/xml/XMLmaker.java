@@ -20,7 +20,7 @@ public class XMLmaker {
 	private final static String fireAuthor =  "Angela B. Shiflet";
 
 	// CHANGE THIS
-	private final static String sim = wator;
+	private final static String sim = fire;
 	private final static int gridx = 400;
 	private final static int gridy = 400;
 	private final static int cellx = 10;
@@ -38,6 +38,11 @@ public class XMLmaker {
 	private final static int eFish = 5;
 	private final static int geShark = 1;
 	private final static int geFish = 0;
+	
+	// fire specific
+	private final static double fireProb = 0.15;
+	private final static double lightningProb = 0.01;
+	private final static double emptyTreeProb = 0.01;
 
 
 	public static void main (String[] args) throws FileNotFoundException, UnsupportedEncodingException {
@@ -121,44 +126,49 @@ public class XMLmaker {
 				}
 			}
 		}
-		else if(sim.equals(fire)){			
+		else if(sim.equals(fire)){	
+			writer.println("\t" + "<fireProb>" + fireProb + "</fireProb>");
+			writer.println("\t" + "<lightningProb>" + lightningProb + "</lightningProb>");
+			writer.println("\t" + "<emptyTreeProb>" + emptyTreeProb + "</emptyTreeProb>");
+			writer.println("");
+			
 			for(int i = 0; i < numCellsX; i++){
-				System.out.println("\t" + "<cell>");
-				System.out.println("\t" + "\t" + "<type>empty</type>");
-				System.out.println("\t" + "\t" + "<x>" + i + "</x>");
-				System.out.println("\t" + "\t" + "<y>" + 0 + "</y>");
-				System.out.println("\t" + "</cell>");
-				System.out.println("");
-				System.out.println("\t" + "<cell>");
-				System.out.println("\t" + "\t" + "<type>empty</type>");
-				System.out.println("\t" + "\t" + "<x>" + i + "</x>");
-				System.out.println("\t" + "\t" + "<y>" + (numCellsY-1) + "</y>");
-				System.out.println("\t" + "</cell>");
-				System.out.println("");
+				writer.println("\t" + "<cell>");
+				writer.println("\t" + "\t" + "<type>empty</type>");
+				writer.println("\t" + "\t" + "<x>" + i + "</x>");
+				writer.println("\t" + "\t" + "<y>" + 0 + "</y>");
+				writer.println("\t" + "</cell>");
+				writer.println("");
+				writer.println("\t" + "<cell>");
+				writer.println("\t" + "\t" + "<type>empty</type>");
+				writer.println("\t" + "\t" + "<x>" + i + "</x>");
+				writer.println("\t" + "\t" + "<y>" + (numCellsY-1) + "</y>");
+				writer.println("\t" + "</cell>");
+				writer.println("");
 			}
 
 			for(int i = 0; i < numCellsY; i++){
-				System.out.println("\t" + "<cell>");
-				System.out.println("\t" + "\t" + "<type>empty</type>");
-				System.out.println("\t" + "\t" + "<x>" + 0 + "</x>");
-				System.out.println("\t" + "\t" + "<y>" + i + "</y>");
-				System.out.println("\t" + "</cell>");
-				System.out.println("");
-				System.out.println("\t" + "<cell>");
-				System.out.println("\t" + "\t" + "<type>empty</type>");
-				System.out.println("\t" + "\t" + "<x>" + (numCellsX-1) + "</x>");
-				System.out.println("\t" + "\t" + "<y>" + i+ "</y>");
-				System.out.println("\t" + "</cell>");
-				System.out.println("");
+				writer.println("\t" + "<cell>");
+				writer.println("\t" + "\t" + "<type>empty</type>");
+				writer.println("\t" + "\t" + "<x>" + 0 + "</x>");
+				writer.println("\t" + "\t" + "<y>" + i + "</y>");
+				writer.println("\t" + "</cell>");
+				writer.println("");
+				writer.println("\t" + "<cell>");
+				writer.println("\t" + "\t" + "<type>empty</type>");
+				writer.println("\t" + "\t" + "<x>" + (numCellsX-1) + "</x>");
+				writer.println("\t" + "\t" + "<y>" + i+ "</y>");
+				writer.println("\t" + "</cell>");
+				writer.println("");
 			}
 
-			System.out.println("\t" + "<cell>");
-			System.out.println("\t" + "\t" + "<type>fire</type>");
+			writer.println("\t" + "<cell>");
+			writer.println("\t" + "\t" + "<type>fire</type>");
 			int centerX = (int) (numCellsX-1)/2;
 			int centerY = (int) (numCellsY-1)/2;
-			System.out.println("\t" + "\t" + "<x>" + centerX + "</x>");
-			System.out.println("\t" + "\t" + "<y>" + centerY + "</y>");
-			System.out.println("\t" + "</cell>");
+			writer.println("\t" + "\t" + "<x>" + centerX + "</x>");
+			writer.println("\t" + "\t" + "<y>" + centerY + "</y>");
+			writer.println("\t" + "</cell>");
 
 
 		}

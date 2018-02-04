@@ -12,7 +12,7 @@
 	<lightningProb>0.01</lightningProb>
 	<emptyTreeProb>0.01</emptyTreeProb>
 
-		<cell>
+	<cell>
 		<type>empty</type>
 		<x>0</x>
 		<y>0</y>
