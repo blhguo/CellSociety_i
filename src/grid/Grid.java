@@ -23,6 +23,10 @@ public abstract class Grid {
 	}
 	*/
 	
+	public Cell[][] getCellArray() {
+		return myGrid;
+	}
+	
 	public Cell[][] updateGrid() {
 		Cell[][] nextGrid = new Cell[myWidth][myHeight];
 		for (int i = 0; i < myWidth; i++) {
