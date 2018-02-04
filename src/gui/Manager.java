@@ -35,21 +35,20 @@ public class Manager extends Application {
 	private Timeline animation;
 	Visualizer visualizer = new Visualizer();
 	
-	private Grid[] myPossibleSims = { 
-	        //new FireSimGrid(sim_width, sim_height, cellArray, probCatch, probLightning),
-	        //new GOLSimGrid(sim_width, sim_height, cellArray),
-	        //new SegregationSimGrid(sim_width, sim_height, cellArray, x_threshold, o_threshold),
-	        //new WatorSimGrid(sim_width, sim_height, cellArray, fish_threshold, shark_threshold)
+	/*private Grid[] myPossibleSims = { 
+	        new FireSimGrid(sim_width, sim_height, cellArray, probCatch, probLightning),
+	        new GOLSimGrid(sim_width, sim_height, cellArray),
+	        new SegregationSimGrid(sim_width, sim_height, cellArray, x_threshold, o_threshold),
+	        new WatorSimGrid(sim_width, sim_height, cellArray, fish_threshold, shark_threshold)
 	};
-	
+	*/
 	
 	@Override
 	public void start(Stage stage) throws Exception {
 		
 		//add code to parse and create grid
 		
-		
-		CellArray = myPossibleSims[0];
+		//CellArray = myPossibleSims[0];
 		//cell_Width; //TODO
 		//cell_Height; //TODO
 		
@@ -98,6 +97,9 @@ public class Manager extends Application {
 			myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 			TheStage.setScene(myScene_Buffer);
 			TheStage.show();
+		Scene myScene_Buffer = null;
+		try {
+			myScene_Buffer = Visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -127,5 +129,7 @@ public class Manager extends Application {
 		}
 	}
 	
-
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
 }
