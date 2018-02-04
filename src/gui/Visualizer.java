@@ -2,6 +2,7 @@ package gui;
 
 import java.io.File;
 
+import cell.Cell;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -40,7 +41,7 @@ public class Visualizer {
         splash.getChildren().add(lbl);
         FileChooser fileChooser = new FileChooser();
         Button openButton = new Button("Open a File...");
-
+        
         openButton.setOnAction(
         	new EventHandler<ActionEvent>() {
         		@Override
@@ -49,7 +50,11 @@ public class Visualizer {
         			if (file != null) {
         				fileName = file.getName();
         				fileName = "data/" + fileName;		
-        				return setupScene (width, height, background, cellArray, cell_width, cell_height);
+        				try {
+							stage.setScene(setupScene (width, height, background, cellArray, cell_width, cell_height));
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
         			}
         		}
         	});
@@ -58,7 +63,7 @@ public class Visualizer {
         return scene;
 	}
 	
-	private Group CreateRoot(Cell[][] cellArray, int width, int height) {//cell abstract class hasn't been created yet
+	private static Group CreateRoot(Cell[][] cellArray, int width, int height) {//cell abstract class hasn't been created yet
 		Group addition = new Group();
 		for (int i = 0; i < cellArray[0].length; i++) {
 			for (int j = 0; j < cellArray[1].length; j++) {
@@ -68,8 +73,9 @@ public class Visualizer {
 		return addition;
 	}
 	
-	private Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
+	private static Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
 		Rectangle Image = new Rectangle((width * i + XPADDING), (height * j + YPADDING), width, height);
 		Image.setFill(BufferCell.getDisplayColor());
+		return Image;
 	}
 }
