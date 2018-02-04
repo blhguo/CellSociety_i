@@ -18,21 +18,23 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import xml.readers.*;
+import xml.SimSetups.*;
 
 public class Visualizer {
 	
-	public static final int XPADDING = 10; //when creating cells, the x-margin between cell
-	public static final int YPADDING = 10; //when creating cells, the y-margin between cell
-	public static final int MENU_PAD = 10;
-	public static String fileName;
+	private static final int XPADDING = 10; //when creating cells, the x-margin between cell
+	private static final int YPADDING = 10; //when creating cells, the y-margin between cell
+	private static final int MENU_PAD = 10;
+	private static String fileName;
 
-	static Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height) throws Exception {
+	public Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height) throws Exception {
 		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));
 		Scene scene = new Scene(root, width, height, background);
 		return scene;	
 	}
 	
-	static Scene setupMenu (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height, Stage stage) throws Exception {
+	public Scene setupMenu (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height, Stage stage) throws Exception {
     	VBox splash = new VBox ();
         splash.setPadding(new Insets(MENU_PAD, MENU_PAD, MENU_PAD, MENU_PAD));
         splash.setSpacing(MENU_PAD);
@@ -51,6 +53,7 @@ public class Visualizer {
         				fileName = file.getName();
         				fileName = "data/" + fileName;		
         				try {
+        					Manager.callXMLreader(fileName);
 							stage.setScene(setupScene (width, height, background, cellArray, cell_width, cell_height));
 						} catch (Exception e1) {
 							e1.printStackTrace();
@@ -63,7 +66,7 @@ public class Visualizer {
         return scene;
 	}
 	
-	private static Group CreateRoot(Cell[][] cellArray, int width, int height) {//cell abstract class hasn't been created yet
+	public Group CreateRoot(Cell[][] cellArray, int width, int height) {//cell abstract class hasn't been created yet
 		Group addition = new Group();
 		for (int i = 0; i < cellArray[0].length; i++) {
 			for (int j = 0; j < cellArray[1].length; j++) {
@@ -73,7 +76,7 @@ public class Visualizer {
 		return addition;
 	}
 	
-	private static Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
+	private Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
 		Rectangle Image = new Rectangle((width * i + XPADDING), (height * j + YPADDING), width, height);
 		Image.setFill(BufferCell.getDisplayColor());
 		return Image;
