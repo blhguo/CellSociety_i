@@ -35,9 +35,9 @@ public class Manager extends Application {
 		cell_Width; //TODO
 		cell_Height; //TODO
 		
-		Scene myScene = Visualizer.setupScene(width, height, BACKGROUND, CellArray, cell_Width, cell_Height);
-		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 		TheStage = stage;
+		Scene myScene = Visualizer.setupMenu(width, height, BACKGROUND, CellArray, cell_Width, cell_Height, TheStage);
+		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 		TheStage.setScene(myScene);
 		TheStage.setTitle(TITLE);
 		TheStage.show();
