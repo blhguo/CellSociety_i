@@ -1,4 +1,5 @@
 # XML README
+Author: Marcus Oertle
 ## Packages
 Don't forget to import the packages:
 ```java
