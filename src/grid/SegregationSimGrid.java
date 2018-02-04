@@ -9,16 +9,16 @@ import cell.segregation.XCell;
 
 public class SegregationSimGrid extends Grid{
 
-	public SegregationSimGrid(int width, int height, String[][] cellArray, double x_threshold, double o_threshold) {
+	public SegregationSimGrid(int width, int height, String[][] cellArray, double[][] threshold) {
 		super(width, height);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
 					case "x": 
-						this.myGrid[i][j] = new XCell(x_threshold);
+						this.myGrid[i][j] = new XCell(threshold[i][j]);
 						break;
 					case "o":
-						this.myGrid[i][j] = new OCell(o_threshold);
+						this.myGrid[i][j] = new OCell(threshold[i][j]);
 						break;
 					default: 
 						this.myGrid[i][j] = new EmptyCell();
