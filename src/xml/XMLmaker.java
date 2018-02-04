@@ -10,6 +10,14 @@ public class XMLmaker {
 	private final static String seg = "segregation";
 	private final static String wator = "wator";
 	private final static String fire =  "fire";
+	private final static String golTitle = "Game of Life";
+	private final static String segTitle = "Segregation";
+	private final static String watorTitle = "Wa-Tor World";
+	private final static String fireTitle =  "Fire";
+	private final static String golAuthor = "John Horton Conway";
+	private final static String segAuthor = "Thomas Schelling";
+	private final static String watorAuthor = "A.K. Dewdney";
+	private final static String fireAuthor =  "?";
 
 	// CHANGE THIS
 	private final static String sim = wator;
@@ -17,8 +25,8 @@ public class XMLmaker {
 	private final static int gridy = 400;
 	private final static int cellx = 10;
 	private final static int celly = 10;
-	private final static String title = "";
-	private final static String author = "";
+	private static String title = "";
+	private static String author = "";
 	private final static String shape = "square";
 
 	// wator world specific
@@ -35,12 +43,30 @@ public class XMLmaker {
 	public static void main (String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 		int numCellsX = (int) gridx / cellx;
 		int numCellsY = (int) gridy / celly;
+		
+		if(sim.equals(gol)){
+			title = golTitle;
+			author = golAuthor;
+		}
+		else if(sim.equals(seg)){
+			title = segTitle;
+			author = segAuthor;
+		}
+		else if(sim.equals(wator)){
+			title = watorTitle;
+			author = watorAuthor;
+		}
+		else if(sim.equals(fire)){
+			title = fireTitle;
+			author = fireAuthor;
+		}
+		
 		String fileName = sim + ".txt";
 		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
 		writer.println("<" + '?' + "xml version" + '=' + '"'+ "1.0" + '"' + " encoding=" + '"' + "UTF-8" + '"' + '?' + ">");
 		writer.println("<simulation>");
 		writer.println("\t" + "<name>" + sim + "</name>");
-		writer.println("\t" + "<titile>" + title + "</title>");
+		writer.println("\t" + "<title>" + title + "</title>");
 		writer.println("\t" + "<author>" + author + "</author>");
 		writer.println("\t" + "<cell_shape>" + shape + "</cell_shape>");
 		writer.println("\t" + "<cell_xsize>" + cellx + "</cell_xsize>");
@@ -137,6 +163,7 @@ public class XMLmaker {
 		else{
 			System.out.println("Error, invalid sim type");
 		}
+		writer.print("</simulation>");
 		writer.close();
 	}
 }

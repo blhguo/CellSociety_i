@@ -10,6 +10,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import xml.SimSetups.FireSimSetup;
+import xml.SimSetups.GOLSimSetup;
+import xml.SimSetups.SegregationSimSetup;
+import xml.SimSetups.WatorSimSetup;
+import xml.readers.FireXMLreader;
+import xml.readers.GOLXMLreader;
+import xml.readers.SegregationXMLreader;
+import xml.readers.WatorXMLreader;
 
 public class Manager extends Application {
 
@@ -21,9 +29,11 @@ public class Manager extends Application {
     public static final Paint BACKGROUND = Color.WHITE;
     private Stage TheStage;
 	private static final String TITLE = "CA SIMULATION";
+	private String fileName = "";
 	public double SECOND_DELAY = 1000.0;
 	private KeyFrame frame;
 	private Timeline animation;
+	Visualizer visualizer = new Visualizer();
 	
 	/*private Grid[] myPossibleSims = { 
 	        new FireSimGrid(sim_width, sim_height, cellArray, probCatch, probLightning),
@@ -35,6 +45,7 @@ public class Manager extends Application {
 	
 	@Override
 	public void start(Stage stage) throws Exception {
+		
 		//add code to parse and create grid
 		
 		//CellArray = myPossibleSims[0];
@@ -42,7 +53,7 @@ public class Manager extends Application {
 		//cell_Height; //TODO
 		
 		TheStage = stage;
-		Scene myScene = Visualizer.setupMenu(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height, TheStage);
+		Scene myScene = visualizer.setupMenu(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height, TheStage);
 		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 		TheStage.setScene(myScene);
 		TheStage.setTitle(TITLE);
@@ -80,6 +91,12 @@ public class Manager extends Application {
 	
 	private void step () {
 		//TODO: call grid, call start
+		Scene myScene_Buffer;
+		try {
+			myScene_Buffer = visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
+			myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
+			TheStage.setScene(myScene_Buffer);
+			TheStage.show();
 		Scene myScene_Buffer = null;
 		try {
 			myScene_Buffer = Visualizer.setupScene(width, height, BACKGROUND, CellArray.getCellArray(), cell_Width, cell_Height);
@@ -87,9 +104,29 @@ public class Manager extends Application {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
-		TheStage.setScene(myScene_Buffer);
-		TheStage.show();
+	}
+	
+	public static void callXMLreader(String file){
+		if(file.equals("data/segregation.xml")) {
+		    SegregationXMLreader xml_reader = new SegregationXMLreader();
+		    SegregationSimSetup simInfo = xml_reader.read(file);
+		    simInfo.printInfo();
+		}
+		else if(file.equals("data/wator.xml")) {
+		    WatorXMLreader xml_reader = new WatorXMLreader();
+		    WatorSimSetup simInfo = xml_reader.read(file);
+		    simInfo.printInfo();
+		}
+		else if(file.equals("data/fire.xml")) {
+		    FireXMLreader xml_reader = new FireXMLreader();
+		    FireSimSetup simInfo = xml_reader.read(file);
+		    simInfo.printInfo();
+		}
+		else {
+		    GOLXMLreader xml_reader = new GOLXMLreader();
+		    GOLSimSetup simInfo = xml_reader.read(file);
+		    simInfo.printInfo();
+		}
 	}
 	
 	public static void main(String[] args) {
