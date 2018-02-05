@@ -17,9 +17,9 @@ public class XMLtester {
 	 */
 	public static void main (String[] args) {
 		//String fileName = gol;
-		//String fileName = segregation;
+		String fileName = segregation;
 		//String fileName = wator;
-		String fileName = fire;
+		//String fileName = fire;
 		
 		if(fileName.equals(segregation)) {
 			SegregationXMLreader xml_reader = new SegregationXMLreader();

@@ -4,10 +4,10 @@
 	<title>Segregation</title>
 	<author>Thomas Schelling</author>
 	<cell_shape>square</cell_shape>
-	<cell_xsize>40</cell_xsize>
-	<cell_ysize>40</cell_ysize>
-	<grid_x>200</grid_x>
-	<grid_y>200</grid_y>
+	<cell_xsize>80</cell_xsize>
+	<cell_ysize>80</cell_ysize>
+	<grid_x>400</grid_x>
+	<grid_y>400</grid_y>
 	
 	<cell>
 		<type>x</type>

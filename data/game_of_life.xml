@@ -4,10 +4,10 @@
 	<title>Game of Life</title>
 	<author>John Horton Conway</author>
 	<cell_shape>square</cell_shape>
-	<cell_xsize>40</cell_xsize>
-	<cell_ysize>40</cell_ysize>
-	<grid_x>240</grid_x>
-	<grid_y>240</grid_y>
+	<cell_xsize>50</cell_xsize>
+	<cell_ysize>50</cell_ysize>
+	<grid_x>400</grid_x>
+	<grid_y>400</grid_y>
 	
 	<cell>
 		<type>alive</type>

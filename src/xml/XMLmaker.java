@@ -23,8 +23,8 @@ public class XMLmaker {
 	private final static String sim = wator;
 	private final static int gridx = 400;
 	private final static int gridy = 400;
-	private final static int cellx = 10;
-	private final static int celly = 10;
+	private final static int cellx = 5;
+	private final static int celly = 5;
 	private static String title = "";
 	private static String author = "";
 	private final static String shape = "square";
@@ -34,13 +34,13 @@ public class XMLmaker {
 	private final static double oProb = 0.3;
 
 	// wator world specific
-	private final static double fishProp = 0.7;
-	private final static double sharkProp = 0.2;
+	private final static double fishProp = 0.55;
+	private final static double sharkProp = 0.4;
 	private final static int rtShark = 10;
 	private final static int rtFish = 5;
 	private final static int eShark = 5;
 	private final static int eFish = 0;
-	private final static int geShark = 2;
+	private final static int geShark = 5;
 	private final static int geFish = 0;
 
 	// fire specific
@@ -70,7 +70,7 @@ public class XMLmaker {
 			author = fireAuthor;
 		}
 
-		String fileName = sim + ".txt";
+		String fileName = "data/" + sim + ".xml";
 		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
 		writer.println("<" + '?' + "xml version" + '=' + '"'+ "1.0" + '"' + " encoding=" + '"' + "UTF-8" + '"' + '?' + ">");
 		writer.println("<simulation>");

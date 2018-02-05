@@ -62,16 +62,16 @@ public class Manager extends Application {
 	private static final int XPADDING = 10; //when creating cells, the x-margin between cell
 	private static final int YPADDING = 27; //when creating cells, the y-margin between cell
 	private static final int MENU_PAD = 10;
-	private static final int GUIDE_SIZE = 300;
+	private static final int GUIDE_SIZE = 310;
 	private boolean inMenu = true;
-	//public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
-	//public static final String DEFAULT_RESOURCE_FILE = "defaultText.properties";
-	//private ResourceBundle myResources;
+	public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
+	public static final String DEFAULT_RESOURCE_FILE = "defaultText";
+	private ResourceBundle myResources;
 
 	@Override
 	public void start(Stage stage) throws Exception {
 
-		//myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE + DEFAULT_RESOURCE_FILE);
+		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE + DEFAULT_RESOURCE_FILE);
 
 		TheStage = stage;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
@@ -89,6 +89,7 @@ public class Manager extends Application {
 	}
 
 	private void returnMenu() throws Exception {
+		inMenu = true;
 		fileName = DEFAULT_FILENAME;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
 		menuScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
@@ -123,7 +124,6 @@ public class Manager extends Application {
 		else if (code == KeyCode.M) {
 			// return menu
 			try {
-				inMenu = true;
 				returnMenu();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -151,7 +151,7 @@ public class Manager extends Application {
 	}
 
 	public void callXMLreader(String file){
-		if(file.equals("data/segregation.xml")) {
+		if(file.equals(myResources.getString("FileS"))) {
 			SegregationXMLreader xml_reader = new SegregationXMLreader();
 			SegregationSimSetup simInfo = xml_reader.read(file);
 			//simInfo.printInfo();
@@ -163,7 +163,7 @@ public class Manager extends Application {
 			cell_Width = simInfo.getCellX();
 			cell_Height = simInfo.getCellY();
 		}
-		else if(file.equals("data/wator.xml")) {
+		else if(file.equals(myResources.getString("FileW"))) {
 			WatorXMLreader xml_reader = new WatorXMLreader();
 			WatorSimSetup simInfo = xml_reader.read(file);
 			//simInfo.printInfo();
@@ -175,7 +175,7 @@ public class Manager extends Application {
 			cell_Width = simInfo.getCellX();
 			cell_Height = simInfo.getCellY();
 		}
-		else if(file.equals("data/fire.xml")) {
+		else if(file.equals(myResources.getString("FileF"))) {
 			FireXMLreader xml_reader = new FireXMLreader();
 			FireSimSetup simInfo = xml_reader.read(file);
 			//simInfo.printInfo();
@@ -202,40 +202,37 @@ public class Manager extends Application {
 	}
 
 	private Scene setupGuide(int width, int height, Paint background) {
-		//String label = myResources.getString(property); ---> property itself is a string
 		// set all text for guide
 		Text g1 = new Text();
-		g1.setText("Welcome to Group 18 Simulation Project!");
+		g1.setText(myResources.getString("Guide1"));
 		Text g2 = new Text();
-		g2.setText("Press any key to return to menu.");
+		g2.setText(myResources.getString("Guide2"));
 		Text line = new Text();
-		line.setText("----------------------------------------------------");
+		line.setText(myResources.getString("Line"));
 		Text line2 = new Text();
-		line2.setText("----------------------------------------------------");
-		Text line3 = new Text();
-		line3.setText("----------------------------------------------------");
+		line2.setText(myResources.getString("Line"));
 		Text g3 = new Text();
-		g3.setText("Keys:");
+		g3.setText(myResources.getString("Guide3"));
 		Text g4 = new Text();
-		g4.setText("P - pauses the simulation");
+		g4.setText(myResources.getString("Guide4"));
 		Text g5 = new Text();
-		g5.setText("Arrow up - increases animation rate");
+		g5.setText(myResources.getString("Guide5"));
 		Text g6 = new Text();
-		g6.setText("Arrow down - decreases animation rate");
+		g6.setText(myResources.getString("Guide6"));
 		Text g7 = new Text();
-		g7.setText("Arrow right - step forward through simulation");
+		g7.setText(myResources.getString("Guide7"));
 		Text g8 = new Text();
-		g8.setText("M - take you to menu");
+		g8.setText(myResources.getString("Guide8"));
 		Text g15 = new Text();
-		g15.setText("About:");
+		g15.setText(myResources.getString("Guide9"));
 		Text g155 = new Text();
-		g155.setText("Game of Life Simulation by John Horton Conway");
+		g155.setText(myResources.getString("Guide10"));
 		Text g16 = new Text();
-		g16.setText("Segregation Simulation by Thomas Schelling");
+		g16.setText(myResources.getString("Guide11"));
 		Text g17 = new Text();
-		g17.setText("Wator World Simulation by A.K. Dewdney");
+		g17.setText(myResources.getString("Guide12"));
 		Text g18 = new Text();
-		g18.setText("Fire Simulation by Angela B. Shiflet");
+		g18.setText(myResources.getString("Guide13"));
 
 		// initialize GridPane and settings
 		GridPane gridPane = new GridPane();
@@ -289,7 +286,7 @@ public class Manager extends Application {
 		VBox splash = new VBox ();
 		splash.setPadding(new Insets(MENU_PAD, MENU_PAD, MENU_PAD, MENU_PAD));
 		splash.setSpacing(MENU_PAD);
-		Label lbl = new Label("Cell Society Simulation");
+		Label lbl = new Label(myResources.getString("Title"));
 		lbl.setFont(Font.font("Amble CN", FontWeight.BOLD, 24));
 		splash.getChildren().add(lbl);
 
@@ -308,13 +305,14 @@ public class Manager extends Application {
 	}
 
 	public Button GenerateStartButton(Stage s) {
-		Button startButton = new Button("Start Selected Simulation");
+		Button startButton = new Button(myResources.getString("StartCommand"));
 
 		startButton.setOnAction(
 				new EventHandler<ActionEvent>() {
 					@Override
 					public void handle(final ActionEvent e) {	
 						try {
+							animation.play();
 							callXMLreader(fileName);
 							s.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height, s));
 							inMenu = false;
@@ -329,24 +327,24 @@ public class Manager extends Application {
 
 	public ChoiceBox GenerateChoiceBox() {
 		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
-		fileChoiceBox.getItems().add("Game of Life");
-		fileChoiceBox.getItems().add("Segregation");
-		fileChoiceBox.getItems().add("Wator World");
-		fileChoiceBox.getItems().add("Fire");
+		fileChoiceBox.getItems().add(myResources.getString("DropDown1"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown2"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown3"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown4"));
 		fileChoiceBox.getSelectionModel().selectFirst();
 		fileChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {	
 				if((int) new_value == 0){
-					fileName = "data/game_of_life.xml";
+					fileName = myResources.getString("FileGOL");
 				}
 				if((int) new_value == 1){
-					fileName = "data/segregation.xml";
+					fileName = myResources.getString("FileS");
 				}
 				if((int) new_value == 2){
-					fileName = "data/wator.xml";
+					fileName = myResources.getString("FileW");
 				}
 				if((int) new_value == 3){
-					fileName = "data/fire.xml";
+					fileName = myResources.getString("FileF");
 				}
 			}
 		});
@@ -356,7 +354,7 @@ public class Manager extends Application {
 
 	public Button GenerateButton(Stage stage) {
 		FileChooser fileChooser = new FileChooser();
-		Button openButton = new Button("Open a File...");
+		Button openButton = new Button(myResources.getString("OpenFile"));
 
 		openButton.setOnAction(
 				new EventHandler<ActionEvent>() {
@@ -367,6 +365,7 @@ public class Manager extends Application {
 							fileName = file.getName();
 							fileName = "data/" + fileName;		
 							try {
+								animation.play();
 								callXMLreader(fileName);
 								stage.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height, stage));
 								inMenu = false;
@@ -380,7 +379,7 @@ public class Manager extends Application {
 	}
 	
 	public Button GenerateGuideButton(Stage s) {
-		Button guideButton = new Button("Guide");
+		Button guideButton = new Button(myResources.getString("Guide"));
 
 		guideButton.setOnAction(
 				new EventHandler<ActionEvent>() {
