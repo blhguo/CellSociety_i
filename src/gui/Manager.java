@@ -1,6 +1,7 @@
 package gui;
 
 import java.io.File;
+import java.util.ResourceBundle;
 
 import cell.Cell;
 import grid.FireSimGrid;
@@ -63,12 +64,15 @@ public class Manager extends Application {
 	private static final int GUIDE_SIZE = 300;
 	private boolean inMenu = true;
 	private Scene menuScene;
+	public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
+	public static final String DEFAULT_RESOURCE_FILE = "defaultText.properties";
+	private ResourceBundle myResources;
 	//Visualizer visualizer = new Visualizer();
 
 	@Override
 	public void start(Stage stage) throws Exception {
 
-		//add code to parse and create grid
+		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE + DEFAULT_RESOURCE_FILE);
 
 		TheStage = stage;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
@@ -197,6 +201,7 @@ public class Manager extends Application {
 	}
 
 	private Scene setupGuide(int width, int height, Paint background) {
+		//String label = myResources.getString(property); ---> property itself is a string
 		// set all text for guide
 		Text g1 = new Text();
 		g1.setText("Welcome to Group 18 Simulation Project!");
