@@ -64,15 +64,15 @@ public class Manager extends Application {
 	private static final int GUIDE_SIZE = 300;
 	private boolean inMenu = true;
 	private Scene menuScene;
-	public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
-	public static final String DEFAULT_RESOURCE_FILE = "defaultText.properties";
+	//public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
+	//public static final String DEFAULT_RESOURCE_FILE = "defaultText.properties";
 	private ResourceBundle myResources;
 	//Visualizer visualizer = new Visualizer();
 
 	@Override
 	public void start(Stage stage) throws Exception {
 
-		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE + DEFAULT_RESOURCE_FILE);
+		//myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE + DEFAULT_RESOURCE_FILE);
 
 		TheStage = stage;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
