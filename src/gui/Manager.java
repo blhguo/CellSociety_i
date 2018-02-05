@@ -10,6 +10,7 @@ import grid.SegregationSimGrid;
 import grid.WatorSimGrid;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.Animation.Status;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -103,18 +104,20 @@ public class Manager extends Application {
 		}
 		else if (code == KeyCode.UP) {
 			//speed up
-			SECOND_DELAY = SECOND_DELAY * 0.5;
+			//SECOND_DELAY = SECOND_DELAY * 0.5;
+			animation.setRate(2);
 		}
 		else if (code == KeyCode.DOWN) {
 			//slow down
-			SECOND_DELAY = SECOND_DELAY * 2;
+			//SECOND_DELAY = SECOND_DELAY * 2;
+			animation.setRate(0.5);
 		}
 		else if (code == KeyCode.P) {
 			//play or pause
-			if (animation.getStatus().equals("PAUSED")) {
+			if (animation.getStatus() == Status.PAUSED) {
 				animation.play();
 			}
-			else if (animation.getStatus().equals("RUNNING")) {
+			else if (animation.getStatus() == Status.RUNNING) {
 				animation.pause();
 			}
 		}
@@ -126,7 +129,7 @@ public class Manager extends Application {
 			Scene myScene_Buffer;
 			try {
 				myGrid.updateGrid();
-				myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height);
+				myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height, TheStage);
 				myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 				TheStage.setScene(myScene_Buffer);
 				TheStage.show();
@@ -181,8 +184,8 @@ public class Manager extends Application {
 		}
 	}
 
-	public Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height) throws Exception {
-		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));
+	public Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height, Stage stage) throws Exception {
+		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height, stage));
 		Scene scene = new Scene(root, width, height, background);
 		return scene;	
 	}
@@ -195,27 +198,8 @@ public class Manager extends Application {
         lbl.setFont(Font.font("Amble CN", FontWeight.BOLD, 24));
         splash.getChildren().add(lbl);
         
-        FileChooser fileChooser = new FileChooser();
-        Button openButton = new Button("Open a File...");
+        Button openButton = GenerateButton(stage);
         
-        openButton.setOnAction(
-        	new EventHandler<ActionEvent>() {
-        		@Override
-        		public void handle(final ActionEvent e) {
-        			File file = fileChooser.showOpenDialog(stage);
-        			if (file != null) {
-        				fileName = file.getName();
-        				fileName = "data/" + fileName;		
-        				try {
-        						callXMLreader(fileName);
-        						stage.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
-        						inMenu = false;
-        					} catch (Exception e1) {
-							e1.printStackTrace();
-						}
-        			}
-        		}
-        	});
         splash.getChildren().add(openButton);
 
 
@@ -223,13 +207,40 @@ public class Manager extends Application {
         return scene;
 	}
 	
-	public Group CreateRoot(Cell[][] cellArray, int width, int height) {//cell abstract class hasn't been created yet
+	public Button GenerateButton(Stage stage) {
+	FileChooser fileChooser = new FileChooser();
+    Button openButton = new Button("Open a File...");
+    
+    openButton.setOnAction(
+    	new EventHandler<ActionEvent>() {
+    		@Override
+    		public void handle(final ActionEvent e) {
+    			File file = fileChooser.showOpenDialog(stage);
+    			if (file != null) {
+    				fileName = file.getName();
+    				fileName = "data/" + fileName;		
+    				try {
+    						callXMLreader(fileName);
+    						stage.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height, stage));
+    						inMenu = false;
+    					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+    			}
+    		}
+    	});
+    return openButton;
+	}
+	
+	public Group CreateRoot(Cell[][] cellArray, int width, int height, Stage stage) {//cell abstract class hasn't been created yet
 		Group addition = new Group();
 		for (int i = 0; i < cellArray[0].length; i++) {
 			for (int j = 0; j < cellArray[1].length; j++) {
 				addition.getChildren().add(GenerateCell(cellArray[i][j], width, height, i, j));
 			}
 		}
+        Button openButton = GenerateButton(stage);
+        addition.getChildren().add(openButton);
 		return addition;
 	}
 	
