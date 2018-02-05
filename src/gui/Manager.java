@@ -63,11 +63,9 @@ public class Manager extends Application {
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 300;
 	private boolean inMenu = true;
-	private Scene menuScene;
 	//public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	//public static final String DEFAULT_RESOURCE_FILE = "defaultText.properties";
-	private ResourceBundle myResources;
-	//Visualizer visualizer = new Visualizer();
+	//private ResourceBundle myResources;
 
 	@Override
 	public void start(Stage stage) throws Exception {
