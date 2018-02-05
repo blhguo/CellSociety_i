@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 public class AliveCell extends GOLSimCell{
 	
 	public AliveCell() {
-		this.DISPLAYCOLOR = Color.GREEN;
+		this.DISPLAYCOLOR = Color.GREENYELLOW;
 	}
 
 	@Override
