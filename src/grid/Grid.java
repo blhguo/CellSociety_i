@@ -52,7 +52,7 @@ public abstract class Grid {
 	}
 	
 	public boolean inGrid (int x, int y) {
-		return (x >= 0 && x <= myWidth && y >= 0 && y <= myHeight);
+		return (x >= 0 && x < myWidth && y >= 0 && y < myHeight);
 	}
 	
 	public Color[][] getVisuals() {

@@ -6,19 +6,10 @@ import cell.Cell;
 import javafx.scene.paint.Color;
 
 public class TreeCell extends FireSimCell{
-	private double probCatch = 0.5;
-	private double probLightning = 0;
 	
-	public TreeCell() {
+	public TreeCell(double pCatch, double pLight, double pGrow) {
+		super(pCatch, pLight, pGrow);
 		this.DISPLAYCOLOR = Color.BURLYWOOD;
-	}
-	
-	public void setProbCatch (double prob) {
-		probCatch = prob;
-	}
-	
-	public void setProbLightning (double prob) {
-		probLightning = prob;
 	}
 
 	@Override
@@ -33,7 +24,7 @@ public class TreeCell extends FireSimCell{
 		if (Math.random() <= probLightning)
 			prob *= probLightning;
 		if (neighborBurning && Math.random() <= prob)
-			return new FireCell();
+			return new FireCell(probCatch, probLightning, probGrow);
 		return this;
 	}
 	
