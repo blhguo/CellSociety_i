@@ -20,11 +20,11 @@ public class XMLmaker {
 	private final static String fireAuthor =  "Angela B. Shiflet";
 
 	// CHANGE THIS
-	private final static String sim = wator;
+	private final static String sim = seg;
 	private final static int gridx = 400;
 	private final static int gridy = 400;
-	private final static int cellx = 5;
-	private final static int celly = 5;
+	private final static int cellx = 10;
+	private final static int celly = 10;
 	private static String title = "";
 	private static String author = "";
 	private final static String shape = "square";
@@ -32,6 +32,7 @@ public class XMLmaker {
 	// seg specific
 	private final static double xProb = 0.3;
 	private final static double oProb = 0.3;
+	private final static double threshold = 0.3;
 
 	// wator world specific
 	private final static double fishProp = 0.55;
@@ -109,6 +110,7 @@ public class XMLmaker {
 					writer.println("\t" + "\t" + "<type>" + wType + "</type>");
 					writer.println("\t" + "\t" + "<x>" + i + "</x>");
 					writer.println("\t" + "\t" + "<y>" + j + "</y>");
+					writer.println("\t" + "\t" + "<threshold>" + threshold + "</threshold>");
 					writer.println("\t" + "</cell>");
 					writer.println("");
 				}
