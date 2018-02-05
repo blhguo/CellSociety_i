@@ -10,7 +10,7 @@ public class EmptyCell extends WatorSimCell{
 	
 	public EmptyCell() {
 		moved = false;
-		this.DISPLAYCOLOR = Color.WHITE;
+		this.DISPLAYCOLOR = Color.GREY;
 	}
 	
 	@Override

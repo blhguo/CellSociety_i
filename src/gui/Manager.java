@@ -165,7 +165,7 @@ public class Manager extends Application {
 		    simInfo.printInfo();
 		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), 1);//simInfo.getProbGrow());
+		    myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
 		    cell_Width = simInfo.getCellX();
 		    cell_Height = simInfo.getCellY();
 		}

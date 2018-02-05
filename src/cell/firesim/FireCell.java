@@ -7,13 +7,14 @@ import javafx.scene.paint.Color;
 
 public class FireCell extends FireSimCell{
 
-	public FireCell() {
-		this.DISPLAYCOLOR = Color.ORANGE;
+	public FireCell(double pCatch, double pLight, double pGrow) {
+		super(pCatch, pLight, pGrow);
+		this.DISPLAYCOLOR = Color.DARKORANGE;
 	}
 	
 	@Override
 	public Cell nextState(HashSet<Cell> neighbors) {
-		return new EmptyCell();
+		return new EmptyCell(probCatch, probLightning, probGrow);
 	}
 	
 	@Override

@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 public class EmptyCell extends SegregationSimCell{
 
 	public EmptyCell() {
-		this.DISPLAYCOLOR = Color.WHITE;
+		this.DISPLAYCOLOR = Color.GREY;
 	}
 	
 	@Override
