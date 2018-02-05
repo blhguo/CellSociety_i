@@ -54,7 +54,8 @@ public class Manager extends Application {
 	public static final Paint BACKGROUND = Color.WHITE;
 	private Stage TheStage;
 	private static final String TITLE = "CA SIMULATION";
-	private String fileName = "data/game_of_life.xml";
+	private String DEFAULT_FILENAME = "data/game_of_life.xml";
+	private String fileName = DEFAULT_FILENAME;
 	public double SECOND_DELAY = 1000.0;
 	private KeyFrame frame;
 	private Timeline animation;	
@@ -88,6 +89,7 @@ public class Manager extends Application {
 	}
 
 	private void returnMenu() throws Exception {
+		fileName = DEFAULT_FILENAME;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
 		menuScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 		TheStage.setScene(menuScene);

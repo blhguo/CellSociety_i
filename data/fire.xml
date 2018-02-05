@@ -8,7 +8,7 @@
 	<cell_ysize>10</cell_ysize>
 	<grid_x>400</grid_x>
 	<grid_y>400</grid_y>
-	<fireProb>0.15</fireProb>
+	<fireProb>0.5</fireProb>
 	<lightningProb>0.01</lightningProb>
 	<emptyTreeProb>0.01</emptyTreeProb>
 
