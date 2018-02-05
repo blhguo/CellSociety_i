@@ -20,7 +20,7 @@ public class XMLmaker {
 	private final static String fireAuthor =  "Angela B. Shiflet";
 
 	// CHANGE THIS
-	private final static String sim = fire;
+	private final static String sim = wator;
 	private final static int gridx = 400;
 	private final static int gridy = 400;
 	private final static int cellx = 10;
@@ -34,17 +34,17 @@ public class XMLmaker {
 	private final static double oProb = 0.3;
 
 	// wator world specific
-	private final static double fishProp = 0.3;
-	private final static double sharkProp = 0.3;
-	private final static int rtShark = 5;
+	private final static double fishProp = 0.7;
+	private final static double sharkProp = 0.2;
+	private final static int rtShark = 10;
 	private final static int rtFish = 5;
 	private final static int eShark = 5;
-	private final static int eFish = 5;
-	private final static int geShark = 1;
+	private final static int eFish = 0;
+	private final static int geShark = 2;
 	private final static int geFish = 0;
 
 	// fire specific
-	private final static double fireProb = 0.15;
+	private final static double fireProb = 0.5;
 	private final static double lightningProb = 0.01;
 	private final static double emptyTreeProb = 0.01;
 

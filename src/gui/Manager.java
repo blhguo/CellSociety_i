@@ -121,6 +121,7 @@ public class Manager extends Application {
 			}
 		}
 		else if (code == KeyCode.M) {
+			// return menu
 			try {
 				inMenu = true;
 				returnMenu();

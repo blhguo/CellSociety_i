@@ -79,7 +79,7 @@ public class WatorXMLreader extends XMLreader{
 			typeArray = fillEmpty(typeArray);
 			return new WatorSimSetup(simSetup, typeArray, reproductionArray, gainedEnergyArray, energyArray);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}	
 		return null;
 	}

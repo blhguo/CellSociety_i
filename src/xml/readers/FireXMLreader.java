@@ -70,9 +70,9 @@ public class FireXMLreader extends XMLreader{
 			typeArray = fillEmpty(typeArray);
 			return new FireSimSetup(simSetup, typeArray, fireProb, lightningProb, emptyTreeProb);
 		} catch (Exception e) {
-			e.printStackTrace();
-		}	
-		return null;
+			return null;
+			//e.printStackTrace();
+		}
 	}
 	
 	@Override
