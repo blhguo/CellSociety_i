@@ -29,6 +29,10 @@ public class XMLmaker {
 	private static String author = "";
 	private final static String shape = "square";
 
+	// seg specific
+	private final static double xProb = 0.3;
+	private final static double oProb = 0.3;
+
 	// wator world specific
 	private final static double fishProp = 0.3;
 	private final static double sharkProp = 0.3;
@@ -38,7 +42,7 @@ public class XMLmaker {
 	private final static int eFish = 5;
 	private final static int geShark = 1;
 	private final static int geFish = 0;
-	
+
 	// fire specific
 	private final static double fireProb = 0.15;
 	private final static double lightningProb = 0.01;
@@ -48,7 +52,7 @@ public class XMLmaker {
 	public static void main (String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 		int numCellsX = (int) gridx / cellx;
 		int numCellsY = (int) gridy / celly;
-		
+
 		if(sim.equals(gol)){
 			title = golTitle;
 			author = golAuthor;
@@ -65,7 +69,7 @@ public class XMLmaker {
 			title = fireTitle;
 			author = fireAuthor;
 		}
-		
+
 		String fileName = sim + ".txt";
 		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
 		writer.println("<" + '?' + "xml version" + '=' + '"'+ "1.0" + '"' + " encoding=" + '"' + "UTF-8" + '"' + '?' + ">");
@@ -78,12 +82,37 @@ public class XMLmaker {
 		writer.println("\t" + "<cell_ysize>" + celly + "</cell_ysize>");
 		writer.println("\t" + "<grid_x>" + gridx + "</grid_x>");
 		writer.println("\t" + "<grid_y>" + gridy + "</grid_y>");
-		
+
 		if(sim.equals(gol)){
 
 		}
 		else if(sim.equals(seg)){
+			double xNum = 999 * xProb;
+			double oNum = 999 * oProb + xNum;
+			for(int i = 0; i < numCellsX; i++){
+				for(int j = 0; j < numCellsY; j++){
+					Random rand = new Random();
+					int  n = rand.nextInt(1000);
+					String wType = "";
 
+					if(n < xNum){
+						wType = "x";
+					}
+					else if(n > xNum && n < oNum){
+						wType = "o";
+					}
+					else{
+						wType = "empty";
+					}
+
+					writer.println("\t" + "<cell>");
+					writer.println("\t" + "\t" + "<type>" + wType + "</type>");
+					writer.println("\t" + "\t" + "<x>" + i + "</x>");
+					writer.println("\t" + "\t" + "<y>" + j + "</y>");
+					writer.println("\t" + "</cell>");
+					writer.println("");
+				}
+			}
 		}
 		else if(sim.equals(wator)){
 			double fishNum = 999 * fishProp;
@@ -131,7 +160,7 @@ public class XMLmaker {
 			writer.println("\t" + "<lightningProb>" + lightningProb + "</lightningProb>");
 			writer.println("\t" + "<emptyTreeProb>" + emptyTreeProb + "</emptyTreeProb>");
 			writer.println("");
-			
+
 			for(int i = 0; i < numCellsX; i++){
 				writer.println("\t" + "<cell>");
 				writer.println("\t" + "\t" + "<type>empty</type>");
