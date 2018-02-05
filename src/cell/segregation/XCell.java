@@ -16,10 +16,17 @@ public class XCell extends SegregationSimCell{
 	@Override
 	public Cell nextState(HashSet<Cell> neighbors) {
 		double xcells = 0;
-		for (Cell cell:neighbors)
-			if (cell instanceof XCell)
+		double total = 0;
+		for (Cell cell:neighbors) {
+			if (cell instanceof XCell) {
 				xcells++;
-		if (xcells/neighbors.size() < threshold) {
+				total++;
+			}
+			if (cell instanceof OCell)
+				total++;
+					
+		}
+		if (xcells/total < threshold) {
 			return new EmptyCell();
 		}
 		
