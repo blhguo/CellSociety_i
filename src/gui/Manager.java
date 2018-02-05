@@ -53,7 +53,7 @@ public class Manager extends Application {
 	private KeyFrame frame;
 	private Timeline animation;	
 	private static final int XPADDING = 10; //when creating cells, the x-margin between cell
-	private static final int YPADDING = 10; //when creating cells, the y-margin between cell
+	private static final int YPADDING = 27; //when creating cells, the y-margin between cell
 	private static final int MENU_PAD = 10;
 	private boolean inMenu = true;
 	//Visualizer visualizer = new Visualizer();
@@ -125,7 +125,9 @@ public class Manager extends Application {
 		if(file.equals("data/segregation.xml")) {
 		    SegregationXMLreader xml_reader = new SegregationXMLreader();
 		    SegregationSimSetup simInfo = xml_reader.read(file);
-		    simInfo.printInfo();
+		    //simInfo.printInfo();
+		    width = simInfo.getGridX() + 20;
+		    height = simInfo.getGridY() + 20;
 		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		    myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getThreshold());
@@ -135,7 +137,9 @@ public class Manager extends Application {
 		else if(file.equals("data/wator.xml")) {
 		    WatorXMLreader xml_reader = new WatorXMLreader();
 		    WatorSimSetup simInfo = xml_reader.read(file);
-		    simInfo.printInfo();
+		    //simInfo.printInfo();
+		    width = simInfo.getGridX() + 20;
+		    height = simInfo.getGridY() + 20;
 		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		    myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getReproduction());
@@ -145,7 +149,9 @@ public class Manager extends Application {
 		else if(file.equals("data/fire.xml")) {
 		    FireXMLreader xml_reader = new FireXMLreader();
 		    FireSimSetup simInfo = xml_reader.read(file);
-		    simInfo.printInfo();
+		    //simInfo.printInfo();
+		    width = simInfo.getGridX() + 20;
+		    height = simInfo.getGridY() + 20;
 		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		    myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
@@ -155,7 +161,9 @@ public class Manager extends Application {
 		else {
 		    GOLXMLreader xml_reader = new GOLXMLreader();
 		    GOLSimSetup simInfo = xml_reader.read(file);
-		    simInfo.printInfo();
+		    //simInfo.printInfo();
+		    width = simInfo.getGridX() + 20;
+		    height = simInfo.getGridY() + 20;
 		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		    myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getArray());
@@ -164,9 +172,9 @@ public class Manager extends Application {
 		}
 	}
 
-	public Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height, Stage stage) throws Exception {
+	public Scene setupScene (int w, int h, Paint background, Cell[][] cellArray, int cell_width, int cell_height, Stage stage) throws Exception {
 		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height, stage));
-		Scene scene = new Scene(root, width, height, background);
+		Scene scene = new Scene(root, w, h + YPADDING/2, background);
 		return scene;	
 	}
 	
