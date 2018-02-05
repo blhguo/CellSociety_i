@@ -66,26 +66,6 @@ public class Manager extends Application {
 		TheStage = stage;
 		Scene myScene = setupMenu(width, height, BACKGROUND, TheStage);
 		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
-        /*FileChooser fileChooser = new FileChooser();
-        Button openButton = new Button("Open a File...");
-        
-        openButton.setOnAction(
-        	new EventHandler<ActionEvent>() {
-        		@Override
-        		public void handle(final ActionEvent e) {
-        			File file = fileChooser.showOpenDialog(stage);
-        			if (file != null) {
-        				fileName = file.getName();
-        				fileName = "data/" + fileName;		
-        				try {
-        					callXMLreader(fileName);
-							stage.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
-						} catch (Exception e1) {
-							e1.printStackTrace();
-						}	
-        			}
-        		}
-        	});*/
         
 		TheStage.setScene(myScene);
 		TheStage.setTitle(TITLE);
