@@ -60,7 +60,7 @@ public class Manager extends Application {
 	private KeyFrame frame;
 	private Timeline animation;	
 	private static final int XPADDING = 10; //when creating cells, the x-margin between cell
-	private static final int YPADDING = 27; //when creating cells, the y-margin between cell
+	private static final int YPADDING = 10; //when creating cells, the y-margin between cell
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
 	private boolean inMenu = true;
@@ -76,27 +76,6 @@ public class Manager extends Application {
 		TheStage = stage;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
 		menuScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
-        /*FileChooser fileChooser = new FileChooser();
-        Button openButton = new Button("Open a File...");
-        
-        openButton.setOnAction(
-        	new EventHandler<ActionEvent>() {
-        		@Override
-        		public void handle(final ActionEvent e) {
-        			File file = fileChooser.showOpenDialog(stage);
-        			if (file != null) {
-        				fileName = file.getName();
-        				fileName = "data/" + fileName;		
-        				try {
-        					callXMLreader(fileName);
-							stage.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
-						} catch (Exception e1) {
-							e1.printStackTrace();
-						}	
-        			}
-        		}
-        	});*/
-        
 		TheStage.setScene(menuScene);
 		TheStage.setTitle(TITLE);
 		TheStage.show();
@@ -110,6 +89,7 @@ public class Manager extends Application {
 	
 	private void returnMenu() throws Exception {
 		inMenu = true;
+		animation.setRate(1);
 		fileName = DEFAULT_FILENAME;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
 		menuScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
@@ -120,12 +100,14 @@ public class Manager extends Application {
 
 	
 	private void handleKeyInput(KeyCode code) {
-		if (code == KeyCode.RIGHT) {
+		if (code == KeyCode.S) {
+			//System.out.println("Right arrow pushed.");
 			step();
 		}
-		else if (code == KeyCode.UP) {
+		if (code == KeyCode.UP) {
 			//speed up
 			//SECOND_DELAY = SECOND_DELAY * 0.5;
+			//System.out.println("Up arrow pushed.");
 			animation.setRate(2);
 		}
 		else if (code == KeyCode.DOWN) {
@@ -154,7 +136,6 @@ public class Manager extends Application {
 	}
 	
 	private void step () {
-		//TODO: call grid, call start
 		if (!inMenu) {
 			Scene myScene_Buffer;
 			try {
@@ -165,7 +146,6 @@ public class Manager extends Application {
 				TheStage.show();
 				
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
@@ -204,7 +184,7 @@ public class Manager extends Application {
 			height = simInfo.getGridY() + 20;
 		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), 1);//simInfo.getProbGrow());
+		    myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
 		    cell_Width = simInfo.getCellX();
 		    cell_Height = simInfo.getCellY();
 		}
