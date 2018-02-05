@@ -15,7 +15,7 @@ public class XCell extends SegregationSimCell{
 
 	@Override
 	public Cell nextState(HashSet<Cell> neighbors) {
-		int xcells = 0;
+		double xcells = 0;
 		for (Cell cell:neighbors)
 			if (cell instanceof XCell)
 				xcells++;

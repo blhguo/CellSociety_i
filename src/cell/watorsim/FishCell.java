@@ -7,14 +7,15 @@ import cell.Cell;
 import javafx.scene.paint.Color;
 
 public class FishCell extends WatorSimCell{
+	WatorSimCell nextShark;
 	private boolean isEaten;
 	private int myTurns;
-	private int turn_threshold;
+	private int reproduction_threshold;
 	
 	public FishCell(int threshold) {
 		isEaten = false;
 		myTurns = 0;
-		turn_threshold = threshold;
+		reproduction_threshold = threshold;
 		this.DISPLAYCOLOR = Color.YELLOW;
 	}
 
@@ -29,14 +30,16 @@ public class FishCell extends WatorSimCell{
 				empty_neighbors.add((EmptyCell) cell);
 		
 		this.myTurns++;
-		if (this.myTurns >= turn_threshold && empty_neighbors.size() != 0) {
+		if (this.myTurns >= reproduction_threshold && empty_neighbors.size() != 0) {
 			int random_number = (int) Math.random() * empty_neighbors.size();
-			empty_neighbors.get(random_number).setMoved(new FishCell(turn_threshold));
+			empty_neighbors.get(random_number).setMoved(this);
 			empty_neighbors.remove(random_number);
+			return new FishCell(reproduction_threshold);
 		}
 		
 		if (empty_neighbors.size() != 0) {
-			empty_neighbors.get((int) (Math.random() * empty_neighbors.size())).setMoved(this);
+			int random_number = (int) Math.random() * empty_neighbors.size();
+			empty_neighbors.get(random_number).setMoved(this);
 			return new EmptyCell();
 		}
 		
@@ -47,8 +50,9 @@ public class FishCell extends WatorSimCell{
 		return isEaten;
 	}
 
-	public void setEaten(boolean isEaten) {
-		this.isEaten = isEaten;
+	public void setEaten(WatorSimCell isEaten) {
+		nextShark = isEaten;
+		this.isEaten = true;
 	}
 
 }

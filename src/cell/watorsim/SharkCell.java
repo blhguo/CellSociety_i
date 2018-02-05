@@ -24,7 +24,8 @@ public class SharkCell extends WatorSimCell{
 				fish_neighbors.add((FishCell) cell);
 		
 		if (fish_neighbors.size() != 0) {
-			fish_neighbors.get((int) (Math.random() * fish_neighbors.size())).setEaten(true);
+			fish_neighbors.get((int) (Math.random() * fish_neighbors.size())).setEaten(this);
+			return new EmptyCell();
 		}
 		
 		List<EmptyCell> empty_neighbors = new ArrayList<EmptyCell>();
@@ -35,12 +36,14 @@ public class SharkCell extends WatorSimCell{
 		this.myTurns++;
 		if (this.myTurns >= turn_threshold && empty_neighbors.size() != 0) {
 			int random_number = (int) Math.random() * empty_neighbors.size();
-			empty_neighbors.get(random_number).setMoved(new SharkCell(turn_threshold));
+			empty_neighbors.get(random_number).setMoved(this);
 			empty_neighbors.remove(random_number);
+			return new SharkCell(turn_threshold);
 		}
 		
 		if (empty_neighbors.size() != 0) {
-			empty_neighbors.get((int) (Math.random() * empty_neighbors.size())).setMoved(this);
+			int random_number = (int) Math.random() * empty_neighbors.size();
+			empty_neighbors.get(random_number).setMoved(this);
 			return new EmptyCell();
 		}
 		
