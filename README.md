@@ -1,7 +1,9 @@
 # Cell Society Team 18
 
 CompSci 308 Cell Society Project
+
 *Date started*: January 25, 2018
+
 *Date finished*: In progress
 
 ## Project information
