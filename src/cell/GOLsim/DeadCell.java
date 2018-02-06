@@ -1,18 +1,29 @@
 package cell.GOLsim;
 
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
+/**
+ * @author Yashas Manjunatha
+ * Creates and describes behavior of a Dead Cell in the GOL Simulation.
+ * Extends GOLSimCell class.
+ */
 public class DeadCell extends GOLSimCell{
 	
+	/**
+	 * Creates a new dead cell.
+	 */
 	public DeadCell() {
 		this.DISPLAYCOLOR = Color.GRAY;
 	}
 
+	/* (non-Javadoc)
+	 * @see cell.Cell#nextState(java.util.ArrayList)
+	 */
 	@Override
-	public Cell nextState(HashSet<Cell> neighbors) {
+	public Cell nextState(ArrayList<Cell> neighbors) {
 		int neighbors_alive = 0;
 		for(Cell cell:neighbors) {
 			if (cell instanceof AliveCell)

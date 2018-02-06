@@ -1,14 +1,25 @@
 package grid;
 
-import java.util.HashSet;
-
+import java.util.ArrayList;
 import cell.Cell;
 import cell.segregation.EmptyCell;
 import cell.segregation.OCell;
 import cell.segregation.XCell;
 
+/**
+ * @author Yashas Manjunatha
+ * Creates and describes behavior of a Grid for the Segregation Simulation.
+ * Extends the Grid class.
+ */
 public class SegregationSimGrid extends Grid{
 
+	/**
+	 * Initializes a Grid for the Segregation Simulation
+	 * @param width - number of cells in the width of the grid
+	 * @param height - number of cells in the height of the grid
+	 * @param cellArray - array of initial cell types
+	 * @param threshold - array of satisfaction threshold values
+	 */
 	public SegregationSimGrid(int width, int height, String[][] cellArray, double[][] threshold) {
 		super(width, height);
 		for (int i = 0; i < width; i++) {
@@ -30,12 +41,15 @@ public class SegregationSimGrid extends Grid{
 	
 	
 	private Cell[][] nextGrid;
+	/* (non-Javadoc)
+	 * @see grid.Grid#updateGrid()
+	 */
 	@Override
 	public Cell[][] updateGrid() {
 		nextGrid = new Cell[this.myGrid.length][this.myGrid[0].length];
 		for (int i = 0; i < nextGrid.length; i++) {
 			for (int j = 0; j < nextGrid[0].length; j++) {
-				HashSet<Cell> neighbors = new HashSet<Cell>();
+				ArrayList<Cell> neighbors = new ArrayList<Cell>();
 				this.addNeighbors(neighbors, myGrid, i , j);
 				Cell nextState = myGrid[i][j].nextState(neighbors);
 				if (!(nextState instanceof EmptyCell))
@@ -51,6 +65,10 @@ public class SegregationSimGrid extends Grid{
 		return nextGrid;
 	}
 	
+	/**
+	 * Places a cell in the first empty cell available
+	 * @param cell - cell to be placed
+	 */
 	private void placeInEmpty (Cell cell) {
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
@@ -63,8 +81,11 @@ public class SegregationSimGrid extends Grid{
 		}		
 	}
 	
+	/* (non-Javadoc)
+	 * @see grid.Grid#addNeighbors(java.util.ArrayList, cell.Cell[][], int, int)
+	 */
 	@Override
-	protected void addNeighbors(HashSet<Cell> neighbors, Cell[][] grid, int i, int j) {
+	protected void addNeighbors(ArrayList<Cell> neighbors, Cell[][] grid, int i, int j) {
 		if (inGrid(i-1,j))
 			neighbors.add(grid[i-1][j]);
 		if (inGrid(i+1,j))

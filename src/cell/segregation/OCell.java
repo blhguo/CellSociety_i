@@ -1,20 +1,32 @@
 package cell.segregation;
 
-import java.util.HashSet;
-
+import java.util.ArrayList;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
+/**
+ * @author Yashas Manjunatha
+ * Creates and describes behavior of an O Cell in the Segregation Simulation.
+ * Extends SegregationSimCell class.
+ *
+ */
 public class OCell extends SegregationSimCell{
 	private double threshold;
 	
+	/**
+	 * Creates a new O cell.
+	 * @param t - satisfaction threshold
+	 */
 	public OCell(double t) {
 		threshold = t;
 		this.DISPLAYCOLOR = Color.ORANGE;
 	}
 
+	/* (non-Javadoc)
+	 * @see cell.Cell#nextState(java.util.ArrayList)
+	 */
 	@Override
-	public Cell nextState(HashSet<Cell> neighbors) {
+	public Cell nextState(ArrayList<Cell> neighbors) {
 		double ocells = 0;
 		double total = 0;
 		for (Cell cell:neighbors) {

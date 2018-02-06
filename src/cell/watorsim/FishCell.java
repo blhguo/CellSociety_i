@@ -1,58 +1,77 @@
 package cell.watorsim;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
+/**
+ * @author Yashas Manjunatha
+ * Creates and describes behavior of a Fish Cell in the Wator Simulation.
+ * Extends WatorSimCell class.
+ *
+ */
 public class FishCell extends WatorSimCell{
-	WatorSimCell nextShark;
-	private boolean isEaten;
-	private int myTurns;
+	private int reproduction_time;
 	private int reproduction_threshold;
+	private boolean isEaten;
+	private boolean isReproducing;
 	
-	public FishCell(int threshold) {
-		isEaten = false;
-		myTurns = 0;
-		reproduction_threshold = threshold;
+	/**
+	 * Creates a new fish cell.
+	 * @param x - x location of cell in grid
+	 * @param y - y location of cell in grid
+	 * @param reproduction_threshold - threshold for reproduction of new fish cell
+	 */
+	public FishCell(int x, int y, int reproduction_threshold) {
+		super(x, y);
+		resetReproduction();
+		this.reproduction_threshold = reproduction_threshold;
+		this.setEaten(false);
 		this.DISPLAYCOLOR = Color.YELLOW;
 	}
 
+	/* (non-Javadoc)
+	 * @see cell.Cell#nextState(java.util.ArrayList)
+	 */
 	@Override
-	public Cell nextState(HashSet<Cell> neighbors) {
-		if(this.isEaten)
-			return new EmptyCell();
+	public Cell nextState(ArrayList<Cell> neighbors) {
+		this.reproduction_time++;
 		
-		List<EmptyCell> empty_neighbors = new ArrayList<EmptyCell>();
-		for (Cell cell:neighbors)
-			if (cell instanceof EmptyCell)
-				empty_neighbors.add((EmptyCell) cell);
-		
-		this.myTurns++;
-		if (this.myTurns >= reproduction_threshold && empty_neighbors.size() != 0) {
-			int random_number = (int) Math.random() * empty_neighbors.size();
-			empty_neighbors.get(random_number).setMoved(this);
-			empty_neighbors.remove(random_number);
-			return new FishCell(reproduction_threshold);
-		}
-		
-		if (empty_neighbors.size() != 0) {
-			int random_number = (int) Math.random() * empty_neighbors.size();
-			empty_neighbors.get(random_number).setMoved(this);
-			return new EmptyCell();
+		if (reproduction_time >= reproduction_threshold) {
+			this.isReproducing = true;
+			return new FishCell(this.getX(), this.getY(), reproduction_threshold);
 		}
 		
 		return this;
 	}
 
+	/**
+	 * @return boolean value if the fish is eaten by a shark in this turn
+	 */
 	public boolean isEaten() {
 		return isEaten;
 	}
 
-	public void setEaten(WatorSimCell isEaten) {
-		nextShark = isEaten;
-		this.isEaten = true;
+	/** Sets value of isEaten.
+	 * @param isEaten boolean value if the fish is eaten by a shark in this turn
+	 */
+	public void setEaten(boolean isEaten) {
+		this.isEaten = isEaten;
+	}
+	
+	/**
+	 * @return boolean value if the fish is reproducing
+	 */
+	public boolean isReproducing() {
+		return isReproducing;
+	}
+	
+	/**
+	 * Resets reproducing values (for use after a fish cell has reproduced)
+	 */
+	public void resetReproduction() {
+		this.reproduction_time = 0;
+		this.isReproducing = false;
 	}
 
 }

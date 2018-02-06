@@ -1,13 +1,23 @@
 package grid;
 
-import java.util.HashSet;
-
+import java.util.ArrayList;
 import cell.Cell;
 import cell.GOLsim.AliveCell;
 import cell.GOLsim.DeadCell;
 
+/**
+ * @author Yashas Manjunatha
+ * Creates a Grid for the GOL Simulation.
+ * Extends the Grid class.
+ */
 public class GOLSimGrid extends Grid{
 
+	/**
+	 * Initializes a Grid for the GOL Simulation
+	 * @param width - number of cells in the width of the grid
+	 * @param height - number of cells in the height of the grid
+	 * @param cellArray - array of initial cell types
+	 */
 	public GOLSimGrid(int width, int height, String[][] cellArray) {
 		super(width, height);
 		for (int i = 0; i < width; i++) {
@@ -24,8 +34,11 @@ public class GOLSimGrid extends Grid{
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see grid.Grid#addNeighbors(java.util.ArrayList, cell.Cell[][], int, int)
+	 */
 	@Override
-	protected void addNeighbors(HashSet<Cell> neighbors, Cell[][] grid, int i, int j) {
+	protected void addNeighbors(ArrayList<Cell> neighbors, Cell[][] grid, int i, int j) {
 		if (inGrid(i-1,j))
 			neighbors.add(grid[i-1][j]);
 		if (inGrid(i+1,j))

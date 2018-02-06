@@ -4,7 +4,21 @@ import cell.firesim.EmptyCell;
 import cell.firesim.FireCell;
 import cell.firesim.TreeCell;
 
+/**
+ * @author Yashas Manjunatha
+ * Creates a Grid for the Fire Simulation.
+ * Extends the Grid class.
+ */
 public class FireSimGrid extends Grid {
+	/**
+	 * Initializes a Grid for the Fire Simulation
+	 * @param width - number of cells in the width of the grid
+	 * @param height - number of cells in the height of the grid
+	 * @param cellArray - array of initial cell types
+	 * @param probCatch - probability of tree cell catching on fire
+	 * @param probLightning - probability of tree cell getting struck by lightning
+	 * @param probGrow - probability of tree cell growing in empty cell
+	 */
 	public FireSimGrid(int width, int height, String[][] cellArray, double probCatch, double probLightning, double probGrow) {
 		super(width, height);
 		for (int i = 0; i < width; i++) {
