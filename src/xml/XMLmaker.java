@@ -26,11 +26,11 @@ public class XMLmaker {
 	private final static String fireAuthor =  "Angela B. Shiflet";
 
 	// CHANGE THIS
-	private final static String sim = seg;
+	private final static String sim = wator;
 	private final static int gridx = 400;
 	private final static int gridy = 400;
-	private final static int cellx = 10;
-	private final static int celly = 10;
+	private final static int cellx = 40;
+	private final static int celly = 40;
 	private static String title = "";
 	private static String author = "";
 	private final static String shape = "square";
@@ -79,7 +79,8 @@ public class XMLmaker {
 		}
 		
 		// write header to file
-		String fileName = "data/" + sim + ".xml";
+		//String fileName = "data/" + sim + ".xml";
+		String fileName = "data/" + "watortest" + ".xml";
 		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
 		writer.println("<" + '?' + "xml version" + '=' + '"'+ "1.0" + '"' + " encoding=" + '"' + "UTF-8" + '"' + '?' + ">");
 		writer.println("<simulation>");

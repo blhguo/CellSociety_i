@@ -71,6 +71,7 @@ public class Manager extends Application {
 	private static final String TITLE = "CA SIMULATION";
 	private String DEFAULT_FILENAME = "data/game_of_life.xml";
 	private String fileName = DEFAULT_FILENAME;
+	private int fileType = 0;
 	public double SECOND_DELAY = 1000.0;
 	private KeyFrame frame;
 	private Timeline animation;	
@@ -106,6 +107,7 @@ public class Manager extends Application {
 	// Has no return value
 	private void returnMenu() throws Exception {
 		inMenu = true;
+		fileType = 0;
 		animation.setRate(1);
 		fileName = DEFAULT_FILENAME;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
@@ -162,50 +164,78 @@ public class Manager extends Application {
 	// Calls XML parser and stores the values from the parser
 	public void callXMLreader(String file){
 		if(file.equals(myResources.getString("FileS"))) {
-			SegregationXMLreader xml_reader = new SegregationXMLreader();
-			SegregationSimSetup simInfo = xml_reader.read(file);
-			width = simInfo.getGridX() + 20;
-			height = simInfo.getGridY() + 20;
-		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
-		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getThreshold());
-		    cell_Width = simInfo.getCellX();
-		    cell_Height = simInfo.getCellY();
+			callSegXMLreader(file);
 		}
 		else if(file.equals(myResources.getString("FileW"))) {
-			WatorXMLreader xml_reader = new WatorXMLreader();
-			WatorSimSetup simInfo = xml_reader.read(file);
-			width = simInfo.getGridX() + 20;
-			height = simInfo.getGridY() + 20;
-		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
-		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getReproduction());
-		    cell_Width = simInfo.getCellX();
-		    cell_Height = simInfo.getCellY();
+			callWatorXMLreader(file);
 		}
 		else if(file.equals(myResources.getString("FileF"))) {
-			FireXMLreader xml_reader = new FireXMLreader();
-			FireSimSetup simInfo = xml_reader.read(file);
-			width = simInfo.getGridX() + 20;
-			height = simInfo.getGridY() + 20;
-		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
-		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
-		    cell_Width = simInfo.getCellX();
-		    cell_Height = simInfo.getCellY();
+			callFireXMLreader(file);
 		}
 		else {
-		    GOLXMLreader xml_reader = new GOLXMLreader();
-		    GOLSimSetup simInfo = xml_reader.read(file);
-			width = simInfo.getGridX() + 20;
-			height = simInfo.getGridY() + 20;
-			int simWidth = simInfo.getGridX()/simInfo.getCellX();
-		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getArray());
-		    cell_Width = simInfo.getCellX();
-		    cell_Height = simInfo.getCellY();
+			if(fileType == 0) {
+				callGOLXMLreader(file);
+			}
+			else if(fileType == 1) {
+				callSegXMLreader(file);
+			}
+			else if(fileType == 2) {
+				callWatorXMLreader(file);
+			}
+			else if(fileType == 3) {
+				callFireXMLreader(file);
+			}			
 		}
 	}
+	
+	public void callGOLXMLreader(String file){
+		GOLXMLreader xml_reader = new GOLXMLreader();
+	    GOLSimSetup simInfo = xml_reader.read(file);
+		width = simInfo.getGridX() + 20;
+		height = simInfo.getGridY() + 20;
+		int simWidth = simInfo.getGridX()/simInfo.getCellX();
+	    int simHeight = simInfo.getGridY()/simInfo.getCellY();
+	    myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getArray());
+	    cell_Width = simInfo.getCellX();
+	    cell_Height = simInfo.getCellY();
+	}
+	
+	public void callSegXMLreader(String file){
+		SegregationXMLreader xml_reader = new SegregationXMLreader();
+		SegregationSimSetup simInfo = xml_reader.read(file);
+		width = simInfo.getGridX() + 20;
+		height = simInfo.getGridY() + 20;
+	    int simWidth = simInfo.getGridX()/simInfo.getCellX();
+	    int simHeight = simInfo.getGridY()/simInfo.getCellY();
+	    myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getThreshold());
+	    cell_Width = simInfo.getCellX();
+	    cell_Height = simInfo.getCellY();
+	}
+	
+	public void callWatorXMLreader(String file){
+		WatorXMLreader xml_reader = new WatorXMLreader();
+		WatorSimSetup simInfo = xml_reader.read(file);
+		width = simInfo.getGridX() + 20;
+		height = simInfo.getGridY() + 20;
+	    int simWidth = simInfo.getGridX()/simInfo.getCellX();
+	    int simHeight = simInfo.getGridY()/simInfo.getCellY();
+	    myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getReproduction());
+	    cell_Width = simInfo.getCellX();
+	    cell_Height = simInfo.getCellY();
+	}
+	
+	public void callFireXMLreader(String file){
+		FireXMLreader xml_reader = new FireXMLreader();
+		FireSimSetup simInfo = xml_reader.read(file);
+		width = simInfo.getGridX() + 20;
+		height = simInfo.getGridY() + 20;
+	    int simWidth = simInfo.getGridX()/simInfo.getCellX();
+	    int simHeight = simInfo.getGridY()/simInfo.getCellY();
+	    myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
+	    cell_Width = simInfo.getCellX();
+	    cell_Height = simInfo.getCellY();
+	}
+	
 	// Sets up scene for tutorial
 	private Scene setupGuide(int width, int height, Paint background) {
 		// set all text for guide
@@ -369,15 +399,19 @@ public class Manager extends Application {
 			public void changed(ObservableValue ov, Number value, Number new_value) {	
 				if((int) new_value == 0){
 					fileName = myResources.getString("FileGOL");
+					fileType = 0;
 				}
 				if((int) new_value == 1){
 					fileName = myResources.getString("FileS");
+					fileType = 1;
 				}
 				if((int) new_value == 2){
 					fileName = myResources.getString("FileW");
+					fileType = 2;
 				}
 				if((int) new_value == 3){
 					fileName = myResources.getString("FileF");
+					fileType = 3;
 				}
 			}
 		});
