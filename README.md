@@ -2,20 +2,24 @@
 
 CompSci 308 Cell Society Project
 
-*Date started*: January 25, 2018
+*Date Started*: January 25, 2018
 
-*Date finished*: In progress
+*Date Finished*: In progress
 
 ## Project information
 ### Team members:
 * Marcus Oertle (mlo11) - XML processor
 * Brandon Guo (blg19) - Front end graphics
-* Yashas  Manjunatha (NETID) - Back-end processes
+* Yashas Manjunatha (ym101) - Back-end processes
 
 ### Resources used
 * [TutorialsPoint XML tutorial](https://www.tutorialspoint.com/java_xml/java_dom_query_document.htm)
 * [StackOverflow] (https://stackoverflow.com/questions/28290814/how-to-slow-down-javafx-animation)
 * [Timeline and Animation] (https://docs.oracle.com/javafx/2/animations/basics.htm)
+* [Game of Life Simulation Rules] (https://en.wikipedia.org/wiki/Conway's_Game_of_Life)
+* [Segregation Simulation Rules] (http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/)
+* [Wator World Simulation Rules] (https://en.wikipedia.org/wiki/Wa-Tor)
+* [Fire Simulation Rules] (http://nifty.stanford.edu/2007/shiflet-fire/)
 
 ### Important files
 * [Manager.java](https://coursework.cs.duke.edu/CompSci308_2018Spring/cellsociety_team18/blob/master/src/gui/Manager.java) in package "gui" is used to start the application.
