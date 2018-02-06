@@ -28,7 +28,7 @@ CompSci 308 Cell Society Project
 * *Start Selected Simulation* - begins the simulation specified by the drop down menu
 * *Drop down menu* - select a default simulation
 * *Guide* - loads the user guide
-* *Open a file...* - choose custom file, **will be treated like a "Game of Life" XML file**
+* *Open a file...* - choose custom file, **will be treated as whatever type XML file is selected in drop down menu**
 
 ### In simulations
 * *P* - pauses/plays the simulation
