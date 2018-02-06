@@ -22,6 +22,23 @@ import javafx.stage.Stage;
 import xml.readers.*;
 import xml.SimSetups.*;
 
+/**
+ * Visualizer
+ * @author Brandon Guo
+ * 
+ * input:
+ * @param Input parameters vary depending on method call
+ * @return Return objects vary depending on method call
+ * 
+ * Use: 
+ * Graphically presents simulation
+ * Allows for User selected files
+ * Double speed simulation, half speed simulation
+ * Call next cell layout
+ * 
+ * NOTE: Due to exceeding difficulty in variable management and accessibility, we have merged Visualizer into Manager.java
+ */
+
 public class Visualizer {
 	
 	private static final int XPADDING = 10; //when creating cells, the x-margin between cell
