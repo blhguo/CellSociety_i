@@ -9,7 +9,7 @@ public class TreeCell extends FireSimCell{
 	
 	public TreeCell(double pCatch, double pLight, double pGrow) {
 		super(pCatch, pLight, pGrow);
-		this.DISPLAYCOLOR = Color.BURLYWOOD;
+		this.DISPLAYCOLOR = Color.FORESTGREEN;
 	}
 
 	@Override
