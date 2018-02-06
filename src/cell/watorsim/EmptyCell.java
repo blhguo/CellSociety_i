@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
  *
  */
 public class EmptyCell extends WatorSimCell{
+	private static final Color CELLCOLOR = Color.LIGHTGRAY;
 	private boolean isOccupied;
 	
 	/**
@@ -21,7 +22,7 @@ public class EmptyCell extends WatorSimCell{
 	public EmptyCell(int x, int y) {
 		super(x, y);
 		setOccupied(false);
-		this.DISPLAYCOLOR = Color.LIGHTGRAY;
+		setDisplayColor();
 	}
 	
 	/* (non-Javadoc)
@@ -46,5 +47,12 @@ public class EmptyCell extends WatorSimCell{
 	public void setOccupied(boolean isOccupied) {
 		this.isOccupied = isOccupied;
 	}
-
+	
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
+	}
 }

@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
  *
  */
 public class SharkCell extends WatorSimCell{
+	private static final Color CELLCOLOR = Color.BLUE;
 	private int reproduction_time;
 	private int reproduction_threshold;
 	private int current_energy;
@@ -31,7 +32,7 @@ public class SharkCell extends WatorSimCell{
 		this.reproduction_threshold = reproduction_threshold;
 		this.current_energy = current_energy;
 		this.gained_energy = gained_energy;
-		this.DISPLAYCOLOR = Color.BLUE;
+		setDisplayColor();
 	}
 
 	/* (non-Javadoc)
@@ -75,4 +76,11 @@ public class SharkCell extends WatorSimCell{
 		this.isReproducing = false;
 	}
 
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
+	}
 }

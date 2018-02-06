@@ -10,6 +10,7 @@ import javafx.scene.paint.Color;
  * Extends SegregationSimCell class.
  */
 public class EmptyCell extends SegregationSimCell{
+	private static final Color CELLCOLOR = Color.LIGHTGRAY;
 	private boolean isTaken = false;
 
 	/**
@@ -17,7 +18,7 @@ public class EmptyCell extends SegregationSimCell{
 	 */
 	public EmptyCell() {
 		isTaken = false;
-		this.DISPLAYCOLOR = Color.LIGHTGRAY;
+		setDisplayColor();
 	}
 	
 	/* (non-Javadoc)
@@ -42,5 +43,12 @@ public class EmptyCell extends SegregationSimCell{
 	public void setTaken(boolean isTaken) {
 		this.isTaken = isTaken;
 	}
-
+	
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
+	}
 }

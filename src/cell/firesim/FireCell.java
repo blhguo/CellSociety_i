@@ -10,6 +10,7 @@ import javafx.scene.paint.Color;
  * Extends FireSimCell class.
  */
 public class FireCell extends FireSimCell{
+	private static final Color CELLCOLOR = Color.DARKORANGE;
 
 	/**
 	 * Creates a new fire cell with the following parameters.
@@ -19,7 +20,7 @@ public class FireCell extends FireSimCell{
 	 */
 	public FireCell(double pCatch, double pLight, double pGrow) {
 		super(pCatch, pLight, pGrow);
-		this.DISPLAYCOLOR = Color.DARKORANGE;
+		setDisplayColor();
 	}
 	
 	/* (non-Javadoc)
@@ -36,5 +37,13 @@ public class FireCell extends FireSimCell{
 	@Override
 	public boolean isBurning() {
 		return true;
+	}
+	
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
 	}
 }

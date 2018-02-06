@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
  *
  */
 public class EmptyCell extends FireSimCell{
+	private static final Color CELLCOLOR = Color.LIGHTGRAY;
 
 	/**
 	 * Creates a new empty cell with the following parameters.
@@ -20,7 +21,7 @@ public class EmptyCell extends FireSimCell{
 	 */
 	public EmptyCell(double pCatch, double pLight, double pGrow) {
 		super(pCatch, pLight, pGrow);
-		this.DISPLAYCOLOR = Color.LIGHTGRAY;
+		setDisplayColor();
 	}
 	
 	
@@ -40,5 +41,13 @@ public class EmptyCell extends FireSimCell{
 	@Override
 	public boolean isBurning() {
 		return false;
+	}
+
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
 	}
 }
