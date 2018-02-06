@@ -27,6 +27,7 @@ CompSci 308 Cell Society Project
 * *Drop down menu* - select a default simulation
 * *Guide* - loads the guide
 * *Open a file...* - choose custom file, **will be treated like a "Game of Life" XML file**
+
 ### In simulations
 * *P* - pauses the simulation
 * *Arrow Up* - double animation speed
@@ -41,4 +42,3 @@ CompSci 308 Cell Society Project
 ## Extra features
 
 ## Impressions of the project
-
