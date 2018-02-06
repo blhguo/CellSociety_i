@@ -1,19 +1,32 @@
 package cell.firesim;
 
-import java.util.HashSet;
-
+import java.util.ArrayList;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
+/**
+ * @author Yashas Manjunatha
+ * Creates and describes behavior of a Tree Cell in the Fire Simulation.
+ * Extends FireSimCell class.
+ */
 public class TreeCell extends FireSimCell{
 	
+	/**
+	 * Creates a new tree cell with the following parameters.
+	 * @param pCatch - probability of tree cell catching on fire
+	 * @param pLight - probability of tree cell getting struck by lightning
+	 * @param pGrow - probability of tree cell growing in empty cell
+	 */
 	public TreeCell(double pCatch, double pLight, double pGrow) {
 		super(pCatch, pLight, pGrow);
 		this.DISPLAYCOLOR = Color.BURLYWOOD;
 	}
 
+	/* (non-Javadoc)
+	 * @see cell.Cell#nextState(java.util.ArrayList)
+	 */
 	@Override
-	public Cell nextState(HashSet<Cell> neighbors) {
+	public Cell nextState(ArrayList<Cell> neighbors) {
 		boolean neighborBurning = false;
 		for(Cell cell:neighbors) {
 			if(cell instanceof FireSimCell)
@@ -28,6 +41,9 @@ public class TreeCell extends FireSimCell{
 		return this;
 	}
 	
+	/* (non-Javadoc)
+	 * @see cell.firesim.FireSimCell#isBurning()
+	 */
 	@Override
 	public boolean isBurning() {
 		return false;

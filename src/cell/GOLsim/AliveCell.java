@@ -1,17 +1,28 @@
 package cell.GOLsim;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
+/**
+ * @author Yashas Manjunatha
+ * Creates and describes behavior of an Alive Cell in the GOL Simulation.
+ * Extends GOLSimCell class.
+ */
 public class AliveCell extends GOLSimCell{
 	
+	/**
+	 * Creates a new alive cell.
+	 */
 	public AliveCell() {
 		this.DISPLAYCOLOR = Color.GREENYELLOW;
 	}
 
+	/* (non-Javadoc)
+	 * @see cell.Cell#nextState(java.util.ArrayList)
+	 */
 	@Override
-	public Cell nextState(HashSet<Cell> neighbors) {
+	public Cell nextState(ArrayList<Cell> neighbors) {
 		int neighbors_alive = 0;
 		for(Cell cell:neighbors) {
 			if (cell instanceof AliveCell)
