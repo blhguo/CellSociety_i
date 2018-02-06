@@ -3,7 +3,7 @@ package xml;
 import java.util.Arrays;
 
 /**
- * Simulation Setup
+ * Simulation Setup - stores all information about a simulation for use by other classes
  * @author Marcus Oertle
  * 
  * inputs:

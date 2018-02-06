@@ -14,6 +14,10 @@ import xml.SimulationSetup;
 import xml.XMLreader;
 import xml.SimSetups.WatorSimSetup;
 
+/**
+ * @see XMLreader
+ * Extends XMLreader for Wator simulation type
+ */
 public class WatorXMLreader extends XMLreader{
 	public WatorSimSetup read(String filename) {
 		try {
