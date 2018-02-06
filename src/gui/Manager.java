@@ -219,7 +219,7 @@ public class Manager extends Application {
 		height = simInfo.getGridY() + 20;
 	    int simWidth = simInfo.getGridX()/simInfo.getCellX();
 	    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-	    myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getReproduction());
+	    myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getReproduction(), simInfo.getEnergy(), simInfo.getGainedEnergy());
 	    cell_Width = simInfo.getCellX();
 	    cell_Height = simInfo.getCellY();
 	}
