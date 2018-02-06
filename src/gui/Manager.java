@@ -417,6 +417,7 @@ public class Manager extends Application {
 	private Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
 		Rectangle Image = new Rectangle((width * i + XPADDING), (height * j + YPADDING), width, height);
 		Image.setFill(BufferCell.getDisplayColor());
+		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
 		return Image;
 	}
