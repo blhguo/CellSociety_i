@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
  *
  */
 public class FishCell extends WatorSimCell{
+	private static final Color CELLCOLOR = Color.YELLOW;
 	private int reproduction_time;
 	private int reproduction_threshold;
 	private boolean isEaten;
@@ -27,7 +28,7 @@ public class FishCell extends WatorSimCell{
 		resetReproduction();
 		this.reproduction_threshold = reproduction_threshold;
 		this.setEaten(false);
-		this.DISPLAYCOLOR = Color.YELLOW;
+		setDisplayColor();
 	}
 
 	/* (non-Javadoc)
@@ -74,4 +75,11 @@ public class FishCell extends WatorSimCell{
 		this.isReproducing = false;
 	}
 
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
+	}
 }

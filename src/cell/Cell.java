@@ -21,6 +21,11 @@ public abstract class Cell {
 	public abstract Cell nextState (ArrayList<Cell> neighbors);
 	
 	/**
+	 * Sets the display color of the cell.
+	 */
+	protected abstract void setDisplayColor();
+	
+	/**
 	 * Used to get the display color of the cell.
 	 * @return - The display color of the cell.
 	 */

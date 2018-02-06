@@ -10,6 +10,7 @@ import javafx.scene.paint.Color;
  * Extends SegregationSimCell class.
  */
 public class XCell extends SegregationSimCell{
+	private static final Color CELLCOLOR = Color.PINK;
 	private double threshold;
 	
 	/**
@@ -18,7 +19,7 @@ public class XCell extends SegregationSimCell{
 	 */
 	public XCell(double t) {
 		threshold = t;
-		this.DISPLAYCOLOR = Color.PINK;
+		setDisplayColor();
 	}
 
 	/* (non-Javadoc)
@@ -42,5 +43,13 @@ public class XCell extends SegregationSimCell{
 		}
 		
 		return this;
+	}
+	
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
 	}
 }

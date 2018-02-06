@@ -11,12 +11,13 @@ import javafx.scene.paint.Color;
  * Extends GOLSimCell class.
  */
 public class DeadCell extends GOLSimCell{
+	private static final Color CELLCOLOR = Color.GRAY;
 	
 	/**
 	 * Creates a new dead cell.
 	 */
 	public DeadCell() {
-		this.DISPLAYCOLOR = Color.GRAY;
+		setDisplayColor();
 	}
 
 	/* (non-Javadoc)
@@ -33,5 +34,13 @@ public class DeadCell extends GOLSimCell{
 		if (neighbors_alive == 3)
 			return new AliveCell();
 		return this;
+	}
+	
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
 	}
 }

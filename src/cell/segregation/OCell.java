@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
  *
  */
 public class OCell extends SegregationSimCell{
+	private static final Color CELLCOLOR = Color.ORANGE;
 	private double threshold;
 	
 	/**
@@ -19,7 +20,7 @@ public class OCell extends SegregationSimCell{
 	 */
 	public OCell(double t) {
 		threshold = t;
-		this.DISPLAYCOLOR = Color.ORANGE;
+		setDisplayColor();
 	}
 
 	/* (non-Javadoc)
@@ -43,5 +44,13 @@ public class OCell extends SegregationSimCell{
 		}
 		
 		return this;
+	}
+	
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
 	}
 }

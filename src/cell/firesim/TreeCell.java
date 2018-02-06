@@ -10,6 +10,7 @@ import javafx.scene.paint.Color;
  * Extends FireSimCell class.
  */
 public class TreeCell extends FireSimCell{
+	private static final Color CELLCOLOR = Color.FORESTGREEN;
 	
 	/**
 	 * Creates a new tree cell with the following parameters.
@@ -19,7 +20,7 @@ public class TreeCell extends FireSimCell{
 	 */
 	public TreeCell(double pCatch, double pLight, double pGrow) {
 		super(pCatch, pLight, pGrow);
-		this.DISPLAYCOLOR = Color.FORESTGREEN;
+		setDisplayColor();
 	}
 
 	/* (non-Javadoc)
@@ -47,5 +48,13 @@ public class TreeCell extends FireSimCell{
 	@Override
 	public boolean isBurning() {
 		return false;
+	}
+	
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
+	@Override
+	protected void setDisplayColor() {
+		this.DISPLAYCOLOR = CELLCOLOR;
 	}
 }
