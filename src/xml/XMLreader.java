@@ -8,7 +8,7 @@ import org.w3c.dom.Element;
 import java.io.File;
 
 /**
- * XML Reader
+ * XML Reader - reads XML files and creates new SimulationSetup subclass instance to return to other classes
  * @author Marcus Oertle
  * 
  * input:

@@ -14,6 +14,10 @@ import xml.SimulationSetup;
 import xml.XMLreader;
 import xml.SimSetups.GOLSimSetup;
 
+/**
+ * @see XMLreader
+ * Extend XMLreader for GOL simulation type
+ */
 public class GOLXMLreader extends XMLreader{
 
 	public GOLSimSetup read(String filename) {

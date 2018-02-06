@@ -14,6 +14,10 @@ import xml.SimulationSetup;
 import xml.XMLreader;
 import xml.SimSetups.SegregationSimSetup;
 
+/**
+ * @see XMLreader
+ * Extends XMLreader for Segregation simulation type
+ */
 public class SegregationXMLreader extends XMLreader {
 	public SegregationSimSetup read(String filename) {
 		try {

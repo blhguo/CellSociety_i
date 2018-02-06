@@ -5,6 +5,12 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
+/**
+ * XMLmaker - creates XML files for use with project
+ * @author Marcus Oertle
+ * 
+ */
+
 public class XMLmaker {
 	private final static String gol = "game_of_life";
 	private final static String seg = "segregation";
@@ -20,11 +26,11 @@ public class XMLmaker {
 	private final static String fireAuthor =  "Angela B. Shiflet";
 
 	// CHANGE THIS
-	private final static String sim = seg;
+	private final static String sim = wator;
 	private final static int gridx = 400;
 	private final static int gridy = 400;
-	private final static int cellx = 10;
-	private final static int celly = 10;
+	private final static int cellx = 40;
+	private final static int celly = 40;
 	private static String title = "";
 	private static String author = "";
 	private final static String shape = "square";
@@ -54,6 +60,7 @@ public class XMLmaker {
 		int numCellsX = (int) gridx / cellx;
 		int numCellsY = (int) gridy / celly;
 
+		// set title
 		if(sim.equals(gol)){
 			title = golTitle;
 			author = golAuthor;
@@ -70,8 +77,10 @@ public class XMLmaker {
 			title = fireTitle;
 			author = fireAuthor;
 		}
-
-		String fileName = "data/" + sim + ".xml";
+		
+		// write header to file
+		//String fileName = "data/" + sim + ".xml";
+		String fileName = "data/" + "watortest" + ".xml";
 		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
 		writer.println("<" + '?' + "xml version" + '=' + '"'+ "1.0" + '"' + " encoding=" + '"' + "UTF-8" + '"' + '?' + ">");
 		writer.println("<simulation>");
@@ -84,6 +93,7 @@ public class XMLmaker {
 		writer.println("\t" + "<grid_x>" + gridx + "</grid_x>");
 		writer.println("\t" + "<grid_y>" + gridy + "</grid_y>");
 
+		// create cells based on simulation type and parameters
 		if(sim.equals(gol)){
 
 		}

@@ -11,9 +11,12 @@ public class XMLtester {
 	
 	/**
 	 * Start the program.
+	 * Used for testing XML files
 	 * Creates new XMLreader class and SimulationSetup class
 	 * Reads XML file
 	 * Prints results
+	 * 
+	 * Use: change the first four lines to the type of simulation you are testing the XML for
 	 */
 	public static void main (String[] args) {
 		//String fileName = gol;

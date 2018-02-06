@@ -14,6 +14,10 @@ import xml.SimulationSetup;
 import xml.XMLreader;
 import xml.SimSetups.FireSimSetup;
 
+/**
+ * @see XMLreader
+ * Extend XMLreader for Fire simulation type
+ */
 public class FireXMLreader extends XMLreader{
 	public FireSimSetup read(String filename) {
 		try {
@@ -75,6 +79,9 @@ public class FireXMLreader extends XMLreader{
 		}
 	}
 	
+	/**
+	 * @see XMLreader:fillEmpty(String[][] typeArray)
+	 */
 	@Override
 	protected String[][] fillEmpty(String[][] typeArray) {
 		String empty = "tree";

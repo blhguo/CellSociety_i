@@ -44,23 +44,39 @@ import xml.readers.GOLXMLreader;
 import xml.readers.SegregationXMLreader;
 import xml.readers.WatorXMLreader;
 
+/**
+ * Simulation visualization and management
+ * @author Brandon Guo, Marcus Olerte, Yashas Manjunatha
+ * 
+ * input:
+ * @param No input parameters, all inputs are given by user
+ * @return No return object, presents simulation
+ * 
+ * Use: 
+ * Graphically presents simulation
+ * Allows for User selected files
+ * Double speed simulation, half speed simulation
+ * Call next cell layout
+ */
+
 public class Manager extends Application {
 
-	int width = 500; //TODO
-	int height = 500; //TODO
+	int width;
+	int height;
 	Grid myGrid;
-	int cell_Width; //TODO
-	int cell_Height; //TODO
+	int cell_Width;
+	int cell_Height;
 	public static final Paint BACKGROUND = Color.WHITE;
 	private Stage TheStage;
 	private static final String TITLE = "CA SIMULATION";
 	private String DEFAULT_FILENAME = "data/game_of_life.xml";
 	private String fileName = DEFAULT_FILENAME;
+	private int fileType = 0;
 	public double SECOND_DELAY = 1000.0;
 	private KeyFrame frame;
 	private Timeline animation;	
-	private static final int XPADDING = 10; //when creating cells, the x-margin between cell
-	private static final int YPADDING = 10; //when creating cells, the y-margin between cell
+	private static final int XPADDING = 10;
+	private static final int YPADDING = 10;
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
 	private boolean inMenu = true;
@@ -87,8 +103,11 @@ public class Manager extends Application {
         animation.play();
 	}
 	
+	// Takes in no parameters, but when called returns user to the menu
+	// Has no return value
 	private void returnMenu() throws Exception {
 		inMenu = true;
+		fileType = 0;
 		animation.setRate(1);
 		fileName = DEFAULT_FILENAME;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
@@ -98,25 +117,18 @@ public class Manager extends Application {
 		TheStage.show();
 	}
 
-	
+	// Handles key input, takes in a keycode and matches it to one of the following, then acts on the simulation. No return value
 	private void handleKeyInput(KeyCode code) {
 		if (code == KeyCode.S) {
-			//System.out.println("Right arrow pushed.");
 			step();
 		}
 		if (code == KeyCode.UP) {
-			//speed up
-			//SECOND_DELAY = SECOND_DELAY * 0.5;
-			//System.out.println("Up arrow pushed.");
 			animation.setRate(2);
 		}
 		else if (code == KeyCode.DOWN) {
-			//slow down
-			//SECOND_DELAY = SECOND_DELAY * 2;
 			animation.setRate(0.5);
 		}
 		else if (code == KeyCode.P) {
-			//play or pause
 			if (animation.getStatus() == Status.PAUSED) {
 				animation.play();
 			}
@@ -129,12 +141,11 @@ public class Manager extends Application {
 			try {
 				returnMenu();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
-	
+	// Computes next "scene", takes in no parameters and returns nothing
 	private void step () {
 		if (!inMenu) {
 			Scene myScene_Buffer;
@@ -150,58 +161,82 @@ public class Manager extends Application {
 			}
 		}
 	}
-	
+	// Calls XML parser and stores the values from the parser
 	public void callXMLreader(String file){
 		if(file.equals(myResources.getString("FileS"))) {
-			SegregationXMLreader xml_reader = new SegregationXMLreader();
-			SegregationSimSetup simInfo = xml_reader.read(file);
-			//simInfo.printInfo();
-			width = simInfo.getGridX() + 20;
-			height = simInfo.getGridY() + 20;
-		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
-		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getThreshold());
-		    cell_Width = simInfo.getCellX();
-		    cell_Height = simInfo.getCellY();
+			callSegXMLreader(file);
 		}
 		else if(file.equals(myResources.getString("FileW"))) {
-			WatorXMLreader xml_reader = new WatorXMLreader();
-			WatorSimSetup simInfo = xml_reader.read(file);
-			//simInfo.printInfo();
-			width = simInfo.getGridX() + 20;
-			height = simInfo.getGridY() + 20;
-		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
-		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getReproduction(), simInfo.getEnergy(), simInfo.getGainedEnergy());
-		    cell_Width = simInfo.getCellX();
-		    cell_Height = simInfo.getCellY();
+			callWatorXMLreader(file);
 		}
 		else if(file.equals(myResources.getString("FileF"))) {
-			FireXMLreader xml_reader = new FireXMLreader();
-			FireSimSetup simInfo = xml_reader.read(file);
-			//simInfo.printInfo();
-			width = simInfo.getGridX() + 20;
-			height = simInfo.getGridY() + 20;
-		    int simWidth = simInfo.getGridX()/simInfo.getCellX();
-		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
-		    cell_Width = simInfo.getCellX();
-		    cell_Height = simInfo.getCellY();
+			callFireXMLreader(file);
 		}
 		else {
-		    GOLXMLreader xml_reader = new GOLXMLreader();
-		    GOLSimSetup simInfo = xml_reader.read(file);
-		    //simInfo.printInfo();
-			width = simInfo.getGridX() + 20;
-			height = simInfo.getGridY() + 20;
-			int simWidth = simInfo.getGridX()/simInfo.getCellX();
-		    int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		    myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getArray());
-		    cell_Width = simInfo.getCellX();
-		    cell_Height = simInfo.getCellY();
+			if(fileType == 0) {
+				callGOLXMLreader(file);
+			}
+			else if(fileType == 1) {
+				callSegXMLreader(file);
+			}
+			else if(fileType == 2) {
+				callWatorXMLreader(file);
+			}
+			else if(fileType == 3) {
+				callFireXMLreader(file);
+			}			
 		}
 	}
 	
+	public void callGOLXMLreader(String file){
+		GOLXMLreader xml_reader = new GOLXMLreader();
+	    GOLSimSetup simInfo = xml_reader.read(file);
+		width = simInfo.getGridX() + 20;
+		height = simInfo.getGridY() + 20;
+		int simWidth = simInfo.getGridX()/simInfo.getCellX();
+	    int simHeight = simInfo.getGridY()/simInfo.getCellY();
+	    myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getArray());
+	    cell_Width = simInfo.getCellX();
+	    cell_Height = simInfo.getCellY();
+	}
+	
+	public void callSegXMLreader(String file){
+		SegregationXMLreader xml_reader = new SegregationXMLreader();
+		SegregationSimSetup simInfo = xml_reader.read(file);
+		width = simInfo.getGridX() + 20;
+		height = simInfo.getGridY() + 20;
+	    int simWidth = simInfo.getGridX()/simInfo.getCellX();
+	    int simHeight = simInfo.getGridY()/simInfo.getCellY();
+	    myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getThreshold());
+	    cell_Width = simInfo.getCellX();
+	    cell_Height = simInfo.getCellY();
+	}
+	
+	public void callWatorXMLreader(String file){
+		WatorXMLreader xml_reader = new WatorXMLreader();
+		WatorSimSetup simInfo = xml_reader.read(file);
+		width = simInfo.getGridX() + 20;
+		height = simInfo.getGridY() + 20;
+	    int simWidth = simInfo.getGridX()/simInfo.getCellX();
+	    int simHeight = simInfo.getGridY()/simInfo.getCellY();
+	    myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getReproduction());
+	    cell_Width = simInfo.getCellX();
+	    cell_Height = simInfo.getCellY();
+	}
+	
+	public void callFireXMLreader(String file){
+		FireXMLreader xml_reader = new FireXMLreader();
+		FireSimSetup simInfo = xml_reader.read(file);
+		width = simInfo.getGridX() + 20;
+		height = simInfo.getGridY() + 20;
+	    int simWidth = simInfo.getGridX()/simInfo.getCellX();
+	    int simHeight = simInfo.getGridY()/simInfo.getCellY();
+	    myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
+	    cell_Width = simInfo.getCellX();
+	    cell_Height = simInfo.getCellY();
+	}
+	
+	// Sets up scene for tutorial
 	private Scene setupGuide(int width, int height, Paint background) {
 		// set all text for guide
 		Text g1 = new Text();
@@ -270,20 +305,20 @@ public class Manager extends Application {
 			try {
 				returnMenu();
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		});
 		return scene;
 	}
 
-
+	// Sets up scene for the actual simulation
 	public Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height) throws Exception {
 		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));
 		Scene scene = new Scene(root, width, height, background);
 		return scene;	
 	}
 	
+	// Sets up Splash screen/menu
 	public Scene setupMenu (int width, int height, Paint background, Stage stage) throws Exception {
     	VBox splash = new VBox ();
         splash.setPadding(new Insets(MENU_PAD, MENU_PAD, MENU_PAD, MENU_PAD));
@@ -292,9 +327,7 @@ public class Manager extends Application {
         lbl.setFont(Font.font("Amble CN", FontWeight.BOLD, 24));
         splash.getChildren().add(lbl);
         
-        FileChooser fileChooser = new FileChooser();
-        Button openButton = new Button("Open a File...");
-        
+        Button openButton = GenerateFileButton(stage);
 		Button startButton = GenerateStartButton(stage);
 		ChoiceBox<String> fileChoiceBox = GenerateChoiceBox();
 		Button guideButton = GenerateGuideButton(stage);
@@ -302,20 +335,28 @@ public class Manager extends Application {
 		splash.getChildren().add(startButton);
 		splash.getChildren().add(fileChoiceBox);
 		splash.getChildren().add(guideButton);
+        splash.getChildren().add(openButton);
 
-        
+        Scene scene = new Scene(splash);
+        return scene;
+	}
+	
+	// Generates button to click to choose a file
+	public Button GenerateFileButton(Stage s) {
+        Button openButton = new Button(myResources.getString("OpenFile"));
+        FileChooser fileChooser = new FileChooser();
         openButton.setOnAction(
         	new EventHandler<ActionEvent>() {
         		@Override
         		public void handle(final ActionEvent e) {
-        			File file = fileChooser.showOpenDialog(stage);
+        			File file = fileChooser.showOpenDialog(s);
         			if (file != null) {
         				fileName = file.getName();
         				fileName = "data/" + fileName;		
         				try {
         						animation.play();
         						callXMLreader(fileName);
-        						stage.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
+        						s.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
         						inMenu = false;
         					} catch (Exception e1) {
 							e1.printStackTrace();
@@ -323,13 +364,9 @@ public class Manager extends Application {
         			}
         		}
         	});
-        splash.getChildren().add(openButton);
-
-
-        Scene scene = new Scene(splash);
-        return scene;
+        return openButton;
 	}
-	
+	// Generates button to start the selected simulation
 	public Button GenerateStartButton(Stage s) {
 		Button startButton = new Button(myResources.getString("StartCommand"));
 
@@ -350,7 +387,7 @@ public class Manager extends Application {
 				});
 		return startButton;
 	}
-	
+	// Drop down menu to select type of simulation
 	public ChoiceBox GenerateChoiceBox() {
 		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
 		fileChoiceBox.getItems().add(myResources.getString("DropDown1"));
@@ -362,22 +399,25 @@ public class Manager extends Application {
 			public void changed(ObservableValue ov, Number value, Number new_value) {	
 				if((int) new_value == 0){
 					fileName = myResources.getString("FileGOL");
+					fileType = 0;
 				}
 				if((int) new_value == 1){
 					fileName = myResources.getString("FileS");
+					fileType = 1;
 				}
 				if((int) new_value == 2){
 					fileName = myResources.getString("FileW");
+					fileType = 2;
 				}
 				if((int) new_value == 3){
 					fileName = myResources.getString("FileF");
+					fileType = 3;
 				}
 			}
 		});
 		return fileChoiceBox;
-
 	}
-
+	// Generates button that opens the user manual
 	public Button GenerateGuideButton(Stage s) {
 		Button guideButton = new Button(myResources.getString("Guide"));
 
@@ -397,8 +437,8 @@ public class Manager extends Application {
 		return guideButton;
 	}
 
-	
-	public Group CreateRoot(Cell[][] cellArray, int width, int height) {//cell abstract class hasn't been created yet
+	// Helper function of setupScene, returns a root with everything needed
+	public Group CreateRoot(Cell[][] cellArray, int width, int height) {
 		Group addition = new Group();
 		for (int i = 0; i < cellArray[0].length; i++) {
 			for (int j = 0; j < cellArray[1].length; j++) {
@@ -407,15 +447,16 @@ public class Manager extends Application {
 		}
 		return addition;
 	}
-	
+	//Helper function for CreateRoot, generates one cell
 	private Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
 		Rectangle Image = new Rectangle((width * i + XPADDING), (height * j + YPADDING), width, height);
 		Image.setFill(BufferCell.getDisplayColor());
+		Image.setStrokeWidth(0.3);
+		Image.setStroke(Color.BLACK);
 		return Image;
 	}
-	
+	//Launches game
 	public static void main(String[] args) {
 		Application.launch(args);
 	}
-
 }
