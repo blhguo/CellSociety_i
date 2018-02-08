@@ -12,7 +12,7 @@ import cell.Cell;
 public abstract class WatorSimCell extends Cell{
 	private int myX;
 	private int myY;
-	
+
 	/**
 	 * Creates a new Wator simulation cell.
 	 * @param x - x location of cell in grid
@@ -22,14 +22,14 @@ public abstract class WatorSimCell extends Cell{
 		this.myX = x;
 		this.myY = y;
 	}
-	
+
 	/**
 	 * @return x location of cell in grid
 	 */
 	public int getX() {
 		return myX;
 	}
-	
+
 	/**
 	 * Sets x location of cell in grid
 	 * @param x - x location of cell in grid
@@ -37,14 +37,14 @@ public abstract class WatorSimCell extends Cell{
 	public void setX(int x) {
 		this.myX = x;
 	}
-	
+
 	/**
 	 * @return y location of cell in grid
 	 */
 	public int getY() {
 		return myY;
 	}
-	
+
 	/**
 	 * Sets y location of cell in grid
 	 * @param y - y location of cell in grid

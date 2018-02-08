@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
  */
 public class TreeCell extends FireSimCell{
 	private static final Color CELLCOLOR = Color.FORESTGREEN;
-	
+
 	/**
 	 * Creates a new tree cell with the following parameters.
 	 * @param pCatch - probability of tree cell catching on fire
@@ -43,7 +43,7 @@ public class TreeCell extends FireSimCell{
 		}
 		return this;
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */

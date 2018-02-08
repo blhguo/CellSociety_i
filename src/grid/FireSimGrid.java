@@ -24,15 +24,15 @@ public class FireSimGrid extends Grid {
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
-					case "fire":
-						this.myGrid[i][j] = new FireCell(probCatch, probLightning, probGrow);
-						break;
-					case "tree": 
-						this.myGrid[i][j] = new TreeCell(probCatch, probLightning, probGrow);
-						break;
-					default: 
-						this.myGrid[i][j] = new EmptyCell(probCatch, probLightning, probGrow);
-						break;
+				case "fire":
+					this.myGrid[i][j] = new FireCell(probCatch, probLightning, probGrow);
+					break;
+				case "tree": 
+					this.myGrid[i][j] = new TreeCell(probCatch, probLightning, probGrow);
+					break;
+				default: 
+					this.myGrid[i][j] = new EmptyCell(probCatch, probLightning, probGrow);
+					break;
 				}
 			}
 		}

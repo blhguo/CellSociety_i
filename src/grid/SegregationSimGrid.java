@@ -26,21 +26,21 @@ public class SegregationSimGrid extends Grid{
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
-					case "x": 
-						this.myGrid[i][j] = new XCell(threshold[i][j]);
-						break;
-					case "o":
-						this.myGrid[i][j] = new OCell(threshold[i][j]);
-						break;
-					default: 
-						this.myGrid[i][j] = new EmptyCell();
-						break;
+				case "x": 
+					this.myGrid[i][j] = new XCell(threshold[i][j]);
+					break;
+				case "o":
+					this.myGrid[i][j] = new OCell(threshold[i][j]);
+					break;
+				default: 
+					this.myGrid[i][j] = new EmptyCell();
+					break;
 				}
 			}
 		}
 	}
-	
-	
+
+
 	private Cell[][] nextGrid;
 	/* (non-Javadoc)
 	 * @see grid.Grid#updateGrid()
@@ -67,7 +67,7 @@ public class SegregationSimGrid extends Grid{
 		myGrid = nextGrid;
 		return nextGrid;
 	}
-	
+
 	/**
 	 * Places a cell in the first empty cell available
 	 * @param cell - cell to be placed
@@ -83,7 +83,7 @@ public class SegregationSimGrid extends Grid{
 			}
 		}		
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see grid.Grid#addNeighbors(java.util.List, cell.Cell[][], int, int)
 	 */
