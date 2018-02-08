@@ -101,20 +101,13 @@ public class WatorSimGrid extends Grid{
 		if(!fish_cells.isEmpty()) {
 			switchToRandomFish(fish_cells, currentState, i, j, new EmptyCell(i, j));
 		} else {
-			ArrayList<EmptyCell> empty_cells = new ArrayList<>();
-			for(Cell cell:neighbors) {
-				if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied()) {
-					empty_cells.add((EmptyCell) cell);
-				}
-			}
-
-			if(!empty_cells.isEmpty()) {
-				switchToRandomEmpty(empty_cells, currentState, i, j, new EmptyCell(i, j));
-			} else {
-				nextGrid[i][j] = currentState;
-			}
+			checkAndMoveToEmpty(i, j, currentState, neighbors);
 		}
 
+		checkAndReproduce(i, j, currentState, neighbors, nextState);
+	}
+	
+	private void checkAndReproduce (int i, int j, WatorSimCell currentState, List<Cell> neighbors, Cell nextState) {
 		if(currentState.isReproducing()) {
 			currentState.resetReproduction();
 			ArrayList<EmptyCell> reprod_empty_cells = new ArrayList<>();
@@ -127,6 +120,21 @@ public class WatorSimGrid extends Grid{
 			if(!reprod_empty_cells.isEmpty()) {
 				switchToRandomEmpty(reprod_empty_cells, currentState, i, j, nextState);
 			}
+		}
+	}
+	
+	private void checkAndMoveToEmpty (int i, int j, WatorSimCell currentState, List<Cell> neighbors) {
+		ArrayList<EmptyCell> empty_cells = new ArrayList<>();
+		for(Cell cell:neighbors) {
+			if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied()) {
+				empty_cells.add((EmptyCell) cell);
+			}
+		}
+
+		if(!empty_cells.isEmpty()) {
+			switchToRandomEmpty(empty_cells, currentState, i, j, new EmptyCell(i, j));
+		} else {
+			nextGrid[i][j] = currentState;
 		}
 	}
 
@@ -166,32 +174,9 @@ public class WatorSimGrid extends Grid{
 	 * @param nextState - next state of the cell
 	 */
 	private void updateFishCell (int i, int j, FishCell currentState, List<Cell> neighbors, Cell nextState) {
-		ArrayList<EmptyCell> empty_cells = new ArrayList<>();
-		for(Cell cell:neighbors) {
-			if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied()) {
-				empty_cells.add((EmptyCell) cell);
-			}
-		}
+		checkAndMoveToEmpty(i, j, currentState, neighbors);
 
-		if(!empty_cells.isEmpty()) {
-			switchToRandomEmpty(empty_cells, currentState, i, j, new EmptyCell(i, j));
-		} else {
-			nextGrid[i][j] = currentState;
-		}
-
-		if(currentState.isReproducing()) {
-			currentState.resetReproduction();
-			ArrayList<EmptyCell> reprod_empty_cells = new ArrayList<>();
-			for(Cell cell:neighbors) {
-				if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied()) {
-					reprod_empty_cells.add((EmptyCell) cell);
-				}
-			}
-
-			if(!reprod_empty_cells.isEmpty()) {
-				switchToRandomEmpty(reprod_empty_cells, currentState, i, j, nextState);
-			}
-		}
+		checkAndReproduce(i, j, currentState, neighbors, nextState);
 	}
 
 	/**

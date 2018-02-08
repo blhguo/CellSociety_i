@@ -73,16 +73,18 @@ public class FishCell extends WatorSimCell{
 		this.isEaten = isEaten;
 	}
 
-	/**
-	 * @return boolean value if the fish is reproducing
+	/* (non-Javadoc)
+	 * @see cell.watorsim.WatorSimCell#isReproducing()
 	 */
+	@Override
 	public boolean isReproducing() {
 		return isReproducing;
 	}
 
-	/**
-	 * Resets reproducing values (for use after a fish cell has reproduced)
+	/* (non-Javadoc)
+	 * @see cell.watorsim.WatorSimCell#resetReproduction()
 	 */
+	@Override
 	public void resetReproduction() {
 		this.reproduction_time = 0;
 		this.isReproducing = false;
