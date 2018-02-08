@@ -41,6 +41,6 @@ public class AliveCell extends GOLSimCell{
 	 */
 	@Override
 	protected void setDisplayColor() {
-		this.DISPLAYCOLOR = CELLCOLOR;
+		this.display_color = CELLCOLOR;
 	}
 }

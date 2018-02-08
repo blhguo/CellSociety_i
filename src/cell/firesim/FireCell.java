@@ -32,18 +32,10 @@ public class FireCell extends FireSimCell{
 	}
 	
 	/* (non-Javadoc)
-	 * @see cell.firesim.FireSimCell#isBurning()
-	 */
-	@Override
-	public boolean isBurning() {
-		return true;
-	}
-	
-	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */
 	@Override
 	protected void setDisplayColor() {
-		this.DISPLAYCOLOR = CELLCOLOR;
+		this.display_color = CELLCOLOR;
 	}
 }

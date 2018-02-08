@@ -30,9 +30,8 @@ public class TreeCell extends FireSimCell{
 	public Cell nextState(ArrayList<Cell> neighbors) {
 		boolean neighborBurning = false;
 		for(Cell cell:neighbors) {
-			if(cell instanceof FireSimCell)
-				if(((FireSimCell) cell).isBurning())
-					neighborBurning = true;
+			if(cell instanceof FireCell)
+				neighborBurning = true;
 		}
 		double prob = probCatch;
 		if (Math.random() <= probLightning)
@@ -43,18 +42,10 @@ public class TreeCell extends FireSimCell{
 	}
 	
 	/* (non-Javadoc)
-	 * @see cell.firesim.FireSimCell#isBurning()
-	 */
-	@Override
-	public boolean isBurning() {
-		return false;
-	}
-	
-	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */
 	@Override
 	protected void setDisplayColor() {
-		this.DISPLAYCOLOR = CELLCOLOR;
+		this.display_color = CELLCOLOR;
 	}
 }

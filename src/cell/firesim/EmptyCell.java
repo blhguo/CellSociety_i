@@ -34,20 +34,12 @@ public class EmptyCell extends FireSimCell{
 			return new TreeCell(probCatch, probLightning, probGrow);
 		return this;
 	}
-	
-	/* (non-Javadoc)
-	 * @see cell.firesim.FireSimCell#isBurning()
-	 */
-	@Override
-	public boolean isBurning() {
-		return false;
-	}
 
 	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */
 	@Override
 	protected void setDisplayColor() {
-		this.DISPLAYCOLOR = CELLCOLOR;
+		this.display_color = CELLCOLOR;
 	}
 }
