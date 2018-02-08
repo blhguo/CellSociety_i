@@ -57,8 +57,9 @@ public class SharkCell extends WatorSimCell{
 		reproduction_time++;
 		current_energy--;
 		
-		if (current_energy <= 0)
+		if (current_energy <= 0) {
 			return new EmptyCell(this.getX(), this.getY());
+		}
 		
 		if (reproduction_time >= reproduction_threshold) {
 			this.isReproducing = true;

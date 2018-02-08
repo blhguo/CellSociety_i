@@ -26,14 +26,17 @@ public class AliveCell extends GOLSimCell{
 	public Cell nextState(List<Cell> neighbors) {
 		int neighbors_alive = 0;
 		for(Cell cell:neighbors) {
-			if (cell instanceof AliveCell)
+			if (cell instanceof AliveCell) {
 				neighbors_alive++;
+			}
 		}
 		
-		if (neighbors_alive == 2 || neighbors_alive == 3)
+		if (neighbors_alive == 2 || neighbors_alive == 3) {
 			return this;
-		else //if (neighbors_alive < 2 || neighbors_alive > 3)
+		}
+		else { //if (neighbors_alive < 2 || neighbors_alive > 3)
 			return new DeadCell();
+		}
 	}
 	
 	/* (non-Javadoc)
