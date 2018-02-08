@@ -39,18 +39,7 @@ public class GOLSimGrid extends Grid{
 	 */
 	@Override
 	protected void addNeighbors(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-1,j)) {
-			neighbors.add(grid[i-1][j]);
-		}
-		if (inGrid(i+1,j)) {
-			neighbors.add(grid[i+1][j]);
-		}
-		if (inGrid(i,j-1)) {
-			neighbors.add(grid[i][j-1]);
-		}
-		if (inGrid(i,j+1)) {
-			neighbors.add(grid[i][j+1]);
-		}
+		super.addNeighbors(neighbors, grid, i, j);
 		if (inGrid(i-1,j-1)) {
 			neighbors.add(grid[i-1][j-1]);
 		}
