@@ -14,16 +14,6 @@ public abstract class WatorSimCell extends Cell{
 	private int myY;
 	
 	/**
-	 * @return boolean value if the cell is reproducing
-	 */
-	public abstract boolean isReproducing();
-	
-	/**
-	 * Resets reproducing values (for use after a cell has reproduced)
-	 */
-	public abstract void resetReproduction();
-
-	/**
 	 * Creates a new Wator simulation cell.
 	 * @param x - x location of cell in grid
 	 * @param y - y location of cell in grid
@@ -32,6 +22,16 @@ public abstract class WatorSimCell extends Cell{
 		this.myX = x;
 		this.myY = y;
 	}
+	
+	/**
+	 * @return boolean value if the cell is reproducing
+	 */
+	public abstract boolean isReproducing();
+	
+	/**
+	 * Resets reproducing values (for use after a cell has reproduced)
+	 */
+	public abstract void resetReproduction();
 
 	/**
 	 * @return x location of cell in grid

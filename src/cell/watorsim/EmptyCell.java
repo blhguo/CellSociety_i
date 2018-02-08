@@ -78,6 +78,7 @@ public class EmptyCell extends WatorSimCell{
 	 * @see cell.watorsim.WatorSimCell#resetReproduction()
 	 */
 	@Override
-	public void resetReproduction() {
+	public void resetReproduction() throws UnsupportedOperationException{
+		//this cell never reproduces
 	}
 }
