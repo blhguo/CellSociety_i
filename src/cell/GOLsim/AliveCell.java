@@ -1,6 +1,6 @@
 package cell.GOLsim;
 
-import java.util.ArrayList;
+import java.util.List;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
@@ -20,10 +20,10 @@ public class AliveCell extends GOLSimCell{
 	}
 
 	/* (non-Javadoc)
-	 * @see cell.Cell#nextState(java.util.ArrayList)
+	 * @see cell.Cell#nextState(java.util.List)
 	 */
 	@Override
-	public Cell nextState(ArrayList<Cell> neighbors) {
+	public Cell nextState(List<Cell> neighbors) {
 		int neighbors_alive = 0;
 		for(Cell cell:neighbors) {
 			if (cell instanceof AliveCell)

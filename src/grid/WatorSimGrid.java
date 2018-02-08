@@ -1,6 +1,7 @@
 package grid;
 
 import java.util.ArrayList;
+import java.util.List;
 import cell.Cell;
 import cell.watorsim.EmptyCell;
 import cell.watorsim.FishCell;
@@ -89,7 +90,7 @@ public class WatorSimGrid extends Grid{
 	 * @param neighbors - neighbors of the cell
 	 * @param nextState - next state of the cell
 	 */
-	private void updateSharkCell (int i, int j, SharkCell currentState, ArrayList<Cell> neighbors, Cell nextState) {
+	private void updateSharkCell (int i, int j, SharkCell currentState, List<Cell> neighbors, Cell nextState) {
 		ArrayList<FishCell> fish_cells = new ArrayList<FishCell>();
 		for(Cell cell:neighbors)
 			if ((cell instanceof FishCell) && !((FishCell) cell).isEaten())
@@ -131,7 +132,7 @@ public class WatorSimGrid extends Grid{
 	 * @param j - y location of cell in grid
 	 * @param nextState - next state of shark cell
 	 */
-	private void switchToRandomFish(ArrayList<FishCell> fish_cells, SharkCell currentState, int i, int j, Cell nextState) {
+	private void switchToRandomFish(List<FishCell> fish_cells, SharkCell currentState, int i, int j, Cell nextState) {
 		int random_number = (int) Math.random() * fish_cells.size();
 		
 		int newX = fish_cells.get(random_number).getX();
@@ -158,7 +159,7 @@ public class WatorSimGrid extends Grid{
 	 * @param neighbors - neighbors of the cell
 	 * @param nextState - next state of the cell
 	 */
-	private void updateFishCell (int i, int j, FishCell currentState, ArrayList<Cell> neighbors, Cell nextState) {
+	private void updateFishCell (int i, int j, FishCell currentState, List<Cell> neighbors, Cell nextState) {
 		ArrayList<EmptyCell> empty_cells = new ArrayList<EmptyCell>();
 		for(Cell cell:neighbors)
 			if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied())
@@ -191,7 +192,7 @@ public class WatorSimGrid extends Grid{
 	 * @param j - y location of cell in grid
 	 * @param nextState - next state of cell
 	 */
-	private void switchToRandomEmpty(ArrayList<EmptyCell> empty_cells, Cell currentState, int i, int j, Cell nextState) {
+	private void switchToRandomEmpty(List<EmptyCell> empty_cells, Cell currentState, int i, int j, Cell nextState) {
 		int random_number = (int) Math.random() * empty_cells.size();
 		
 		int newX = empty_cells.get(random_number).getX();

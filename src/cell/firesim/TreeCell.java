@@ -1,6 +1,6 @@
 package cell.firesim;
 
-import java.util.ArrayList;
+import java.util.List;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
@@ -24,10 +24,10 @@ public class TreeCell extends FireSimCell{
 	}
 
 	/* (non-Javadoc)
-	 * @see cell.Cell#nextState(java.util.ArrayList)
+	 * @see cell.Cell#nextState(java.util.List)
 	 */
 	@Override
-	public Cell nextState(ArrayList<Cell> neighbors) {
+	public Cell nextState(List<Cell> neighbors) {
 		boolean neighborBurning = false;
 		for(Cell cell:neighbors) {
 			if(cell instanceof FireCell)
