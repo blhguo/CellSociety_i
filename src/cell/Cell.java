@@ -6,11 +6,10 @@ import javafx.scene.paint.Color;
 /**
  * @author Yashas Manjunatha
  * This is an abstract class for cells. To create a new cell type, create a subclass of this.
- * Be sure to define the DISPLAYCOLOR parameter in each subclass.
  * 
  */
 public abstract class Cell {
-	protected Color DISPLAYCOLOR;
+	protected Color display_color;
 	
 	/**
 	 * Used to get the next state information of a cell based on rules applied
@@ -30,6 +29,6 @@ public abstract class Cell {
 	 * @return - The display color of the cell.
 	 */
 	public Color getDisplayColor() {
-		return DISPLAYCOLOR;
+		return display_color;
 	}
 }

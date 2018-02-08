@@ -24,10 +24,4 @@ public abstract class FireSimCell extends Cell{
 		probLightning = pLight;
 		probGrow = pGrow;
 	}
-	
-	/**
-	 * Determines whether a cell is on fire.
-	 * @return boolean value if cell is on fire
-	 */
-	public abstract boolean isBurning();
 }
