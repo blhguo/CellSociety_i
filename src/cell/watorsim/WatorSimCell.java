@@ -12,6 +12,16 @@ import cell.Cell;
 public abstract class WatorSimCell extends Cell{
 	private int myX;
 	private int myY;
+	
+	/**
+	 * @return boolean value if the cell is reproducing
+	 */
+	public abstract boolean isReproducing();
+	
+	/**
+	 * Resets reproducing values (for use after a cell has reproduced)
+	 */
+	public abstract void resetReproduction();
 
 	/**
 	 * Creates a new Wator simulation cell.

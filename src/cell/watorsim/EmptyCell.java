@@ -65,4 +65,19 @@ public class EmptyCell extends WatorSimCell{
 	protected void setDisplayColor() {
 		this.display_color = CELLCOLOR;
 	}
+
+	/* (non-Javadoc)
+	 * @see cell.watorsim.WatorSimCell#isReproducing()
+	 */
+	@Override
+	public boolean isReproducing() {
+		return false;
+	}
+
+	/* (non-Javadoc)
+	 * @see cell.watorsim.WatorSimCell#resetReproduction()
+	 */
+	@Override
+	public void resetReproduction() {
+	}
 }

@@ -76,16 +76,18 @@ public class SharkCell extends WatorSimCell{
 		this.current_energy += this.gained_energy;
 	}
 
-	/**
-	 * @return boolean value if the shark is reproducing
+	/* (non-Javadoc)
+	 * @see cell.watorsim.WatorSimCell#isReproducing()
 	 */
+	@Override
 	public boolean isReproducing() {
 		return isReproducing;
 	}
 
-	/**
-	 * Resets reproducing values (for use after a shark cell has reproduced)
+	/* (non-Javadoc)
+	 * @see cell.watorsim.WatorSimCell#resetReproduction()
 	 */
+	@Override
 	public void resetReproduction() {
 		this.reproduction_time = 0;
 		this.isReproducing = false;
