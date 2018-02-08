@@ -1,6 +1,7 @@
 package cell;
 
-import java.util.ArrayList;
+import java.util.List;
+
 import javafx.scene.paint.Color;
 
 /**
@@ -17,7 +18,7 @@ public abstract class Cell {
 	 * @param neighbors - List of all neighboring cells.
 	 * @return - A cell with the next state information.
 	 */
-	public abstract Cell nextState (ArrayList<Cell> neighbors);
+	public abstract Cell nextState (List<Cell> neighbors);
 	
 	/**
 	 * Sets the display color of the cell.

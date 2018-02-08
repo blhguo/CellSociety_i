@@ -1,6 +1,6 @@
 package cell.segregation;
 
-import java.util.ArrayList;
+import java.util.List;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
@@ -24,10 +24,10 @@ public class OCell extends SegregationSimCell{
 	}
 
 	/* (non-Javadoc)
-	 * @see cell.Cell#nextState(java.util.ArrayList)
+	 * @see cell.Cell#nextState(java.util.List)
 	 */
 	@Override
-	public Cell nextState(ArrayList<Cell> neighbors) {
+	public Cell nextState(List<Cell> neighbors) {
 		double ocells = 0;
 		double total = 0;
 		for (Cell cell:neighbors) {

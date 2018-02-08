@@ -1,6 +1,7 @@
 package grid;
 
 import java.util.ArrayList;
+import java.util.List;
 import cell.Cell;
 import cell.segregation.EmptyCell;
 import cell.segregation.OCell;
@@ -82,10 +83,10 @@ public class SegregationSimGrid extends Grid{
 	}
 	
 	/* (non-Javadoc)
-	 * @see grid.Grid#addNeighbors(java.util.ArrayList, cell.Cell[][], int, int)
+	 * @see grid.Grid#addNeighbors(java.util.List, cell.Cell[][], int, int)
 	 */
 	@Override
-	protected void addNeighbors(ArrayList<Cell> neighbors, Cell[][] grid, int i, int j) {
+	protected void addNeighbors(List<Cell> neighbors, Cell[][] grid, int i, int j) {
 		if (inGrid(i-1,j))
 			neighbors.add(grid[i-1][j]);
 		if (inGrid(i+1,j))

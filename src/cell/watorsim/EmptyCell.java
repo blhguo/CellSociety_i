@@ -1,6 +1,6 @@
 package cell.watorsim;
 
-import java.util.ArrayList;
+import java.util.List;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
@@ -36,10 +36,10 @@ public class EmptyCell extends WatorSimCell{
 	}
 	
 	/* (non-Javadoc)
-	 * @see cell.Cell#nextState(java.util.ArrayList)
+	 * @see cell.Cell#nextState(java.util.List)
 	 */
 	@Override
-	public Cell nextState(ArrayList<Cell> neighbors) {
+	public Cell nextState(List<Cell> neighbors) {
 		return this;
 	}
 
