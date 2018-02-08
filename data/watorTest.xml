@@ -45,12 +45,12 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>0</x>
 		<y>4</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -63,12 +63,12 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>0</x>
 		<y>6</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -81,12 +81,12 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>0</x>
 		<y>8</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
@@ -108,21 +108,21 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>1</x>
 		<y>1</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>1</x>
 		<y>2</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -135,12 +135,12 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>1</x>
 		<y>4</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
@@ -180,21 +180,21 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>1</x>
 		<y>9</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
-	</cell>
-
-	<cell>
-		<type>shark</type>
-		<x>2</x>
-		<y>0</y>
 		<reproductionThreshold>10</reproductionThreshold>
 		<gainedEnergy>5</gainedEnergy>
 		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>2</x>
+		<y>0</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -207,30 +207,30 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>2</x>
 		<y>2</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
-	</cell>
-
-	<cell>
-		<type>fish</type>
-		<x>2</x>
-		<y>3</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
 		<type>shark</type>
 		<x>2</x>
-		<y>4</y>
+		<y>3</y>
 		<reproductionThreshold>10</reproductionThreshold>
 		<gainedEnergy>5</gainedEnergy>
 		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>2</x>
+		<y>4</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -243,21 +243,21 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>empty</type>
 		<x>2</x>
 		<y>6</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>0</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>2</x>
 		<y>7</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
@@ -279,21 +279,21 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>3</x>
 		<y>0</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>3</x>
 		<y>1</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -315,12 +315,12 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>3</x>
 		<y>4</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -333,12 +333,12 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>3</x>
 		<y>6</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
@@ -351,12 +351,12 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>3</x>
 		<y>8</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -369,12 +369,12 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>4</x>
 		<y>0</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -387,12 +387,12 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>4</x>
 		<y>2</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -405,12 +405,12 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>4</x>
 		<y>4</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -432,12 +432,12 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>4</x>
 		<y>7</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
@@ -459,21 +459,21 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>5</x>
 		<y>0</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>5</x>
 		<y>1</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
@@ -504,30 +504,30 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>5</x>
 		<y>5</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>5</x>
 		<y>6</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>5</x>
 		<y>7</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -576,18 +576,9 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
-		<x>6</x>
-		<y>3</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
-	</cell>
-
-	<cell>
 		<type>fish</type>
 		<x>6</x>
-		<y>4</y>
+		<y>3</y>
 		<reproductionThreshold>5</reproductionThreshold>
 		<gainedEnergy>0</gainedEnergy>
 		<energy>0</energy>
@@ -596,10 +587,19 @@
 	<cell>
 		<type>shark</type>
 		<x>6</x>
-		<y>5</y>
+		<y>4</y>
 		<reproductionThreshold>10</reproductionThreshold>
 		<gainedEnergy>5</gainedEnergy>
 		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>6</x>
+		<y>5</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -621,9 +621,126 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>shark</type>
 		<x>6</x>
 		<y>8</y>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>shark</type>
+		<x>6</x>
+		<y>9</y>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>7</x>
+		<y>0</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>7</x>
+		<y>1</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>7</x>
+		<y>2</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>7</x>
+		<y>3</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
+	</cell>
+
+	<cell>
+		<type>shark</type>
+		<x>7</x>
+		<y>4</y>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>shark</type>
+		<x>7</x>
+		<y>5</y>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>shark</type>
+		<x>7</x>
+		<y>6</y>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>shark</type>
+		<x>7</x>
+		<y>7</y>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>7</x>
+		<y>8</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
+	</cell>
+
+	<cell>
+		<type>shark</type>
+		<x>7</x>
+		<y>9</y>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>8</x>
+		<y>0</y>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
+	</cell>
+
+	<cell>
+		<type>fish</type>
+		<x>8</x>
+		<y>1</y>
 		<reproductionThreshold>5</reproductionThreshold>
 		<gainedEnergy>0</gainedEnergy>
 		<energy>0</energy>
@@ -631,43 +748,16 @@
 
 	<cell>
 		<type>empty</type>
-		<x>6</x>
-		<y>9</y>
+		<x>8</x>
+		<y>2</y>
 		<reproductionThreshold>0</reproductionThreshold>
 		<gainedEnergy>0</gainedEnergy>
 		<energy>0</energy>
 	</cell>
 
 	<cell>
-		<type>fish</type>
-		<x>7</x>
-		<y>0</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
-	</cell>
-
-	<cell>
 		<type>shark</type>
-		<x>7</x>
-		<y>1</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
-	</cell>
-
-	<cell>
-		<type>shark</type>
-		<x>7</x>
-		<y>2</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
-	</cell>
-
-	<cell>
-		<type>shark</type>
-		<x>7</x>
+		<x>8</x>
 		<y>3</y>
 		<reproductionThreshold>10</reproductionThreshold>
 		<gainedEnergy>5</gainedEnergy>
@@ -676,7 +766,7 @@
 
 	<cell>
 		<type>shark</type>
-		<x>7</x>
+		<x>8</x>
 		<y>4</y>
 		<reproductionThreshold>10</reproductionThreshold>
 		<gainedEnergy>5</gainedEnergy>
@@ -684,26 +774,26 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
-		<x>7</x>
+		<type>shark</type>
+		<x>8</x>
 		<y>5</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
-		<type>fish</type>
-		<x>7</x>
+		<type>shark</type>
+		<x>8</x>
 		<y>6</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 	<cell>
 		<type>fish</type>
-		<x>7</x>
+		<x>8</x>
 		<y>7</y>
 		<reproductionThreshold>5</reproductionThreshold>
 		<gainedEnergy>0</gainedEnergy>
@@ -711,27 +801,9 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
-		<x>7</x>
-		<y>8</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
-	</cell>
-
-	<cell>
-		<type>shark</type>
-		<x>7</x>
-		<y>9</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
-	</cell>
-
-	<cell>
 		<type>fish</type>
 		<x>8</x>
-		<y>0</y>
+		<y>8</y>
 		<reproductionThreshold>5</reproductionThreshold>
 		<gainedEnergy>0</gainedEnergy>
 		<energy>0</energy>
@@ -740,34 +812,7 @@
 	<cell>
 		<type>shark</type>
 		<x>8</x>
-		<y>1</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
-	</cell>
-
-	<cell>
-		<type>shark</type>
-		<x>8</x>
-		<y>2</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
-	</cell>
-
-	<cell>
-		<type>shark</type>
-		<x>8</x>
-		<y>3</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
-	</cell>
-
-	<cell>
-		<type>shark</type>
-		<x>8</x>
-		<y>4</y>
+		<y>9</y>
 		<reproductionThreshold>10</reproductionThreshold>
 		<gainedEnergy>5</gainedEnergy>
 		<energy>5</energy>
@@ -775,56 +820,11 @@
 
 	<cell>
 		<type>empty</type>
-		<x>8</x>
-		<y>5</y>
+		<x>9</x>
+		<y>0</y>
 		<reproductionThreshold>0</reproductionThreshold>
 		<gainedEnergy>0</gainedEnergy>
 		<energy>0</energy>
-	</cell>
-
-	<cell>
-		<type>fish</type>
-		<x>8</x>
-		<y>6</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
-	</cell>
-
-	<cell>
-		<type>fish</type>
-		<x>8</x>
-		<y>7</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
-	</cell>
-
-	<cell>
-		<type>shark</type>
-		<x>8</x>
-		<y>8</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
-	</cell>
-
-	<cell>
-		<type>fish</type>
-		<x>8</x>
-		<y>9</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
-	</cell>
-
-	<cell>
-		<type>shark</type>
-		<x>9</x>
-		<y>0</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
 	</cell>
 
 	<cell>
@@ -837,10 +837,10 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
+		<type>empty</type>
 		<x>9</x>
 		<y>2</y>
-		<reproductionThreshold>5</reproductionThreshold>
+		<reproductionThreshold>0</reproductionThreshold>
 		<gainedEnergy>0</gainedEnergy>
 		<energy>0</energy>
 	</cell>
@@ -855,21 +855,21 @@
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>fish</type>
 		<x>9</x>
 		<y>4</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>5</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
-		<type>shark</type>
+		<type>empty</type>
 		<x>9</x>
 		<y>5</y>
-		<reproductionThreshold>10</reproductionThreshold>
-		<gainedEnergy>5</gainedEnergy>
-		<energy>5</energy>
+		<reproductionThreshold>0</reproductionThreshold>
+		<gainedEnergy>0</gainedEnergy>
+		<energy>0</energy>
 	</cell>
 
 	<cell>
@@ -882,18 +882,9 @@
 	</cell>
 
 	<cell>
-		<type>fish</type>
-		<x>9</x>
-		<y>7</y>
-		<reproductionThreshold>5</reproductionThreshold>
-		<gainedEnergy>0</gainedEnergy>
-		<energy>0</energy>
-	</cell>
-
-	<cell>
 		<type>shark</type>
 		<x>9</x>
-		<y>8</y>
+		<y>7</y>
 		<reproductionThreshold>10</reproductionThreshold>
 		<gainedEnergy>5</gainedEnergy>
 		<energy>5</energy>
@@ -902,10 +893,19 @@
 	<cell>
 		<type>fish</type>
 		<x>9</x>
-		<y>9</y>
+		<y>8</y>
 		<reproductionThreshold>5</reproductionThreshold>
 		<gainedEnergy>0</gainedEnergy>
 		<energy>0</energy>
+	</cell>
+
+	<cell>
+		<type>shark</type>
+		<x>9</x>
+		<y>9</y>
+		<reproductionThreshold>10</reproductionThreshold>
+		<gainedEnergy>5</gainedEnergy>
+		<energy>5</energy>
 	</cell>
 
 </simulation>

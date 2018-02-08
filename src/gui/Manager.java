@@ -83,6 +83,10 @@ public class Manager extends Application {
 	public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	public static final String DEFAULT_RESOURCE_FILE = "defaultText";
 	private ResourceBundle myResources;
+	private static final String FileS = "FileS";
+	private static final String FileW = "FileW";
+	private static final String FileF = "FileF";
+	private static final String FileGOL = "FileGOL";
 	
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -163,13 +167,13 @@ public class Manager extends Application {
 	}
 	// Calls XML parser and stores the values from the parser
 	public void callXMLreader(String file){
-		if(file.equals(myResources.getString("FileS"))) {
+		if(file.equals(myResources.getString(FileS))) {
 			callSegXMLreader(file);
 		}
-		else if(file.equals(myResources.getString("FileW"))) {
+		else if(file.equals(myResources.getString(FileW))) {
 			callWatorXMLreader(file);
 		}
-		else if(file.equals(myResources.getString("FileF"))) {
+		else if(file.equals(myResources.getString(FileF))) {
 			callFireXMLreader(file);
 		}
 		else {
@@ -398,19 +402,19 @@ public class Manager extends Application {
 		fileChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {	
 				if((int) new_value == 0){
-					fileName = myResources.getString("FileGOL");
+					fileName = myResources.getString(FileGOL);
 					fileType = 0;
 				}
 				if((int) new_value == 1){
-					fileName = myResources.getString("FileS");
+					fileName = myResources.getString(FileS);
 					fileType = 1;
 				}
 				if((int) new_value == 2){
-					fileName = myResources.getString("FileW");
+					fileName = myResources.getString(FileW);
 					fileType = 2;
 				}
 				if((int) new_value == 3){
-					fileName = myResources.getString("FileF");
+					fileName = myResources.getString(FileF);
 					fileType = 3;
 				}
 			}
