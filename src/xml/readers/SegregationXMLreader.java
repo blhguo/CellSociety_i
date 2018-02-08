@@ -68,7 +68,7 @@ public class SegregationXMLreader extends XMLreader {
 			typeArray = fillEmpty(typeArray);
 			return new SegregationSimSetup(simSetup, typeArray, thresholdArray);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}	
 		return null;
 	}

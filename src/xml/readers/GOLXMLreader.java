@@ -35,7 +35,6 @@ public class GOLXMLreader extends XMLreader{
 
 			NodeList nList = doc.getElementsByTagName("cell");
 			String[][] typeArray = new String[numCellsX][numCellsY];
-			double[][] thresholdArray = new double[numCellsX][numCellsY];
 
 			for (int temp = 0; temp < nList.getLength(); temp++) {
 				Node nNode = nList.item(temp);
