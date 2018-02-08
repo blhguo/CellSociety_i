@@ -30,8 +30,9 @@ public class EmptyCell extends FireSimCell{
 	 */
 	@Override
 	public Cell nextState(List<Cell> neighbors) {
-		if (Math.random() <= probGrow)
+		if (Math.random() <= probGrow) {
 			return new TreeCell(probCatch, probLightning, probGrow);
+		}
 		return this;
 	}
 

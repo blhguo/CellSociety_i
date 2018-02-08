@@ -52,7 +52,7 @@ public class WatorSimGrid extends Grid{
 		nextGrid = new Cell[this.myGrid.length][this.myGrid[0].length];
 		for (int i = 0; i < nextGrid.length; i++) {
 			for (int j = 0; j < nextGrid[0].length; j++) {
-				ArrayList<Cell> neighbors = new ArrayList<Cell>();
+				ArrayList<Cell> neighbors = new ArrayList<>();
 				this.addNeighbors(neighbors, myGrid, i , j);
 				Cell currentState = myGrid[i][j];
 				//Cell nextState = myGrid[i][j].nextState(neighbors);
@@ -91,18 +91,22 @@ public class WatorSimGrid extends Grid{
 	 * @param nextState - next state of the cell
 	 */
 	private void updateSharkCell (int i, int j, SharkCell currentState, List<Cell> neighbors, Cell nextState) {
-		ArrayList<FishCell> fish_cells = new ArrayList<FishCell>();
-		for(Cell cell:neighbors)
-			if ((cell instanceof FishCell) && !((FishCell) cell).isEaten())
+		ArrayList<FishCell> fish_cells = new ArrayList<>();
+		for(Cell cell:neighbors) {
+			if ((cell instanceof FishCell) && !((FishCell) cell).isEaten()) {
 				fish_cells.add((FishCell) cell);
+			}
+		}
 		
 		if(fish_cells.size() != 0) {
 			switchToRandomFish(fish_cells, currentState, i, j, new EmptyCell(i, j));
 		} else {
-			ArrayList<EmptyCell> empty_cells = new ArrayList<EmptyCell>();
-			for(Cell cell:neighbors)
-				if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied())
+			ArrayList<EmptyCell> empty_cells = new ArrayList<>();
+			for(Cell cell:neighbors) {
+				if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied()) {
 					empty_cells.add((EmptyCell) cell);
+				}
+			}
 			
 			if(empty_cells.size() != 0) {
 				switchToRandomEmpty(empty_cells, currentState, i, j, new EmptyCell(i, j));
@@ -113,10 +117,12 @@ public class WatorSimGrid extends Grid{
 		
 		if(currentState.isReproducing()) {
 			currentState.resetReproduction();
-			ArrayList<EmptyCell> reprod_empty_cells = new ArrayList<EmptyCell>();
-			for(Cell cell:neighbors)
-				if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied())
+			ArrayList<EmptyCell> reprod_empty_cells = new ArrayList<>();
+			for(Cell cell:neighbors) {
+				if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied()) {
 					reprod_empty_cells.add((EmptyCell) cell);
+				}
+			}
 			
 			if(reprod_empty_cells.size() != 0) {
 				switchToRandomEmpty(reprod_empty_cells, currentState, i, j, nextState);
@@ -160,10 +166,12 @@ public class WatorSimGrid extends Grid{
 	 * @param nextState - next state of the cell
 	 */
 	private void updateFishCell (int i, int j, FishCell currentState, List<Cell> neighbors, Cell nextState) {
-		ArrayList<EmptyCell> empty_cells = new ArrayList<EmptyCell>();
-		for(Cell cell:neighbors)
-			if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied())
+		ArrayList<EmptyCell> empty_cells = new ArrayList<>();
+		for(Cell cell:neighbors) {
+			if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied()) {
 				empty_cells.add((EmptyCell) cell);
+			}
+		}
 		
 		if(empty_cells.size() != 0) {
 			switchToRandomEmpty(empty_cells, currentState, i, j, new EmptyCell(i, j));
@@ -173,10 +181,12 @@ public class WatorSimGrid extends Grid{
 		
 		if(currentState.isReproducing()) {
 			currentState.resetReproduction();
-			ArrayList<EmptyCell> reprod_empty_cells = new ArrayList<EmptyCell>();
-			for(Cell cell:neighbors)
-				if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied())
+			ArrayList<EmptyCell> reprod_empty_cells = new ArrayList<>();
+			for(Cell cell:neighbors) {
+				if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied()) {
 					reprod_empty_cells.add((EmptyCell) cell);
+				}
+			}
 			
 			if(reprod_empty_cells.size() != 0) {
 				switchToRandomEmpty(reprod_empty_cells, currentState, i, j, nextState);
@@ -199,12 +209,15 @@ public class WatorSimGrid extends Grid{
 		int newY = empty_cells.get(random_number).getY();
 		
 		WatorSimCell movedCurrentState;
-		if (currentState instanceof FishCell)
+		if (currentState instanceof FishCell) {
 			movedCurrentState = new FishCell ((FishCell) currentState);
-		else if (currentState instanceof SharkCell)
+		}
+		else if (currentState instanceof SharkCell) {
 			movedCurrentState = new SharkCell ((SharkCell) currentState);
-		else
+		}
+		else {
 			movedCurrentState = new EmptyCell ((EmptyCell) currentState);
+		}
 		
 		nextGrid[newX][newY] = movedCurrentState;
 		movedCurrentState.setX(newX);

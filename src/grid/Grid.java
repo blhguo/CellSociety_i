@@ -50,7 +50,7 @@ public abstract class Grid {
 		Cell[][] nextGrid = new Cell[myWidth][myHeight];
 		for (int i = 0; i < myWidth; i++) {
 			for (int j = 0; j < myHeight; j++) {
-				List<Cell> neighbors = new ArrayList<Cell>();
+				List<Cell> neighbors = new ArrayList<>();
 				this.addNeighbors(neighbors, myGrid, i , j);
 				nextGrid[i][j] = myGrid[i][j].nextState(neighbors);
 			}
@@ -67,14 +67,18 @@ public abstract class Grid {
 	 * @param j - y location of cell in grid
 	 */
 	protected void addNeighbors(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-1,j))
+		if (inGrid(i-1,j)) {
 			neighbors.add(grid[i-1][j]);
-		if (inGrid(i+1,j))
+		}
+		if (inGrid(i+1,j)) {
 			neighbors.add(grid[i+1][j]);
-		if (inGrid(i,j-1))
+		}
+		if (inGrid(i,j-1)) {
 			neighbors.add(grid[i][j-1]);
-		if (inGrid(i,j+1))
+		}
+		if (inGrid(i,j+1)) {
 			neighbors.add(grid[i][j+1]);
+		}
 	}
 	
 	/**
