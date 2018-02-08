@@ -34,6 +34,20 @@ public class SharkCell extends WatorSimCell{
 		this.gained_energy = gained_energy;
 		setDisplayColor();
 	}
+	
+	/**
+	 * Returns an instance of SharkCell by duplicating another instance of SharkCell
+	 * @param shark_cell - SharkCell to be duplicated
+	 */
+	public SharkCell(SharkCell shark_cell) {
+		super(shark_cell.getX(), shark_cell.getY());
+		this.reproduction_time = shark_cell.reproduction_time;
+		this.reproduction_threshold = shark_cell.reproduction_threshold;
+		this.current_energy = shark_cell.current_energy;
+		this.gained_energy = shark_cell.gained_energy;
+		this.isReproducing = shark_cell.isReproducing;
+		setDisplayColor();
+	}
 
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.ArrayList)
@@ -81,6 +95,6 @@ public class SharkCell extends WatorSimCell{
 	 */
 	@Override
 	protected void setDisplayColor() {
-		this.DISPLAYCOLOR = CELLCOLOR;
+		this.display_color = CELLCOLOR;
 	}
 }

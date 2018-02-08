@@ -30,6 +30,19 @@ public class FishCell extends WatorSimCell{
 		this.setEaten(false);
 		setDisplayColor();
 	}
+	
+	/**
+	 * Returns an instance of FishCell by duplicating another instance of FishCell
+	 * @param fish_cell - fish cell to be duplicated
+	 */
+	public FishCell(FishCell fish_cell) {
+		super(fish_cell.getX(), fish_cell.getY());
+		this.reproduction_time = fish_cell.reproduction_time;
+		this.reproduction_threshold = fish_cell.reproduction_threshold;
+		this.setEaten(fish_cell.isEaten);
+		this.isReproducing = fish_cell.isReproducing;
+		setDisplayColor();
+	}
 
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.ArrayList)
@@ -80,6 +93,6 @@ public class FishCell extends WatorSimCell{
 	 */
 	@Override
 	protected void setDisplayColor() {
-		this.DISPLAYCOLOR = CELLCOLOR;
+		this.display_color = CELLCOLOR;
 	}
 }

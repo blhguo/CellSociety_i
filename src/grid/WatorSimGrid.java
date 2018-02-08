@@ -77,13 +77,6 @@ public class WatorSimGrid extends Grid{
 			}
 		}
 		
-		for (int i = 0; i < nextGrid.length; i++) {
-			for (int j = 0; j < nextGrid[0].length; j++) {
-				if (nextGrid[i][j] == null)
-					nextGrid[i][j] = new EmptyCell(i, j);
-			}
-		}
-		
 		myGrid = nextGrid;
 		return nextGrid;
 	}
@@ -96,7 +89,7 @@ public class WatorSimGrid extends Grid{
 	 * @param neighbors - neighbors of the cell
 	 * @param nextState - next state of the cell
 	 */
-	public void updateSharkCell (int i, int j, SharkCell currentState, ArrayList<Cell> neighbors, Cell nextState) {
+	private void updateSharkCell (int i, int j, SharkCell currentState, ArrayList<Cell> neighbors, Cell nextState) {
 		ArrayList<FishCell> fish_cells = new ArrayList<FishCell>();
 		for(Cell cell:neighbors)
 			if ((cell instanceof FishCell) && !((FishCell) cell).isEaten())
@@ -144,10 +137,13 @@ public class WatorSimGrid extends Grid{
 		int newX = fish_cells.get(random_number).getX();
 		int newY = fish_cells.get(random_number).getY();
 		
-		currentState.gainEnergy();
-		nextGrid[newX][newY] = currentState;
-		currentState.setX(newX);
-		currentState.setY(newY);
+		SharkCell movedCurrentState = new SharkCell ((SharkCell) currentState);
+		
+		movedCurrentState.gainEnergy();
+		nextGrid[newX][newY] = movedCurrentState;
+		movedCurrentState.setX(newX);
+		movedCurrentState.setY(newY);
+		
 		fish_cells.get(random_number).setEaten(true);
 		//((FishCell) myGrid[newX][newY]).setEaten(true);
 		
@@ -162,7 +158,7 @@ public class WatorSimGrid extends Grid{
 	 * @param neighbors - neighbors of the cell
 	 * @param nextState - next state of the cell
 	 */
-	public void updateFishCell (int i, int j, FishCell currentState, ArrayList<Cell> neighbors, Cell nextState) {
+	private void updateFishCell (int i, int j, FishCell currentState, ArrayList<Cell> neighbors, Cell nextState) {
 		ArrayList<EmptyCell> empty_cells = new ArrayList<EmptyCell>();
 		for(Cell cell:neighbors)
 			if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied())
@@ -190,7 +186,7 @@ public class WatorSimGrid extends Grid{
 	/**
 	 * Switches cell with random neighboring empty cell
 	 * @param empty_cells - list of neighboring empty cells
-	 * @param currentState - current state of  cell
+	 * @param currentState - current state of cell
 	 * @param i - x location of cell in grid
 	 * @param j - y location of cell in grid
 	 * @param nextState - next state of cell
@@ -201,9 +197,18 @@ public class WatorSimGrid extends Grid{
 		int newX = empty_cells.get(random_number).getX();
 		int newY = empty_cells.get(random_number).getY();
 		
-		nextGrid[newX][newY] = currentState;
-		((WatorSimCell) currentState).setX(newX);
-		((WatorSimCell) currentState).setY(newY);
+		WatorSimCell movedCurrentState;
+		if (currentState instanceof FishCell)
+			movedCurrentState = new FishCell ((FishCell) currentState);
+		else if (currentState instanceof SharkCell)
+			movedCurrentState = new SharkCell ((SharkCell) currentState);
+		else
+			movedCurrentState = new EmptyCell ((EmptyCell) currentState);
+		
+		nextGrid[newX][newY] = movedCurrentState;
+		movedCurrentState.setX(newX);
+		movedCurrentState.setY(newY);
+		
 		empty_cells.get(random_number).setOccupied(true);
 		//((EmptyCell) myGrid[newX][newY]).setOccupied(true);
 		

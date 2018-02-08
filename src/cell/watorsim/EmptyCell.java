@@ -25,6 +25,16 @@ public class EmptyCell extends WatorSimCell{
 		setDisplayColor();
 	}
 	
+	/**
+	 * Returns an instance of EmptyCell by duplicating another instance of EmptyCell
+	 * @param empty_cell
+	 */
+	public EmptyCell(EmptyCell empty_cell) {
+		super(empty_cell.getX(), empty_cell.getY());
+		setOccupied(empty_cell.isOccupied);
+		setDisplayColor();
+	}
+	
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.ArrayList)
 	 */
@@ -53,6 +63,6 @@ public class EmptyCell extends WatorSimCell{
 	 */
 	@Override
 	protected void setDisplayColor() {
-		this.DISPLAYCOLOR = CELLCOLOR;
+		this.display_color = CELLCOLOR;
 	}
 }
