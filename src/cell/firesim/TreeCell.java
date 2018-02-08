@@ -30,14 +30,17 @@ public class TreeCell extends FireSimCell{
 	public Cell nextState(List<Cell> neighbors) {
 		boolean neighborBurning = false;
 		for(Cell cell:neighbors) {
-			if(cell instanceof FireCell)
+			if(cell instanceof FireCell) {
 				neighborBurning = true;
+			}
 		}
 		double prob = probCatch;
-		if (Math.random() <= probLightning)
+		if (Math.random() <= probLightning) {
 			prob *= probLightning;
-		if (neighborBurning && Math.random() <= prob)
+		}
+		if (neighborBurning && Math.random() <= prob) {
 			return new FireCell(probCatch, probLightning, probGrow);
+		}
 		return this;
 	}
 	

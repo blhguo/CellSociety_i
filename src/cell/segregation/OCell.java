@@ -35,8 +35,9 @@ public class OCell extends SegregationSimCell{
 				ocells++;
 				total++;
 			}
-			if (cell instanceof XCell)
+			if (cell instanceof XCell) {
 				total++;
+			}
 				
 		}
 		if (ocells/total < threshold) {
