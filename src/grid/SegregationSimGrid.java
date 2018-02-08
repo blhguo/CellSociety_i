@@ -13,6 +13,7 @@ import cell.segregation.XCell;
  * Extends the Grid class.
  */
 public class SegregationSimGrid extends Grid{
+	private Cell[][] nextGrid;
 
 	/**
 	 * Initializes a Grid for the Segregation Simulation
@@ -40,8 +41,6 @@ public class SegregationSimGrid extends Grid{
 		}
 	}
 
-
-	private Cell[][] nextGrid;
 	/* (non-Javadoc)
 	 * @see grid.Grid#updateGrid()
 	 */

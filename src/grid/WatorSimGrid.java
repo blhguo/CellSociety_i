@@ -14,6 +14,7 @@ import cell.watorsim.WatorSimCell;
  * Extends the Grid class.
  */
 public class WatorSimGrid extends Grid{
+	private Cell[][] nextGrid;
 
 	/**
 	 * Initializes a Grid for the Wator Simulation
@@ -43,7 +44,6 @@ public class WatorSimGrid extends Grid{
 		}
 	}
 
-	private Cell[][] nextGrid;
 	/* (non-Javadoc)
 	 * @see grid.Grid#updateGrid()
 	 */
@@ -98,7 +98,7 @@ public class WatorSimGrid extends Grid{
 			}
 		}
 
-		if(fish_cells.size() != 0) {
+		if(!fish_cells.isEmpty()) {
 			switchToRandomFish(fish_cells, currentState, i, j, new EmptyCell(i, j));
 		} else {
 			ArrayList<EmptyCell> empty_cells = new ArrayList<>();
@@ -108,7 +108,7 @@ public class WatorSimGrid extends Grid{
 				}
 			}
 
-			if(empty_cells.size() != 0) {
+			if(!empty_cells.isEmpty()) {
 				switchToRandomEmpty(empty_cells, currentState, i, j, new EmptyCell(i, j));
 			} else {
 				nextGrid[i][j] = currentState;
@@ -124,7 +124,7 @@ public class WatorSimGrid extends Grid{
 				}
 			}
 
-			if(reprod_empty_cells.size() != 0) {
+			if(!reprod_empty_cells.isEmpty()) {
 				switchToRandomEmpty(reprod_empty_cells, currentState, i, j, nextState);
 			}
 		}
@@ -173,7 +173,7 @@ public class WatorSimGrid extends Grid{
 			}
 		}
 
-		if(empty_cells.size() != 0) {
+		if(!empty_cells.isEmpty()) {
 			switchToRandomEmpty(empty_cells, currentState, i, j, new EmptyCell(i, j));
 		} else {
 			nextGrid[i][j] = currentState;
@@ -188,7 +188,7 @@ public class WatorSimGrid extends Grid{
 				}
 			}
 
-			if(reprod_empty_cells.size() != 0) {
+			if(!reprod_empty_cells.isEmpty()) {
 				switchToRandomEmpty(reprod_empty_cells, currentState, i, j, nextState);
 			}
 		}
