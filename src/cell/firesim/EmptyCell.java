@@ -23,15 +23,16 @@ public class EmptyCell extends FireSimCell{
 		super(pCatch, pLight, pGrow);
 		setDisplayColor();
 	}
-	
-	
+
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.List)
 	 */
 	@Override
 	public Cell nextState(List<Cell> neighbors) {
-		if (Math.random() <= probGrow)
+		if (Math.random() <= probGrow) {
 			return new TreeCell(probCatch, probLightning, probGrow);
+		}
 		return this;
 	}
 

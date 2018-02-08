@@ -13,7 +13,7 @@ import javafx.scene.paint.Color;
 public class OCell extends SegregationSimCell{
 	private static final Color CELLCOLOR = Color.ORANGE;
 	private double threshold;
-	
+
 	/**
 	 * Creates a new O cell.
 	 * @param t - satisfaction threshold
@@ -35,17 +35,18 @@ public class OCell extends SegregationSimCell{
 				ocells++;
 				total++;
 			}
-			if (cell instanceof XCell)
+			if (cell instanceof XCell) {
 				total++;
-				
+			}
+
 		}
 		if (ocells/total < threshold) {
 			return new EmptyCell();
 		}
-		
+
 		return this;
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */

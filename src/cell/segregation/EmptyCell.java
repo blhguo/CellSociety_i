@@ -20,7 +20,7 @@ public class EmptyCell extends SegregationSimCell{
 		isTaken = false;
 		setDisplayColor();
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.List)
 	 */
@@ -43,7 +43,7 @@ public class EmptyCell extends SegregationSimCell{
 	public void setTaken(boolean isTaken) {
 		this.isTaken = isTaken;
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */

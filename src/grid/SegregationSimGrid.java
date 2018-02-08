@@ -13,6 +13,7 @@ import cell.segregation.XCell;
  * Extends the Grid class.
  */
 public class SegregationSimGrid extends Grid{
+	private Cell[][] nextGrid;
 
 	/**
 	 * Initializes a Grid for the Segregation Simulation
@@ -26,22 +27,20 @@ public class SegregationSimGrid extends Grid{
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
-					case "x": 
-						this.myGrid[i][j] = new XCell(threshold[i][j]);
-						break;
-					case "o":
-						this.myGrid[i][j] = new OCell(threshold[i][j]);
-						break;
-					default: 
-						this.myGrid[i][j] = new EmptyCell();
-						break;
+				case "x": 
+					this.myGrid[i][j] = new XCell(threshold[i][j]);
+					break;
+				case "o":
+					this.myGrid[i][j] = new OCell(threshold[i][j]);
+					break;
+				default: 
+					this.myGrid[i][j] = new EmptyCell();
+					break;
 				}
 			}
 		}
 	}
-	
-	
-	private Cell[][] nextGrid;
+
 	/* (non-Javadoc)
 	 * @see grid.Grid#updateGrid()
 	 */
@@ -50,22 +49,24 @@ public class SegregationSimGrid extends Grid{
 		nextGrid = new Cell[this.myGrid.length][this.myGrid[0].length];
 		for (int i = 0; i < nextGrid.length; i++) {
 			for (int j = 0; j < nextGrid[0].length; j++) {
-				ArrayList<Cell> neighbors = new ArrayList<Cell>();
+				ArrayList<Cell> neighbors = new ArrayList<>();
 				this.addNeighbors(neighbors, myGrid, i , j);
 				Cell nextState = myGrid[i][j].nextState(neighbors);
-				if (!(nextState instanceof EmptyCell))
+				if (!(nextState instanceof EmptyCell)) {
 					nextGrid[i][j] = nextState;
+				}
 				else if (!(myGrid[i][j] instanceof EmptyCell)) {
 					placeInEmpty(myGrid[i][j]);
 					nextGrid[i][j] = nextState;
-				} else if (!((EmptyCell) myGrid[i][j]).isTaken())
+				} else if (!((EmptyCell) myGrid[i][j]).isTaken()) {
 					nextGrid[i][j] = nextState;
+				}
 			}
 		}
 		myGrid = nextGrid;
 		return nextGrid;
 	}
-	
+
 	/**
 	 * Places a cell in the first empty cell available
 	 * @param cell - cell to be placed
@@ -81,28 +82,24 @@ public class SegregationSimGrid extends Grid{
 			}
 		}		
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see grid.Grid#addNeighbors(java.util.List, cell.Cell[][], int, int)
 	 */
 	@Override
 	protected void addNeighbors(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-1,j))
-			neighbors.add(grid[i-1][j]);
-		if (inGrid(i+1,j))
-			neighbors.add(grid[i+1][j]);
-		if (inGrid(i,j-1))
-			neighbors.add(grid[i][j-1]);
-		if (inGrid(i,j+1))
-			neighbors.add(grid[i][j+1]);
-		if (inGrid(i-1,j-1))
+		super.addNeighbors(neighbors, grid, i, j);
+		if (inGrid(i-1,j-1)) {
 			neighbors.add(grid[i-1][j-1]);
-		if (inGrid(i+1,j+1))
+		}
+		if (inGrid(i+1,j+1)) {
 			neighbors.add(grid[i+1][j+1]);
-		if (inGrid(i+1,j-1))
+		}
+		if (inGrid(i+1,j-1)) {
 			neighbors.add(grid[i+1][j-1]);
-		if (inGrid(i-1,j+1))
+		}
+		if (inGrid(i-1,j+1)) {
 			neighbors.add(grid[i-1][j+1]);
+		}
 	}
-
 }

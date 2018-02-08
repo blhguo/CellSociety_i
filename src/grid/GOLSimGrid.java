@@ -23,37 +23,34 @@ public class GOLSimGrid extends Grid{
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
-					case "alive": 
-						this.myGrid[i][j] = new AliveCell();
-						break;
-					default: 
-						this.myGrid[i][j] = new DeadCell();
-						break;
+				case "alive": 
+					this.myGrid[i][j] = new AliveCell();
+					break;
+				default: 
+					this.myGrid[i][j] = new DeadCell();
+					break;
 				}
 			}
 		}
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see grid.Grid#addNeighbors(java.util.List, cell.Cell[][], int, int)
 	 */
 	@Override
 	protected void addNeighbors(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-1,j))
-			neighbors.add(grid[i-1][j]);
-		if (inGrid(i+1,j))
-			neighbors.add(grid[i+1][j]);
-		if (inGrid(i,j-1))
-			neighbors.add(grid[i][j-1]);
-		if (inGrid(i,j+1))
-			neighbors.add(grid[i][j+1]);
-		if (inGrid(i-1,j-1))
+		super.addNeighbors(neighbors, grid, i, j);
+		if (inGrid(i-1,j-1)) {
 			neighbors.add(grid[i-1][j-1]);
-		if (inGrid(i+1,j+1))
+		}
+		if (inGrid(i+1,j+1)) {
 			neighbors.add(grid[i+1][j+1]);
-		if (inGrid(i+1,j-1))
+		}
+		if (inGrid(i+1,j-1)) {
 			neighbors.add(grid[i+1][j-1]);
-		if (inGrid(i-1,j+1))
+		}
+		if (inGrid(i-1,j+1)) {
 			neighbors.add(grid[i-1][j+1]);
+		}
 	}
 }

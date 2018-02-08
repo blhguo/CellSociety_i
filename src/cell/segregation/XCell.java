@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 public class XCell extends SegregationSimCell{
 	private static final Color CELLCOLOR = Color.PINK;
 	private double threshold;
-	
+
 	/**
 	 * Creates a new X cell.
 	 * @param t - satisfaction threshold
@@ -34,17 +34,18 @@ public class XCell extends SegregationSimCell{
 				xcells++;
 				total++;
 			}
-			if (cell instanceof OCell)
+			if (cell instanceof OCell) {
 				total++;
-					
+			}
+
 		}
 		if (xcells/total < threshold) {
 			return new EmptyCell();
 		}
-		
+
 		return this;
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */
