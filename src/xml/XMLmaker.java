@@ -12,76 +12,50 @@ import java.util.Random;
  */
 
 public class XMLmaker {
-	private final static String gol = "game_of_life";
-	private final static String seg = "segregation";
-	private final static String wator = "wator";
-	private final static String fire =  "fire";
-	private final static String golTitle = "Game of Life";
-	private final static String segTitle = "Segregation";
-	private final static String watorTitle = "Wa-Tor World";
-	private final static String fireTitle =  "Fire";
-	private final static String golAuthor = "John Horton Conway";
-	private final static String segAuthor = "Thomas Schelling";
-	private final static String watorAuthor = "A.K. Dewdney";
-	private final static String fireAuthor =  "Angela B. Shiflet";
+	private final static String GOL = "game_of_life";
+	private final static String SEG = "segregation";
+	private final static String GOL_TITLE = "Game of Life";
+	private final static String SEG_TITLE = "Segregation";
+
+	private final static String GOL_AUTHOR = "John Horton Conway";
+	private final static String SEG_AUTHOR = "Thomas Schelling";
+
 
 	// CHANGE THIS
-	private final static String sim = wator;
-	private final static int gridx = 400;
-	private final static int gridy = 400;
-	private final static int cellx = 40;
-	private final static int celly = 40;
-	private static String title = "";
-	private static String author = "";
-	private final static String shape = "square";
+	protected final static int PROB = 999;
+
+	// INITIALIZED INSTANCE VARIABLES
+	private String title;
+	private String author;
+	protected PrintWriter writer;
+	protected int numCellsX;
+	protected int numCellsY;
+	private int gridx;
+	private int gridy;
+	private int cellx;
+	private int celly;
+	private String shape;
+	private String fileName;
 
 	// seg specific
-	private final static double xProb = 0.3;
-	private final static double oProb = 0.3;
-	private final static double threshold = 0.3;
+	private final static double PROB_X = 0.3;
+	private final static double PROB_O = 0.3;
+	private final static double THRESHOLD = 0.3;
 
-	// wator world specific
-	private final static double fishProp = 0.55;
-	private final static double sharkProp = 0.4;
-	private final static int rtShark = 10;
-	private final static int rtFish = 5;
-	private final static int eShark = 5;
-	private final static int eFish = 0;
-	private final static int geShark = 5;
-	private final static int geFish = 0;
+	public XMLmaker(String file, String sim, String t, String a, String s, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
+		title = t;
+		author = a;
+		shape = s;
+		gridx = gx;
+		gridy = gy;
+		cellx = cx;
+		celly = cy;
+		numCellsX = (int) gridx / cellx;
+		numCellsY = (int) gridy / celly;
+		fileName = "data/" + file + ".xml";
 
-	// fire specific
-	private final static double fireProb = 0.5;
-	private final static double lightningProb = 0.01;
-	private final static double emptyTreeProb = 0.01;
-
-
-	public static void main (String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-		int numCellsX = (int) gridx / cellx;
-		int numCellsY = (int) gridy / celly;
-
-		// set title
-		if(sim.equals(gol)){
-			title = golTitle;
-			author = golAuthor;
-		}
-		else if(sim.equals(seg)){
-			title = segTitle;
-			author = segAuthor;
-		}
-		else if(sim.equals(wator)){
-			title = watorTitle;
-			author = watorAuthor;
-		}
-		else if(sim.equals(fire)){
-			title = fireTitle;
-			author = fireAuthor;
-		}
-		
 		// write header to file
-		//String fileName = "data/" + sim + ".xml";
-		String fileName = "data/" + "watortest" + ".xml";
-		PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+		writer = new PrintWriter(fileName, "UTF-8");
 		writer.println("<" + '?' + "xml version" + '=' + '"'+ "1.0" + '"' + " encoding=" + '"' + "UTF-8" + '"' + '?' + ">");
 		writer.println("<simulation>");
 		writer.println("\t" + "<name>" + sim + "</name>");
@@ -93,131 +67,63 @@ public class XMLmaker {
 		writer.println("\t" + "<grid_x>" + gridx + "</grid_x>");
 		writer.println("\t" + "<grid_y>" + gridy + "</grid_y>");
 
-		// create cells based on simulation type and parameters
-		if(sim.equals(gol)){
+//		// create cells based on simulation type and parameters
+//		if(sim.equals(GOL)){
+//		}
+//		if(sim.equals(SEG)){
+//			double xNum = PROB * PROB_X;
+//			double oNum = PROB * PROB_O + xNum;
+//			for(int i = 0; i < numCellsX; i++){
+//				for(int j = 0; j < numCellsY; j++){
+//					Random rand = new Random();
+//					int  n = rand.nextInt(PROB+1);
+//					String wType = "";
+//
+//					if(n < xNum){
+//						wType = "x";
+//					}
+//					else if(n > xNum && n < oNum){
+//						wType = "o";
+//					}
+//					else{
+//						wType = "empty";
+//					}
+//
+//					printSegCell(wType, i, j);
+//				}
+//			}
+//		}
+//		else{
+//			System.out.println("Error, invalid sim type");
+//		}
+	}
 
-		}
-		else if(sim.equals(seg)){
-			double xNum = 999 * xProb;
-			double oNum = 999 * oProb + xNum;
-			for(int i = 0; i < numCellsX; i++){
-				for(int j = 0; j < numCellsY; j++){
-					Random rand = new Random();
-					int  n = rand.nextInt(1000);
-					String wType = "";
-
-					if(n < xNum){
-						wType = "x";
-					}
-					else if(n > xNum && n < oNum){
-						wType = "o";
-					}
-					else{
-						wType = "empty";
-					}
-
-					writer.println("\t" + "<cell>");
-					writer.println("\t" + "\t" + "<type>" + wType + "</type>");
-					writer.println("\t" + "\t" + "<x>" + i + "</x>");
-					writer.println("\t" + "\t" + "<y>" + j + "</y>");
-					writer.println("\t" + "\t" + "<threshold>" + threshold + "</threshold>");
-					writer.println("\t" + "</cell>");
-					writer.println("");
-				}
-			}
-		}
-		else if(sim.equals(wator)){
-			double fishNum = 999 * fishProp;
-			double sharkNum = 999 * sharkProp + fishNum;
-			for(int i = 0; i < numCellsX; i++){
-				for(int j = 0; j < numCellsY; j++){
-					Random rand = new Random();
-					int  n = rand.nextInt(1000);
-					String wType = "";
-					int rT = 0;
-					int gE = 0;
-					int e = 0;
-
-					if(n < fishNum){
-						wType = "fish";
-						rT = rtFish;
-						gE = geFish;
-						e = eFish;
-
-					}
-					else if(n > fishNum && n < sharkNum){
-						wType = "shark";
-						rT = rtShark;
-						gE = geShark;
-						e = eShark;
-					}
-					else{
-						wType = "empty";
-					}
-
-					writer.println("\t" + "<cell>");
-					writer.println("\t" + "\t" + "<type>" + wType + "</type>");
-					writer.println("\t" + "\t" + "<x>" + i + "</x>");
-					writer.println("\t" + "\t" + "<y>" + j + "</y>");
-					writer.println("\t" + "\t" + "<reproductionThreshold>" + rT + "</reproductionThreshold>");
-					writer.println("\t" + "\t" + "<gainedEnergy>" + gE + "</gainedEnergy>");
-					writer.println("\t" + "\t" + "<energy>" + e + "</energy>");
-					writer.println("\t" + "</cell>");
-					writer.println("");
-				}
-			}
-		}
-		else if(sim.equals(fire)){	
-			writer.println("\t" + "<fireProb>" + fireProb + "</fireProb>");
-			writer.println("\t" + "<lightningProb>" + lightningProb + "</lightningProb>");
-			writer.println("\t" + "<emptyTreeProb>" + emptyTreeProb + "</emptyTreeProb>");
-			writer.println("");
-
-			for(int i = 0; i < numCellsX; i++){
-				writer.println("\t" + "<cell>");
-				writer.println("\t" + "\t" + "<type>empty</type>");
-				writer.println("\t" + "\t" + "<x>" + i + "</x>");
-				writer.println("\t" + "\t" + "<y>" + 0 + "</y>");
-				writer.println("\t" + "</cell>");
-				writer.println("");
-				writer.println("\t" + "<cell>");
-				writer.println("\t" + "\t" + "<type>empty</type>");
-				writer.println("\t" + "\t" + "<x>" + i + "</x>");
-				writer.println("\t" + "\t" + "<y>" + (numCellsY-1) + "</y>");
-				writer.println("\t" + "</cell>");
-				writer.println("");
-			}
-
-			for(int i = 0; i < numCellsY; i++){
-				writer.println("\t" + "<cell>");
-				writer.println("\t" + "\t" + "<type>empty</type>");
-				writer.println("\t" + "\t" + "<x>" + 0 + "</x>");
-				writer.println("\t" + "\t" + "<y>" + i + "</y>");
-				writer.println("\t" + "</cell>");
-				writer.println("");
-				writer.println("\t" + "<cell>");
-				writer.println("\t" + "\t" + "<type>empty</type>");
-				writer.println("\t" + "\t" + "<x>" + (numCellsX-1) + "</x>");
-				writer.println("\t" + "\t" + "<y>" + i+ "</y>");
-				writer.println("\t" + "</cell>");
-				writer.println("");
-			}
-
-			writer.println("\t" + "<cell>");
-			writer.println("\t" + "\t" + "<type>fire</type>");
-			int centerX = (int) (numCellsX-1)/2;
-			int centerY = (int) (numCellsY-1)/2;
-			writer.println("\t" + "\t" + "<x>" + centerX + "</x>");
-			writer.println("\t" + "\t" + "<y>" + centerY + "</y>");
-			writer.println("\t" + "</cell>");
-
-
-		}
-		else{
-			System.out.println("Error, invalid sim type");
-		}
+	protected void closeWriter(){
 		writer.print("</simulation>");
 		writer.close();
 		System.out.println("Done.");
+	}
+	
+	protected void printCellHeader(String type, int i, int j){
+		writer.println("\t" + "<cell>");
+		writer.println("\t" + "\t" + "<type>" + type + "</type>");
+		writer.println("\t" + "\t" + "<x>" + i + "</x>");
+		writer.println("\t" + "\t" + "<y>" + j + "</y>");
+	}
+
+	protected void printCellFooter(){
+		writer.println("\t" + "</cell>");
+		writer.println("");
+	}
+
+	private void printSegCell(String type, int i, int j){
+		printCellHeader(type, i, j);
+		writer.println("\t" + "\t" + "<threshold>" + THRESHOLD + "</threshold>");
+		printCellFooter();
+	}
+
+	protected void printCell(String type, int i, int j){
+		printCellHeader(type, i, j);
+		printCellFooter();
 	}
 }
