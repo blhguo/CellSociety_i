@@ -13,7 +13,7 @@ import javafx.scene.paint.Color;
 public class EmptyCell extends WatorSimCell{
 	private static final Color CELLCOLOR = Color.LIGHTGRAY;
 	private boolean isOccupied;
-	
+
 	/**
 	 * Creates a new empty cell.
 	 * @param x - x location of cell in grid
@@ -24,7 +24,7 @@ public class EmptyCell extends WatorSimCell{
 		setOccupied(false);
 		setDisplayColor();
 	}
-	
+
 	/**
 	 * Returns an instance of EmptyCell by duplicating another instance of EmptyCell
 	 * @param empty_cell
@@ -34,7 +34,7 @@ public class EmptyCell extends WatorSimCell{
 		setOccupied(empty_cell.isOccupied);
 		setDisplayColor();
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.List)
 	 */
@@ -57,7 +57,7 @@ public class EmptyCell extends WatorSimCell{
 	public void setOccupied(boolean isOccupied) {
 		this.isOccupied = isOccupied;
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */

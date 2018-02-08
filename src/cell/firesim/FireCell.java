@@ -22,7 +22,7 @@ public class FireCell extends FireSimCell{
 		super(pCatch, pLight, pGrow);
 		setDisplayColor();
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.List)
 	 */
@@ -30,7 +30,7 @@ public class FireCell extends FireSimCell{
 	public Cell nextState(List<Cell> neighbors) {
 		return new EmptyCell(probCatch, probLightning, probGrow);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */

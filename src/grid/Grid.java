@@ -15,7 +15,7 @@ public abstract class Grid {
 	protected Cell[][] myGrid;
 	private int myWidth;
 	private int myHeight;
-	
+
 	/**
 	 * Creates a new Grid object.
 	 * @param width - number of cells in the width of the grid
@@ -26,22 +26,22 @@ public abstract class Grid {
 		myHeight = height;
 		myGrid = new Cell[myWidth][myHeight];
 	}
-	
+
 	/*
 	public Grid (Cell[][] grid) {
 		myWidth = grid.length;
 		myHeight = grid[0].length;
 		myGrid = grid;
 	}
-	*/
-	
+	 */
+
 	/**
 	 * @return the 2D array of cells of the grid
 	 */
 	public Cell[][] getCellArray() {
 		return myGrid;
 	}
-	
+
 	/**
 	 * Updates the cell states of every cell in the grid to the next state of the cell.
 	 * @return the 2D array of cells of the next state grid
@@ -58,7 +58,7 @@ public abstract class Grid {
 		myGrid = nextGrid;
 		return nextGrid;
 	}
-	
+
 	/**
 	 * Adds all the neighbors of a cell to a list
 	 * @param neighbors - list of the cells neighbors
@@ -80,7 +80,7 @@ public abstract class Grid {
 			neighbors.add(grid[i][j+1]);
 		}
 	}
-	
+
 	/**
 	 * Checks to see if cell location is in the bounds of the grid
 	 * @param x - x location of cell in grid
@@ -90,7 +90,7 @@ public abstract class Grid {
 	public boolean inGrid (int x, int y) {
 		return (x >= 0 && x < myWidth && y >= 0 && y < myHeight);
 	}
-	
+
 	/**
 	 * Gets the visuals of the grid
 	 * @return a 2D array of colors of the cells

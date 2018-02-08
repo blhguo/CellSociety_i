@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
  */
 public abstract class Cell {
 	protected Color display_color;
-	
+
 	/**
 	 * Used to get the next state information of a cell based on rules applied
 	 * to the current state and the states of its neighbors.
@@ -19,12 +19,12 @@ public abstract class Cell {
 	 * @return - A cell with the next state information.
 	 */
 	public abstract Cell nextState (List<Cell> neighbors);
-	
+
 	/**
 	 * Sets the display color of the cell.
 	 */
 	protected abstract void setDisplayColor();
-	
+
 	/**
 	 * Used to get the display color of the cell.
 	 * @return - The display color of the cell.

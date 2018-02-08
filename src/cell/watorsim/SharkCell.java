@@ -17,7 +17,7 @@ public class SharkCell extends WatorSimCell{
 	private int current_energy;
 	private int gained_energy;
 	private boolean isReproducing;
-	
+
 	/**
 	 * Creates a new shark cell.
 	 * @param x - x location of cell in grid
@@ -34,7 +34,7 @@ public class SharkCell extends WatorSimCell{
 		this.gained_energy = gained_energy;
 		setDisplayColor();
 	}
-	
+
 	/**
 	 * Returns an instance of SharkCell by duplicating another instance of SharkCell
 	 * @param shark_cell - SharkCell to be duplicated
@@ -56,33 +56,33 @@ public class SharkCell extends WatorSimCell{
 	public Cell nextState(List<Cell> neighbors) {
 		reproduction_time++;
 		current_energy--;
-		
+
 		if (current_energy <= 0) {
 			return new EmptyCell(this.getX(), this.getY());
 		}
-		
+
 		if (reproduction_time >= reproduction_threshold) {
 			this.isReproducing = true;
 			return new SharkCell(this.getX(), this.getY(), reproduction_threshold, current_energy, gained_energy);
 		}
-		
+
 		return this;
 	}
-	
+
 	/**
 	 * Updates energy value after shark eats a fish
 	 */
 	public void gainEnergy() {
 		this.current_energy += this.gained_energy;
 	}
-	
+
 	/**
 	 * @return boolean value if the shark is reproducing
 	 */
 	public boolean isReproducing() {
 		return isReproducing;
 	}
-	
+
 	/**
 	 * Resets reproducing values (for use after a shark cell has reproduced)
 	 */

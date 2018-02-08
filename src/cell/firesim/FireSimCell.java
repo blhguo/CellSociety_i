@@ -12,7 +12,7 @@ public abstract class FireSimCell extends Cell{
 	protected double probCatch;
 	protected double probLightning;
 	protected double probGrow;
-	
+
 	/**
 	 * Creates a new cell in the fire simulation with the following parameters.
 	 * @param pCatch - probability of tree cell catching on fire

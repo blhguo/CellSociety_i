@@ -23,8 +23,8 @@ public class EmptyCell extends FireSimCell{
 		super(pCatch, pLight, pGrow);
 		setDisplayColor();
 	}
-	
-	
+
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.List)
 	 */

@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
  */
 public class AliveCell extends GOLSimCell{
 	private static final Color CELLCOLOR = Color.GREENYELLOW;
-	
+
 	/**
 	 * Creates a new alive cell.
 	 */
@@ -30,7 +30,7 @@ public class AliveCell extends GOLSimCell{
 				neighbors_alive++;
 			}
 		}
-		
+
 		if (neighbors_alive == 2 || neighbors_alive == 3) {
 			return this;
 		}
@@ -38,7 +38,7 @@ public class AliveCell extends GOLSimCell{
 			return new DeadCell();
 		}
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see cell.Cell#setDisplayColor()
 	 */
