@@ -573,6 +573,11 @@ public class Manager extends Application {
 					isError = true;
 					displayMessage(grid, myResources.getString("MakerError6"), 3, 0,10);
 				}
+				else if(filename.equals("game_of_life") || filename.equals("segregation") 
+						|| filename.equals("wator") || filename.equals("fire")) {
+					isError = true;
+					displayMessage(grid, myResources.getString("MakerError7"), 3, 0,11);
+				}
 
 				try {
 					gridxval = Integer.parseInt(gridx.getText());
