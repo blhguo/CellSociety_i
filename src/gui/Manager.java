@@ -87,6 +87,7 @@ public class Manager extends Application {
 	private static final int YPADDING = 10;
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
+	private static final int MAKER_SIZE = 300;
 	private boolean inMenu = true;
 	public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	public static final String DEFAULT_RESOURCE_FILE = "defaultText";
@@ -455,7 +456,7 @@ public class Manager extends Application {
 					@Override
 					public void handle(final ActionEvent e) {	
 						try {
-							s.setScene(setupXMLmaker(400, 400, BACKGROUND));
+							s.setScene(setupXMLmaker(MAKER_SIZE, MAKER_SIZE, BACKGROUND));
 							System.out.println("6");
 							inMenu = true;
 						} catch (Exception e1) {
