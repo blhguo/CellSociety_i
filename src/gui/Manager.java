@@ -1,6 +1,7 @@
 package gui;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import cell.Cell;
@@ -20,6 +21,9 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -28,6 +32,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -446,19 +451,97 @@ public class Manager extends Application {
 		Group addition = new Group();
 		for (int i = 0; i < cellArray[0].length; i++) {
 			for (int j = 0; j < cellArray[1].length; j++) {
-				addition.getChildren().add(GenerateCell(cellArray[i][j], width, height, i, j));
+				/* TODO: Add switch case here to tell which type of cell to generate */	
+				addition.getChildren().add(GenerateRectangularCell(cellArray[i][j], width, height, i, j));
 			}
 		}
 		return addition;
 	}
 	//Helper function for CreateRoot, generates one cell
-	private Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
+	private Rectangle GenerateRectangularCell(Cell BufferCell, int width, int height, int i, int j) {
 		Rectangle Image = new Rectangle((width * i + XPADDING), (height * j + YPADDING), width, height);
 		Image.setFill(BufferCell.getDisplayColor());
 		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
 		return Image;
 	}
+	
+	private Polygon GenerateHexagonCell(Cell BufferCell, int width, int height, int i, int j) {
+		Polygon Image = new Polygon();
+		Double[] points;
+		if ((i % 2 )== 0) {
+			points = new Double[] {
+					40.0 * j + 10, 10.0 * i, 
+					40.0 * j + 20, 10.0 * i, 
+					40.0 * j + 30, 10.0 * i + 10,
+					40.0 * j + 20, 10.0 * i + 20,
+					40.0 * j + 10, 10.0 * i + 20,
+					40.0 * j, 10.0 * i + 10
+					};
+		}
+		else {
+			points = new Double[] {
+					40.0 * j + 30, 10.0 * i, 
+					40.0 * j + 40, 10.0 * i, 
+					40.0 * j + 50, 10.0 * i + 10,
+					40.0 * j + 40, 10.0 * i + 20,
+					40.0 * j + 30, 10.0 * i + 20,
+					40.0 * j + 20, 10.0 * i + 10
+					};
+			}
+		Image.getPoints().addAll(points);
+		Image.setFill(BufferCell.getDisplayColor());
+		Image.setStrokeWidth(0.3);
+		Image.setStroke(Color.BLACK);
+		return Image;
+	}
+	
+	private Polygon GenerateTriangleCell(Cell BufferCell, int width, int height, int i, int j) {
+		Polygon Image = new Polygon();
+		Double[] points;
+		if ((i % 2 )== 0) {
+			points = new Double[] {
+					10.0 * j + 10, 15.0 * (j % 2) + 15 * i, 
+					10.0 * j + 20, 15.0 * ((j + 1) % 2) + 15 * i, 
+					10.0 * j, 15.0 * (j + 1% 2) + 15 * i
+					};
+		}
+		else {
+			points = new Double[] {
+					10.0 * j + 10, 15.0 * ((j + 1) % 2) + 15 * i, 
+					10.0 * j + 20, 15.0 * (j % 2) + 15 * i, 
+					10.0 * j, 15.0 * (j % 2) + 15 * i
+					};
+			}
+		Image.getPoints().addAll(points);
+		Image.setFill(BufferCell.getDisplayColor());
+		Image.setStrokeWidth(0.3);
+		Image.setStroke(Color.BLACK);
+		return Image;
+	}
+	
+	//more efficient way is to make it so that each time you simply add the point to the XYCHart instead of creating an entirely new xy chart, trying to make flexible
+	
+	private LineChart<Number, Number> GenerateLineChart() {
+        final NumberAxis xAxis = new NumberAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        xAxis.setLabel("Population counts");
+        final LineChart<Number,Number> lineChart = new LineChart<Number,Number>(xAxis,yAxis);
+        lineChart.setTitle("Population Plots");
+        return lineChart;
+	}
+	
+	private XYChart.Series<Integer, Integer> GenerateSeries() {
+        XYChart.Series series = new XYChart.Series();
+        return series;
+     }
+	
+	private XYChart.Series<Integer, Integer>[] GenerateSeriesArray(int arraysize) {
+		XYChart.Series<Integer, Integer>[] array = new XYChart.Series<Integer, Integer>[arraysize];
+		
+	}
+	
+	
 	//Launches game
 	public static void main(String[] args) {
 		Application.launch(args);
