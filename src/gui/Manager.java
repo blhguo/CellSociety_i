@@ -452,7 +452,7 @@ public class Manager extends Application {
 		for (int i = 0; i < cellArray[0].length; i++) {
 			for (int j = 0; j < cellArray[1].length; j++) {
 				/* TODO: Add switch case here to tell which type of cell to generate */	
-				addition.getChildren().add(GenerateRectangularCell(cellArray[i][j], width, height, i, j));
+				addition.getChildren().add(GenerateTriangleCell(cellArray[i][j], width, height, i, j));
 			}
 		}
 		return addition;
@@ -503,7 +503,7 @@ public class Manager extends Application {
 			points = new Double[] {
 					10.0 * j + 10, 15.0 * (j % 2) + 15 * i, 
 					10.0 * j + 20, 15.0 * ((j + 1) % 2) + 15 * i, 
-					10.0 * j, 15.0 * (j + 1% 2) + 15 * i
+					10.0 * j, 15.0 * ((j + 1)% 2) + 15 * i
 					};
 		}
 		else {
@@ -531,15 +531,14 @@ public class Manager extends Application {
         return lineChart;
 	}
 	
-	private XYChart.Series<Integer, Integer> GenerateSeries() {
-        XYChart.Series series = new XYChart.Series();
-        return series;
-     }
-	
-	private XYChart.Series<Integer, Integer>[] GenerateSeriesArray(int arraysize) {
-		XYChart.Series<Integer, Integer>[] array = new XYChart.Series<Integer, Integer>[arraysize];
-		
-	}
+//	private XYChart.Series<Integer, Integer> GenerateSeries() {
+//        XYChart.Series series = new XYChart.Series();
+//        return series;
+//     }
+//	
+//	private XYChart.Series<Integer, Integer>[] GenerateSeriesArray(int arraysize) {
+//		XYChart.Series<Integer, Integer>[] array = new XYChart.Series<Integer, Integer>[arraysize];		
+//	}
 	
 	
 	//Launches game
