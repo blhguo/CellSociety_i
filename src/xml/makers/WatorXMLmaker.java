@@ -1,7 +1,6 @@
 package xml.makers;
 
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
@@ -56,7 +55,7 @@ public class WatorXMLmaker extends XMLmaker{
 					e = e_shark;
 				}
 				else{
-					wType = "empty";
+					continue;
 				}
 
 				printWatorCell(wType, i, j, rT, gE, e);

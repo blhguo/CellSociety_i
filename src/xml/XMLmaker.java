@@ -12,16 +12,8 @@ import java.util.Random;
  */
 
 public class XMLmaker {
-	private final static String GOL = "game_of_life";
-	private final static String SEG = "segregation";
-	private final static String GOL_TITLE = "Game of Life";
-	private final static String SEG_TITLE = "Segregation";
-
-	private final static String GOL_AUTHOR = "John Horton Conway";
-	private final static String SEG_AUTHOR = "Thomas Schelling";
-
-
-	// CHANGE THIS
+	
+	// FINALS
 	protected final static int PROB = 999;
 
 	// INITIALIZED INSTANCE VARIABLES
@@ -36,11 +28,6 @@ public class XMLmaker {
 	private int celly;
 	private String shape;
 	private String fileName;
-
-	// seg specific
-	private final static double PROB_X = 0.3;
-	private final static double PROB_O = 0.3;
-	private final static double THRESHOLD = 0.3;
 
 	public XMLmaker(String file, String sim, String t, String a, String s, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		title = t;
@@ -66,36 +53,6 @@ public class XMLmaker {
 		writer.println("\t" + "<cell_ysize>" + celly + "</cell_ysize>");
 		writer.println("\t" + "<grid_x>" + gridx + "</grid_x>");
 		writer.println("\t" + "<grid_y>" + gridy + "</grid_y>");
-
-//		// create cells based on simulation type and parameters
-//		if(sim.equals(GOL)){
-//		}
-//		if(sim.equals(SEG)){
-//			double xNum = PROB * PROB_X;
-//			double oNum = PROB * PROB_O + xNum;
-//			for(int i = 0; i < numCellsX; i++){
-//				for(int j = 0; j < numCellsY; j++){
-//					Random rand = new Random();
-//					int  n = rand.nextInt(PROB+1);
-//					String wType = "";
-//
-//					if(n < xNum){
-//						wType = "x";
-//					}
-//					else if(n > xNum && n < oNum){
-//						wType = "o";
-//					}
-//					else{
-//						wType = "empty";
-//					}
-//
-//					printSegCell(wType, i, j);
-//				}
-//			}
-//		}
-//		else{
-//			System.out.println("Error, invalid sim type");
-//		}
 	}
 
 	protected void closeWriter(){
@@ -114,12 +71,6 @@ public class XMLmaker {
 	protected void printCellFooter(){
 		writer.println("\t" + "</cell>");
 		writer.println("");
-	}
-
-	private void printSegCell(String type, int i, int j){
-		printCellHeader(type, i, j);
-		writer.println("\t" + "\t" + "<threshold>" + THRESHOLD + "</threshold>");
-		printCellFooter();
 	}
 
 	protected void printCell(String type, int i, int j){

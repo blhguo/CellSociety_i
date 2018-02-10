@@ -1,48 +1,53 @@
 package xml.makers;
 
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.Random;
 
 import xml.XMLmaker;
 
 public class SegXMLmaker extends XMLmaker{
-	private final static String TYPE = "fire";
-	private final static String FIRE_TITLE =  "Fire";
-	private final static String FIRE_AUTHOR =  "Angela B. Shiflet";
-	
-	
-	private double prob_fire = 0.5;
-	private double prob_lightning = 0.01;
-	private double prob_newTree = 0.01;
-	
-	public SegXMLmaker(String file, String shape, int gx, int gy, int cx, int cy, double probFire, double probLightning, double probNewTree) throws FileNotFoundException, UnsupportedEncodingException{
-		super(file, TYPE, FIRE_TITLE, FIRE_AUTHOR, shape, gx, gy, cx, cy);
-		prob_fire = probFire;
-		prob_lightning = probLightning;
-		prob_newTree = probNewTree;
-		printFireHeader();
-		String empty = "empty";
+	private final static String TYPE = "segregation";
+	private final static String SEG_TITLE = "Segregation";
+	private final static String SEG_AUTHOR = "Thomas Schelling";
+
+	// seg specific
+	private double prob_x = 0.3;
+	private double prob_o = 0.3;
+	private double threshold = 0.3;
+
+	public SegXMLmaker(String file, String shape, int gx, int gy, int cx, int cy, double probx, double probo, double thresh) throws FileNotFoundException, UnsupportedEncodingException{
+		super(file, TYPE, SEG_TITLE, SEG_AUTHOR, shape, gx, gy, cx, cy);
+		prob_x = probx;
+		prob_o = probo;
+		threshold = thresh;
+		double xNum = PROB * prob_x;
+		double oNum = PROB * prob_o + xNum;
 		for(int i = 0; i < numCellsX; i++){
-			printCell(empty, i, 0);
-			printCell(empty, i, numCellsY-1);
-		}
+			for(int j = 0; j < numCellsY; j++){
+				Random rand = new Random();
+				int  n = rand.nextInt(PROB+1);
+				String wType = "";
 
-		for(int i = 0; i < numCellsY; i++){
-			printCell(empty, 0, i);
-			printCell(empty, numCellsX-1, i);
-		}
+				if(n < xNum){
+					wType = "x";
+				}
+				else if(n > xNum && n < oNum){
+					wType = "o";
+				}
+				else{
+					continue;
+				}
 
-		int centerX = (int) (numCellsX-1)/2;
-		int centerY = (int) (numCellsY-1)/2;
-		printCell("fire", centerX, centerY);
+				printSegCell(wType, i, j);
+			}
+		}
 		closeWriter();
 	}
-	
-	private void printFireHeader(){
-		writer.println("\t" + "<fireProb>" + prob_fire + "</fireProb>");
-		writer.println("\t" + "<lightningProb>" + prob_lightning + "</lightningProb>");
-		writer.println("\t" + "<emptyTreeProb>" + prob_newTree + "</emptyTreeProb>");
-		writer.println("");
+
+	private void printSegCell(String type, int i, int j){
+		printCellHeader(type, i, j);
+		writer.println("\t" + "\t" + "<threshold>" + threshold + "</threshold>");
+		printCellFooter();
 	}
 }
