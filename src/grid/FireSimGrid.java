@@ -1,5 +1,8 @@
 package grid;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import cell.firesim.EmptyCell;
 import cell.firesim.FireCell;
 import cell.firesim.TreeCell;
@@ -36,5 +39,31 @@ public class FireSimGrid extends Grid {
 				}
 			}
 		}
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#getNumberOfCells()
+	 */
+	@Override
+	public Map<String, Integer> getNumberOfCells() {
+		HashMap<String, Integer> map = new HashMap<>();
+		int empty = 0;
+		int fire = 0;
+		int tree = 0;
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof EmptyCell) {
+					empty++;
+				} else if (myGrid[i][j] instanceof FireCell) {
+					fire++;
+				} else if (myGrid[i][j] instanceof TreeCell) {
+					tree++;
+				}
+			}
+		}
+		map.put("Empty Cells", empty);
+		map.put("Fire Cells", fire);
+		map.put("Tree Cells", tree);
+		return map;
 	}
 }

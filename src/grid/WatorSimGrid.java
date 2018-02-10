@@ -1,7 +1,10 @@
 package grid;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import cell.Cell;
 import cell.watorsim.EmptyCell;
 import cell.watorsim.FishCell;
@@ -212,5 +215,31 @@ public class WatorSimGrid extends Grid{
 		//((EmptyCell) myGrid[newX][newY]).setOccupied(true);
 
 		nextGrid[i][j] = nextState;
+	}
+	
+	/* (non-Javadoc)
+	 * @see grid.Grid#getNumberOfCells()
+	 */
+	@Override
+	public Map<String, Integer> getNumberOfCells() {
+		HashMap<String, Integer> map = new HashMap<>();
+		int empty = 0;
+		int fish = 0;
+		int shark = 0;
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof EmptyCell) {
+					empty++;
+				} else if (myGrid[i][j] instanceof FishCell) {
+					fish++;
+				} else if (myGrid[i][j] instanceof SharkCell) {
+					shark++;
+				}
+			}
+		}
+		map.put("Empty Cells", empty);
+		map.put("Fish Cells", fish);
+		map.put("Shark Cells", shark);
+		return map;
 	}
 }
