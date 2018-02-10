@@ -571,6 +571,7 @@ public class Manager extends Application {
 				String filename = file.getText();
 				if(filename.contains(".")) {
 					isError = true;
+					displayMessage(grid, myResources.getString("MakerError6"), 3, 0,10);
 				}
 
 				try {
@@ -579,7 +580,7 @@ public class Manager extends Application {
 					cellxval = Integer.parseInt(cellx.getText());
 					cellyval = Integer.parseInt(celly.getText());
 				} catch(NumberFormatException ea) {
-					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+					displayMessage(grid, myResources.getString("MakerError1"), 3, 0, 8);
 					isError = true;
 					//ea.printStackTrace();
 				}
@@ -589,7 +590,7 @@ public class Manager extends Application {
 						try {
 							probcellval = Double.parseDouble(probcell.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+							displayMessage(grid, myResources.getString("MakerError2"), 3, 0, 9);
 							isError = true;
 							//ea.printStackTrace();
 						}
@@ -604,7 +605,7 @@ public class Manager extends Application {
 							proboval = Double.parseDouble(probo.getText());
 							threshval = Double.parseDouble(thresh.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+							displayMessage(grid, myResources.getString("MakerError3"), 3, 0, 9);
 							isError = true;
 							//ea.printStackTrace();
 						}
@@ -622,7 +623,7 @@ public class Manager extends Application {
 							esharkval = Integer.parseInt(eShark.getText());
 							gesharkval = Integer.parseInt(geShark.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+							displayMessage(grid, myResources.getString("MakerError4"), 3, 0, 9);
 							isError = true;
 							//ea.printStackTrace();
 						}
@@ -638,7 +639,7 @@ public class Manager extends Application {
 							problightval = Double.parseDouble(problight.getText());
 							probnewtreeval = Double.parseDouble(probnewtree.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+							displayMessage(grid, myResources.getString("MakerError5"), 3, 0, 9);
 							isError = true;
 							//ea.printStackTrace();
 						}
@@ -654,9 +655,9 @@ public class Manager extends Application {
 					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
 					//e1.printStackTrace();
 				}
-				if(isError) {
-					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
-				}
+				//if(isError) {
+					//displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+				//}
 			}
 		});
 		// create a place to see the shapes
