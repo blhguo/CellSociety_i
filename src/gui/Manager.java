@@ -449,7 +449,7 @@ public class Manager extends Application {
 
 	// Generates button to start the maker scene
 	public Button GenerateMakerButton(Stage s) {
-		Button makerButton = new Button("Create custom XML file");
+		Button makerButton = new Button(myResources.getString("MakerButton"));
 
 		makerButton.setOnAction(
 				new EventHandler<ActionEvent>() {
@@ -457,7 +457,6 @@ public class Manager extends Application {
 					public void handle(final ActionEvent e) {	
 						try {
 							s.setScene(setupXMLmaker(MAKER_SIZE, MAKER_SIZE, BACKGROUND));
-							System.out.println("6");
 							inMenu = true;
 						} catch (Exception e1) {
 							e1.printStackTrace();
@@ -506,33 +505,33 @@ public class Manager extends Application {
 		//Text title = new Text();
 		//title.setText("'M' to return to main menu");
 		//grid.add(title,0,0);
-		final TextField file = makeTextField(grid, "name (no extension)", 0, 1);
-		final TextField gridx = makeTextField(grid, "grid x dimension", 0, 2);
-		final TextField gridy = makeTextField(grid, "grid y dimension", 0, 3);
-		final TextField cellx = makeTextField(grid, "cell x dimension", 0, 4);
-		final TextField celly = makeTextField(grid, "cell y dimension", 0, 5);
+		final TextField file = makeTextField(grid, myResources.getString("NameField"), 0, 1);
+		final TextField gridx = makeTextField(grid, myResources.getString("GridXField"), 0, 2);
+		final TextField gridy = makeTextField(grid, myResources.getString("GridYField"), 0, 3);
+		final TextField cellx = makeTextField(grid, myResources.getString("CellXField"), 0, 4);
+		final TextField celly = makeTextField(grid, myResources.getString("CellYField"), 0, 5);
 		if(fileType == 0) {
-			probcell = makeTextField(grid, "cell probability (0-1)", 1, 1);
+			probcell = makeTextField(grid, myResources.getString("CellProbField"), 1, 1);
 		}
 		else if(fileType == 1) {
-			probx = makeTextField(grid, "X type cell probability (0-1)", 1, 1);
-			probo = makeTextField(grid, "O type cell probability (0-1)", 1, 2);
-			thresh = makeTextField(grid, "Enter threshold (0-1)", 1, 2);
+			probx = makeTextField(grid, myResources.getString("XProbField"), 1, 1);
+			probo = makeTextField(grid,myResources.getString("OProbField"), 1, 2);
+			thresh = makeTextField(grid, myResources.getString("ThreshField"), 1, 3);
 		}
 		else if(fileType == 2) {
-			probfish = makeTextField(grid, "fish probability (0-1)", 1, 1);
-			probshark = makeTextField(grid, "shark probability (0-1)", 1, 2);
-			rtshark = makeTextField(grid, "Shark rep threshold", 1, 3);
-			rtfish = makeTextField(grid, "Fish rep threshold", 1, 4);
-			eShark = makeTextField(grid, "Shark energy total", 1, 5);
-			geShark = makeTextField(grid, "Shark energy per fish", 1, 6);
+			probfish = makeTextField(grid, myResources.getString("ProbFishField"), 1, 1);
+			probshark = makeTextField(grid, myResources.getString("ProbSharkField"), 1, 2);
+			rtshark = makeTextField(grid, myResources.getString("SharkThreshField"), 1, 3);
+			rtfish = makeTextField(grid, myResources.getString("FishThreshField"), 1, 4);
+			eShark = makeTextField(grid, myResources.getString("SharkEnergyField"), 1, 5);
+			geShark = makeTextField(grid, myResources.getString("SharkEnergyPerFishField"), 1, 6);
 		}
 		else if(fileType == 3) {
-			probfire = makeTextField(grid, "fire prob (0-1)", 1, 1);
-			problight = makeTextField(grid, "lightning prob (0-1)", 1, 2);
-			probnewtree = makeTextField(grid, "new tree prob (0-1)", 1, 3);
+			probfire = makeTextField(grid, myResources.getString("FireProbField"), 1, 1);
+			problight = makeTextField(grid, myResources.getString("LightProbField"), 1, 2);
+			probnewtree = makeTextField(grid, myResources.getString("NewTreeProbField"), 1, 3);
 		}
-		Button menu = GenButton(grid, "Menu", 0, 0);
+		Button menu = GenButton(grid, myResources.getString("MenuButton"), 0, 0);
 		menu.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -546,7 +545,7 @@ public class Manager extends Application {
 			}
 		});
 		
-		Button create = GenButton(grid, "Create", 1, 0);
+		Button create = GenButton(grid, myResources.getString("CreateButton"), 1, 0);
 		create.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -580,7 +579,7 @@ public class Manager extends Application {
 					cellxval = Integer.parseInt(cellx.getText());
 					cellyval = Integer.parseInt(celly.getText());
 				} catch(NumberFormatException ea) {
-					displayMessage(grid, "Invalid parameters", 3, 0, 8);
+					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
 					isError = true;
 					//ea.printStackTrace();
 				}
@@ -590,7 +589,7 @@ public class Manager extends Application {
 						try {
 							probcellval = Double.parseDouble(probcell.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, "Invalid parameters", 3, 0, 8);
+							displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
 							isError = true;
 							//ea.printStackTrace();
 						}
@@ -605,7 +604,7 @@ public class Manager extends Application {
 							proboval = Double.parseDouble(probo.getText());
 							threshval = Double.parseDouble(thresh.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, "Invalid parameters", 3, 0, 8);
+							displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
 							isError = true;
 							//ea.printStackTrace();
 						}
@@ -623,7 +622,7 @@ public class Manager extends Application {
 							esharkval = Integer.parseInt(eShark.getText());
 							gesharkval = Integer.parseInt(geShark.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, "Invalid parameters", 3, 0, 8);
+							displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
 							isError = true;
 							//ea.printStackTrace();
 						}
@@ -639,7 +638,7 @@ public class Manager extends Application {
 							problightval = Double.parseDouble(problight.getText());
 							probnewtreeval = Double.parseDouble(probnewtree.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, "Invalid parameters", 3, 0, 8);
+							displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
 							isError = true;
 							//ea.printStackTrace();
 						}
@@ -649,14 +648,14 @@ public class Manager extends Application {
 						}	
 					}	
 				} catch (FileNotFoundException e1) {
-					displayMessage(grid, "Invalid parameters", 3, 0, 8);
-					e1.printStackTrace();
+					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+					//e1.printStackTrace();
 				} catch (UnsupportedEncodingException e1) {
-					displayMessage(grid, "Invalid parameters", 3, 0, 8);
-					e1.printStackTrace();
+					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+					//e1.printStackTrace();
 				}
 				if(isError) {
-					displayMessage(grid, "Invalid parameters", 3, 0, 8);
+					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
 				}
 			}
 		});
@@ -670,8 +669,8 @@ public class Manager extends Application {
 					returnMenu();
 				}		
 			} catch (Exception e1) {
-				displayMessage(grid, "Invalid parameters", 3, 0, 7);
-				e1.printStackTrace();
+				displayMessage(grid, myResources.getString("MakerError"), 3, 0, 7);
+				//e1.printStackTrace();
 			}
 		});
 		return scene;
