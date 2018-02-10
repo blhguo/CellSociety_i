@@ -54,7 +54,7 @@ import xml.readers.WatorXMLreader;
 
 /**
  * Simulation visualization and management
- * @author Brandon Guo, Marcus Olerte, Yashas Manjunatha
+ * @author Brandon Guo, Marcus Oertle, Yashas Manjunatha
  * 
  * input:
  * @param No input parameters, all inputs are given by user
