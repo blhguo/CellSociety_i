@@ -1,6 +1,9 @@
 package grid;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import cell.Cell;
 import cell.GOLsim.AliveCell;
 import cell.GOLsim.DeadCell;
@@ -52,5 +55,27 @@ public class GOLSimGrid extends Grid{
 		if (inGrid(i-1,j+1)) {
 			neighbors.add(grid[i-1][j+1]);
 		}
+	}
+	
+	/* (non-Javadoc)
+	 * @see grid.Grid#getNumberOfCells()
+	 */
+	@Override
+	public Map<String, Integer> getNumberOfCells() {
+		HashMap<String, Integer> map = new HashMap<>();
+		int alive = 0;
+		int dead = 0;
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof AliveCell) {
+					alive++;
+				} else if (myGrid[i][j] instanceof DeadCell) {
+					dead++;
+				}
+			}
+		}
+		map.put("Alive Cells", alive);
+		map.put("Dead Cells", dead);
+		return map;
 	}
 }

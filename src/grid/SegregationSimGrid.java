@@ -1,7 +1,10 @@
 package grid;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import cell.Cell;
 import cell.segregation.EmptyCell;
 import cell.segregation.OCell;
@@ -101,5 +104,31 @@ public class SegregationSimGrid extends Grid{
 		if (inGrid(i-1,j+1)) {
 			neighbors.add(grid[i-1][j+1]);
 		}
+	}
+	
+	/* (non-Javadoc)
+	 * @see grid.Grid#getNumberOfCells()
+	 */
+	@Override
+	public Map<String, Integer> getNumberOfCells() {
+		HashMap<String, Integer> map = new HashMap<>();
+		int empty = 0;
+		int o = 0;
+		int x = 0;
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof EmptyCell) {
+					empty++;
+				} else if (myGrid[i][j] instanceof OCell) {
+					o++;
+				} else if (myGrid[i][j] instanceof XCell) {
+					x++;
+				}
+			}
+		}
+		map.put("Empty Cells", empty);
+		map.put("O Cells", o);
+		map.put("X Cells", x);
+		return map;
 	}
 }
