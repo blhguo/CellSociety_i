@@ -21,6 +21,14 @@ public class XCell extends SegregationSimCell{
 		threshold = t;
 		setDisplayColor();
 	}
+	
+	public double getThreshold() {
+		return this.threshold;
+	}
+	
+	public void setThreshold(double t) {
+		this.threshold = t;
+	}
 
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.List)

@@ -25,15 +25,16 @@ public class XMLtester {
 	 * @throws FileNotFoundException 
 	 */
 	public static void main (String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-		//String fileName = GOL;
+		String fileName = GOL;
 		//String fileName = SEGREGATION;
-		String fileName = WATOR;
+		//String fileName = WATOR;
 		//String fileName = FIRE;
 		
 		if(fileName.equals(SEGREGATION)) {
 			SegregationXMLreader xml_reader = new SegregationXMLreader();
 			SegregationSimSetup simInfo = xml_reader.read(fileName);
 			simInfo.printInfo();
+			new SegXMLmaker("seg_test", "square", 400, 400, 20, 20, 0.3, 0.3, 0.3);
 		}
 		else if(fileName.equals(WATOR)) {
 			WatorXMLreader xml_reader = new WatorXMLreader();
@@ -51,6 +52,7 @@ public class XMLtester {
 			GOLXMLreader xml_reader = new GOLXMLreader();
 			GOLSimSetup simInfo = xml_reader.read(fileName);
 			simInfo.printInfo();
+			new GOLXMLmaker("gol_test", "square", 400, 400, 40, 40, 0.3);
 		}
 		
 	}

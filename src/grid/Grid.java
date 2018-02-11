@@ -2,6 +2,7 @@ package grid;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import cell.Cell;
 import javafx.scene.paint.Color;
@@ -104,4 +105,22 @@ public abstract class Grid {
 		}
 		return colorGrid;
 	}
+	
+	/**
+	 * Gets the number of the different types of cells in a simulation during the current state
+	 * @return a Map with a key string with the type of cell and value of the number of that type of cell
+	 */
+	public abstract Map<String, Number> getNumberOfCells();
+	
+	/**
+	 * @return string array of cell types
+	 */
+	public abstract String[][] getArray();
+	
+	/**
+	 * Updates various grid parameters with the current state values
+	 */
+	public abstract Map<String,Double> getCurrentParameters();
+	
+	public abstract void setCurrentParameters(Map<String,Double> map);
 }

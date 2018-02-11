@@ -12,6 +12,7 @@ import grid.Grid;
 import grid.SegregationSimGrid;
 import grid.WatorSimGrid;
 import javafx.animation.Animation.Status;
+import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -28,6 +29,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -45,6 +47,10 @@ import xml.SimSetups.FireSimSetup;
 import xml.SimSetups.GOLSimSetup;
 import xml.SimSetups.SegregationSimSetup;
 import xml.SimSetups.WatorSimSetup;
+import xml.makers.FireXMLmaker;
+import xml.makers.GOLXMLmaker;
+import xml.makers.SegXMLmaker;
+import xml.makers.WatorXMLmaker;
 import xml.readers.FireXMLreader;
 import xml.readers.GOLXMLreader;
 import xml.readers.SegregationXMLreader;
@@ -88,6 +94,7 @@ public class Manager extends Application {
 	private static final int YPADDING = 10;
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
+	private static final int MAKER_SIZE = 300;
 	private boolean inMenu = true;
 	public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	public static final String DEFAULT_RESOURCE_FILE = "defaultText";
@@ -96,6 +103,19 @@ public class Manager extends Application {
 	private static final String FileW = "FileW";
 	private static final String FileF = "FileF";
 	private static final String FileGOL = "FileGOL";
+	private TextField probcell = null;
+	private TextField probx = null;
+	private TextField probo = null;
+	private TextField thresh = null;
+	private TextField probfish = null;
+	private TextField probshark = null;
+	private TextField rtshark = null;
+	private TextField rtfish = null;
+	private TextField eShark = null;
+	private TextField geShark = null;
+	private TextField probfire = null;
+	private TextField problight = null;
+	private TextField probnewtree = null;
 
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -345,11 +365,13 @@ public class Manager extends Application {
 		Button startButton = GenerateStartButton(stage);
 		ChoiceBox<String> fileChoiceBox = GenerateChoiceBox();
 		Button guideButton = GenerateGuideButton(stage);
+		Button makerButton = GenerateMakerButton(stage);
 
 		splash.getChildren().add(startButton);
 		splash.getChildren().add(fileChoiceBox);
 		splash.getChildren().add(guideButton);
 		splash.getChildren().add(openButton);
+		splash.getChildren().add(makerButton);
 
 		Scene scene = new Scene(splash);
 		return scene;
@@ -401,6 +423,7 @@ public class Manager extends Application {
 				});
 		return startButton;
 	}
+
 	// Drop down menu to select type of simulation
 	public ChoiceBox GenerateChoiceBox() {
 		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
@@ -431,6 +454,27 @@ public class Manager extends Application {
 		});
 		return fileChoiceBox;
 	}
+
+	// Generates button to start the maker scene
+	public Button GenerateMakerButton(Stage s) {
+		Button makerButton = new Button(myResources.getString("MakerButton"));
+
+		makerButton.setOnAction(
+				new EventHandler<ActionEvent>() {
+					@Override
+					public void handle(final ActionEvent e) {	
+						try {
+							s.setScene(setupXMLmaker(MAKER_SIZE, MAKER_SIZE, BACKGROUND));
+							inMenu = true;
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
+					}
+
+				});
+		return makerButton;
+	}
+
 	// Generates button that opens the user manual
 	public Button GenerateGuideButton(Stage s) {
 		Button guideButton = new Button(myResources.getString("Guide"));
@@ -449,6 +493,222 @@ public class Manager extends Application {
 
 				});
 		return guideButton;
+	}
+
+	public Button GenButton(GridPane grid, String name, int x, int y) {
+		Button temp = new Button(name);
+		GridPane.setConstraints(temp, x, y);
+		grid.getChildren().add(temp);
+		return temp;
+	}
+
+	private Scene setupXMLmaker(int width, int height, Paint background) {
+		// make gridpane
+		GridPane grid = new GridPane();
+		grid.setPadding(new Insets(10, 10, 10, 10));
+		grid.setVgap(5);
+		grid.setHgap(5);
+
+		// add text entry fields
+		//Text title = new Text();
+		//title.setText("'M' to return to main menu");
+		//grid.add(title,0,0);
+		final TextField file = makeTextField(grid, myResources.getString("NameField"), 0, 1);
+		final TextField gridx = makeTextField(grid, myResources.getString("GridXField"), 0, 2);
+		final TextField gridy = makeTextField(grid, myResources.getString("GridYField"), 0, 3);
+		final TextField cellx = makeTextField(grid, myResources.getString("CellXField"), 0, 4);
+		final TextField celly = makeTextField(grid, myResources.getString("CellYField"), 0, 5);
+		if(fileType == 0) {
+			probcell = makeTextField(grid, myResources.getString("CellProbField"), 1, 1);
+		}
+		else if(fileType == 1) {
+			probx = makeTextField(grid, myResources.getString("XProbField"), 1, 1);
+			probo = makeTextField(grid,myResources.getString("OProbField"), 1, 2);
+			thresh = makeTextField(grid, myResources.getString("ThreshField"), 1, 3);
+		}
+		else if(fileType == 2) {
+			probfish = makeTextField(grid, myResources.getString("ProbFishField"), 1, 1);
+			probshark = makeTextField(grid, myResources.getString("ProbSharkField"), 1, 2);
+			rtshark = makeTextField(grid, myResources.getString("SharkThreshField"), 1, 3);
+			rtfish = makeTextField(grid, myResources.getString("FishThreshField"), 1, 4);
+			eShark = makeTextField(grid, myResources.getString("SharkEnergyField"), 1, 5);
+			geShark = makeTextField(grid, myResources.getString("SharkEnergyPerFishField"), 1, 6);
+		}
+		else if(fileType == 3) {
+			probfire = makeTextField(grid, myResources.getString("FireProbField"), 1, 1);
+			problight = makeTextField(grid, myResources.getString("LightProbField"), 1, 2);
+			probnewtree = makeTextField(grid, myResources.getString("NewTreeProbField"), 1, 3);
+		}
+		Button menu = GenButton(grid, myResources.getString("MenuButton"), 0, 0);
+		menu.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent e) {
+				try {
+					returnMenu();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		
+		Button create = GenButton(grid, myResources.getString("CreateButton"), 1, 0);
+		create.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent e) {
+				boolean isError = false;
+				int gridxval = 400;
+				int gridyval = 400;
+				int cellxval = 40;
+				int cellyval = 40;
+				double probcellval = 0.3;
+				double probxval = 0.3;
+				double proboval = 0.3;
+				double threshval = 0.3;
+				double probfishval = 0.3;
+				double probsharkval = 0.3;
+				int rtsharkval = 5;
+				int rtfishval = 5;
+				int esharkval = 5;
+				int gesharkval = 3;
+				double probfireval = 0.5;
+				double problightval = 0.01;
+				double probnewtreeval = 0.01;
+				String filename = file.getText();
+				if(filename.contains(".")) {
+					isError = true;
+					displayMessage(grid, myResources.getString("MakerError6"), 3, 0,10);
+				}
+				else if(filename.equals("game_of_life") || filename.equals("segregation") 
+						|| filename.equals("wator") || filename.equals("fire")) {
+					isError = true;
+					displayMessage(grid, myResources.getString("MakerError7"), 3, 0,11);
+				}
+
+				try {
+					gridxval = Integer.parseInt(gridx.getText());
+					gridyval = Integer.parseInt(gridy.getText());
+					cellxval = Integer.parseInt(cellx.getText());
+					cellyval = Integer.parseInt(celly.getText());
+				} catch(NumberFormatException ea) {
+					displayMessage(grid, myResources.getString("MakerError1"), 3, 0, 8);
+					isError = true;
+					//ea.printStackTrace();
+				}
+
+				try {
+					if(fileType == 0) {
+						try {
+							probcellval = Double.parseDouble(probcell.getText());
+						} catch(NumberFormatException ea) {
+							displayMessage(grid, myResources.getString("MakerError2"), 3, 0, 9);
+							isError = true;
+							//ea.printStackTrace();
+						}
+						if(!isError) {
+							new GOLXMLmaker(filename, "square", gridxval, gridyval, cellxval, cellyval, probcellval);
+							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
+						}		
+					}
+					else if(fileType == 1) {
+						try {
+							probxval = Double.parseDouble(probx.getText());
+							proboval = Double.parseDouble(probo.getText());
+							threshval = Double.parseDouble(thresh.getText());
+						} catch(NumberFormatException ea) {
+							displayMessage(grid, myResources.getString("MakerError3"), 3, 0, 9);
+							isError = true;
+							//ea.printStackTrace();
+						}
+						if(!isError) {
+							new SegXMLmaker(filename, "square", gridxval, gridyval, cellxval, cellyval, probxval, proboval, threshval);
+							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
+						}	
+					}
+					else if(fileType == 2) {
+						try {
+							probfishval = Double.parseDouble(probfish.getText());
+							probsharkval = Double.parseDouble(probshark.getText());
+							rtsharkval = Integer.parseInt(rtshark.getText());
+							rtfishval = Integer.parseInt(rtfish.getText());
+							esharkval = Integer.parseInt(eShark.getText());
+							gesharkval = Integer.parseInt(geShark.getText());
+						} catch(NumberFormatException ea) {
+							displayMessage(grid, myResources.getString("MakerError4"), 3, 0, 9);
+							isError = true;
+							//ea.printStackTrace();
+						}
+						if(!isError) {
+							new WatorXMLmaker(filename, "square", gridxval, gridyval, cellxval, cellyval, probfishval, 
+									probsharkval, rtsharkval, rtfishval, esharkval, gesharkval);
+							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
+						}	
+					}
+					else if(fileType == 3) {
+						try {
+							probfireval = Double.parseDouble(probfire.getText());
+							problightval = Double.parseDouble(problight.getText());
+							probnewtreeval = Double.parseDouble(probnewtree.getText());
+						} catch(NumberFormatException ea) {
+							displayMessage(grid, myResources.getString("MakerError5"), 3, 0, 9);
+							isError = true;
+							//ea.printStackTrace();
+						}
+						if(!isError) {
+							new FireXMLmaker(filename, "square", gridxval, gridyval, cellxval, cellyval, probfireval, problightval, probnewtreeval);
+							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
+						}	
+					}	
+				} catch (FileNotFoundException e1) {
+					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+					//e1.printStackTrace();
+				} catch (UnsupportedEncodingException e1) {
+					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+					//e1.printStackTrace();
+				}
+				//if(isError) {
+					//displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+				//}
+			}
+		});
+		// create a place to see the shapes
+		Scene scene = new Scene(grid, width, height, background);
+		// set what happens on key press
+		scene.setOnKeyPressed(ex -> {
+			// return to menu scene
+			try {
+				if(ex.getCode() == KeyCode.M) {
+					returnMenu();
+				}		
+			} catch (Exception e1) {
+				displayMessage(grid, myResources.getString("MakerError"), 3, 0, 7);
+				//e1.printStackTrace();
+			}
+		});
+		return scene;
+	}
+
+	private void displayMessage(GridPane grid, String message, int time, int x, int y) {
+		Text display = new Text();
+		grid.add(display,x,y);
+		display.setText(message);
+		FadeTransition ft = new FadeTransition(Duration.millis(time*1000), display);
+		ft.setFromValue(1.0);
+		ft.setToValue(0);
+		ft.setCycleCount(1);
+		ft.play();
+	}
+	
+	private TextField makeTextField(GridPane grid, String prompt, int x, int y) {
+		final TextField temp = new TextField();
+		temp.setPromptText(prompt);
+		temp.setPrefColumnCount(10);
+		temp.getText();
+		GridPane.setConstraints(temp, x, y);
+		grid.getChildren().add(temp);
+		return temp;
 	}
 
 	// Helper function of setupScene, returns a root with everything needed
