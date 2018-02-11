@@ -192,38 +192,31 @@ public class Neighbors {
 	}
 	
 	private void square_cardinal(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-1,j)) {
-			neighbors.add(grid[i-1][j]);
-		}
-		if (inGrid(i+1,j)) {
-			neighbors.add(grid[i+1][j]);
-		}
-		if (inGrid(i,j-1)) {
-			neighbors.add(grid[i][j-1]);
-		}
-		if (inGrid(i,j+1)) {
-			neighbors.add(grid[i][j+1]);
-		}
+		checkEdgeTypeAndAdd(neighbors, grid, i-1,j);
+		checkEdgeTypeAndAdd(neighbors, grid, i+1,j);
+		checkEdgeTypeAndAdd(neighbors, grid, i,j-1);
+		checkEdgeTypeAndAdd(neighbors, grid, i,j+1);
 	}
 	
 	private void square_diagonal(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-1,j-1)) {
-			neighbors.add(grid[i-1][j-1]);
-		}
-		if (inGrid(i+1,j+1)) {
-			neighbors.add(grid[i+1][j+1]);
-		}
-		if (inGrid(i+1,j-1)) {
-			neighbors.add(grid[i+1][j-1]);
-		}
-		if (inGrid(i-1,j+1)) {
-			neighbors.add(grid[i-1][j+1]);
-		}
+		checkEdgeTypeAndAdd(neighbors, grid, i-1,j-1);
+		checkEdgeTypeAndAdd(neighbors, grid, i+1,j+1);
+		checkEdgeTypeAndAdd(neighbors, grid, i+1,j-1);
+		checkEdgeTypeAndAdd(neighbors, grid, i-1,j+1);
 	}
 	
 	private void square_all(List<Cell> neighbors, Cell[][] grid, int i, int j) {
 		square_cardinal(neighbors, grid, i, j);
 		square_diagonal(neighbors, grid, i, j);
+	}
+	
+	private void checkEdgeTypeAndAdd (List<Cell> neighbors, Cell[][] grid, int x, int y) {
+		switch(edge_type) {
+		case "finite":
+			if (inGrid(x,y)) {
+				neighbors.add(grid[x][y]);
+			}
+		}
 	}
 	
 	/**
