@@ -82,8 +82,9 @@ public class Manager extends Application {
 	int cell_Height;
 	Integer stepcount = 0;
 	String shapetype;
-	int graphbufferH = 400;
-	int graphbufferW = 50;
+	int graphbufferH = 500;
+	int graphbufferW = 1200;
+	Color[] colors;
 	//probably should have made this a map
 	ArrayList<XYChart.Series<Number, Number>> datapoints = new ArrayList<XYChart.Series<Number, Number>>();
 	public static final Paint BACKGROUND = Color.WHITE;
@@ -179,6 +180,8 @@ public class Manager extends Application {
 		else if (code == KeyCode.M) {
 			// return menu
 			try {
+				datapoints.clear();
+				stepcount = 0;
 				returnMenu();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -358,9 +361,15 @@ public class Manager extends Application {
 		shapetype = cellArray.getShape();
 		int cell_width = (int) (width - 20) / cellArray.getCellArray()[0].length;
 		int cell_height = (int) (height - 20) / cellArray.getCellArray()[1].length;
+		if ((width + graphbufferW/2.0) < 800) {
+			width = 800 - graphbufferW/2;
+		}
+		if (height < (graphbufferH)) {
+			height = graphbufferH;
+		}
 		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));
 		root.getChildren().add(GenerateLineChart(cellArray.getNumberOfCells()));
-		Scene scene = new Scene(root, width + graphbufferW, height + graphbufferH, background);
+		Scene scene = new Scene(root, width + graphbufferW/2.0, height, background);
 		return scene;	
 	}
 
@@ -742,7 +751,7 @@ public class Manager extends Application {
 	}
 	//Helper function for CreateRoot, generates one cell
 	private Rectangle GenerateRectangularCell(Cell BufferCell, int width, int height, int i, int j) {
-		Rectangle Image = new Rectangle((width * i + XPADDING) + graphbufferW/2, (height * j + YPADDING) + graphbufferH, width, height);
+		Rectangle Image = new Rectangle((width * i + XPADDING) + graphbufferW/2, (height * j + YPADDING), width, height);
 		Image.setFill(BufferCell.getDisplayColor());
 		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
@@ -752,24 +761,26 @@ public class Manager extends Application {
 	private Polygon GenerateHexagonCell(Cell BufferCell, int width, int height, int i, int j) {
 		Polygon Image = new Polygon();
 		Double[] points;
+		height = 2* height / 3;
+		
 		if ((i % 2 )== 0) {
 			points = new Double[] {
-					40.0 * j + 10 + graphbufferW/2, 10.0 * i + graphbufferH, 
-					40.0 * j + 20 + graphbufferW/2, 10.0 * i + graphbufferH, 
-					40.0 * j + 30 + graphbufferW/2, 10.0 * i + 10 + graphbufferH,
-					40.0 * j + 20 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
-					40.0 * j + 10 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
-					40.0 * j + graphbufferW/2, 10.0 * i + 10 + graphbufferH
+					width * j + width/4.0 + graphbufferW/2, 1.0*height * i, 
+					width * j + width/2.0 + graphbufferW/2, 1.0*height * i, 
+					width * j + 3*width/4.0 + graphbufferW/2, height * i + 1.0*height,
+					width * j + width/2.0 + graphbufferW/2, height * i + 2.0*height,
+					width * j + width/4.0 + graphbufferW/2, height * i + 2.0*height,
+					width * j + graphbufferW/2.0, height * i + 1.0*height
 			};
 		}
 		else {
 			points = new Double[] {
-					40.0 * j + 30 + graphbufferW/2, 10.0 * i + graphbufferH, 
-					40.0 * j + 40 + graphbufferW/2, 10.0 * i + graphbufferH, 
-					40.0 * j + 50 + graphbufferW/2, 10.0 * i + 10 + graphbufferH,
-					40.0 * j + 40 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
-					40.0 * j + 30 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
-					40.0 * j + 20 + graphbufferW/2, 10.0 * i + 10 + graphbufferH
+					width * j + 3*width/4.0 + graphbufferW/2, 1.0*height * i, 
+					width * j + width + graphbufferW/2.0, 1.0*height * i, 
+					width * j + 5*width/4.0 + graphbufferW/2, height * i + 1.0*height,
+					width * j + width + graphbufferW/2.0, height * i + 2.0*height,
+					width * j + 3*width/4.0 + graphbufferW/2, height * i + 2.0*height,
+					width * j + width/2.0 + graphbufferW/2, height * i + 1.0*height
 			};
 		}
 		Image.getPoints().addAll(points);
@@ -784,16 +795,16 @@ public class Manager extends Application {
 		Double[] points;
 		if ((i % 2 )== 0) {
 			points = new Double[] {
-					10.0 * j + 10 + graphbufferW/2, 15.0 * (j % 2) + 15 * i + graphbufferH, 
-					10.0 * j + 20 + graphbufferW/2, 15.0 * ((j + 1) % 2) + 15 * i + graphbufferH, 
-					10.0 * j + graphbufferW/2, 15.0 * ((j + 1)% 2) + 15 * i + graphbufferH
+					width * j + width/1.0 + graphbufferW/2, height * (j % 2) + height/1.0 * i, 
+					width * j + width/0.5 + graphbufferW/2, height * ((j + 1) % 2) + height/1.0 * i, 
+					width * j + graphbufferW/2.0, height * ((j + 1)% 2) + height/1.0 * i
 			};
 		}
 		else {
 			points = new Double[] {
-					10.0 * j + 10 + graphbufferW/2, 15.0 * ((j + 1) % 2) + 15 * i + graphbufferH, 
-					10.0 * j + 20 + graphbufferW/2, 15.0 * (j % 2) + 15 * i + graphbufferH, 
-					10.0 * j + graphbufferW/2, 15.0 * (j % 2) + 15 * i + graphbufferH
+					width * j + width/1.0 + graphbufferW/2, height * ((j + 1) % 2) + height/1.0 * i, 
+					width * j + width/0.5 + graphbufferW/2, height * (j % 2) + height/1.0 * i, 
+					width * j + graphbufferW/2.0, height * (j % 2) + height/1.0 * i
 			};
 		}
 		Image.getPoints().addAll(points);
@@ -812,11 +823,14 @@ public class Manager extends Application {
 		final LineChart<Number, Number> lineChart = new LineChart<Number, Number>(xAxis,yAxis);
 		lineChart.setTitle("Population Plots");
 		int count = 0;
+		
 
+		
 		for (String s : init_map.keySet()) {
 			if (datapoints.size() == count) {
 				XYChart.Series<Number, Number> buffer = new XYChart.Series();
 				buffer.getData().add(new XYChart.Data(stepcount, init_map.get(s)));
+				buffer.setName(s);
 				datapoints.add(buffer);
 			}
 			datapoints.get(count).getData().add(new XYChart.Data(stepcount, init_map.get(s)));
