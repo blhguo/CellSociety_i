@@ -75,7 +75,7 @@ public class FireSimGrid extends Grid {
 	 */
 	@Override
 	public String[][] getArray() {
-		getCurrentState();
+		getCurrentParameters();
 		return this.cellArray;
 	}
 	
@@ -91,8 +91,12 @@ public class FireSimGrid extends Grid {
 		return ((FireSimCell) myGrid[0][0]).getProbGrow();
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#getCurrentParameters()
+	 */
 	@Override
-	protected void getCurrentState() {
+	public Map<String,Double> getCurrentParameters() {
+		HashMap<String, Double> map = new HashMap<>();
 		cellArray = new String[myGrid.length][myGrid[0].length];
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
@@ -103,6 +107,24 @@ public class FireSimGrid extends Grid {
 				} else if (myGrid[i][j] instanceof TreeCell) {
 					cellArray[i][j] = "tree";
 				}
+			}
+		}
+		map.put("probCatch", getFireProb());
+		map.put("probLightning", getLightningProb());
+		map.put("probGrow", getProbGrow());
+		return map;
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#setCurrentParameters(java.util.Map)
+	 */
+	@Override
+	public void setCurrentParameters(Map<String, Double> map) {
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				((FireSimCell) myGrid[i][j]).setFireProb(map.get("probCatch"));
+				((FireSimCell) myGrid[i][j]).setLightningProb(map.get("probLightning"));
+				((FireSimCell) myGrid[i][j]).setProbGrow(map.get("probGrow"));
 			}
 		}
 	}

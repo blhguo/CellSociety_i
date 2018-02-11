@@ -53,12 +53,20 @@ public class SharkCell extends WatorSimCell{
 		return this.reproduction_threshold;
 	}
 	
+	public void setReproductionThreshold(double t) {
+		this.reproduction_threshold = (int) t;
+	}
+	
 	public int getEnergy() {
 		return this.current_energy;
 	}
 	
 	public int getGainedEnergy() {
 		return this.gained_energy;
+	}
+	
+	public void setGainedEnergy(double e) {
+		this.gained_energy = (int) e;
 	}
 
 	/* (non-Javadoc)
