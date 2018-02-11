@@ -89,7 +89,7 @@ public class WatorXMLmaker extends XMLmaker{
 		int[][] currentEnergyArray = grid.getCurrentEnergy();
 		int[][] gainedEnergyArray = grid.getGainedEnergy();
 		int[][] defaultEnergyArray = grid.getDefaultEnergy();
-		int[][] currentReproductionArray = grid.getReproductionTime;
+		int[][] currentReproductionArray = grid.getReproductionTime();
 		numCellsX = (int) gridx / cellx;
 		numCellsY = (int) gridy / celly;
 		printFileHeader2();
