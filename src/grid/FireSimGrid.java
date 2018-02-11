@@ -48,8 +48,8 @@ public class FireSimGrid extends Grid {
 	 * @see grid.Grid#getNumberOfCells()
 	 */
 	@Override
-	public Map<String, Integer> getNumberOfCells() {
-		HashMap<String, Integer> map = new HashMap<>();
+	public Map<String, Number> getNumberOfCells() {
+		HashMap<String, Number> map = new HashMap<>();
 		int empty = 0;
 		int fire = 0;
 		int tree = 0;

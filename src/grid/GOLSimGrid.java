@@ -62,8 +62,8 @@ public class GOLSimGrid extends Grid{
 	 * @see grid.Grid#getNumberOfCells()
 	 */
 	@Override
-	public Map<String, Integer> getNumberOfCells() {
-		HashMap<String, Integer> map = new HashMap<>();
+	public Map<String, Number> getNumberOfCells() {
+		HashMap<String, Number> map = new HashMap<>();
 		int alive = 0;
 		int dead = 0;
 		for (int i = 0; i < myGrid.length; i++) {
