@@ -98,6 +98,8 @@ public class Manager extends Application {
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
 	private static final int MAKER_SIZE = 300;
+	private int SHAPESIZE_W;
+	private int SHAPESIZE_L;
 	private boolean inMenu = true;
 	public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	public static final String DEFAULT_RESOURCE_FILE = "defaultText";
@@ -188,7 +190,7 @@ public class Manager extends Application {
 			stepcount = stepcount + 1;
 			try {
 				myGrid.updateGrid();
-				myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid, cell_Width, cell_Height);
+				myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid);
 				myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 				TheStage.setScene(myScene_Buffer);
 				TheStage.show();
@@ -350,8 +352,9 @@ public class Manager extends Application {
 	}
 
 	// Sets up scene for the actual simulation
-	public Scene setupScene (int width, int height, Paint background, Grid cellArray, int cell_width, int cell_height) throws Exception {
-		shapetype = cellArray.getShape();
+	public Scene setupScene (int width, int height, Paint background, Grid cellArray) throws Exception {
+		int cell_width = (int) (width - 20) / cellArray.getCellArray()[0].length;
+		int cell_height = (int) (height - 20) / cellArray.getCellArray()[1].length;
 		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));
 		root.getChildren().add(GenerateLineChart(cellArray.getNumberOfCells()));
 		Scene scene = new Scene(root, width, height, background);
@@ -398,7 +401,7 @@ public class Manager extends Application {
 							try {
 								animation.play();
 								callXMLreader(fileName);
-								s.setScene(setupScene(width, height, BACKGROUND, myGrid, cell_Width, cell_Height));
+								s.setScene(setupScene(width, height, BACKGROUND, myGrid));
 								inMenu = false;
 							} catch (Exception e1) {
 								e1.printStackTrace();
@@ -419,7 +422,7 @@ public class Manager extends Application {
 						try {
 							animation.play();
 							callXMLreader(fileName);
-							s.setScene(setupScene(width, height, BACKGROUND, myGrid, cell_Width, cell_Height));
+							s.setScene(setupScene(width, height, BACKGROUND, myGrid));
 							inMenu = false;
 						} catch (Exception e1) {
 							e1.printStackTrace();
