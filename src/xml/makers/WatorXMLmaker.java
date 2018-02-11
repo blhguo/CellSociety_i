@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
-import grid.GOLSimGrid;
+import grid.WatorSimGrid;
 import xml.XMLmaker;
 
 public class WatorXMLmaker extends XMLmaker{
@@ -76,13 +76,20 @@ public class WatorXMLmaker extends XMLmaker{
 		closeWriter();
 	}
 	
-	public WatorXMLmaker(GOLSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
+	public WatorXMLmaker(WatorSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		super(FILE, TYPE, WATOR_TITLE, WATOR_AUTHOR);
 		gridx = gx;
 		gridy = gy;
 		cellx = cx;
 		celly = cy;
 		shape = grid.getShape();
+		neighbourType = grid.getNeighborArrangement();
+		edgeType = grid.getEdgeType();
+		int[][] repThreshArray = grid.getReproductionThreshold(); // both shark and fish
+		int[][] currentEnergyArray = grid.getCurrentEnergy();
+		int[][] gainedEnergyArray = grid.getGainedEnergy();
+		int[][] defaultEnergyArray = grid.getDefaultEnergy();
+		int[][] currentReproductionArray = grid.getReproductionTime;
 		numCellsX = (int) gridx / cellx;
 		numCellsY = (int) gridy / celly;
 		printFileHeader2();
@@ -92,7 +99,8 @@ public class WatorXMLmaker extends XMLmaker{
 			for(int j = 0; j < cellArray[1].length; j++){
 				type = cellArray[i][j];
 				if(!type.equals("empty")){
-					printCell(type, i, j);
+					printWatorCell(type, i, j, repThreshArray[i][j], gainedEnergyArray[i][j],
+							defaultEnergyArray[i][j], currentEnergyArray[i][j], currentReproductionArray[i][j]);
 				}
 			}
 		}
