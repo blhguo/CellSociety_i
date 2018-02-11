@@ -32,6 +32,7 @@ public class Neighbors {
 				chooseSquareNeighborOrienation(neighbors, grid, i, j);
 				break;
 			case "hexagon":
+				hexagon_all(neighbors, grid, i, j);
 				break;
 			case "triangle":
 				chooseTriangleNeighborOrienation(neighbors, grid, i, j);
@@ -67,6 +68,36 @@ public class Neighbors {
 			default:
 				triangle_all(neighbors, grid, i, j);
 				break;
+		}
+	}
+	
+	private void hexagon_all (List<Cell> neighbors, Cell[][] grid, int i, int j) {
+		if (inGrid(i-2,j)) {
+			neighbors.add(grid[i-2][j]);
+		}
+		if (inGrid(i+2,j)) {
+			neighbors.add(grid[i+2][j]);
+		}
+		if (i%2 == 0) {
+			if (inGrid(i-1,j-1)) {
+				neighbors.add(grid[i-1][j-1]);
+			}
+			if (inGrid(i+1,j-1)) {
+				neighbors.add(grid[i+1][j-1]);
+			}
+		} else {
+			if (inGrid(i-1,j+1)) {
+				neighbors.add(grid[i-1][j+1]);
+			}
+			if (inGrid(i+1,j+1)) {
+				neighbors.add(grid[i+1][j+1]);
+			}
+		}
+		if (inGrid(i-1,j)) {
+			neighbors.add(grid[i-1][j]);
+		}
+		if (inGrid(i+1,j)) {
+			neighbors.add(grid[i+1][j]);
 		}
 	}
 	
