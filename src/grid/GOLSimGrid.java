@@ -1,10 +1,8 @@
 package grid;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import cell.Cell;
 import cell.GOLsim.AliveCell;
 import cell.GOLsim.DeadCell;
 
@@ -22,8 +20,8 @@ public class GOLSimGrid extends Grid{
 	 * @param height - number of cells in the height of the grid
 	 * @param cellArray - array of initial cell types
 	 */
-	public GOLSimGrid(int width, int height, String[][] cellArray) {
-		super(width, height);
+	public GOLSimGrid(int width, int height, String shape, String[][] cellArray) {
+		super(width, height, shape, "all");
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
@@ -35,26 +33,6 @@ public class GOLSimGrid extends Grid{
 					break;
 				}
 			}
-		}
-	}
-
-	/* (non-Javadoc)
-	 * @see grid.Grid#addNeighbors(java.util.List, cell.Cell[][], int, int)
-	 */
-	@Override
-	protected void addNeighbors(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		super.addNeighbors(neighbors, grid, i, j);
-		if (inGrid(i-1,j-1)) {
-			neighbors.add(grid[i-1][j-1]);
-		}
-		if (inGrid(i+1,j+1)) {
-			neighbors.add(grid[i+1][j+1]);
-		}
-		if (inGrid(i+1,j-1)) {
-			neighbors.add(grid[i+1][j-1]);
-		}
-		if (inGrid(i-1,j+1)) {
-			neighbors.add(grid[i-1][j+1]);
 		}
 	}
 	
