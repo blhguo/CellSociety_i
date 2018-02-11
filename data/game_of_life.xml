@@ -9,7 +9,7 @@
 	<grid_x>400</grid_x>
 	<grid_y>400</grid_y>
 	<neighbourType>all</neighbourType>
-	<edgeType>infinite</edgeType>
+	<edgeType>finite</edgeType>
 	
 	<cell>
 		<type>alive</type>

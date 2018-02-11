@@ -55,10 +55,8 @@ public class SegXMLmaker extends XMLmaker{
 		cellx = cx;
 		celly = cy;
 		shape = grid.getShape();
-		//neighbourType = grid.getNeighborArrangement();
-		//edgeType = grid.getEdgeType();
-		neighbourType = "all";
-		edgeType = "finite";
+		neighbourType = grid.getNeighborArrangement();
+		edgeType = grid.getEdgeType();
 		double[][] gThreshold= grid.getThreshold();
 		numCellsX = (int) gridx / cellx;
 		numCellsY = (int) gridy / celly; 

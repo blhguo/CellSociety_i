@@ -3,9 +3,11 @@ package xml.makers;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 
+import grid.FireSimGrid;
 import xml.XMLmaker;
 
 public class FireXMLmaker extends XMLmaker{
+	private final static String FILE = "data/fire_saved.xml";
 	private final static String TYPE = "fire";
 	private final static String FIRE_TITLE =  "Fire";
 	private final static String FIRE_AUTHOR =  "Angela B. Shiflet";
@@ -35,6 +37,32 @@ public class FireXMLmaker extends XMLmaker{
 		int centerX = (int) (numCellsX-1)/2;
 		int centerY = (int) (numCellsY-1)/2;
 		printCell("fire", centerX, centerY);
+		closeWriter();
+	}
+	
+	public FireXMLmaker(FireSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
+		super(FILE, TYPE, FIRE_TITLE, FIRE_AUTHOR);
+		gridx = gx;
+		gridy = gy;
+		cellx = cx;
+		celly = cy;
+		shape = grid.getShape();
+		numCellsX = (int) gridx / cellx;
+		numCellsY = (int) gridy / celly;
+		neighbourType = grid.getNeighborArrangement();
+		edgeType = grid.getEdgeType();
+		printFileHeader2();
+		printFireHeader();
+		String[][] cellArray = grid.getArray();
+		String type;
+		for(int i = 0; i < cellArray[0].length; i++){
+			for(int j = 0; j < cellArray[1].length; j++){
+				type = cellArray[i][j];
+				if(!type.equals("tree")){
+					printCell(type, i, j);
+				}
+			}
+		}
 		closeWriter();
 	}
 	
