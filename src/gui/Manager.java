@@ -89,7 +89,7 @@ public class Manager extends Application {
 	public static final Paint BACKGROUND = Color.WHITE;
 	private Stage TheStage;
 	private static final String TITLE = "CA SIMULATION";
-	private String DEFAULT_FILENAME = "data/game_of_life.xml";
+	private static final String DEFAULT_FILENAME = "data/game_of_life.xml";
 	private String fileName = DEFAULT_FILENAME;
 	private int fileType = 0;
 	public double SECOND_DELAY = 1000.0;
@@ -99,7 +99,7 @@ public class Manager extends Application {
 	private static final int YPADDING = 10;
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
-	private static final int MAKER_SIZE = 300;
+	private static final int MAKER_SIZE = 400;
 	private int SHAPESIZE_W;
 	private int SHAPESIZE_L;
 	private boolean inMenu = true;
@@ -123,6 +123,9 @@ public class Manager extends Application {
 	private TextField probfire = null;
 	private TextField problight = null;
 	private TextField probnewtree = null;
+	private String neighbourType = "all";
+	private String edgeType = "finite";
+	private String shape = "square";
 
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -375,7 +378,7 @@ public class Manager extends Application {
 
 		Button openButton = GenerateFileButton(stage);
 		Button startButton = GenerateStartButton(stage);
-		ChoiceBox<String> fileChoiceBox = GenerateChoiceBox();
+		ChoiceBox<String> fileChoiceBox = GenerateSimChoiceBox();
 		Button guideButton = GenerateGuideButton(stage);
 		Button makerButton = GenerateMakerButton(stage);
 
@@ -437,7 +440,7 @@ public class Manager extends Application {
 	}
 
 	// Drop down menu to select type of simulation
-	public ChoiceBox GenerateChoiceBox() {
+	public ChoiceBox GenerateSimChoiceBox() {
 		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
 		fileChoiceBox.getItems().add(myResources.getString("DropDown1"));
 		fileChoiceBox.getItems().add(myResources.getString("DropDown2"));
@@ -461,6 +464,79 @@ public class Manager extends Application {
 				if((int) new_value == 3){
 					fileName = myResources.getString(FileF);
 					fileType = 3;
+				}
+			}
+		});
+		return fileChoiceBox;
+	}
+
+	// Drop down menu to select type of simulation
+	public ChoiceBox GenerateNeighbourChoiceBox() {
+		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
+		fileChoiceBox.getItems().add(myResources.getString("DropDown5"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown6"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown7"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown8"));
+		fileChoiceBox.getSelectionModel().selectFirst();
+		fileChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {	
+				if((int) new_value == 0){
+					neighbourType = "all";
+				}
+				if((int) new_value == 1){
+					neighbourType = "cardinal";
+				}
+				if((int) new_value == 2){
+					neighbourType = "diagonal";
+				}
+				if((int) new_value == 3){
+					neighbourType = "3-next";
+				}
+			}
+		});
+		return fileChoiceBox;
+	}
+
+	// Drop down menu to select type of simulation
+	public ChoiceBox GenerateEdgeChoiceBox() {
+		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
+		fileChoiceBox.getItems().add(myResources.getString("DropDown9"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown10"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown11"));
+		fileChoiceBox.getSelectionModel().selectFirst();
+		fileChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {	
+				if((int) new_value == 0){
+					edgeType = "finite";
+				}
+				if((int) new_value == 1){
+					edgeType = "toroidal";
+				}
+				if((int) new_value == 2){
+					edgeType = "infinite";
+				}
+			}
+		});
+		return fileChoiceBox;
+	}
+
+	// Drop down menu to select type of simulation
+	public ChoiceBox GenerateShapeChoiceBox() {
+		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
+		fileChoiceBox.getItems().add(myResources.getString("DropDown12"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown13"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown14"));
+		fileChoiceBox.getSelectionModel().selectFirst();
+		fileChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue ov, Number value, Number new_value) {	
+				if((int) new_value == 0){
+					shape = "square";
+				}
+				if((int) new_value == 1){
+					shape = "triangle";
+				}
+				if((int) new_value == 2){
+					shape = "hexagon";
 				}
 			}
 		});
@@ -522,14 +598,17 @@ public class Manager extends Application {
 		grid.setHgap(5);
 
 		// add text entry fields
-		//Text title = new Text();
-		//title.setText("'M' to return to main menu");
-		//grid.add(title,0,0);
 		final TextField file = makeTextField(grid, myResources.getString("NameField"), 0, 1);
 		final TextField gridx = makeTextField(grid, myResources.getString("GridXField"), 0, 2);
 		final TextField gridy = makeTextField(grid, myResources.getString("GridYField"), 0, 3);
 		final TextField cellx = makeTextField(grid, myResources.getString("CellXField"), 0, 4);
 		final TextField celly = makeTextField(grid, myResources.getString("CellYField"), 0, 5);
+		final ChoiceBox neighbourChoiceBox = GenerateNeighbourChoiceBox();
+		final ChoiceBox edgeChoiceBox = GenerateEdgeChoiceBox();
+		final ChoiceBox shapeChoiceBox = GenerateShapeChoiceBox();
+		grid.add(neighbourChoiceBox, 0, 7);
+		grid.add(edgeChoiceBox, 0, 8);
+		grid.add(shapeChoiceBox, 0, 6);
 		if(fileType == 0) {
 			probcell = makeTextField(grid, myResources.getString("CellProbField"), 1, 1);
 		}
@@ -589,14 +668,32 @@ public class Manager extends Application {
 				double problightval = 0.01;
 				double probnewtreeval = 0.01;
 				String filename = file.getText();
+				
+				// filename error handling
 				if(filename.contains(".")) {
 					isError = true;
-					displayMessage(grid, myResources.getString("MakerError6"), 3, 0,10);
+					displayMessage(grid, myResources.getString("MakerError6"), 3, 0,11);
 				}
 				else if(filename.equals("game_of_life") || filename.equals("segregation") 
 						|| filename.equals("wator") || filename.equals("fire")) {
 					isError = true;
-					displayMessage(grid, myResources.getString("MakerError7"), 3, 0,11);
+					displayMessage(grid, myResources.getString("MakerError7"), 3, 0,12);
+				}
+				
+				// shape error handling
+				if(shape.equals("square") && neighbourType.equals("3-next")){
+					isError = true;
+					displayMessage(grid, myResources.getString("MakerError8"), 3, 0, 13);
+				}
+				else if (shape.equals("triangle") 
+						&& (neighbourType.equals("cardinal") || neighbourType.equals("diagonal"))){
+					isError = true;
+					displayMessage(grid, myResources.getString("MakerError8"), 3, 0, 13);
+				}
+				else if (shape.equals("hexagon") && 
+						(neighbourType.equals("cardinal") || neighbourType.equals("diagonal") || neighbourType.equals("3-next"))){
+					isError = true;
+					displayMessage(grid, myResources.getString("MakerError8"), 3, 0, 13);
 				}
 
 				try {
@@ -605,9 +702,15 @@ public class Manager extends Application {
 					cellxval = Integer.parseInt(cellx.getText());
 					cellyval = Integer.parseInt(celly.getText());
 				} catch(NumberFormatException ea) {
-					displayMessage(grid, myResources.getString("MakerError1"), 3, 0, 8);
+					displayMessage(grid, myResources.getString("MakerError1"), 3, 0, 9);
 					isError = true;
 					//ea.printStackTrace();
+				}
+				
+				// grid size error handling
+				if(cellxval > gridxval/2 || cellyval > gridyval/2){
+					isError = true;
+					displayMessage(grid, myResources.getString("MakerError1"), 3, 0, 9);
 				}
 
 				try {
@@ -615,12 +718,12 @@ public class Manager extends Application {
 						try {
 							probcellval = Double.parseDouble(probcell.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, myResources.getString("MakerError2"), 3, 0, 9);
+							displayMessage(grid, myResources.getString("MakerError2"), 3, 0, 10);
 							isError = true;
 							//ea.printStackTrace();
 						}
 						if(!isError) {
-							new GOLXMLmaker(filename, "square", gridxval, gridyval, cellxval, cellyval, probcellval);
+							new GOLXMLmaker(filename, shape, neighbourType, edgeType, gridxval, gridyval, cellxval, cellyval, probcellval);
 							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
 						}		
 					}
@@ -630,12 +733,12 @@ public class Manager extends Application {
 							proboval = Double.parseDouble(probo.getText());
 							threshval = Double.parseDouble(thresh.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, myResources.getString("MakerError3"), 3, 0, 9);
+							displayMessage(grid, myResources.getString("MakerError3"), 3, 0, 10);
 							isError = true;
 							//ea.printStackTrace();
 						}
 						if(!isError) {
-							new SegXMLmaker(filename, "square", gridxval, gridyval, cellxval, cellyval, probxval, proboval, threshval);
+							new SegXMLmaker(filename, shape, neighbourType, edgeType, gridxval, gridyval, cellxval, cellyval, probxval, proboval, threshval);
 							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
 						}	
 					}
@@ -648,12 +751,12 @@ public class Manager extends Application {
 							esharkval = Integer.parseInt(eShark.getText());
 							gesharkval = Integer.parseInt(geShark.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, myResources.getString("MakerError4"), 3, 0, 9);
+							displayMessage(grid, myResources.getString("MakerError4"), 3, 0, 10);
 							isError = true;
 							//ea.printStackTrace();
 						}
 						if(!isError) {
-							new WatorXMLmaker(filename, "square", gridxval, gridyval, cellxval, cellyval, probfishval, 
+							new WatorXMLmaker(filename, shape, neighbourType, edgeType, gridxval, gridyval, cellxval, cellyval, probfishval, 
 									probsharkval, rtsharkval, rtfishval, esharkval, gesharkval);
 							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
 						}	
@@ -664,24 +767,24 @@ public class Manager extends Application {
 							problightval = Double.parseDouble(problight.getText());
 							probnewtreeval = Double.parseDouble(probnewtree.getText());
 						} catch(NumberFormatException ea) {
-							displayMessage(grid, myResources.getString("MakerError5"), 3, 0, 9);
+							displayMessage(grid, myResources.getString("MakerError5"), 3, 0, 10);
 							isError = true;
 							//ea.printStackTrace();
 						}
 						if(!isError) {
-							new FireXMLmaker(filename, "square", gridxval, gridyval, cellxval, cellyval, probfireval, problightval, probnewtreeval);
+							new FireXMLmaker(filename, shape, neighbourType, edgeType, gridxval, gridyval, cellxval, cellyval, probfireval, problightval, probnewtreeval);
 							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
 						}	
 					}	
 				} catch (FileNotFoundException e1) {
-					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 9);
 					//e1.printStackTrace();
 				} catch (UnsupportedEncodingException e1) {
-					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 9);
 					//e1.printStackTrace();
 				}
 				//if(isError) {
-				//displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+				//displayMessage(grid, myResources.getString("MakerError"), 3, 0, 9);
 				//}
 			}
 		});

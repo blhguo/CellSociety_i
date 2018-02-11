@@ -15,9 +15,9 @@ public class FireSimSetup extends SimulationSetup{
 	 * @param lP
 	 * @param eTP
 	 */
-	public FireSimSetup(String n, String t, String a, String s, int xSize, int ySize, int gridX, int gridY,
+	public FireSimSetup(String n, String t, String a, String s, String nT, String eT, int xSize, int ySize, int gridX, int gridY,
 			String[][] typeArray, double fP, double lP, double eTP) {
-		super(n, t, a, s, xSize, ySize, gridX, gridY);
+		super(n, t, a, s, nT, eT, xSize, ySize, gridX, gridY);
 		cellArray = typeArray;
 		fireProb = fP;
 		lightningProb = lP;
@@ -34,8 +34,8 @@ public class FireSimSetup extends SimulationSetup{
 	 * @param eTP
 	 */
 	public FireSimSetup(SimulationSetup simSetup, String[][] typeArray, double fP, double lP, double eTP) {
-		super(simSetup.getName(), simSetup.getTitle(), simSetup.getAuthor(), simSetup.getShape(), simSetup.getCellX(), 
-				simSetup.getCellY(), simSetup.getGridX(), simSetup.getGridY());
+		super(simSetup.getName(), simSetup.getTitle(), simSetup.getAuthor(), simSetup.getShape(), simSetup.getNeighbourType(), 
+				simSetup.getEdgeType(), simSetup.getCellX(), simSetup.getCellY(), simSetup.getGridX(), simSetup.getGridY());
 		cellArray = typeArray;
 		fireProb = fP;
 		lightningProb = lP;
