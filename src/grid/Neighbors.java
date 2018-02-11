@@ -34,6 +34,7 @@ public class Neighbors {
 			case "triangle":
 				break;
 			default:
+				chooseSquareNeighborOrienation(neighbors, grid, i, j);
 				break;
 		}
 	}
@@ -50,6 +51,7 @@ public class Neighbors {
 				square_all(neighbors, grid, i, j);
 				break;
 			default:
+				square_all(neighbors, grid, i, j);
 				break;
 		}
 	}
