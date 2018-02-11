@@ -71,7 +71,13 @@ public class XMLreader {
 			String grid_yString = getStringValue(grid_yList);
 			int grid_y = Integer.parseInt(grid_yString);
 			
-			return new SimulationSetup(name, title, author, cell_shape, cell_xsize, 
+			NodeList neighbourList = doc.getElementsByTagName("neighbourType");
+			String neighbourType = getStringValue(neighbourList);
+			
+			NodeList edgeTypeList = doc.getElementsByTagName("edgeType");
+			String edgeType = getStringValue(edgeTypeList);
+			
+			return new SimulationSetup(name, title, author, cell_shape, neighbourType, edgeType, cell_xsize, 
 					cell_ysize, grid_x, grid_y);
 		} catch (Exception e) {
 			return null;

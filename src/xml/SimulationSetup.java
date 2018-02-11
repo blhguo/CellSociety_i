@@ -26,12 +26,14 @@ public class SimulationSetup {
 	private String title;
 	private String author;
 	private String cell_shape;
+	private String neighbourType;
+	private String edgeType;
 	private int cell_xsize;
 	private int cell_ysize;
 	private int grid_x;
 	private int grid_y;
 	
-	public SimulationSetup(String n, String t, String a, String s, int xSize, int ySize, 
+	public SimulationSetup(String n, String t, String a, String s, String nT, String eT, int xSize, int ySize, 
 			int gridX, int gridY) {
 		name =  n;
 		title = t;
@@ -41,6 +43,8 @@ public class SimulationSetup {
 		cell_ysize = ySize;
 		grid_x = gridX;
 		grid_y = gridY;
+		neighbourType = nT;
+		edgeType = eT;
 	}
 	
 	/**
@@ -69,6 +73,20 @@ public class SimulationSetup {
 	 */
 	public String getShape() {
 		return cell_shape;
+	}
+	
+	/**
+	 * returns the cell shape of the simulation
+	 */
+	public String getNeighbourType() {
+		return neighbourType;
+	}
+	
+	/**
+	 * returns the cell shape of the simulation
+	 */
+	public String getEdgeType() {
+		return edgeType;
 	}
 	
 	/**
@@ -114,6 +132,15 @@ public class SimulationSetup {
 		
 		System.out.print("cell_shape = ");
 		System.out.println(cell_shape);
+		
+		System.out.print("neighourType = ");
+		System.out.println(neighbourType);
+		
+		System.out.print("edgeType = ");
+		System.out.println(edgeType);
+		
+		System.out.print("grid_y = ");
+		System.out.println(grid_y);
 		
 		System.out.print("cell_xsize = ");
 		System.out.println(cell_xsize);

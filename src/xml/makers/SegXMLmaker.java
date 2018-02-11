@@ -19,8 +19,8 @@ public class SegXMLmaker extends XMLmaker{
 	private double prob_o = 0.3;
 	private double threshold = 0.3;
 
-	public SegXMLmaker(String file, String shape, int gx, int gy, int cx, int cy, double probx, double probo, double thresh) throws FileNotFoundException, UnsupportedEncodingException{
-		super(file, TYPE, SEG_TITLE, SEG_AUTHOR, shape, gx, gy, cx, cy);
+	public SegXMLmaker(String file, String shape, String nT, String eT, int gx, int gy, int cx, int cy, double probx, double probo, double thresh) throws FileNotFoundException, UnsupportedEncodingException{
+		super(file, TYPE, SEG_TITLE, SEG_AUTHOR, shape, nT, eT, gx, gy, cx, cy);
 		prob_x = probx;
 		prob_o = probo;
 		threshold = thresh;
@@ -47,7 +47,7 @@ public class SegXMLmaker extends XMLmaker{
 		}
 		closeWriter();
 	}
-	
+
 	public SegXMLmaker(SegregationSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		super(FILE, TYPE, SEG_TITLE, SEG_AUTHOR);
 		gridx = gx;
@@ -55,6 +55,10 @@ public class SegXMLmaker extends XMLmaker{
 		cellx = cx;
 		celly = cy;
 		shape = grid.getShape();
+		//neighbourType = grid.getNeighborArrangement();
+		//edgeType = grid.getEdgeType();
+		neighbourType = "all";
+		edgeType = "finite";
 		double[][] gThreshold= grid.getThreshold();
 		numCellsX = (int) gridx / cellx;
 		numCellsY = (int) gridy / celly; 

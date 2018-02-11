@@ -31,8 +31,10 @@ public class XMLmaker {
 	protected int celly;
 	protected String shape;
 	private String fileName;
+	protected String neighbourType;
+	protected String edgeType;
 
-	public XMLmaker(String file, String simu, String t, String a, String s, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
+	public XMLmaker(String file, String simu, String t, String a, String s, String nT, String eT, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		sim = simu;
 		title = t;
 		author = a;
@@ -41,6 +43,8 @@ public class XMLmaker {
 		gridy = gy;
 		cellx = cx;
 		celly = cy;
+		neighbourType = nT;
+		edgeType = eT;
 		numCellsX = (int) gridx / cellx;
 		numCellsY = (int) gridy / celly;
 		fileName = "data/" + file + ".xml";
@@ -73,6 +77,8 @@ public class XMLmaker {
 		writer.println("\t" + "<cell_ysize>" + celly + "</cell_ysize>");
 		writer.println("\t" + "<grid_x>" + gridx + "</grid_x>");
 		writer.println("\t" + "<grid_y>" + gridy + "</grid_y>");
+		writer.println("\t" + "<neighbourType>" + neighbourType + "</neighbourType>");
+		writer.println("\t" + "<edgeType>" + edgeType + "</edgeType>");
 	}
 
 	protected void closeWriter(){

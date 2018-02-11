@@ -7,6 +7,8 @@ public class WatorSimSetup extends SimulationSetup{
 	private int[][] reproductionArray;
 	private int[][] gainedEnergyArray;
 	private int[][] energyArray;
+	private int[][] currentEnergyArray;
+	private int[][] currentReproductionArray;
 	
 	/**
 	 * @see SimulationSetup#SimulationSetup(String n, String t, String a, String s, int xSize, int ySize, int gridX, int gridY)
@@ -15,13 +17,15 @@ public class WatorSimSetup extends SimulationSetup{
 	 * @param gEA
 	 * @param eA
 	 */
-	public WatorSimSetup(String n, String t, String a, String s, int xSize, int ySize, int gridX, int gridY,
-			String[][] typeArray, int[][] rA, int[][] gEA, int[][] eA) {
-		super(n, t, a, s, xSize, ySize, gridX, gridY);
+	public WatorSimSetup(String n, String t, String a, String s, String nT, String eT, int xSize, int ySize, int gridX, int gridY,
+			String[][] typeArray, int[][] rA, int[][] gEA, int[][] eA, int[][]cEA, int[][]cRA) {
+		super(n, t, a, s, nT, eT, xSize, ySize, gridX, gridY);
 		cellArray = typeArray;
 		reproductionArray = rA;
 		gainedEnergyArray = gEA;
 		energyArray = eA;
+		currentEnergyArray= cEA;
+		currentReproductionArray = cRA;
 	}
 	
 	
@@ -33,13 +37,15 @@ public class WatorSimSetup extends SimulationSetup{
 	 * @param gEA;
 	 * @param eA;
 	 */
-	public WatorSimSetup(SimulationSetup simSetup, String[][] typeArray, int[][] rA, int[][] gEA, int[][] eA) {
-		super(simSetup.getName(), simSetup.getTitle(), simSetup.getAuthor(), simSetup.getShape(), simSetup.getCellX(), 
-				simSetup.getCellY(), simSetup.getGridX(), simSetup.getGridY());
+	public WatorSimSetup(SimulationSetup simSetup, String[][] typeArray, int[][] rA, int[][] gEA, int[][] eA, int[][]cEA, int[][]cRA) {
+		super(simSetup.getName(), simSetup.getTitle(), simSetup.getAuthor(), simSetup.getShape(), simSetup.getNeighbourType(), 
+				simSetup.getEdgeType(), simSetup.getCellX(), simSetup.getCellY(), simSetup.getGridX(), simSetup.getGridY());
 		cellArray = typeArray;
 		reproductionArray = rA;
 		gainedEnergyArray = gEA;
 		energyArray = eA;
+		currentEnergyArray= cEA;
+		currentReproductionArray = cRA;
 	}
 	
 	
@@ -70,6 +76,20 @@ public class WatorSimSetup extends SimulationSetup{
 	 */
 	public int[][] getEnergy() {
 		return energyArray;
+	}
+	
+	/**
+	 * returns the current energy of each cell of the simulation (for initial state)
+	 */
+	public int[][] getCurrentEnergy() {
+		return currentEnergyArray;
+	}
+	
+	/**
+	 * returns the energy of each cell of the simulation (for initial state)
+	 */
+	public int[][] getCurrentReproduction() {
+		return currentReproductionArray;
 	}
 	
 	
@@ -115,6 +135,26 @@ public class WatorSimSetup extends SimulationSetup{
 		    for(int j = 0; j<energyArray[0].length; j++)
 		    {
 		        System.out.print(energyArray[j][i]);
+		        System.out.print(" ");
+		    }
+		    System.out.println("");
+		}
+		System.out.println("current energy = ");
+		for(int i = 0; i<currentEnergyArray[1].length; i++)
+		{
+		    for(int j = 0; j<currentEnergyArray[0].length; j++)
+		    {
+		        System.out.print(currentEnergyArray[j][i]);
+		        System.out.print(" ");
+		    }
+		    System.out.println("");
+		}
+		System.out.println("current reproduction = ");
+		for(int i = 0; i<currentReproductionArray[1].length; i++)
+		{
+		    for(int j = 0; j<currentReproductionArray[0].length; j++)
+		    {
+		        System.out.print(currentReproductionArray[j][i]);
 		        System.out.print(" ");
 		    }
 		    System.out.println("");

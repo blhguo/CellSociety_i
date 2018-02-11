@@ -37,6 +37,8 @@ public class WatorXMLreader extends XMLreader{
 			int[][] reproductionArray = new int[numCellsX][numCellsY];
 			int[][] gainedEnergyArray = new int[numCellsX][numCellsY];
 			int[][] energyArray = new int[numCellsX][numCellsY];
+			int[][] currentEnergyArray = new int[numCellsX][numCellsY];
+			int[][] currentReproductionArray = new int[numCellsX][numCellsY];
 
 			for (int temp = 0; temp < nList.getLength(); temp++) {
 				Node nNode = nList.item(temp);
@@ -49,6 +51,8 @@ public class WatorXMLreader extends XMLreader{
 					NodeList reproductionList = eElement.getElementsByTagName("reproductionThreshold");
 					NodeList gainedEnergyList = eElement.getElementsByTagName("gainedEnergy");
 					NodeList energyList = eElement.getElementsByTagName("energy");
+					NodeList currentEnergyList = eElement.getElementsByTagName("currentEnergy");
+					NodeList currentReproductionList = eElement.getElementsByTagName("currentReproduction");
 
 					// get type
 					String type = getStringValue(typeList);;
@@ -73,15 +77,25 @@ public class WatorXMLreader extends XMLreader{
 					String energyString = getStringValue(energyList);
 					int energy = Integer.parseInt(energyString);
 					
+					// get current energy
+					String currentEnergyString = getStringValue(currentEnergyList);
+					int currentEnergy = Integer.parseInt(currentEnergyString);
+					
+					// get current reproduction
+					String currentReproductionString = getStringValue(currentReproductionList);
+					int currentReproduction = Integer.parseInt(currentReproductionString);
+					
 					// add to arrays
 					typeArray[x][y] = type;
 					reproductionArray[x][y] = reproductionThreshold;
 					gainedEnergyArray[x][y] = gainedEnergy;
 					energyArray[x][y] = energy;
+					currentEnergyArray[x][y] = currentEnergy;
+					currentReproductionArray[x][y] = currentReproduction;
 				}
 			}
 			typeArray = fillEmpty(typeArray);
-			return new WatorSimSetup(simSetup, typeArray, reproductionArray, gainedEnergyArray, energyArray);
+			return new WatorSimSetup(simSetup, typeArray, reproductionArray, gainedEnergyArray, energyArray, currentEnergyArray, currentReproductionArray);
 		} catch (Exception e) {
 			//e.printStackTrace();
 		}	

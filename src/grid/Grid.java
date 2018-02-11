@@ -18,6 +18,7 @@ public abstract class Grid {
 	private int myHeight;
 	private String cell_shape;
 	private String neighbor_arrangement;
+	private String edge_type;
 	private Neighbors neighbors_object;
 
 	/**
@@ -33,7 +34,7 @@ public abstract class Grid {
 		myGrid = new Cell[myWidth][myHeight];
 		this.cell_shape = shape;
 		this.neighbor_arrangement = arrangement;
-		neighbors_object = new Neighbors(cell_shape, neighbor_arrangement);
+		neighbors_object = new Neighbors(cell_shape, neighbor_arrangement, "");
 	}
 	
 	public Grid (int width, int height) {
@@ -44,8 +45,24 @@ public abstract class Grid {
 		this(width, height, shape, "cardinal");
 	}
 	
+	public String getNeighborArrangement() {
+		return this.neighbor_arrangement;
+	}
+	
+	public String getEdgeType() {
+		return this.edge_type;
+	}
+	
 	public String getShape() {
 		return this.cell_shape;
+	}
+	
+	public int getWidth() {
+		return this.myWidth;
+	}
+	
+	public int getHeight() {
+		return this.myHeight;
 	}
 
 	/*
@@ -119,7 +136,7 @@ public abstract class Grid {
 	/**
 	 * Updates various grid parameters with the current state values
 	 */
-	public abstract Map<String,Double> getCurrentParameters();
+	public abstract Map<String,Double[]> getCurrentParameters();
 	
-	public abstract void setCurrentParameters(Map<String,Double> map);
+	public abstract void setCurrentParameters(Map<String,Double[]> map);
 }
