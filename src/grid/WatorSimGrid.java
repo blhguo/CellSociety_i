@@ -275,8 +275,8 @@ public class WatorSimGrid extends Grid{
 	 * @see grid.Grid#getCurrentParameters()
 	 */
 	@Override
-	public Map<String,Double> getCurrentParameters() {
-		HashMap<String, Double> map = new HashMap<>();
+	public Map<String,Double[]> getCurrentParameters() {
+		HashMap<String, Double[]> map = new HashMap<>();
 		double fish_reprod_thresh = 0;
 		double shark_reprod_thresh = 0;
 		double gain_energy = 0;
@@ -307,21 +307,24 @@ public class WatorSimGrid extends Grid{
 				}
 			}
 		}
-		map.put("Fish Reproduction Threshold", fish_reprod_thresh);
-		map.put("Shark Reproduction Threshold", shark_reprod_thresh);
-		map.put("Gained Energy eating Fish", gain_energy);
+		Double[] fArray = {0.0, 100.0, fish_reprod_thresh};
+		Double[] sArray = {0.0, 100.0, fish_reprod_thresh};
+		Double[] eArray = {0.0, 100.0, fish_reprod_thresh};
+		map.put("Fish Reproduction Threshold", fArray);
+		map.put("Shark Reproduction Threshold", sArray);
+		map.put("Gained Energy eating Fish", eArray);
 		return map;
 	}
 
 	@Override
-	public void setCurrentParameters(Map<String, Double> map) {
+	public void setCurrentParameters(Map<String, Double[]> map) {
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
 				if (myGrid[i][j] instanceof FishCell) {
-					((FishCell) myGrid[i][j]).setReproductionThreshold(map.get("Fish Reproduction Threshold"));
+					((FishCell) myGrid[i][j]).setReproductionThreshold(map.get("Fish Reproduction Threshold")[2]);
 				} else if (myGrid[i][j] instanceof SharkCell) {
-					((SharkCell) myGrid[i][j]).setReproductionThreshold(map.get("Shark Reproduction Threshold"));
-					((SharkCell) myGrid[i][j]).setGainedEnergy(map.get("Gained Energy eating Fish"));
+					((SharkCell) myGrid[i][j]).setReproductionThreshold(map.get("Shark Reproduction Threshold")[2]);
+					((SharkCell) myGrid[i][j]).setGainedEnergy(map.get("Gained Energy eating Fish")[2]);
 				}
 			}
 		}
