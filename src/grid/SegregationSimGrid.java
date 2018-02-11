@@ -139,17 +139,23 @@ public class SegregationSimGrid extends Grid{
 	 */
 	@Override
 	public String[][] getArray() {
-		getCurrentState();
+		getCurrentParameters();
 		return this.cellArray;
 	}
 	
 	public double[][] getThreshold() {
-		getCurrentState();
+		getCurrentParameters();
 		return this.threshold;
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#getCurrentParameters()
+	 */
 	@Override
-	protected void getCurrentState() {
+	public Map<String,Double> getCurrentParameters() {
+		HashMap<String, Double> map = new HashMap<>();
+		double o_cell_threshold = 0;
+		double x_cell_threshold = 0;
 		cellArray = new String[myGrid.length][myGrid[0].length];
 		threshold = new double[myGrid.length][myGrid[0].length];
 		for (int i = 0; i < myGrid.length; i++) {
@@ -160,9 +166,27 @@ public class SegregationSimGrid extends Grid{
 				} else if (myGrid[i][j] instanceof OCell) {
 					cellArray[i][j] = "o";
 					threshold[i][j] = ((OCell) myGrid[i][j]).getThreshold();
+					o_cell_threshold = threshold[i][j];
 				} else if (myGrid[i][j] instanceof XCell) {
 					cellArray[i][j] = "x";
 					threshold[i][j] = ((XCell) myGrid[i][j]).getThreshold();
+					x_cell_threshold = threshold[i][j];
+				}
+			}
+		}
+		map.put("X Cell Threshold", x_cell_threshold);
+		map.put("O Cell Threshold", o_cell_threshold);
+		return map;
+	}
+
+	@Override
+	public void setCurrentParameters(Map<String, Double> map) {
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof OCell) {
+					((OCell) myGrid[i][j]).setThreshold(map.get("O Cell Threshold"));
+				} else if (myGrid[i][j] instanceof XCell) {
+					((XCell) myGrid[i][j]).setThreshold(map.get("X Cell Threshold"));
 				}
 			}
 		}

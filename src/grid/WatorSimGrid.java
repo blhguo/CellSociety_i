@@ -252,27 +252,34 @@ public class WatorSimGrid extends Grid{
 	 */
 	@Override
 	public String[][] getArray() {
-		getCurrentState();
+		getCurrentParameters();
 		return this.cellArray;
 	}
 	
 	public int[][] getReproduction() {
-		getCurrentState();
+		getCurrentParameters();
 		return this.reproduction;
 	}
 	
 	public int[][] getEnergy() {
-		getCurrentState();
+		getCurrentParameters();
 		return this.energy;
 	}
 	
 	public int[][] getGainedEnergy() {
-		getCurrentState();
+		getCurrentParameters();
 		return this.gained_energy;
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#getCurrentParameters()
+	 */
 	@Override
-	protected void getCurrentState() {
+	public Map<String,Double> getCurrentParameters() {
+		HashMap<String, Double> map = new HashMap<>();
+		double fish_reprod_thresh = 0;
+		double shark_reprod_thresh = 0;
+		double gain_energy = 0;
 		cellArray = new String[myGrid.length][myGrid[0].length];
 		reproduction = new int[myGrid.length][myGrid[0].length];
 		energy = new int[myGrid.length][myGrid[0].length];
@@ -289,12 +296,32 @@ public class WatorSimGrid extends Grid{
 					reproduction[i][j] = ((FishCell) myGrid[i][j]).getReproductionThreshold();
 					energy[i][j] = 0;
 					gained_energy[i][j] = 0;
+					fish_reprod_thresh = reproduction[i][j];
 				} else if (myGrid[i][j] instanceof SharkCell) {
 					cellArray[i][j] = "shark";
 					reproduction[i][j] = ((SharkCell) myGrid[i][j]).getReproductionThreshold();
 					energy[i][j] = ((SharkCell) myGrid[i][j]).getEnergy();
 					gained_energy[i][j] = ((SharkCell) myGrid[i][j]).getGainedEnergy();
-					
+					shark_reprod_thresh = reproduction[i][j];
+					gain_energy = gained_energy[i][j];
+				}
+			}
+		}
+		map.put("Fish Reproduction Threshold", fish_reprod_thresh);
+		map.put("Shark Reproduction Threshold", shark_reprod_thresh);
+		map.put("Gained Energy eating Fish", gain_energy);
+		return map;
+	}
+
+	@Override
+	public void setCurrentParameters(Map<String, Double> map) {
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof FishCell) {
+					((FishCell) myGrid[i][j]).setReproductionThreshold(map.get("Fish Reproduction Threshold"));
+				} else if (myGrid[i][j] instanceof SharkCell) {
+					((SharkCell) myGrid[i][j]).setReproductionThreshold(map.get("Shark Reproduction Threshold"));
+					((SharkCell) myGrid[i][j]).setGainedEnergy(map.get("Gained Energy eating Fish"));
 				}
 			}
 		}

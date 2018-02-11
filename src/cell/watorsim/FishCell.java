@@ -47,6 +47,10 @@ public class FishCell extends WatorSimCell{
 	public int getReproductionThreshold() {
 		return this.reproduction_threshold;
 	}
+	
+	public void setReproductionThreshold(double t) {
+		this.reproduction_threshold = (int) t;
+	}
 
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.List)
