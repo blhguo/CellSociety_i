@@ -32,8 +32,8 @@ public class WatorSimGrid extends Grid{
 	 * @param energy - array with energy values
 	 * @param gained_energy - array with gained energy values
 	 */
-	public WatorSimGrid(int width, int height, String[][] cellArray, int[][] reproduction, int[][] energy, int[][] gained_energy) {
-		super(width, height);
+	public WatorSimGrid(int width, int height, String shape, String[][] cellArray, int[][] reproduction, int[][] energy, int[][] gained_energy) {
+		super(width, height, shape);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {

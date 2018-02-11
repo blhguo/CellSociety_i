@@ -25,8 +25,8 @@ public class FireSimGrid extends Grid {
 	 * @param probLightning - probability of tree cell getting struck by lightning
 	 * @param probGrow - probability of tree cell growing in empty cell
 	 */
-	public FireSimGrid(int width, int height, String[][] cellArray, double probCatch, double probLightning, double probGrow) {
-		super(width, height);
+	public FireSimGrid(int width, int height, String shape, String[][] cellArray, double probCatch, double probLightning, double probGrow) {
+		super(width, height, shape);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {

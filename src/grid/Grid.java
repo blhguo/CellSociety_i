@@ -16,16 +16,36 @@ public abstract class Grid {
 	protected Cell[][] myGrid;
 	private int myWidth;
 	private int myHeight;
+	private String cell_shape;
+	private String neighbor_arrangement;
+	private Neighbors neighbors_object;
 
 	/**
 	 * Creates a new Grid object.
 	 * @param width - number of cells in the width of the grid
 	 * @param height - number of cells in the height of the grid
+	 * @param shape
+	 * @param arrangement
 	 */
-	public Grid (int width, int height) {
+	public Grid (int width, int height, String shape, String arrangement) {
 		myWidth = width;
 		myHeight = height;
 		myGrid = new Cell[myWidth][myHeight];
+		this.cell_shape = shape;
+		this.neighbor_arrangement = arrangement;
+		neighbors_object = new Neighbors(cell_shape, neighbor_arrangement);
+	}
+	
+	public Grid (int width, int height) {
+		this(width, height, "square", "cardinal");
+	}
+	
+	public Grid (int width, int height, String shape) {
+		this(width, height, shape, "cardinal");
+	}
+	
+	public String getShape() {
+		return this.cell_shape;
 	}
 
 	/*
@@ -68,28 +88,7 @@ public abstract class Grid {
 	 * @param j - y location of cell in grid
 	 */
 	protected void addNeighbors(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-1,j)) {
-			neighbors.add(grid[i-1][j]);
-		}
-		if (inGrid(i+1,j)) {
-			neighbors.add(grid[i+1][j]);
-		}
-		if (inGrid(i,j-1)) {
-			neighbors.add(grid[i][j-1]);
-		}
-		if (inGrid(i,j+1)) {
-			neighbors.add(grid[i][j+1]);
-		}
-	}
-
-	/**
-	 * Checks to see if cell location is in the bounds of the grid
-	 * @param x - x location of cell in grid
-	 * @param y - y location of cell in grid
-	 * @return if location is in the bounds of the grid
-	 */
-	public boolean inGrid (int x, int y) {
-		return (x >= 0 && x < myWidth && y >= 0 && y < myHeight);
+		neighbors_object.addNeighbors(neighbors, grid, i, j);
 	}
 
 	/**
