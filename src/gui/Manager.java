@@ -95,7 +95,7 @@ public class Manager extends Application {
 	private static final String DEFAULT_FILENAME = "data/game_of_life.xml";
 	private String fileName = DEFAULT_FILENAME;
 	private int fileType = 0;
-	public double SECOND_DELAY = 1000.0;
+	public double SECOND_DELAY = 2000.0;
 	private KeyFrame frame;
 	private Timeline animation;	
 	private static final int XPADDING = 10;
@@ -103,6 +103,7 @@ public class Manager extends Application {
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
 	private static final int MAKER_SIZE = 400;
+	private static final int SLIDERLENGTH = 100;
 	private int SHAPESIZE_W;
 	private int SHAPESIZE_L;
 	private boolean inMenu = true;
@@ -372,30 +373,46 @@ public class Manager extends Application {
 		if (height < (graphbufferH)) {
 			height = graphbufferH;
 		}
-		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));
-		root.getChildren().add(GenerateLineChart(cellArray.getNumberOfCells()));
-		
+		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));		
 		Map<String, Double[]> MapofParam = cellArray.getCurrentParameters();
 		
+		VBox box = new VBox(GenerateLineChart(cellArray.getNumberOfCells()));
+		
 		//Slider[] sliderArray = new Slider[MapofParam.keySet().size()];
-		int index = 0;
+		int SliderCount = 0;
 		for (String s : MapofParam.keySet()) {
+		    Text text = new Text();
+		    text.setFont(new Font("sans-serif", 10));
+		    text.setText(s);
 			Slider slider = generateSlider(MapofParam.get(s)[0], MapofParam.get(s)[1], MapofParam.get(s)[2]);
 			slider.setOrientation(Orientation.HORIZONTAL);
 			slider.setPrefHeight(SLIDERLENGTH);
 			slider.valueProperty().addListener((observable, oldvalue, newvalue) -> {
 				double d = newvalue.doubleValue();
+//				System.out.println(s);
+//				System.out.println(d);
+				Double[] doublearray = {MapofParam.get(s)[0], MapofParam.get(s)[1], d};
+				MapofParam.put(s, doublearray);
+				cellArray.setCurrentParameters(MapofParam);
+				slider.setValue(d);
 			});
 			
-			root.getChildren().add(slider);
+			box.getChildren().add(slider);
+			box.getChildren().add(text);
 			//sliderArray[index] = slider;
-			//index = index + 1;
+			SliderCount = SliderCount + 1;
 		}
 		
+		cellArray.setCurrentParameters(MapofParam);
+
+		Map<String, Double[]> MapofParam1 = cellArray.getCurrentParameters();
+
+		
+		root.getChildren().add(box);
 		
 		
 		
-		Scene scene = new Scene(root, width + graphbufferW/2.0, height, background);
+		Scene scene = new Scene(root, width + graphbufferW/2.0, height + 90 * SliderCount, background);
 		return scene;	
 	}
 
@@ -969,10 +986,9 @@ public class Manager extends Application {
 		return lineChart;
 	}
 	
-	private Slider generateSlider(int min, int max, int current) {
-		Slider slider = new Slider(min, max, current);
+	private Slider generateSlider(Double double1, Double double2, Double double3) {
+		Slider slider = new Slider(double1, double2, double3);
 		slider.showTickMarksProperty();
-		slider.setBlockIncrement(0.01f);
 		return slider;
 	}
 		
