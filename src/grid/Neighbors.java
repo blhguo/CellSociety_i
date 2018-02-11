@@ -7,12 +7,14 @@ import cell.Cell;
 public class Neighbors {
 	private String shape;
 	private String arrangement;
+	private String edge_type;
 	private int myWidth;
 	private int myHeight;
 	
-	public Neighbors(String shape, String arrangement) {
+	public Neighbors(String shape, String arrangement, String edge_type) {
 		this.shape = shape;
 		this.arrangement = arrangement;
+		this.edge_type = edge_type;
 	}
 	
 	/**
@@ -32,6 +34,7 @@ public class Neighbors {
 			case "hexagon":
 				break;
 			case "triangle":
+				chooseTriangleNeighborOrienation(neighbors, grid, i, j);
 				break;
 			default:
 				chooseSquareNeighborOrienation(neighbors, grid, i, j);
@@ -53,6 +56,113 @@ public class Neighbors {
 			default:
 				square_all(neighbors, grid, i, j);
 				break;
+		}
+	}
+	
+	private void chooseTriangleNeighborOrienation(List<Cell> neighbors, Cell[][] grid, int i, int j) {
+		switch (arrangement) {
+			case "3-next":
+				triangle_three(neighbors, grid, i, j);
+				break;
+			default:
+				triangle_all(neighbors, grid, i, j);
+				break;
+		}
+	}
+	
+	private void triangle_three (List<Cell> neighbors, Cell[][] grid, int i, int j) {
+		if (i%2 == j%2) {
+			if (inGrid(i+1,j)) {
+				neighbors.add(grid[i+1][j]);
+			}
+		} else {
+			if (inGrid(i-1,j)) {
+				neighbors.add(grid[i-1][j]);
+			}
+		}
+		if (inGrid(i,j-1)) {
+			neighbors.add(grid[i][j-1]);
+		}
+		if (inGrid(i,j+1)) {
+			neighbors.add(grid[i][j+1]);
+		}
+	}
+	
+	private void triangle_all(List<Cell> neighbors, Cell[][] grid, int i, int j) {
+		if (i%2 == j%2) {
+			if (inGrid(i-1,j-1)) {
+				neighbors.add(grid[i-1][j-1]);
+			}
+			if (inGrid(i-1,j)) {
+				neighbors.add(grid[i-1][j]);
+			}
+			if (inGrid(i-1,j+1)) {
+				neighbors.add(grid[i-1][j+1]);
+			}
+			if (inGrid(i,j-2)) {
+				neighbors.add(grid[i][j-2]);
+			}
+			if (inGrid(i,j-1)) {
+				neighbors.add(grid[i][j-1]);
+			}
+			if (inGrid(i,j+1)) {
+				neighbors.add(grid[i][j+1]);
+			}
+			if (inGrid(i,j+2)) {
+				neighbors.add(grid[i][j+2]);
+			}
+			if (inGrid(i+1,j-2)) {
+				neighbors.add(grid[i+1][j-2]);
+			}
+			if (inGrid(i+1,j-1)) {
+				neighbors.add(grid[i+1][j-1]);
+			}
+			if (inGrid(i+1,j)) {
+				neighbors.add(grid[i+1][j]);
+			}
+			if (inGrid(i+1,j+1)) {
+				neighbors.add(grid[i+1][j+1]);
+			}
+			if (inGrid(i+1,j+2)) {
+				neighbors.add(grid[i+1][j+2]);
+			}
+		} else {
+			if (inGrid(i-1,j-2)) {
+				neighbors.add(grid[i-1][j-2]);
+			}
+			if (inGrid(i-1,j-1)) {
+				neighbors.add(grid[i-1][j-1]);
+			}
+			if (inGrid(i-1,j)) {
+				neighbors.add(grid[i-1][j]);
+			}
+			if (inGrid(i-1,j+1)) {
+				neighbors.add(grid[i-1][j+1]);
+			}
+			if (inGrid(i-1,j+2)) {
+				neighbors.add(grid[i-1][j+2]);
+			}
+			if (inGrid(i,j-2)) {
+				neighbors.add(grid[i][j-2]);
+			}
+			if (inGrid(i,j-1)) {
+				neighbors.add(grid[i][j-1]);
+			}
+			if (inGrid(i,j+1)) {
+				neighbors.add(grid[i][j+1]);
+			}
+			if (inGrid(i,j+2)) {
+				neighbors.add(grid[i][j+2]);
+			}
+			if (inGrid(i+1,j-1)) {
+				neighbors.add(grid[i+1][j-1]);
+			}
+			if (inGrid(i+1,j)) {
+				neighbors.add(grid[i+1][j]);
+			}
+			if (inGrid(i+1,j-1)) {
+				neighbors.add(grid[i+1][j-1]);
+			}
 		}
 	}
 	

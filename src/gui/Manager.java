@@ -179,6 +179,8 @@ public class Manager extends Application {
 		else if (code == KeyCode.M) {
 			// return menu
 			try {
+				datapoints.clear();
+				stepcount = 0;
 				returnMenu();
 			} catch (Exception e) {
 				e.printStackTrace();
