@@ -23,14 +23,16 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.scene.Group;
-import javafx.scene.Scene;
+import javafx.scene.Scene; 
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
@@ -101,6 +103,7 @@ public class Manager extends Application {
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
 	private static final int MAKER_SIZE = 300;
+	private static final int SLIDERLENGTH = 100;
 	private int SHAPESIZE_W;
 	private int SHAPESIZE_L;
 	private boolean inMenu = true;
@@ -369,6 +372,27 @@ public class Manager extends Application {
 		}
 		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));
 		root.getChildren().add(GenerateLineChart(cellArray.getNumberOfCells()));
+		
+		Map<String, Double[]> MapofParam = cellArray.getCurrentParameters();
+		
+		//Slider[] sliderArray = new Slider[MapofParam.keySet().size()];
+		int index = 0;
+		for (String s : MapofParam.keySet()) {
+			Slider slider = generateSlider(MapofParam.get(s)[0], MapofParam.get(s)[1], MapofParam.get(s)[2]);
+			slider.setOrientation(Orientation.HORIZONTAL);
+			slider.setPrefHeight(SLIDERLENGTH);
+			slider.valueProperty().addListener((observable, oldvalue, newvalue) -> {
+				double d = newvalue.doubleValue();
+			});
+			
+			root.getChildren().add(slider);
+			//sliderArray[index] = slider;
+			//index = index + 1;
+		}
+		
+		
+		
+		
 		Scene scene = new Scene(root, width + graphbufferW/2.0, height, background);
 		return scene;	
 	}
@@ -842,6 +866,14 @@ public class Manager extends Application {
 		}
 		return lineChart;
 	}
+	
+	private Slider generateSlider(int min, int max, int current) {
+		Slider slider = new Slider(min, max, current);
+		slider.showTickMarksProperty();
+		slider.setBlockIncrement(0.01f);
+		return slider;
+	}
+		
 
 	//Launches game
 	public static void main(String[] args) {
