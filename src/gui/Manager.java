@@ -1,6 +1,8 @@
 package gui;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -80,7 +82,7 @@ public class Manager extends Application {
 	int cell_Height;
 	Integer stepcount = 0;
 	//probably should have made this a map
-    ArrayList<XYChart.Series<Number, Number>> datapoints = new ArrayList<XYChart.Series<Number, Number>>();
+	ArrayList<XYChart.Series<Number, Number>> datapoints = new ArrayList<XYChart.Series<Number, Number>>();
 	public static final Paint BACKGROUND = Color.WHITE;
 	private Stage TheStage;
 	private static final String TITLE = "CA SIMULATION";
@@ -182,6 +184,7 @@ public class Manager extends Application {
 	private void step () {
 		if (!inMenu) {
 			Scene myScene_Buffer;
+			stepcount = stepcount + 1;
 			try {
 				myGrid.updateGrid();
 				myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid, cell_Width, cell_Height);
@@ -552,7 +555,7 @@ public class Manager extends Application {
 				}
 			}
 		});
-		
+
 		Button create = GenButton(grid, myResources.getString("CreateButton"), 1, 0);
 		create.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -669,7 +672,7 @@ public class Manager extends Application {
 					//e1.printStackTrace();
 				}
 				//if(isError) {
-					//displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+				//displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
 				//}
 			}
 		});
@@ -700,7 +703,7 @@ public class Manager extends Application {
 		ft.setCycleCount(1);
 		ft.play();
 	}
-	
+
 	private TextField makeTextField(GridPane grid, String prompt, int x, int y) {
 		final TextField temp = new TextField();
 		temp.setPromptText(prompt);
@@ -730,7 +733,7 @@ public class Manager extends Application {
 		Image.setStroke(Color.BLACK);
 		return Image;
 	}
-	
+
 	private Polygon GenerateHexagonCell(Cell BufferCell, int width, int height, int i, int j) {
 		Polygon Image = new Polygon();
 		Double[] points;
@@ -742,7 +745,7 @@ public class Manager extends Application {
 					40.0 * j + 20, 10.0 * i + 20,
 					40.0 * j + 10, 10.0 * i + 20,
 					40.0 * j, 10.0 * i + 10
-					};
+			};
 		}
 		else {
 			points = new Double[] {
@@ -752,15 +755,15 @@ public class Manager extends Application {
 					40.0 * j + 40, 10.0 * i + 20,
 					40.0 * j + 30, 10.0 * i + 20,
 					40.0 * j + 20, 10.0 * i + 10
-					};
-			}
+			};
+		}
 		Image.getPoints().addAll(points);
 		Image.setFill(BufferCell.getDisplayColor());
 		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
 		return Image;
 	}
-	
+
 	private Polygon GenerateTriangleCell(Cell BufferCell, int width, int height, int i, int j) {
 		Polygon Image = new Polygon();
 		Double[] points;
@@ -769,56 +772,48 @@ public class Manager extends Application {
 					10.0 * j + 10, 15.0 * (j % 2) + 15 * i, 
 					10.0 * j + 20, 15.0 * ((j + 1) % 2) + 15 * i, 
 					10.0 * j, 15.0 * ((j + 1)% 2) + 15 * i
-					};
+			};
 		}
 		else {
 			points = new Double[] {
 					10.0 * j + 10, 15.0 * ((j + 1) % 2) + 15 * i, 
 					10.0 * j + 20, 15.0 * (j % 2) + 15 * i, 
 					10.0 * j, 15.0 * (j % 2) + 15 * i
-					};
-			}
+			};
+		}
 		Image.getPoints().addAll(points);
 		Image.setFill(BufferCell.getDisplayColor());
 		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
 		return Image;
 	}
-	
+
 	//more efficient way is to make it so that each time you simply add the point to the XYCHart instead of creating an entirely new xy chart, trying to make flexible
-	
+
 	private LineChart<Number, Number> GenerateLineChart(Map<String, Number> init_map) {
-        final NumberAxis xAxis = new NumberAxis();
-        final NumberAxis yAxis = new NumberAxis();
-        xAxis.setLabel("Population counts");
-        final LineChart<Number, Number> lineChart = new LineChart<Number, Number>(xAxis,yAxis);
-        lineChart.setTitle("Population Plots");
-        int count = 0;
-        
-        for (String s : init_map.keySet()) {
-        	datapoints.get(count).getData().add(new XYChart.Data(stepcount, init_map.get(s)));
-        	count = count + 1;
-        }
-        
-        for (int k = 0; k < count; k++) {
-        	lineChart.getData().add(datapoints.get(k));
-        }
-        //for ()
-        return lineChart;
+		final NumberAxis xAxis = new NumberAxis();
+		final NumberAxis yAxis = new NumberAxis();
+		xAxis.setLabel("Population counts");
+		final LineChart<Number, Number> lineChart = new LineChart<Number, Number>(xAxis,yAxis);
+		lineChart.setTitle("Population Plots");
+		int count = 0;
+
+		for (String s : init_map.keySet()) {
+			if (datapoints.size() == count) {
+				XYChart.Series<Number, Number> buffer = new XYChart.Series();
+				buffer.getData().add(new XYChart.Data(stepcount, init_map.get(s)));
+				datapoints.add(buffer);
+			}
+			datapoints.get(count).getData().add(new XYChart.Data(stepcount, init_map.get(s)));
+			count = count + 1;
+		}
+
+		for (int k = 0; k < count; k++) {
+			lineChart.getData().add(datapoints.get(k));
+		}
+		return lineChart;
 	}
-	
-//	private XYChart.Series<Integer, Integer> GenerateSeries() {
-//        XYChart.Series series = new XYChart.Series();
-//        return series;
-//     }
-//	
-//	private XYChart.Series<Integer, Integer>[] GenerateSeriesArray(int arraysize) {
-//		XYChart.Series<Integer, Integer>[] array = new XYChart.Series<Integer, Integer>[arraysize];		
-//	}
-	
-	
-	
-	
+
 	//Launches game
 	public static void main(String[] args) {
 		Application.launch(args);
