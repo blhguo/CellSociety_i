@@ -2,6 +2,7 @@ package gui;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import cell.Cell;
@@ -71,6 +72,9 @@ public class Manager extends Application {
 	Grid myGrid;
 	int cell_Width;
 	int cell_Height;
+	Integer stepcount = 0;
+	//probably should have made this a map
+    ArrayList<XYChart.Series<Number, Number>> datapoints = new ArrayList<XYChart.Series<Number, Number>>();
 	public static final Paint BACKGROUND = Color.WHITE;
 	private Stage TheStage;
 	private static final String TITLE = "CA SIMULATION";
@@ -160,7 +164,7 @@ public class Manager extends Application {
 			Scene myScene_Buffer;
 			try {
 				myGrid.updateGrid();
-				myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height);
+				myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid, cell_Width, cell_Height);
 				myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 				TheStage.setScene(myScene_Buffer);
 				TheStage.show();
@@ -321,8 +325,9 @@ public class Manager extends Application {
 	}
 
 	// Sets up scene for the actual simulation
-	public Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height) throws Exception {
-		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));
+	public Scene setupScene (int width, int height, Paint background, Grid cellArray, int cell_width, int cell_height) throws Exception {
+		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));
+		root.getChildren().add(GenerateLineChart(cellArray.getNumberOfCells()));
 		Scene scene = new Scene(root, width, height, background);
 		return scene;	
 	}
@@ -365,7 +370,7 @@ public class Manager extends Application {
 							try {
 								animation.play();
 								callXMLreader(fileName);
-								s.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
+								s.setScene(setupScene(width, height, BACKGROUND, myGrid, cell_Width, cell_Height));
 								inMenu = false;
 							} catch (Exception e1) {
 								e1.printStackTrace();
@@ -386,7 +391,7 @@ public class Manager extends Application {
 						try {
 							animation.play();
 							callXMLreader(fileName);
-							s.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
+							s.setScene(setupScene(width, height, BACKGROUND, myGrid, cell_Width, cell_Height));
 							inMenu = false;
 						} catch (Exception e1) {
 							e1.printStackTrace();
@@ -522,12 +527,23 @@ public class Manager extends Application {
 	
 	//more efficient way is to make it so that each time you simply add the point to the XYCHart instead of creating an entirely new xy chart, trying to make flexible
 	
-	private LineChart<Number, Number> GenerateLineChart() {
+	private LineChart<Number, Number> GenerateLineChart(Map<String, Number> init_map) {
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
         xAxis.setLabel("Population counts");
-        final LineChart<Number,Number> lineChart = new LineChart<Number,Number>(xAxis,yAxis);
+        final LineChart<Number, Number> lineChart = new LineChart<Number, Number>(xAxis,yAxis);
         lineChart.setTitle("Population Plots");
+        int count = 0;
+        
+        for (String s : init_map.keySet()) {
+        	datapoints.get(count).getData().add(new XYChart.Data(stepcount, init_map.get(s)));
+        	count = count + 1;
+        }
+        
+        for (int k = 0; k < count; k++) {
+        	lineChart.getData().add(datapoints.get(k));
+        }
+        //for ()
         return lineChart;
 	}
 	
@@ -539,6 +555,8 @@ public class Manager extends Application {
 //	private XYChart.Series<Integer, Integer>[] GenerateSeriesArray(int arraysize) {
 //		XYChart.Series<Integer, Integer>[] array = new XYChart.Series<Integer, Integer>[arraysize];		
 //	}
+	
+	
 	
 	
 	//Launches game
