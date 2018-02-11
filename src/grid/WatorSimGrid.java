@@ -1,7 +1,10 @@
 package grid;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import cell.Cell;
 import cell.watorsim.EmptyCell;
 import cell.watorsim.FishCell;
@@ -15,6 +18,10 @@ import cell.watorsim.WatorSimCell;
  */
 public class WatorSimGrid extends Grid{
 	private Cell[][] nextGrid;
+	private String[][] cellArray;
+	private int[][] reproduction;
+	private int[][] energy;
+	private int[][] gained_energy;
 
 	/**
 	 * Initializes a Grid for the Wator Simulation
@@ -25,8 +32,8 @@ public class WatorSimGrid extends Grid{
 	 * @param energy - array with energy values
 	 * @param gained_energy - array with gained energy values
 	 */
-	public WatorSimGrid(int width, int height, String[][] cellArray, int[][] reproduction, int[][] energy, int[][] gained_energy) {
-		super(width, height);
+	public WatorSimGrid(int width, int height, String shape, String[][] cellArray, int[][] reproduction, int[][] energy, int[][] gained_energy) {
+		super(width, height, shape);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
@@ -212,5 +219,111 @@ public class WatorSimGrid extends Grid{
 		//((EmptyCell) myGrid[newX][newY]).setOccupied(true);
 
 		nextGrid[i][j] = nextState;
+	}
+	
+	/* (non-Javadoc)
+	 * @see grid.Grid#getNumberOfCells()
+	 */
+	@Override
+	public Map<String, Number> getNumberOfCells() {
+		HashMap<String, Number> map = new HashMap<>();
+		int empty = 0;
+		int fish = 0;
+		int shark = 0;
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof EmptyCell) {
+					empty++;
+				} else if (myGrid[i][j] instanceof FishCell) {
+					fish++;
+				} else if (myGrid[i][j] instanceof SharkCell) {
+					shark++;
+				}
+			}
+		}
+		map.put("Empty Cells", empty);
+		map.put("Fish Cells", fish);
+		map.put("Shark Cells", shark);
+		return map;
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#getArray()
+	 */
+	@Override
+	public String[][] getArray() {
+		getCurrentParameters();
+		return this.cellArray;
+	}
+	
+	public int[][] getReproduction() {
+		getCurrentParameters();
+		return this.reproduction;
+	}
+	
+	public int[][] getEnergy() {
+		getCurrentParameters();
+		return this.energy;
+	}
+	
+	public int[][] getGainedEnergy() {
+		getCurrentParameters();
+		return this.gained_energy;
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#getCurrentParameters()
+	 */
+	@Override
+	public Map<String,Double> getCurrentParameters() {
+		HashMap<String, Double> map = new HashMap<>();
+		double fish_reprod_thresh = 0;
+		double shark_reprod_thresh = 0;
+		double gain_energy = 0;
+		cellArray = new String[myGrid.length][myGrid[0].length];
+		reproduction = new int[myGrid.length][myGrid[0].length];
+		energy = new int[myGrid.length][myGrid[0].length];
+		gained_energy = new int[myGrid.length][myGrid[0].length];
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof EmptyCell) {
+					cellArray[i][j] = "empty";
+					reproduction[i][j] = 0;
+					energy[i][j] = 0;
+					gained_energy[i][j] = 0;
+				} else if (myGrid[i][j] instanceof FishCell) {
+					cellArray[i][j] = "fish";
+					reproduction[i][j] = ((FishCell) myGrid[i][j]).getReproductionThreshold();
+					energy[i][j] = 0;
+					gained_energy[i][j] = 0;
+					fish_reprod_thresh = reproduction[i][j];
+				} else if (myGrid[i][j] instanceof SharkCell) {
+					cellArray[i][j] = "shark";
+					reproduction[i][j] = ((SharkCell) myGrid[i][j]).getReproductionThreshold();
+					energy[i][j] = ((SharkCell) myGrid[i][j]).getEnergy();
+					gained_energy[i][j] = ((SharkCell) myGrid[i][j]).getGainedEnergy();
+					shark_reprod_thresh = reproduction[i][j];
+					gain_energy = gained_energy[i][j];
+				}
+			}
+		}
+		map.put("Fish Reproduction Threshold", fish_reprod_thresh);
+		map.put("Shark Reproduction Threshold", shark_reprod_thresh);
+		map.put("Gained Energy eating Fish", gain_energy);
+		return map;
+	}
+
+	@Override
+	public void setCurrentParameters(Map<String, Double> map) {
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof FishCell) {
+					((FishCell) myGrid[i][j]).setReproductionThreshold(map.get("Fish Reproduction Threshold"));
+				} else if (myGrid[i][j] instanceof SharkCell) {
+					((SharkCell) myGrid[i][j]).setReproductionThreshold(map.get("Shark Reproduction Threshold"));
+					((SharkCell) myGrid[i][j]).setGainedEnergy(map.get("Gained Energy eating Fish"));
+				}
+			}
+		}
 	}
 }

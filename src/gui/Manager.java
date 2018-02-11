@@ -3,6 +3,8 @@ package gui;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import cell.Cell;
@@ -23,6 +25,9 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -32,6 +37,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -74,6 +80,12 @@ public class Manager extends Application {
 	Grid myGrid;
 	int cell_Width;
 	int cell_Height;
+	Integer stepcount = 0;
+	String shapetype;
+	int graphbufferH = 400;
+	int graphbufferW = 50;
+	//probably should have made this a map
+	ArrayList<XYChart.Series<Number, Number>> datapoints = new ArrayList<XYChart.Series<Number, Number>>();
 	public static final Paint BACKGROUND = Color.WHITE;
 	private Stage TheStage;
 	private static final String TITLE = "CA SIMULATION";
@@ -88,6 +100,8 @@ public class Manager extends Application {
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
 	private static final int MAKER_SIZE = 300;
+	private int SHAPESIZE_W;
+	private int SHAPESIZE_L;
 	private boolean inMenu = true;
 	public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	public static final String DEFAULT_RESOURCE_FILE = "defaultText";
@@ -175,9 +189,10 @@ public class Manager extends Application {
 	private void step () {
 		if (!inMenu) {
 			Scene myScene_Buffer;
+			stepcount = stepcount + 1;
 			try {
 				myGrid.updateGrid();
-				myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height);
+				myScene_Buffer = setupScene(width, height, BACKGROUND, myGrid);
 				myScene_Buffer.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 				TheStage.setScene(myScene_Buffer);
 				TheStage.show();
@@ -210,18 +225,19 @@ public class Manager extends Application {
 			}
 			else if(fileType == 3) {
 				callFireXMLreader(file);
-			}			
+			}	
+			//TODO throw error if not one of those shapes^^
 		}
 	}
 
 	public void callGOLXMLreader(String file){
 		GOLXMLreader xml_reader = new GOLXMLreader();
 		GOLSimSetup simInfo = xml_reader.read(file);
-		width = simInfo.getGridX() + 20;
+		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getArray());
+		myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getArray());
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}
@@ -229,11 +245,11 @@ public class Manager extends Application {
 	public void callSegXMLreader(String file){
 		SegregationXMLreader xml_reader = new SegregationXMLreader();
 		SegregationSimSetup simInfo = xml_reader.read(file);
-		width = simInfo.getGridX() + 20;
+		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getThreshold());
+		myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getArray(), simInfo.getThreshold());
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}
@@ -241,11 +257,11 @@ public class Manager extends Application {
 	public void callWatorXMLreader(String file){
 		WatorXMLreader xml_reader = new WatorXMLreader();
 		WatorSimSetup simInfo = xml_reader.read(file);
-		width = simInfo.getGridX() + 20;
+		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getReproduction(), simInfo.getEnergy(), simInfo.getGainedEnergy());
+		myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getArray(), simInfo.getReproduction(), simInfo.getEnergy(), simInfo.getGainedEnergy());
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}
@@ -253,11 +269,11 @@ public class Manager extends Application {
 	public void callFireXMLreader(String file){
 		FireXMLreader xml_reader = new FireXMLreader();
 		FireSimSetup simInfo = xml_reader.read(file);
-		width = simInfo.getGridX() + 20;
+		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
+		myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}
@@ -338,9 +354,13 @@ public class Manager extends Application {
 	}
 
 	// Sets up scene for the actual simulation
-	public Scene setupScene (int width, int height, Paint background, Cell[][] cellArray, int cell_width, int cell_height) throws Exception {
-		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));
-		Scene scene = new Scene(root, width, height, background);
+	public Scene setupScene (int width, int height, Paint background, Grid cellArray) throws Exception {
+		shapetype = cellArray.getShape();
+		int cell_width = (int) (width - 20) / cellArray.getCellArray()[0].length;
+		int cell_height = (int) (height - 20) / cellArray.getCellArray()[1].length;
+		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));
+		root.getChildren().add(GenerateLineChart(cellArray.getNumberOfCells()));
+		Scene scene = new Scene(root, width + graphbufferW, height + graphbufferH, background);
 		return scene;	
 	}
 
@@ -384,7 +404,7 @@ public class Manager extends Application {
 							try {
 								animation.play();
 								callXMLreader(fileName);
-								s.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
+								s.setScene(setupScene(width, height, BACKGROUND, myGrid));
 								inMenu = false;
 							} catch (Exception e1) {
 								e1.printStackTrace();
@@ -405,7 +425,7 @@ public class Manager extends Application {
 						try {
 							animation.play();
 							callXMLreader(fileName);
-							s.setScene(setupScene(width, height, BACKGROUND, myGrid.getCellArray(), cell_Width, cell_Height));
+							s.setScene(setupScene(width, height, BACKGROUND, myGrid));
 							inMenu = false;
 						} catch (Exception e1) {
 							e1.printStackTrace();
@@ -544,7 +564,7 @@ public class Manager extends Application {
 				}
 			}
 		});
-		
+
 		Button create = GenButton(grid, myResources.getString("CreateButton"), 1, 0);
 		create.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -661,7 +681,7 @@ public class Manager extends Application {
 					//e1.printStackTrace();
 				}
 				//if(isError) {
-					//displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
+				//displayMessage(grid, myResources.getString("MakerError"), 3, 0, 8);
 				//}
 			}
 		});
@@ -692,7 +712,7 @@ public class Manager extends Application {
 		ft.setCycleCount(1);
 		ft.play();
 	}
-	
+
 	private TextField makeTextField(GridPane grid, String prompt, int x, int y) {
 		final TextField temp = new TextField();
 		temp.setPromptText(prompt);
@@ -708,19 +728,107 @@ public class Manager extends Application {
 		Group addition = new Group();
 		for (int i = 0; i < cellArray[0].length; i++) {
 			for (int j = 0; j < cellArray[1].length; j++) {
-				addition.getChildren().add(GenerateCell(cellArray[i][j], width, height, i, j));
+				/* TODO: Add switch case here to tell which type of cell to generate */	
+				if (shapetype.equals("square"))
+					addition.getChildren().add(GenerateRectangularCell(cellArray[i][j], width, height, i, j));
+				else if(shapetype.equals("triangle"))
+					addition.getChildren().add(GenerateTriangleCell(cellArray[i][j], width, height, i, j));
+				else if(shapetype.equals("hexagon"))
+					addition.getChildren().add(GenerateHexagonCell(cellArray[i][j], width, height, i, j));
+
 			}
 		}
 		return addition;
 	}
 	//Helper function for CreateRoot, generates one cell
-	private Rectangle GenerateCell(Cell BufferCell, int width, int height, int i, int j) {
-		Rectangle Image = new Rectangle((width * i + XPADDING), (height * j + YPADDING), width, height);
+	private Rectangle GenerateRectangularCell(Cell BufferCell, int width, int height, int i, int j) {
+		Rectangle Image = new Rectangle((width * i + XPADDING) + graphbufferW/2, (height * j + YPADDING) + graphbufferH, width, height);
 		Image.setFill(BufferCell.getDisplayColor());
 		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
 		return Image;
 	}
+
+	private Polygon GenerateHexagonCell(Cell BufferCell, int width, int height, int i, int j) {
+		Polygon Image = new Polygon();
+		Double[] points;
+		if ((i % 2 )== 0) {
+			points = new Double[] {
+					40.0 * j + 10 + graphbufferW/2, 10.0 * i + graphbufferH, 
+					40.0 * j + 20 + graphbufferW/2, 10.0 * i + graphbufferH, 
+					40.0 * j + 30 + graphbufferW/2, 10.0 * i + 10 + graphbufferH,
+					40.0 * j + 20 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
+					40.0 * j + 10 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
+					40.0 * j + graphbufferW/2, 10.0 * i + 10 + graphbufferH
+			};
+		}
+		else {
+			points = new Double[] {
+					40.0 * j + 30 + graphbufferW/2, 10.0 * i + graphbufferH, 
+					40.0 * j + 40 + graphbufferW/2, 10.0 * i + graphbufferH, 
+					40.0 * j + 50 + graphbufferW/2, 10.0 * i + 10 + graphbufferH,
+					40.0 * j + 40 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
+					40.0 * j + 30 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
+					40.0 * j + 20 + graphbufferW/2, 10.0 * i + 10 + graphbufferH
+			};
+		}
+		Image.getPoints().addAll(points);
+		Image.setFill(BufferCell.getDisplayColor());
+		Image.setStrokeWidth(0.3);
+		Image.setStroke(Color.BLACK);
+		return Image;
+	}
+
+	private Polygon GenerateTriangleCell(Cell BufferCell, int width, int height, int i, int j) {
+		Polygon Image = new Polygon();
+		Double[] points;
+		if ((i % 2 )== 0) {
+			points = new Double[] {
+					10.0 * j + 10 + graphbufferW/2, 15.0 * (j % 2) + 15 * i + graphbufferH, 
+					10.0 * j + 20 + graphbufferW/2, 15.0 * ((j + 1) % 2) + 15 * i + graphbufferH, 
+					10.0 * j + graphbufferW/2, 15.0 * ((j + 1)% 2) + 15 * i + graphbufferH
+			};
+		}
+		else {
+			points = new Double[] {
+					10.0 * j + 10 + graphbufferW/2, 15.0 * ((j + 1) % 2) + 15 * i + graphbufferH, 
+					10.0 * j + 20 + graphbufferW/2, 15.0 * (j % 2) + 15 * i + graphbufferH, 
+					10.0 * j + graphbufferW/2, 15.0 * (j % 2) + 15 * i + graphbufferH
+			};
+		}
+		Image.getPoints().addAll(points);
+		Image.setFill(BufferCell.getDisplayColor());
+		Image.setStrokeWidth(0.3);
+		Image.setStroke(Color.BLACK);
+		return Image;
+	}
+
+	//more efficient way is to make it so that each time you simply add the point to the XYCHart instead of creating an entirely new xy chart, trying to make flexible
+
+	private LineChart<Number, Number> GenerateLineChart(Map<String, Number> init_map) {
+		final NumberAxis xAxis = new NumberAxis();
+		final NumberAxis yAxis = new NumberAxis();
+		xAxis.setLabel("Population counts");
+		final LineChart<Number, Number> lineChart = new LineChart<Number, Number>(xAxis,yAxis);
+		lineChart.setTitle("Population Plots");
+		int count = 0;
+
+		for (String s : init_map.keySet()) {
+			if (datapoints.size() == count) {
+				XYChart.Series<Number, Number> buffer = new XYChart.Series();
+				buffer.getData().add(new XYChart.Data(stepcount, init_map.get(s)));
+				datapoints.add(buffer);
+			}
+			datapoints.get(count).getData().add(new XYChart.Data(stepcount, init_map.get(s)));
+			count = count + 1;
+		}
+
+		for (int k = 0; k < count; k++) {
+			lineChart.getData().add(datapoints.get(k));
+		}
+		return lineChart;
+	}
+
 	//Launches game
 	public static void main(String[] args) {
 		Application.launch(args);

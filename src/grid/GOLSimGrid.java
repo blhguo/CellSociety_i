@@ -1,7 +1,8 @@
 package grid;
 
-import java.util.List;
-import cell.Cell;
+import java.util.HashMap;
+import java.util.Map;
+
 import cell.GOLsim.AliveCell;
 import cell.GOLsim.DeadCell;
 
@@ -11,6 +12,7 @@ import cell.GOLsim.DeadCell;
  * Extends the Grid class.
  */
 public class GOLSimGrid extends Grid{
+	private String[][] cellArray;
 
 	/**
 	 * Initializes a Grid for the GOL Simulation
@@ -18,8 +20,8 @@ public class GOLSimGrid extends Grid{
 	 * @param height - number of cells in the height of the grid
 	 * @param cellArray - array of initial cell types
 	 */
-	public GOLSimGrid(int width, int height, String[][] cellArray) {
-		super(width, height);
+	public GOLSimGrid(int width, int height, String shape, String[][] cellArray) {
+		super(width, height, shape, "all");
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
@@ -33,24 +35,60 @@ public class GOLSimGrid extends Grid{
 			}
 		}
 	}
-
+	
 	/* (non-Javadoc)
-	 * @see grid.Grid#addNeighbors(java.util.List, cell.Cell[][], int, int)
+	 * @see grid.Grid#getNumberOfCells()
 	 */
 	@Override
-	protected void addNeighbors(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		super.addNeighbors(neighbors, grid, i, j);
-		if (inGrid(i-1,j-1)) {
-			neighbors.add(grid[i-1][j-1]);
+	public Map<String, Number> getNumberOfCells() {
+		HashMap<String, Number> map = new HashMap<>();
+		int alive = 0;
+		int dead = 0;
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof AliveCell) {
+					alive++;
+				} else if (myGrid[i][j] instanceof DeadCell) {
+					dead++;
+				}
+			}
 		}
-		if (inGrid(i+1,j+1)) {
-			neighbors.add(grid[i+1][j+1]);
+		map.put("Alive Cells", alive);
+		map.put("Dead Cells", dead);
+		return map;
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#getArray()
+	 */
+	@Override
+	public String[][] getArray() {
+		getCurrentParameters();
+		return this.cellArray;
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#getCurrentParameters()
+	 */
+	@Override
+	public Map<String,Double> getCurrentParameters() {
+		HashMap<String, Double> map = new HashMap<>();
+		cellArray = new String[myGrid.length][myGrid[0].length];
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof AliveCell) {
+					cellArray[i][j] = "alive";
+				} else if (myGrid[i][j] instanceof DeadCell) {
+					cellArray[i][j] = "dead";
+				}
+			}
 		}
-		if (inGrid(i+1,j-1)) {
-			neighbors.add(grid[i+1][j-1]);
-		}
-		if (inGrid(i-1,j+1)) {
-			neighbors.add(grid[i-1][j+1]);
-		}
+		return map;
+	}
+
+	@Override
+	public void setCurrentParameters(Map<String, Double> map) {
+		// TODO Auto-generated method stub
+		
 	}
 }
