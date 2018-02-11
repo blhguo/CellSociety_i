@@ -11,9 +11,9 @@ public class SegregationSimSetup extends SimulationSetup{
 	 * @param typeArray
 	 * @param thresh
 	 */
-	public SegregationSimSetup(String n, String t, String a, String s, int xSize, int ySize, int gridX, int gridY,
+	public SegregationSimSetup(String n, String t, String a, String s, String nT, String eT, int xSize, int ySize, int gridX, int gridY,
 			String[][] typeArray, double[][] thresh) {
-		super(n, t, a, s, xSize, ySize, gridX, gridY);
+		super(n, t, a, s, nT, eT, xSize, ySize, gridX, gridY);
 		cellArray = typeArray;
 		threshold = thresh;
 	}
@@ -26,8 +26,8 @@ public class SegregationSimSetup extends SimulationSetup{
 	 * @param thresh
 	 */
 	public SegregationSimSetup(SimulationSetup simSetup, String[][] typeArray, double[][] thresh) {
-		super(simSetup.getName(), simSetup.getTitle(), simSetup.getAuthor(), simSetup.getShape(), simSetup.getCellX(), 
-				simSetup.getCellY(), simSetup.getGridX(), simSetup.getGridY());
+		super(simSetup.getName(), simSetup.getTitle(), simSetup.getAuthor(), simSetup.getShape(), simSetup.getNeighbourType(), 
+				simSetup.getEdgeType(), simSetup.getCellX(), simSetup.getCellY(), simSetup.getGridX(), simSetup.getGridY());
 		cellArray = typeArray;
 		threshold = thresh;
 	}

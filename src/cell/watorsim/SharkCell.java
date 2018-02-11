@@ -49,6 +49,10 @@ public class SharkCell extends WatorSimCell{
 		setDisplayColor();
 	}
 	
+	public int getReproductionTime() {
+		return this.reproduction_time;
+	}
+	
 	public int getReproductionThreshold() {
 		return this.reproduction_threshold;
 	}

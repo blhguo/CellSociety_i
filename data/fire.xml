@@ -11,6 +11,8 @@
 	<fireProb>0.5</fireProb>
 	<lightningProb>0.01</lightningProb>
 	<emptyTreeProb>0.01</emptyTreeProb>
+	<neighbourType>cardinal</neighbourType>
+	<edgeType>finite</edgeType>
 
 	<cell>
 		<type>empty</type>

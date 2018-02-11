@@ -25,8 +25,8 @@ public class FireSimGrid extends Grid {
 	 * @param probLightning - probability of tree cell getting struck by lightning
 	 * @param probGrow - probability of tree cell growing in empty cell
 	 */
-	public FireSimGrid(int width, int height, String shape, String[][] cellArray, double probCatch, double probLightning, double probGrow) {
-		super(width, height, shape);
+	public FireSimGrid(int width, int height, String shape, String arrangement, String edge_type, String[][] cellArray, double probCatch, double probLightning, double probGrow) {
+		super(width, height, shape, arrangement, edge_type);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
@@ -95,8 +95,8 @@ public class FireSimGrid extends Grid {
 	 * @see grid.Grid#getCurrentParameters()
 	 */
 	@Override
-	public Map<String,Double> getCurrentParameters() {
-		HashMap<String, Double> map = new HashMap<>();
+	public Map<String,Double[]> getCurrentParameters() {
+		HashMap<String, Double[]> map = new HashMap<>();
 		cellArray = new String[myGrid.length][myGrid[0].length];
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
@@ -109,9 +109,12 @@ public class FireSimGrid extends Grid {
 				}
 			}
 		}
-		map.put("probCatch", getFireProb());
-		map.put("probLightning", getLightningProb());
-		map.put("probGrow", getProbGrow());
+		Double[] pC = {0.0, 1.0, getFireProb()};
+		map.put("probCatch", pC);
+		Double[] pL = {0.0, 1.0, getLightningProb()};
+		map.put("probLightning", pL);
+		Double[] pG = {0.0, 1.0, getProbGrow()};
+		map.put("probGrow", pG);
 		return map;
 	}
 
@@ -119,12 +122,12 @@ public class FireSimGrid extends Grid {
 	 * @see grid.Grid#setCurrentParameters(java.util.Map)
 	 */
 	@Override
-	public void setCurrentParameters(Map<String, Double> map) {
+	public void setCurrentParameters(Map<String, Double[]> map) {
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
-				((FireSimCell) myGrid[i][j]).setFireProb(map.get("probCatch"));
-				((FireSimCell) myGrid[i][j]).setLightningProb(map.get("probLightning"));
-				((FireSimCell) myGrid[i][j]).setProbGrow(map.get("probGrow"));
+				((FireSimCell) myGrid[i][j]).setFireProb(map.get("probCatch")[2]);
+				((FireSimCell) myGrid[i][j]).setLightningProb(map.get("probLightning")[2]);
+				((FireSimCell) myGrid[i][j]).setProbGrow(map.get("probGrow")[2]);
 			}
 		}
 	}

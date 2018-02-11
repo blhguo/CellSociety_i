@@ -20,8 +20,8 @@ public class GOLSimGrid extends Grid{
 	 * @param height - number of cells in the height of the grid
 	 * @param cellArray - array of initial cell types
 	 */
-	public GOLSimGrid(int width, int height, String shape, String[][] cellArray) {
-		super(width, height, shape, "all");
+	public GOLSimGrid(int width, int height, String shape, String arrangement, String edge_type, String[][] cellArray) {
+		super(width, height, shape, arrangement, edge_type);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
@@ -71,8 +71,8 @@ public class GOLSimGrid extends Grid{
 	 * @see grid.Grid#getCurrentParameters()
 	 */
 	@Override
-	public Map<String,Double> getCurrentParameters() {
-		HashMap<String, Double> map = new HashMap<>();
+	public Map<String,Double[]> getCurrentParameters() {
+		HashMap<String, Double[]> map = new HashMap<>();
 		cellArray = new String[myGrid.length][myGrid[0].length];
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
@@ -87,7 +87,7 @@ public class GOLSimGrid extends Grid{
 	}
 
 	@Override
-	public void setCurrentParameters(Map<String, Double> map) {
+	public void setCurrentParameters(Map<String, Double[]> map) {
 		// TODO Auto-generated method stub
 		
 	}

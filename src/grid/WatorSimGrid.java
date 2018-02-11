@@ -20,7 +20,9 @@ public class WatorSimGrid extends Grid{
 	private Cell[][] nextGrid;
 	private String[][] cellArray;
 	private int[][] reproduction;
-	private int[][] energy;
+	private int[][] reproduction_time;
+	private int[][] current_energy;
+	private int[][] default_energy;
 	private int[][] gained_energy;
 
 	/**
@@ -32,8 +34,9 @@ public class WatorSimGrid extends Grid{
 	 * @param energy - array with energy values
 	 * @param gained_energy - array with gained energy values
 	 */
-	public WatorSimGrid(int width, int height, String shape, String[][] cellArray, int[][] reproduction, int[][] energy, int[][] gained_energy) {
-		super(width, height, shape);
+	public WatorSimGrid(int width, int height, String shape, String arrangement, String edge_type, String[][] cellArray, int[][] reproduction, int[][] energy, int[][] gained_energy) {
+		super(width, height, shape, arrangement, edge_type);
+		this.default_energy = energy;
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
@@ -256,14 +259,22 @@ public class WatorSimGrid extends Grid{
 		return this.cellArray;
 	}
 	
-	public int[][] getReproduction() {
+	public int[][] getReproductionThreshold() {
 		getCurrentParameters();
 		return this.reproduction;
 	}
 	
-	public int[][] getEnergy() {
+	public int[][] getCurrentEnergy() {
 		getCurrentParameters();
-		return this.energy;
+		return this.current_energy;
+	}
+	
+	public int[][] getDefaultEnergy() {
+		return this.default_energy;
+	}
+	
+	public int[][] getReproductionTime(){
+		return this.reproduction_time;
 	}
 	
 	public int[][] getGainedEnergy() {
@@ -275,53 +286,60 @@ public class WatorSimGrid extends Grid{
 	 * @see grid.Grid#getCurrentParameters()
 	 */
 	@Override
-	public Map<String,Double> getCurrentParameters() {
-		HashMap<String, Double> map = new HashMap<>();
+	public Map<String,Double[]> getCurrentParameters() {
+		HashMap<String, Double[]> map = new HashMap<>();
 		double fish_reprod_thresh = 0;
 		double shark_reprod_thresh = 0;
 		double gain_energy = 0;
 		cellArray = new String[myGrid.length][myGrid[0].length];
 		reproduction = new int[myGrid.length][myGrid[0].length];
-		energy = new int[myGrid.length][myGrid[0].length];
+		reproduction_time = new int[myGrid.length][myGrid[0].length];
+		current_energy = new int[myGrid.length][myGrid[0].length];
 		gained_energy = new int[myGrid.length][myGrid[0].length];
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
 				if (myGrid[i][j] instanceof EmptyCell) {
 					cellArray[i][j] = "empty";
 					reproduction[i][j] = 0;
-					energy[i][j] = 0;
+					reproduction_time[i][j] = 0;
+					current_energy[i][j] = 0;
 					gained_energy[i][j] = 0;
 				} else if (myGrid[i][j] instanceof FishCell) {
 					cellArray[i][j] = "fish";
 					reproduction[i][j] = ((FishCell) myGrid[i][j]).getReproductionThreshold();
-					energy[i][j] = 0;
+					reproduction_time[i][j] = ((FishCell) myGrid[i][j]).getReproductionTime();
+					current_energy[i][j] = 0;
 					gained_energy[i][j] = 0;
 					fish_reprod_thresh = reproduction[i][j];
 				} else if (myGrid[i][j] instanceof SharkCell) {
 					cellArray[i][j] = "shark";
 					reproduction[i][j] = ((SharkCell) myGrid[i][j]).getReproductionThreshold();
-					energy[i][j] = ((SharkCell) myGrid[i][j]).getEnergy();
+					reproduction_time[i][j] = ((SharkCell) myGrid[i][j]).getReproductionTime();
+					current_energy[i][j] = ((SharkCell) myGrid[i][j]).getEnergy();
 					gained_energy[i][j] = ((SharkCell) myGrid[i][j]).getGainedEnergy();
 					shark_reprod_thresh = reproduction[i][j];
 					gain_energy = gained_energy[i][j];
 				}
 			}
 		}
-		map.put("Fish Reproduction Threshold", fish_reprod_thresh);
-		map.put("Shark Reproduction Threshold", shark_reprod_thresh);
-		map.put("Gained Energy eating Fish", gain_energy);
+		Double[] fArray = {0.0, 100.0, fish_reprod_thresh};
+		Double[] sArray = {0.0, 100.0, shark_reprod_thresh};
+		Double[] eArray = {0.0, 100.0, gain_energy};
+		map.put("Fish Reproduction Threshold", fArray);
+		map.put("Shark Reproduction Threshold", sArray);
+		map.put("Gained Energy eating Fish", eArray);
 		return map;
 	}
 
 	@Override
-	public void setCurrentParameters(Map<String, Double> map) {
+	public void setCurrentParameters(Map<String, Double[]> map) {
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
 				if (myGrid[i][j] instanceof FishCell) {
-					((FishCell) myGrid[i][j]).setReproductionThreshold(map.get("Fish Reproduction Threshold"));
+					((FishCell) myGrid[i][j]).setReproductionThreshold(map.get("Fish Reproduction Threshold")[2]);
 				} else if (myGrid[i][j] instanceof SharkCell) {
-					((SharkCell) myGrid[i][j]).setReproductionThreshold(map.get("Shark Reproduction Threshold"));
-					((SharkCell) myGrid[i][j]).setGainedEnergy(map.get("Gained Energy eating Fish"));
+					((SharkCell) myGrid[i][j]).setReproductionThreshold(map.get("Shark Reproduction Threshold")[2]);
+					((SharkCell) myGrid[i][j]).setGainedEnergy(map.get("Gained Energy eating Fish")[2]);
 				}
 			}
 		}
