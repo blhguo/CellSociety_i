@@ -81,6 +81,7 @@ public class Manager extends Application {
 	int cell_Width;
 	int cell_Height;
 	Integer stepcount = 0;
+	String shapetype;
 	//probably should have made this a map
 	ArrayList<XYChart.Series<Number, Number>> datapoints = new ArrayList<XYChart.Series<Number, Number>>();
 	public static final Paint BACKGROUND = Color.WHITE;
@@ -349,6 +350,7 @@ public class Manager extends Application {
 
 	// Sets up scene for the actual simulation
 	public Scene setupScene (int width, int height, Paint background, Grid cellArray, int cell_width, int cell_height) throws Exception {
+		shapetype = cellArray.getShape();
 		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));
 		root.getChildren().add(GenerateLineChart(cellArray.getNumberOfCells()));
 		Scene scene = new Scene(root, width, height, background);
@@ -720,7 +722,13 @@ public class Manager extends Application {
 		for (int i = 0; i < cellArray[0].length; i++) {
 			for (int j = 0; j < cellArray[1].length; j++) {
 				/* TODO: Add switch case here to tell which type of cell to generate */	
-				addition.getChildren().add(GenerateTriangleCell(cellArray[i][j], width, height, i, j));
+				if (shapetype.equals("square"))
+					addition.getChildren().add(GenerateRectangularCell(cellArray[i][j], width, height, i, j));
+				else if(shapetype.equals("triangle"))
+					addition.getChildren().add(GenerateTriangleCell(cellArray[i][j], width, height, i, j));
+				else if(shapetype.equals("hexagon"))
+					addition.getChildren().add(GenerateHexagonCell(cellArray[i][j], width, height, i, j));
+
 			}
 		}
 		return addition;
