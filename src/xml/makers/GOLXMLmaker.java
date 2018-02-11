@@ -36,28 +36,22 @@ public class GOLXMLmaker extends XMLmaker{
 		closeWriter();
 	}
 	
-	public GOLXMLmaker(GOLSimGrid grid) throws FileNotFoundException, UnsupportedEncodingException{
+	public GOLXMLmaker(GOLSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		super(FILE, TYPE, GOL_TITLE, GOL_AUTHOR);
-//		shape = grid.getShape();
-//		gridx = grid.getGridX();
-//		gridy = grid.getGridY();
-//		cellx = grid.getCellX();
-//		celly = grid.getCellY();
-		shape = "square";
-		gridx = 400;
-		gridy = 400;
-		cellx = 40;
-		celly = 40;
+		gridx = gx;
+		gridy = gy;
+		cellx = cx;
+		celly = cy;
+		shape = grid.getShape();
 		numCellsX = (int) gridx / cellx;
 		numCellsY = (int) gridy / celly;
 		printFileHeader2();
-		Cell[][] cellarray = grid.getCellArray();
+		String[][] cellArray = grid.getArray();
 		String type;
-		for(int i = 0; i < cellarray[0].length; i++){
-			for(int j = 0; j < cellarray[1].length; j++){
-				//type = cellArray[i]][j].getType();
-				type = "alive";
-				if(!type.equals("empty")){
+		for(int i = 0; i < cellArray[0].length; i++){
+			for(int j = 0; j < cellArray[1].length; j++){
+				type = cellArray[i][j];
+				if(!type.equals("dead")){
 					printCell(type, i, j);
 				}
 			}

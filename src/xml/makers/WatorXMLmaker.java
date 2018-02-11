@@ -4,9 +4,11 @@ import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
+import grid.GOLSimGrid;
 import xml.XMLmaker;
 
 public class WatorXMLmaker extends XMLmaker{
+	private final static String FILE = "data/wator_saved.xml";
 	private final static String TYPE = "wator";
 	private final static String WATOR_TITLE =  "Wa-Tor World";
 	private final static String WATOR_AUTHOR =  "A.K. Dewdney";
@@ -59,6 +61,29 @@ public class WatorXMLmaker extends XMLmaker{
 				}
 
 				printWatorCell(wType, i, j, rT, gE, e);
+			}
+		}
+		closeWriter();
+	}
+	
+	public WatorXMLmaker(GOLSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
+		super(FILE, TYPE, WATOR_TITLE, WATOR_AUTHOR);
+		gridx = gx;
+		gridy = gy;
+		cellx = cx;
+		celly = cy;
+		shape = grid.getShape();
+		numCellsX = (int) gridx / cellx;
+		numCellsY = (int) gridy / celly;
+		printFileHeader2();
+		String[][] cellArray = grid.getArray();
+		String type;
+		for(int i = 0; i < cellArray[0].length; i++){
+			for(int j = 0; j < cellArray[1].length; j++){
+				type = cellArray[i][j];
+				if(!type.equals("empty")){
+					printCell(type, i, j);
+				}
 			}
 		}
 		closeWriter();
