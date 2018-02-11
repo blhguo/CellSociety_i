@@ -17,6 +17,8 @@ import cell.segregation.XCell;
  */
 public class SegregationSimGrid extends Grid{
 	private Cell[][] nextGrid;
+	private String[][] cellArray;
+	private double[][] threshold;
 
 	/**
 	 * Initializes a Grid for the Segregation Simulation
@@ -130,5 +132,39 @@ public class SegregationSimGrid extends Grid{
 		map.put("O Cells", o);
 		map.put("X Cells", x);
 		return map;
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#getArray()
+	 */
+	@Override
+	public String[][] getArray() {
+		getCurrentState();
+		return this.cellArray;
+	}
+	
+	public double[][] getThreshold() {
+		getCurrentState();
+		return this.threshold;
+	}
+
+	@Override
+	protected void getCurrentState() {
+		cellArray = new String[myGrid.length][myGrid[0].length];
+		threshold = new double[myGrid.length][myGrid[0].length];
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof EmptyCell) {
+					cellArray[i][j] = "empty";
+					threshold[i][j] = 0;
+				} else if (myGrid[i][j] instanceof OCell) {
+					cellArray[i][j] = "o";
+					threshold[i][j] = ((OCell) myGrid[i][j]).getThreshold();
+				} else if (myGrid[i][j] instanceof XCell) {
+					cellArray[i][j] = "x";
+					threshold[i][j] = ((XCell) myGrid[i][j]).getThreshold();
+				}
+			}
+		}
 	}
 }

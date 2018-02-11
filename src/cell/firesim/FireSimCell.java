@@ -24,4 +24,16 @@ public abstract class FireSimCell extends Cell{
 		probLightning = pLight;
 		probGrow = pGrow;
 	}
+	
+	public double getFireProb() {
+		return this.probCatch;
+	}
+	
+	public double getLightningProb() {
+		return this.probLightning;
+	}
+	
+	public double getProbGrow() {
+		return this.probGrow;
+	}
 }

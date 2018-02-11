@@ -14,6 +14,7 @@ import cell.GOLsim.DeadCell;
  * Extends the Grid class.
  */
 public class GOLSimGrid extends Grid{
+	private String[][] cellArray;
 
 	/**
 	 * Initializes a Grid for the GOL Simulation
@@ -77,5 +78,28 @@ public class GOLSimGrid extends Grid{
 		map.put("Alive Cells", alive);
 		map.put("Dead Cells", dead);
 		return map;
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#getArray()
+	 */
+	@Override
+	public String[][] getArray() {
+		getCurrentState();
+		return this.cellArray;
+	}
+
+	@Override
+	protected void getCurrentState() {
+		cellArray = new String[myGrid.length][myGrid[0].length];
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof AliveCell) {
+					cellArray[i][j] = "alive";
+				} else if (myGrid[i][j] instanceof DeadCell) {
+					cellArray[i][j] = "dead";
+				}
+			}
+		}
 	}
 }

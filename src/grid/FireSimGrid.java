@@ -5,6 +5,7 @@ import java.util.Map;
 
 import cell.firesim.EmptyCell;
 import cell.firesim.FireCell;
+import cell.firesim.FireSimCell;
 import cell.firesim.TreeCell;
 
 /**
@@ -13,6 +14,8 @@ import cell.firesim.TreeCell;
  * Extends the Grid class.
  */
 public class FireSimGrid extends Grid {
+	private String[][] cellArray;
+	
 	/**
 	 * Initializes a Grid for the Fire Simulation
 	 * @param width - number of cells in the width of the grid
@@ -65,5 +68,42 @@ public class FireSimGrid extends Grid {
 		map.put("Fire Cells", fire);
 		map.put("Tree Cells", tree);
 		return map;
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#getArray()
+	 */
+	@Override
+	public String[][] getArray() {
+		getCurrentState();
+		return this.cellArray;
+	}
+	
+	public double getFireProb() {
+		return ((FireSimCell) myGrid[0][0]).getFireProb();
+	}
+	
+	public double getLightningProb() {
+		return ((FireSimCell) myGrid[0][0]).getLightningProb();
+	}
+	
+	public double getProbGrow() {
+		return ((FireSimCell) myGrid[0][0]).getProbGrow();
+	}
+
+	@Override
+	protected void getCurrentState() {
+		cellArray = new String[myGrid.length][myGrid[0].length];
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof EmptyCell) {
+					cellArray[i][j] = "empty";
+				} else if (myGrid[i][j] instanceof FireCell) {
+					cellArray[i][j] = "fire";
+				} else if (myGrid[i][j] instanceof TreeCell) {
+					cellArray[i][j] = "tree";
+				}
+			}
+		}
 	}
 }
