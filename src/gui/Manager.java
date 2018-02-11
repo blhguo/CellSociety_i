@@ -82,6 +82,8 @@ public class Manager extends Application {
 	int cell_Height;
 	Integer stepcount = 0;
 	String shapetype;
+	int graphbufferH = 400;
+	int graphbufferW = 50;
 	//probably should have made this a map
 	ArrayList<XYChart.Series<Number, Number>> datapoints = new ArrayList<XYChart.Series<Number, Number>>();
 	public static final Paint BACKGROUND = Color.WHITE;
@@ -231,7 +233,7 @@ public class Manager extends Application {
 	public void callGOLXMLreader(String file){
 		GOLXMLreader xml_reader = new GOLXMLreader();
 		GOLSimSetup simInfo = xml_reader.read(file);
-		width = simInfo.getGridX() + 20;
+		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
@@ -243,7 +245,7 @@ public class Manager extends Application {
 	public void callSegXMLreader(String file){
 		SegregationXMLreader xml_reader = new SegregationXMLreader();
 		SegregationSimSetup simInfo = xml_reader.read(file);
-		width = simInfo.getGridX() + 20;
+		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
@@ -255,7 +257,7 @@ public class Manager extends Application {
 	public void callWatorXMLreader(String file){
 		WatorXMLreader xml_reader = new WatorXMLreader();
 		WatorSimSetup simInfo = xml_reader.read(file);
-		width = simInfo.getGridX() + 20;
+		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
@@ -267,7 +269,7 @@ public class Manager extends Application {
 	public void callFireXMLreader(String file){
 		FireXMLreader xml_reader = new FireXMLreader();
 		FireSimSetup simInfo = xml_reader.read(file);
-		width = simInfo.getGridX() + 20;
+		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
@@ -353,11 +355,12 @@ public class Manager extends Application {
 
 	// Sets up scene for the actual simulation
 	public Scene setupScene (int width, int height, Paint background, Grid cellArray) throws Exception {
+		shapetype = cellArray.getShape();
 		int cell_width = (int) (width - 20) / cellArray.getCellArray()[0].length;
 		int cell_height = (int) (height - 20) / cellArray.getCellArray()[1].length;
 		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));
 		root.getChildren().add(GenerateLineChart(cellArray.getNumberOfCells()));
-		Scene scene = new Scene(root, width, height, background);
+		Scene scene = new Scene(root, width + graphbufferW, height + graphbufferH, background);
 		return scene;	
 	}
 
@@ -739,7 +742,7 @@ public class Manager extends Application {
 	}
 	//Helper function for CreateRoot, generates one cell
 	private Rectangle GenerateRectangularCell(Cell BufferCell, int width, int height, int i, int j) {
-		Rectangle Image = new Rectangle((width * i + XPADDING), (height * j + YPADDING), width, height);
+		Rectangle Image = new Rectangle((width * i + XPADDING) + graphbufferW/2, (height * j + YPADDING) + graphbufferH, width, height);
 		Image.setFill(BufferCell.getDisplayColor());
 		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
@@ -751,22 +754,22 @@ public class Manager extends Application {
 		Double[] points;
 		if ((i % 2 )== 0) {
 			points = new Double[] {
-					40.0 * j + 10, 10.0 * i, 
-					40.0 * j + 20, 10.0 * i, 
-					40.0 * j + 30, 10.0 * i + 10,
-					40.0 * j + 20, 10.0 * i + 20,
-					40.0 * j + 10, 10.0 * i + 20,
-					40.0 * j, 10.0 * i + 10
+					40.0 * j + 10 + graphbufferW/2, 10.0 * i + graphbufferH, 
+					40.0 * j + 20 + graphbufferW/2, 10.0 * i + graphbufferH, 
+					40.0 * j + 30 + graphbufferW/2, 10.0 * i + 10 + graphbufferH,
+					40.0 * j + 20 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
+					40.0 * j + 10 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
+					40.0 * j + graphbufferW/2, 10.0 * i + 10 + graphbufferH
 			};
 		}
 		else {
 			points = new Double[] {
-					40.0 * j + 30, 10.0 * i, 
-					40.0 * j + 40, 10.0 * i, 
-					40.0 * j + 50, 10.0 * i + 10,
-					40.0 * j + 40, 10.0 * i + 20,
-					40.0 * j + 30, 10.0 * i + 20,
-					40.0 * j + 20, 10.0 * i + 10
+					40.0 * j + 30 + graphbufferW/2, 10.0 * i + graphbufferH, 
+					40.0 * j + 40 + graphbufferW/2, 10.0 * i + graphbufferH, 
+					40.0 * j + 50 + graphbufferW/2, 10.0 * i + 10 + graphbufferH,
+					40.0 * j + 40 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
+					40.0 * j + 30 + graphbufferW/2, 10.0 * i + 20 + graphbufferH,
+					40.0 * j + 20 + graphbufferW/2, 10.0 * i + 10 + graphbufferH
 			};
 		}
 		Image.getPoints().addAll(points);
@@ -781,16 +784,16 @@ public class Manager extends Application {
 		Double[] points;
 		if ((i % 2 )== 0) {
 			points = new Double[] {
-					10.0 * j + 10, 15.0 * (j % 2) + 15 * i, 
-					10.0 * j + 20, 15.0 * ((j + 1) % 2) + 15 * i, 
-					10.0 * j, 15.0 * ((j + 1)% 2) + 15 * i
+					10.0 * j + 10 + graphbufferW/2, 15.0 * (j % 2) + 15 * i + graphbufferH, 
+					10.0 * j + 20 + graphbufferW/2, 15.0 * ((j + 1) % 2) + 15 * i + graphbufferH, 
+					10.0 * j + graphbufferW/2, 15.0 * ((j + 1)% 2) + 15 * i + graphbufferH
 			};
 		}
 		else {
 			points = new Double[] {
-					10.0 * j + 10, 15.0 * ((j + 1) % 2) + 15 * i, 
-					10.0 * j + 20, 15.0 * (j % 2) + 15 * i, 
-					10.0 * j, 15.0 * (j % 2) + 15 * i
+					10.0 * j + 10 + graphbufferW/2, 15.0 * ((j + 1) % 2) + 15 * i + graphbufferH, 
+					10.0 * j + 20 + graphbufferW/2, 15.0 * (j % 2) + 15 * i + graphbufferH, 
+					10.0 * j + graphbufferW/2, 15.0 * (j % 2) + 15 * i + graphbufferH
 			};
 		}
 		Image.getPoints().addAll(points);
