@@ -18,6 +18,10 @@ import cell.watorsim.WatorSimCell;
  */
 public class WatorSimGrid extends Grid{
 	private Cell[][] nextGrid;
+	private String[][] cellArray;
+	private int[][] reproduction;
+	private int[][] energy;
+	private int[][] gained_energy;
 
 	/**
 	 * Initializes a Grid for the Wator Simulation
@@ -241,5 +245,58 @@ public class WatorSimGrid extends Grid{
 		map.put("Fish Cells", fish);
 		map.put("Shark Cells", shark);
 		return map;
+	}
+
+	/* (non-Javadoc)
+	 * @see grid.Grid#getArray()
+	 */
+	@Override
+	public String[][] getArray() {
+		getCurrentState();
+		return this.cellArray;
+	}
+	
+	public int[][] getReproduction() {
+		getCurrentState();
+		return this.reproduction;
+	}
+	
+	public int[][] getEnergy() {
+		getCurrentState();
+		return this.energy;
+	}
+	
+	public int[][] getGainedEnergy() {
+		getCurrentState();
+		return this.gained_energy;
+	}
+
+	@Override
+	protected void getCurrentState() {
+		cellArray = new String[myGrid.length][myGrid[0].length];
+		reproduction = new int[myGrid.length][myGrid[0].length];
+		energy = new int[myGrid.length][myGrid[0].length];
+		gained_energy = new int[myGrid.length][myGrid[0].length];
+		for (int i = 0; i < myGrid.length; i++) {
+			for (int j = 0; j < myGrid[0].length; j++) {
+				if (myGrid[i][j] instanceof EmptyCell) {
+					cellArray[i][j] = "empty";
+					reproduction[i][j] = 0;
+					energy[i][j] = 0;
+					gained_energy[i][j] = 0;
+				} else if (myGrid[i][j] instanceof FishCell) {
+					cellArray[i][j] = "fish";
+					reproduction[i][j] = ((FishCell) myGrid[i][j]).getReproductionThreshold();
+					energy[i][j] = 0;
+					gained_energy[i][j] = 0;
+				} else if (myGrid[i][j] instanceof SharkCell) {
+					cellArray[i][j] = "shark";
+					reproduction[i][j] = ((SharkCell) myGrid[i][j]).getReproductionThreshold();
+					energy[i][j] = ((SharkCell) myGrid[i][j]).getEnergy();
+					gained_energy[i][j] = ((SharkCell) myGrid[i][j]).getGainedEnergy();
+					
+				}
+			}
+		}
 	}
 }

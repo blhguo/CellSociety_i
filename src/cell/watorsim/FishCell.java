@@ -43,6 +43,10 @@ public class FishCell extends WatorSimCell{
 		this.isReproducing = fish_cell.isReproducing;
 		setDisplayColor();
 	}
+	
+	public int getReproductionThreshold() {
+		return this.reproduction_threshold;
+	}
 
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.List)

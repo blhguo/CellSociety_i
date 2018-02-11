@@ -48,6 +48,18 @@ public class SharkCell extends WatorSimCell{
 		this.isReproducing = shark_cell.isReproducing;
 		setDisplayColor();
 	}
+	
+	public int getReproductionThreshold() {
+		return this.reproduction_threshold;
+	}
+	
+	public int getEnergy() {
+		return this.current_energy;
+	}
+	
+	public int getGainedEnergy() {
+		return this.gained_energy;
+	}
 
 	/* (non-Javadoc)
 	 * @see cell.Cell#nextState(java.util.List)
