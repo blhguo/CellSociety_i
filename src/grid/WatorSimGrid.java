@@ -20,7 +20,9 @@ public class WatorSimGrid extends Grid{
 	private Cell[][] nextGrid;
 	private String[][] cellArray;
 	private int[][] reproduction;
-	private int[][] energy;
+	private int[][] reproduction_time;
+	private int[][] current_energy;
+	private int[][] default_energy;
 	private int[][] gained_energy;
 
 	/**
@@ -34,6 +36,7 @@ public class WatorSimGrid extends Grid{
 	 */
 	public WatorSimGrid(int width, int height, String shape, String arrangement, String edge_type, String[][] cellArray, int[][] reproduction, int[][] energy, int[][] gained_energy) {
 		super(width, height, shape, arrangement, edge_type);
+		this.default_energy = energy;
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
@@ -263,7 +266,15 @@ public class WatorSimGrid extends Grid{
 	
 	public int[][] getCurrentEnergy() {
 		getCurrentParameters();
-		return this.energy;
+		return this.current_energy;
+	}
+	
+	public int[][] getDefaultEnergy() {
+		return this.default_energy;
+	}
+	
+	public int[][] getReproductionTime(){
+		return this.reproduction_time;
 	}
 	
 	public int[][] getGainedEnergy() {
@@ -282,25 +293,29 @@ public class WatorSimGrid extends Grid{
 		double gain_energy = 0;
 		cellArray = new String[myGrid.length][myGrid[0].length];
 		reproduction = new int[myGrid.length][myGrid[0].length];
-		energy = new int[myGrid.length][myGrid[0].length];
+		reproduction_time = new int[myGrid.length][myGrid[0].length];
+		current_energy = new int[myGrid.length][myGrid[0].length];
 		gained_energy = new int[myGrid.length][myGrid[0].length];
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
 				if (myGrid[i][j] instanceof EmptyCell) {
 					cellArray[i][j] = "empty";
 					reproduction[i][j] = 0;
-					energy[i][j] = 0;
+					reproduction_time[i][j] = 0;
+					current_energy[i][j] = 0;
 					gained_energy[i][j] = 0;
 				} else if (myGrid[i][j] instanceof FishCell) {
 					cellArray[i][j] = "fish";
 					reproduction[i][j] = ((FishCell) myGrid[i][j]).getReproductionThreshold();
-					energy[i][j] = 0;
+					reproduction_time[i][j] = ((FishCell) myGrid[i][j]).getReproductionTime();
+					current_energy[i][j] = 0;
 					gained_energy[i][j] = 0;
 					fish_reprod_thresh = reproduction[i][j];
 				} else if (myGrid[i][j] instanceof SharkCell) {
 					cellArray[i][j] = "shark";
 					reproduction[i][j] = ((SharkCell) myGrid[i][j]).getReproductionThreshold();
-					energy[i][j] = ((SharkCell) myGrid[i][j]).getEnergy();
+					reproduction_time[i][j] = ((SharkCell) myGrid[i][j]).getReproductionTime();
+					current_energy[i][j] = ((SharkCell) myGrid[i][j]).getEnergy();
 					gained_energy[i][j] = ((SharkCell) myGrid[i][j]).getGainedEnergy();
 					shark_reprod_thresh = reproduction[i][j];
 					gain_energy = gained_energy[i][j];
@@ -308,8 +323,8 @@ public class WatorSimGrid extends Grid{
 			}
 		}
 		Double[] fArray = {0.0, 100.0, fish_reprod_thresh};
-		Double[] sArray = {0.0, 100.0, fish_reprod_thresh};
-		Double[] eArray = {0.0, 100.0, fish_reprod_thresh};
+		Double[] sArray = {0.0, 100.0, shark_reprod_thresh};
+		Double[] eArray = {0.0, 100.0, gain_energy};
 		map.put("Fish Reproduction Threshold", fArray);
 		map.put("Shark Reproduction Threshold", sArray);
 		map.put("Gained Energy eating Fish", eArray);
