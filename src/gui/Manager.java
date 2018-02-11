@@ -243,7 +243,7 @@ public class Manager extends Application {
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getArray());
+		myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), simInfo.getEdgeType(), simInfo.getArray());
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}
@@ -255,7 +255,7 @@ public class Manager extends Application {
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getArray(), simInfo.getThreshold());
+		myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), simInfo.getEdgeType(), simInfo.getArray(), simInfo.getThreshold());
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}
@@ -267,7 +267,7 @@ public class Manager extends Application {
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getArray(), simInfo.getReproduction(), simInfo.getEnergy(), simInfo.getGainedEnergy());
+		myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), simInfo.getEdgeType(), simInfo.getArray(), simInfo.getReproduction(), simInfo.getEnergy(), simInfo.getGainedEnergy());
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}
@@ -279,7 +279,7 @@ public class Manager extends Application {
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
-		myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
+		myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), simInfo.getEdgeType(), simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}

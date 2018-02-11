@@ -8,7 +8,7 @@
 	<cell_ysize>50</cell_ysize>
 	<grid_x>400</grid_x>
 	<grid_y>400</grid_y>
-	<neighbourType>cardinal</neighbourType>
+	<neighbourType>all</neighbourType>
 	<edgeType>infinite</edgeType>
 	
 	<cell>

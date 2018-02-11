@@ -26,8 +26,8 @@ public class SegregationSimGrid extends Grid{
 	 * @param cellArray - array of initial cell types
 	 * @param threshold - array of satisfaction threshold values
 	 */
-	public SegregationSimGrid(int width, int height, String shape, String[][] cellArray, double[][] threshold) {
-		super(width, height, shape, "all");
+	public SegregationSimGrid(int width, int height, String shape, String arrangement, String edge_type, String[][] cellArray, double[][] threshold) {
+		super(width, height, shape, arrangement, edge_type);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
