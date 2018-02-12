@@ -241,7 +241,10 @@ public class Manager extends Application {
 			}
 			else if(fileType == 3) {
 				callFireXMLreader(file);
-			}	
+			}
+			else if(fileType == 4) {
+				callSugarXMLreader(file);
+			}
 			//TODO throw error if not one of those shapes^^
 		}
 	}
