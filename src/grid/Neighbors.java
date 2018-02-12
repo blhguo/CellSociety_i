@@ -10,13 +10,13 @@ public class Neighbors {
 	private String edge_type;
 	private int myWidth;
 	private int myHeight;
-	private Grid myGrid;
+	//private Grid myGrid;
 	
 	public Neighbors(String shape, String arrangement, String edge_type, Grid grid) {
 		this.shape = shape;
 		this.arrangement = arrangement;
 		this.edge_type = edge_type;
-		this.myGrid = grid;
+		//this.myGrid = grid;
 	}
 	
 	/**
