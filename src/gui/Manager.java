@@ -15,7 +15,6 @@ import grid.Grid;
 import grid.SegregationSimGrid;
 import grid.SugarSimGrid;
 import grid.WatorSimGrid;
-import grid.SugarSimGrid;
 import javafx.animation.Animation.Status;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
@@ -42,7 +41,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -94,9 +92,9 @@ public class Manager extends Application {
 	int cell_Height;
 	Integer stepcount = 0;
 	String shapetype;
-	int graphbufferH = 500;
-	int graphbufferW = 1200;
-	Color[] colors;
+	int graphbufferH = 400;
+	int graphbufferW = 500;	
+	double animspeed = 1.0;
 	//probably should have made this a map
 	ArrayList<XYChart.Series<Number, Number>> datapoints = new ArrayList<XYChart.Series<Number, Number>>();
 	public static final Paint BACKGROUND = Color.WHITE;
@@ -108,14 +106,10 @@ public class Manager extends Application {
 	public double SECOND_DELAY = 1000.0;
 	private KeyFrame frame;
 	private Timeline animation;	
-	private static final int XPADDING = 10;
-	private static final int YPADDING = 10;
 	private static final int MENU_PAD = 10;
 	private static final int GUIDE_SIZE = 310;
 	private static final int MAKER_SIZE = 400;
 	private static final int SLIDERLENGTH = 100;
-	private int SHAPESIZE_W;
-	private int SHAPESIZE_L;
 	private boolean inMenu = true;
 	public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	public static final String DEFAULT_RESOURCE_FILE = "defaultText";
@@ -125,6 +119,9 @@ public class Manager extends Application {
 	private static final String FileF = "FileF";
 	private static final String FileGOL = "FileGOL";
 	private static final String FileSug = "FileSug";
+	private static final int SLIDERHEIGHT = 120;
+	private static final int RIGHTPAD = 50;
+	private static final double ERRFADE = 1;
 	private TextField probcell = null;
 	private TextField probx = null;
 	private TextField probo = null;
@@ -166,6 +163,7 @@ public class Manager extends Application {
 	private void returnMenu() throws Exception {
 		inMenu = true;
 		fileType = 0;
+		animspeed = 1;
 		animation.setRate(1);
 		fileName = DEFAULT_FILENAME;
 		Scene menuScene = setupMenu(width, height, BACKGROUND, TheStage);
@@ -180,15 +178,18 @@ public class Manager extends Application {
 		if (code == KeyCode.S) {
 			step();
 		}
-		if (code == KeyCode.UP) {
-			animation.setRate(2);
+		if (code == KeyCode.D) {
+			animspeed = animspeed * 2;
+			animation.setRate(animspeed);
 		}
-		else if (code == KeyCode.DOWN) {
-			animation.setRate(0.5);
+		else if (code == KeyCode.A) {
+			animspeed = animspeed * 0.5;
+			animation.setRate(animspeed);
 		}
 		else if (code == KeyCode.P) {
 			if (animation.getStatus() == Status.PAUSED) {
 				animation.play();
+				animation.setRate(1);
 			}
 			else if (animation.getStatus() == Status.RUNNING) {
 				animation.pause();
@@ -201,7 +202,6 @@ public class Manager extends Application {
 				stepcount = 0;
 				returnMenu();
 			} catch (Exception e) {
-				e.printStackTrace();
 			}
 		}
 		
@@ -209,6 +209,7 @@ public class Manager extends Application {
 			System.exit(0);
 		}
 	}
+	
 	// Computes next "scene", takes in no parameters and returns nothing
 	private void step () {
 		if (!inMenu) {
@@ -222,7 +223,6 @@ public class Manager extends Application {
 				TheStage.show();
 
 			} catch (Exception e1) {
-				e1.printStackTrace();
 			}
 		}
 	}
@@ -266,8 +266,8 @@ public class Manager extends Application {
 		initialH = simInfo.getGridY();
 		initialCW = simInfo.getCellX();
 		initialCH = simInfo.getCellY();
-		width = simInfo.getGridX() + 50;
-		height = simInfo.getGridY() + 20;
+		width = simInfo.getGridX();
+		height = simInfo.getGridY();
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		myGrid = new GOLSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), simInfo.getEdgeType(), simInfo.getArray());
@@ -282,8 +282,8 @@ public class Manager extends Application {
 		initialH = simInfo.getGridY();
 		initialCW = simInfo.getCellX();
 		initialCH = simInfo.getCellY();
-		width = simInfo.getGridX() + 50;
-		height = simInfo.getGridY() + 20;
+		width = simInfo.getGridX();
+		height = simInfo.getGridY();
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), simInfo.getEdgeType(), simInfo.getArray(), simInfo.getThreshold());
@@ -294,8 +294,8 @@ public class Manager extends Application {
 	public void callSugarXMLreader(String file){
 		SugarXMLreader xml_reader = new SugarXMLreader();
 		SugarSimSetup simInfo = xml_reader.read(file);
-		width = simInfo.getGridX() + 50;
-		height = simInfo.getGridY() + 20;
+		width = simInfo.getGridX();
+		height = simInfo.getGridY();
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		myGrid = new SugarSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), 
@@ -314,8 +314,8 @@ public class Manager extends Application {
 		initialH = simInfo.getGridY();
 		initialCW = simInfo.getCellX();
 		initialCH = simInfo.getCellY();
-		width = simInfo.getGridX() + 50;
-		height = simInfo.getGridY() + 20;
+		width = simInfo.getGridX();
+		height = simInfo.getGridY();
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		myGrid = new WatorSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), simInfo.getEdgeType(), simInfo.getArray(), simInfo.getReproduction(), simInfo.getEnergy(), simInfo.getGainedEnergy());
@@ -330,8 +330,8 @@ public class Manager extends Application {
 		initialH = simInfo.getGridY();
 		initialCW = simInfo.getCellX();
 		initialCH = simInfo.getCellY();
-		width = simInfo.getGridX() + 50;
-		height = simInfo.getGridY() + 20;
+		width = simInfo.getGridX();
+		height = simInfo.getGridY();
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		myGrid = new FireSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), simInfo.getEdgeType(), simInfo.getArray(), simInfo.getFireProb(), simInfo.getLightningProb(), simInfo.getProbGrow());
@@ -416,22 +416,10 @@ public class Manager extends Application {
 
 	// Sets up scene for the actual simulation
 	public Scene setupScene (int width, int height, Paint background, Grid cellArray) throws Exception {
-		shapetype = cellArray.getShape();
-		int cell_width = (int) (width - 20) / cellArray.getCellArray().length;
-		int cell_height = (int) (height - 20) / cellArray.getCellArray()[0].length;
-		if ((width + graphbufferW/2.0) < 800) {
-			width = 800 - graphbufferW/2;
-		}
-		if (height < (graphbufferH)) {
-			height = graphbufferH;
-		}
-		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));		
 		Map<String, Double[]> MapofParam = cellArray.getCurrentParameters();
-		
 		VBox box = new VBox(GenerateLineChart(cellArray.getNumberOfCells()));
-		
-		//Slider[] sliderArray = new Slider[MapofParam.keySet().size()];
 		int SliderCount = 0;
+		
 		for (String s : MapofParam.keySet()) {
 		    Text text = new Text();
 		    text.setFont(new Font("sans-serif", 10));
@@ -440,8 +428,6 @@ public class Manager extends Application {
 			slider.setPrefHeight(SLIDERLENGTH);
 			slider.valueProperty().addListener((observable, oldvalue, newvalue) -> {
 				double d = newvalue.doubleValue();
-//				System.out.println(s);
-//				System.out.println(d);
 				Double[] doublearray = {MapofParam.get(s)[0], MapofParam.get(s)[1], d};
 				MapofParam.put(s, doublearray);
 				cellArray.setCurrentParameters(MapofParam);
@@ -451,21 +437,28 @@ public class Manager extends Application {
 			text.setText(s + " = " + MapofParam.get(s)[2]);
 			box.getChildren().add(slider);
 			box.getChildren().add(text);
-			//sliderArray[index] = slider;
 			SliderCount = SliderCount + 1;
 		}
-		
 		cellArray.setCurrentParameters(MapofParam);
-
-		Map<String, Double[]> MapofParam1 = cellArray.getCurrentParameters();
-
+		
+		shapetype = cellArray.getShape();
+		int cell_width = (int) (width) / cellArray.getCellArray().length;
+		int cell_height = (int) (height) / cellArray.getCellArray()[0].length;
+		
+		int gridW = width;
+		int gridH = height;
+		
+		if (width < gridW + graphbufferW) {
+			width = graphbufferW + gridW;
+		}
+		if (gridH < ((graphbufferH) + SLIDERHEIGHT * SliderCount)) {
+			height = ((graphbufferH) + SLIDERHEIGHT * SliderCount);
+		}
+		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));
 		
 		root.getChildren().add(box);
 		root.getChildren().add(GenerateSaveButton(cellArray, initialW, initialH, initialCW, initialCH));
-		
-		
-		
-		Scene scene = new Scene(root, width + graphbufferW/2.0, height + 90 * SliderCount, background);
+		Scene scene = new Scene(root, width + RIGHTPAD, height, background);
 		return scene;	
 	}
 
@@ -512,7 +505,6 @@ public class Manager extends Application {
 								s.setScene(setupScene(width, height, BACKGROUND, myGrid));
 								inMenu = false;
 							} catch (Exception e1) {
-								e1.printStackTrace();
 							}
 						}
 					}
@@ -533,7 +525,6 @@ public class Manager extends Application {
 							s.setScene(setupScene(width, height, BACKGROUND, myGrid));
 							inMenu = false;
 						} catch (Exception e1) {
-							e1.printStackTrace();
 						}
 					}
 
@@ -649,9 +640,7 @@ public class Manager extends Application {
 		});
 		return fileChoiceBox;
 	}
-
-	// Generates button to start the maker scene
-	
+	//Generates button to allow saving of current state
 	public Button GenerateSaveButton(Grid cellArray, int gridx, int gridy, int cellx, int celly) {
 		Button SaveButton = new Button(myResources.getString("SaveFile"));
 		
@@ -674,17 +663,14 @@ public class Manager extends Application {
 							}
 						}
 						catch (Exception e1){
-							e1.printStackTrace();
-							System.out.println("exception");
 						}
-						System.out.println("Save sucess");
 					}
 					
 				}
 				);
 		return SaveButton;
 	}
-	
+		// Generates button to start the maker scene
 	public Button GenerateMakerButton(Stage s) {
 		Button makerButton = new Button(myResources.getString("MakerButton"));
 
@@ -696,7 +682,7 @@ public class Manager extends Application {
 							s.setScene(setupXMLmaker(MAKER_SIZE, MAKER_SIZE, BACKGROUND));
 							inMenu = true;
 						} catch (Exception e1) {
-							e1.printStackTrace();
+							
 						}
 					}
 
@@ -716,7 +702,6 @@ public class Manager extends Application {
 							s.setScene(setupGuide(GUIDE_SIZE, GUIDE_SIZE + 40, BACKGROUND));
 							inMenu = true;
 						} catch (Exception e1) {
-							e1.printStackTrace();
 						}
 					}
 
@@ -780,7 +765,6 @@ public class Manager extends Application {
 					returnMenu();
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
-					e1.printStackTrace();
 				}
 			}
 		});
@@ -945,7 +929,7 @@ public class Manager extends Application {
 		});
 		return scene;
 	}
-
+	//displays error message
 	private void displayMessage(GridPane grid, String message, int time, int x, int y) {
 		Text display = new Text();
 		grid.add(display,x,y);
@@ -956,7 +940,7 @@ public class Manager extends Application {
 		ft.setCycleCount(1);
 		ft.play();
 	}
-
+	// creates a text field to display a message
 	private TextField makeTextField(GridPane grid, String prompt, int x, int y) {
 		final TextField temp = new TextField();
 		temp.setPromptText(prompt);
@@ -973,52 +957,22 @@ public class Manager extends Application {
 		Group addition = new Group();
 		for (int i = 0; i < cellArray.length; i++) {
 			for (int j = 0; j < cellArray[0].length; j++) {
-				/* TODO: Add switch case here to tell which type of cell to generate */	
 				if (shapetype.equals("square")) {
 					addition.getChildren().add(GenerateRectangularCell(cellArray[i][j], width, height, i, j));
-//					if (gridarray instanceof SugarSimGrid) {
-//						if (cellArray[i][j] instanceof AgentCell) {
-//							int i1 = width/2 + width * i + XPADDING + graphbufferW/2;
-//							int i2 = height/2 + height * j + YPADDING;
-//							addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
-//						}
-//					}
 				}
 				else if(shapetype.equals("triangle")) {
 					addition.getChildren().add(GenerateTriangleCell(cellArray[i][j], width, height, i, j));
-//				if (gridarray instanceof SugarSimGrid) {
-//					if (cellArray[i][j] instanceof AgentCell) {
-//						int i1 = width * (j + 1) + graphbufferW;
-//						int i2 = height * i + height/2;
-//						addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
-//					}
-//				}
 				}
-				else if(shapetype.equals("hexagon")) {
-				
+				else if(shapetype.equals("hexagon")) {				
 					addition.getChildren().add(GenerateHexagonCell(cellArray[i][j], width, height, i, j));
-//					if (gridarray instanceof SugarSimGrid) {
-//						if (cellArray[i][j] instanceof AgentCell) {
-//							int i1;
-//							//get rid of the following boolean
-//							if ((i%2) == 0) {
-//								i1 = 3*width/8 + width * j;
-//							}
-//							else {
-//								i1 = 7*width/8 + width * j;
-//							}
-//							int i2 = height * (i + 1);
-//							addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
-//						}
-//					}
 				}
 			}
 		}
 		return addition;
 	}
-	//Helper function for CreateRoot, generates one cell
+	//Helper function for CreateRoot, generates one rectangular cell
 	private Rectangle GenerateRectangularCell(Cell BufferCell, int width, int height, int i, int j) {
-		Rectangle Image = new Rectangle((width * i + XPADDING) + graphbufferW/2, (height * j + YPADDING), width, height);
+		Rectangle Image = new Rectangle((width * i + graphbufferW), (height * j), width, height);
 		Image.setFill(BufferCell.getDisplayColor());
 		Image.setStrokeWidth(1);
 		Image.setStroke(Color.BLACK);
@@ -1029,59 +983,30 @@ public class Manager extends Application {
 		}
 		return Image;
 	}
-
-	private Polygon GenerateHexagonCell(Cell BufferCell, int width, int height, int i, int j) {
+	//Helper function for CreateRoot, generates one hexagonal cell
+	//same as above, switched i and j to reorient as it is in rectangle, not sure if correct
+	private Polygon GenerateHexagonCell(Cell BufferCell, int width, int height, int j, int i) {
 		Polygon Image = new Polygon();
 		Double[] points;
-		height = 2* height / 3;
-		
+		height = 3*height/4;
 		if ((i % 2 )== 0) {
 			points = new Double[] {
-					width * j + width/4.0 + graphbufferW/2, 1.0*height * i, 
-					width * j + width/2.0 + graphbufferW/2, 1.0*height * i, 
-					width * j + 3*width/4.0 + graphbufferW/2, height * i + 1.0*height,
-					width * j + width/2.0 + graphbufferW/2, height * i + 2.0*height,
-					width * j + width/4.0 + graphbufferW/2, height * i + 2.0*height,
-					width * j + graphbufferW/2.0, height * i + 1.0*height
+					width * j + width/4.0 + graphbufferW, 1.0*height * i, 
+					width * j + width/2.0 + graphbufferW, 1.0*height * i, 
+					width * j + 3*width/4.0 + graphbufferW, height * i + 1.0*height,
+					width * j + width/2.0 + graphbufferW, height * i + 2.0*height,
+					width * j + width/4.0 + graphbufferW, height * i + 2.0*height,
+					width * j + 1.0*graphbufferW, height * i + 1.0*height
 			};
 		}
 		else {
 			points = new Double[] {
-					width * j + 3*width/4.0 + graphbufferW/2, 1.0*height * i, 
-					width * j + width + graphbufferW/2.0, 1.0*height * i, 
-					width * j + 5*width/4.0 + graphbufferW/2, height * i + 1.0*height,
-					width * j + width + graphbufferW/2.0, height * i + 2.0*height,
-					width * j + 3*width/4.0 + graphbufferW/2, height * i + 2.0*height,
-					width * j + width/2.0 + graphbufferW/2, height * i + 1.0*height
-			};
-		}
-		Image.getPoints().addAll(points);
-		Image.setFill(BufferCell.getDisplayColor());
-		Image.setStrokeWidth(1);
-		Image.setStroke(Color.BLACK);
-		if (BufferCell instanceof AgentCell) {
-			Image.setStroke(Color.GREEN);
-			Image.setStrokeWidth(5);
-
-		}
-		return Image;
-	}
-
-	private Polygon GenerateTriangleCell(Cell BufferCell, int width, int height, int i, int j) {
-		Polygon Image = new Polygon();
-		Double[] points;
-		if ((i % 2 )== 0) {
-			points = new Double[] {
-					width * j + width/1.0 + graphbufferW/2, height * (j % 2) + height/1.0 * i, 
-					width * j + width/0.5 + graphbufferW/2, height * ((j + 1) % 2) + height/1.0 * i, 
-					width * j + graphbufferW/2.0, height * ((j + 1)% 2) + height/1.0 * i
-			};
-		}
-		else {
-			points = new Double[] {
-					width * j + width/1.0 + graphbufferW/2, height * ((j + 1) % 2) + height/1.0 * i, 
-					width * j + width/0.5 + graphbufferW/2, height * (j % 2) + height/1.0 * i, 
-					width * j + graphbufferW/2.0, height * (j % 2) + height/1.0 * i
+					width * j + 3*width/4.0 + graphbufferW, 1.0*height * i, 
+					width * j + width + graphbufferW/1.0, 1.0*height * i, 
+					width * j + 5*width/4.0 + graphbufferW, height * i + 1.0*height,
+					width * j + width + graphbufferW/1.0, height * i + 2.0*height,
+					width * j + 3*width/4.0 + graphbufferW, height * i + 2.0*height,
+					width * j + width/2.0 + graphbufferW, height * i + 1.0*height
 			};
 		}
 		Image.getPoints().addAll(points);
@@ -1094,18 +1019,37 @@ public class Manager extends Application {
 		}
 		return Image;
 	}
-	
-//	private Circle addCircle(Cell BufferCell, int width, int i, int j) {
-//		double radius = width / 2.0;
-//		Circle marker = new Circle(i, j, radius);
-//		marker.setFill(BufferCell.getDisplayColor());
-//		marker.setStrokeWidth(0.3);
-//		marker.setStroke(Color.BLACK);
-//		return marker;
-//	}
+	//Helper function for CreateRoot, generates a single triangular cell
+	//swapped i and j in the declaration to re-orient the chart, not sure if correct
+	private Polygon GenerateTriangleCell(Cell BufferCell, int width, int height, int j, int i) {
+		Polygon Image = new Polygon();
+		Double[] points;
+		if ((i % 2 )== 0) {
+			points = new Double[] {
+					width * j + width/1.0 + graphbufferW, height * (j % 2) + height/1.0 * i, 
+					width * j + width/0.5 + graphbufferW, height * ((j + 1) % 2) + height/1.0 * i, 
+					width * j + graphbufferW/1.0, height * ((j + 1)% 2) + height/1.0 * i
+			};
+		}
+		else {
+			points = new Double[] {
+					width * j + width/1.0 + graphbufferW, height * ((j + 1) % 2) + height/1.0 * i, 
+					width * j + width/0.5 + graphbufferW, height * (j % 2) + height/1.0 * i, 
+					width * j + graphbufferW/1.0, height * (j % 2) + height/1.0 * i
+			};
+		}
+		Image.getPoints().addAll(points);
+		Image.setFill(BufferCell.getDisplayColor());
+		Image.setStrokeWidth(1);
+		Image.setStroke(Color.BLACK);
+		if (BufferCell instanceof AgentCell) {
+			Image.setStroke(Color.GREEN);
+			Image.setStrokeWidth(5);
+		}
+		return Image;
+	}
 
-	//more efficient way is to make it so that each time you simply add the point to the XYCHart instead of creating an entirely new xy chart, trying to make flexible
-
+	//Takes in a map of population values and adds them to the lineChart
 	private LineChart<Number, Number> GenerateLineChart(Map<String, Number> init_map) {
 		final NumberAxis xAxis = new NumberAxis();
 		final NumberAxis yAxis = new NumberAxis();
@@ -1113,9 +1057,6 @@ public class Manager extends Application {
 		final LineChart<Number, Number> lineChart = new LineChart<Number, Number>(xAxis,yAxis);
 		lineChart.setTitle("Population Plots");
 		int count = 0;
-		
-
-		
 		for (String s : init_map.keySet()) {
 			if (datapoints.size() == count) {
 				XYChart.Series<Number, Number> buffer = new XYChart.Series();
@@ -1126,13 +1067,12 @@ public class Manager extends Application {
 			datapoints.get(count).getData().add(new XYChart.Data(stepcount, init_map.get(s)));
 			count = count + 1;
 		}
-
 		for (int k = 0; k < count; k++) {
 			lineChart.getData().add(datapoints.get(k));
 		}
 		return lineChart;
 	}
-	
+	//Generates slider
 	private Slider generateSlider(Double double1, Double double2, Double double3) {
 		Slider slider = new Slider(double1, double2, double3);
 		slider.showTickMarksProperty();
