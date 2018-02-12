@@ -35,6 +35,11 @@ public abstract class SugarSimCell extends Cell{
 	 */
 	@Override
 	protected void setDisplayColor() {
-		this.display_color = new Color(1.0,0.0,0.0,patch_sugar/max_sugar);
+		if (max_sugar != 0) {
+			this.display_color = new Color(1.0,0.0,0.0,patch_sugar/max_sugar);
+		}
+		else {
+			this.display_color = new Color(1.0,0.0,0.0,0.0);
+		}
 	}
 }
