@@ -34,6 +34,22 @@ public class XMLmaker {
 	protected String neighbourType;
 	protected String edgeType;
 
+	/**
+	 * XMLmaker creates a new XML file with full header
+	 * @param file
+	 * @param simu
+	 * @param t
+	 * @param a
+	 * @param s
+	 * @param nT
+	 * @param eT
+	 * @param gx
+	 * @param gy
+	 * @param cx
+	 * @param cy
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
 	public XMLmaker(String file, String simu, String t, String a, String s, String nT, String eT, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		sim = simu;
 		title = t;
@@ -53,6 +69,15 @@ public class XMLmaker {
 		printFileHeader2();
 	}
 
+	/**
+	 * Alternative inputs to XML maker when others are not yet accessible (for state storing)
+	 * @param file
+	 * @param simu
+	 * @param t
+	 * @param a
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
 	public XMLmaker(String file, String simu, String t, String a) throws FileNotFoundException, UnsupportedEncodingException{
 		sim = simu;
 		title = t;
@@ -61,6 +86,11 @@ public class XMLmaker {
 		printFileHeader();
 	}
 
+	/**
+	 * printFileHeader makes the header to the XML files
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
 	private void printFileHeader() throws FileNotFoundException, UnsupportedEncodingException{
 		// write header to file
 		writer = new PrintWriter(fileName, "UTF-8");
@@ -71,6 +101,10 @@ public class XMLmaker {
 		writer.println("\t" + "<author>" + author + "</author>");
 	}
 	
+	/**
+	 * printFileHeader2 is the second half of the header that is used immediately
+	 * in the regular case or later on in the "storing state" case
+	 */
 	protected void printFileHeader2(){
 		writer.println("\t" + "<cell_shape>" + shape + "</cell_shape>");
 		writer.println("\t" + "<cell_xsize>" + cellx + "</cell_xsize>");
@@ -81,6 +115,9 @@ public class XMLmaker {
 		writer.println("\t" + "<edgeType>" + edgeType + "</edgeType>");
 	}
 
+	/**
+	 * 
+	 */
 	protected void closeWriter(){
 		writer.print("</simulation>");
 		writer.close();
