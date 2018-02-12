@@ -81,6 +81,14 @@ public class SugarSimGrid extends Grid{
 	public int[][] getAgentVisionArray() {
 		return null;
 	}
+	
+	public int getGrowRate() {
+		return 0;
+	}
+	
+	public int getGrowInterval() {
+		return 0;
+	}
 
 	@Override
 	public Map<String, Double[]> getCurrentParameters() {
