@@ -9,7 +9,7 @@ import grid.GOLSimGrid;
 import xml.XMLmaker;
 
 public class GOLXMLmaker extends XMLmaker{
-	private final static String FILE = "data/gol_saved.xml";
+	private final static String FILE = "gol_saved";
 	private final static String TYPE = "game_of_life";
 	private final static String GOL_TITLE = "Game of Life";
 	private final static String GOL_AUTHOR = "John Horton Conway";
