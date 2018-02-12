@@ -356,7 +356,7 @@ public class Manager extends Application {
 			try {
 				returnMenu();
 			} catch (Exception e1) {
-				e1.printStackTrace();
+				//e1.printStackTrace();
 			}
 		});
 		return scene;

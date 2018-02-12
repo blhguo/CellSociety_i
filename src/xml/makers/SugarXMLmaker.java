@@ -47,19 +47,19 @@ public class SugarXMLmaker extends XMLmaker{
 		for(int i = 0; i < numCellsX; i++){
 			for(int j = 0; j < numCellsY; j++){
 				if(j < numCellsY/5){
-					printSugarPatch(i,j,4,4);
+					printSugarPatch(i,j,4,4,0);
 				}
 				else if(j < (numCellsY/5 * 2)){
-					printSugarPatch(i,j,3,3);
+					printSugarPatch(i,j,3,3,0);
 				}
 				else if(j < (numCellsY/5 * 3)){
-					printSugarPatch(i,j,2,2);
+					printSugarPatch(i,j,2,2,0);
 				}
 				else if(j < (numCellsY/5 * 4)){
-					printSugarPatch(i,j,1,1);
+					printSugarPatch(i,j,1,1,0);
 				}
 				else{
-					printSugarPatch(i,j,0,0);
+					printSugarPatch(i,j,0,0,0);
 				}
 			}
 		}
@@ -77,6 +77,7 @@ public class SugarXMLmaker extends XMLmaker{
 		edgeType = grid.getEdgeType();
 		int[][] patchSugarArray;
 		int[][] patchMaxSugarArray;
+		int[][] patchTickArray;
 		String[][] agentArray;
 		int[][] agentSugarArray;
 		int[][] agentMetabolismArray;
@@ -101,11 +102,13 @@ public class SugarXMLmaker extends XMLmaker{
 		}
 		int patchSugar;
 		int patchMaxSugar;
+		int patchTick;
 		for(int i = 0; i < patchSugarArray[0].length; i++){
 			for(int j = 0; j < patchSugarArray[1].length; j++){
 				patchSugar = patchSugarArray[i][j];
 				patchMaxSugar = patchMaxSugarArray[i][j];
-				printSugarPatch(i, j, patchSugar, patchMaxSugar);
+				patchTick = patchTickArray[i][j];
+				printSugarPatch(i, j, patchSugar, patchMaxSugar, patchTick);
 			}
 		}
 		closeWriter();
@@ -122,12 +125,13 @@ public class SugarXMLmaker extends XMLmaker{
 		writer.println("");
 	}
 	
-	private void printSugarPatch(int i, int j, int patchSugar, int sugarMax){
+	private void printSugarPatch(int i, int j, int patchSugar, int sugarMax, int tick){
 		writer.println("\t" + "<patch>");
 		writer.println("\t" + "\t" + "<x>" + i + "</x>");
 		writer.println("\t" + "\t" + "<y>" + j + "</y>");
 		writer.println("\t" + "\t" + "<sugar>" + patchSugar + "</sugar>");
 		writer.println("\t" + "\t" + "<sugarMax>" + sugarMax + "</sugarMax>");
+		writer.println("\t" + "\t" + "<tick>" + tick + "</tick>");
 		writer.println("\t" + "</patch>");
 		writer.println("");
 	}
