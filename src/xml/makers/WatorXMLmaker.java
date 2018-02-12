@@ -7,6 +7,12 @@ import java.util.Random;
 import grid.WatorSimGrid;
 import xml.XMLmaker;
 
+/**
+ * WatorXMLmaker - creates wator XML files for use with project
+ * @author marcusoertle
+ *
+ */
+
 public class WatorXMLmaker extends XMLmaker{
 	private final static String FILE = "wator_saved";
 	private final static String TYPE = "wator";

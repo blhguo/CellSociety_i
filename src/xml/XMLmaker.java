@@ -116,7 +116,7 @@ public class XMLmaker {
 	}
 
 	/**
-	 * 
+	 * Closes the writer
 	 */
 	protected void closeWriter(){
 		writer.print("</simulation>");
@@ -124,6 +124,12 @@ public class XMLmaker {
 		//System.out.println("Done.");
 	}
 
+	/**
+	 * Prints the header for any cell type
+	 * @param type
+	 * @param i
+	 * @param j
+	 */
 	protected void printCellHeader(String type, int i, int j){
 		writer.println("\t" + "<cell>");
 		writer.println("\t" + "\t" + "<type>" + type + "</type>");
@@ -131,11 +137,20 @@ public class XMLmaker {
 		writer.println("\t" + "\t" + "<y>" + j + "</y>");
 	}
 
+	/**
+	 * Prints the footer for any cell type
+	 */
 	protected void printCellFooter(){
 		writer.println("\t" + "</cell>");
 		writer.println("");
 	}
 
+	/**
+	 * Prints the header and footer for a cell
+	 * @param type
+	 * @param i
+	 * @param j
+	 */
 	protected void printCell(String type, int i, int j){
 		printCellHeader(type, i, j);
 		printCellFooter();

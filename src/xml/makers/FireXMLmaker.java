@@ -6,6 +6,11 @@ import java.io.UnsupportedEncodingException;
 import grid.FireSimGrid;
 import xml.XMLmaker;
 
+/**
+ * FireXMLmaker - creates fire XML files for use with project
+ * @author marcusoertle
+ *
+ */
 public class FireXMLmaker extends XMLmaker{
 	private final static String FILE = "fire_saved";
 	private final static String TYPE = "fire";
@@ -40,6 +45,16 @@ public class FireXMLmaker extends XMLmaker{
 		closeWriter();
 	}
 	
+	/**
+	 * Alternative inputs options for FireXMLmaker
+	 * @param grid
+	 * @param gx
+	 * @param gy
+	 * @param cx
+	 * @param cy
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
 	public FireXMLmaker(FireSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		super(FILE, TYPE, FIRE_TITLE, FIRE_AUTHOR);
 		gridx = gx;
@@ -66,6 +81,9 @@ public class FireXMLmaker extends XMLmaker{
 		closeWriter();
 	}
 	
+	/**
+	 * Prints the header for a fire simulation
+	 */
 	private void printFireHeader(){
 		writer.println("\t" + "<fireProb>" + prob_fire + "</fireProb>");
 		writer.println("\t" + "<lightningProb>" + prob_lightning + "</lightningProb>");

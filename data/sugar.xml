@@ -1,0 +1,11869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation>
+	<name>sugar</name>
+	<title>Sugar Scape</title>
+	<author>Joshua M. Epstein and Robert Axtell</author>
+	<cell_shape>square</cell_shape>
+	<cell_xsize>10</cell_xsize>
+	<cell_ysize>10</cell_ysize>
+	<grid_x>400</grid_x>
+	<grid_y>400</grid_y>
+	<neighbourType>all</neighbourType>
+	<edgeType>finite</edgeType>
+	<agent>
+		<x>0</x>
+		<y>10</y>
+		<sugar>6</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>0</x>
+		<y>11</y>
+		<sugar>13</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>1</x>
+		<y>26</y>
+		<sugar>18</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>1</x>
+		<y>27</y>
+		<sugar>7</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>2</x>
+		<y>19</y>
+		<sugar>6</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>2</x>
+		<y>27</y>
+		<sugar>17</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>3</x>
+		<y>7</y>
+		<sugar>21</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>3</x>
+		<y>34</y>
+		<sugar>10</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>3</x>
+		<y>35</y>
+		<sugar>5</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>3</x>
+		<y>37</y>
+		<sugar>9</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>4</x>
+		<y>6</y>
+		<sugar>11</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>4</x>
+		<y>9</y>
+		<sugar>18</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>4</x>
+		<y>24</y>
+		<sugar>9</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>4</x>
+		<y>27</y>
+		<sugar>23</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>5</x>
+		<y>0</y>
+		<sugar>25</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>5</x>
+		<y>1</y>
+		<sugar>24</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>5</x>
+		<y>13</y>
+		<sugar>16</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>5</x>
+		<y>32</y>
+		<sugar>11</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>6</x>
+		<y>14</y>
+		<sugar>23</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>6</x>
+		<y>27</y>
+		<sugar>8</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>6</x>
+		<y>32</y>
+		<sugar>22</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>6</x>
+		<y>36</y>
+		<sugar>16</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>7</x>
+		<y>19</y>
+		<sugar>25</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>8</x>
+		<y>12</y>
+		<sugar>20</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>9</x>
+		<y>6</y>
+		<sugar>15</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>9</x>
+		<y>18</y>
+		<sugar>8</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>9</x>
+		<y>25</y>
+		<sugar>10</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>9</x>
+		<y>35</y>
+		<sugar>16</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>11</x>
+		<y>2</y>
+		<sugar>17</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>11</x>
+		<y>27</y>
+		<sugar>6</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>12</x>
+		<y>7</y>
+		<sugar>5</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>12</x>
+		<y>12</y>
+		<sugar>13</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>12</x>
+		<y>32</y>
+		<sugar>12</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>13</x>
+		<y>1</y>
+		<sugar>13</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>13</x>
+		<y>9</y>
+		<sugar>12</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>13</x>
+		<y>31</y>
+		<sugar>19</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>14</x>
+		<y>17</y>
+		<sugar>16</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>14</x>
+		<y>33</y>
+		<sugar>6</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>15</x>
+		<y>24</y>
+		<sugar>14</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>16</x>
+		<y>7</y>
+		<sugar>25</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>16</x>
+		<y>17</y>
+		<sugar>18</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>16</x>
+		<y>20</y>
+		<sugar>25</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>17</x>
+		<y>12</y>
+		<sugar>7</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>17</x>
+		<y>37</y>
+		<sugar>22</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>18</x>
+		<y>25</y>
+		<sugar>20</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>19</x>
+		<y>6</y>
+		<sugar>10</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>19</x>
+		<y>19</y>
+		<sugar>11</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>20</x>
+		<y>9</y>
+		<sugar>14</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>20</x>
+		<y>14</y>
+		<sugar>11</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>21</x>
+		<y>0</y>
+		<sugar>14</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>22</x>
+		<y>4</y>
+		<sugar>21</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>22</x>
+		<y>20</y>
+		<sugar>24</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>23</x>
+		<y>8</y>
+		<sugar>8</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>23</x>
+		<y>26</y>
+		<sugar>23</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>24</x>
+		<y>0</y>
+		<sugar>23</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>24</x>
+		<y>2</y>
+		<sugar>7</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>24</x>
+		<y>19</y>
+		<sugar>5</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>25</x>
+		<y>16</y>
+		<sugar>7</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>26</x>
+		<y>22</y>
+		<sugar>9</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>27</x>
+		<y>25</y>
+		<sugar>21</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>27</x>
+		<y>39</y>
+		<sugar>19</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>28</x>
+		<y>7</y>
+		<sugar>13</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>28</x>
+		<y>13</y>
+		<sugar>17</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>28</x>
+		<y>15</y>
+		<sugar>12</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>29</x>
+		<y>0</y>
+		<sugar>6</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>29</x>
+		<y>8</y>
+		<sugar>23</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>30</x>
+		<y>21</y>
+		<sugar>24</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>31</x>
+		<y>25</y>
+		<sugar>16</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>32</x>
+		<y>0</y>
+		<sugar>8</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>32</x>
+		<y>32</y>
+		<sugar>12</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>32</x>
+		<y>35</y>
+		<sugar>16</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>33</x>
+		<y>7</y>
+		<sugar>25</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>33</x>
+		<y>15</y>
+		<sugar>9</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>33</x>
+		<y>39</y>
+		<sugar>16</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>34</x>
+		<y>28</y>
+		<sugar>19</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>35</x>
+		<y>18</y>
+		<sugar>23</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>35</x>
+		<y>31</y>
+		<sugar>20</sugar>
+		<sugarMetabolism>4</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>36</x>
+		<y>29</y>
+		<sugar>15</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>37</x>
+		<y>17</y>
+		<sugar>16</sugar>
+		<sugarMetabolism>2</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>38</x>
+		<y>23</y>
+		<sugar>15</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>38</x>
+		<y>38</y>
+		<sugar>7</sugar>
+		<sugarMetabolism>3</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>39</x>
+		<y>9</y>
+		<sugar>23</sugar>
+		<sugarMetabolism>5</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<patch>
+		<x>0</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>0</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>1</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>2</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>3</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>4</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>5</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>6</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>7</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>8</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>9</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>10</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>11</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>12</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>13</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>14</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>15</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>16</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>17</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>18</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>19</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>20</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>21</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>22</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>23</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>24</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>25</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>26</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>27</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>28</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>29</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>30</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>31</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>32</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>33</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>34</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>35</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>36</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>37</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>38</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>0</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>1</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>2</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>3</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>4</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>5</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>6</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>7</y>
+		<sugar>4</sugar>
+		<sugarMax>4</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>8</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>9</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>10</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>11</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>12</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>13</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>14</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>15</y>
+		<sugar>3</sugar>
+		<sugarMax>3</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>16</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>17</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>18</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>19</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>20</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>21</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>22</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>23</y>
+		<sugar>2</sugar>
+		<sugarMax>2</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>24</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>25</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>26</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>27</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>28</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>29</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>30</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>31</y>
+		<sugar>1</sugar>
+		<sugarMax>1</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>32</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>33</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>34</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>35</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>36</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>37</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>38</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+	<patch>
+		<x>39</x>
+		<y>39</y>
+		<sugar>0</sugar>
+		<sugarMax>0</sugarMax>
+	</patch>
+
+</simulation>
