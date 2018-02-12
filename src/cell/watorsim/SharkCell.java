@@ -49,26 +49,50 @@ public class SharkCell extends WatorSimCell{
 		setDisplayColor();
 	}
 	
+	/**
+	 * Gets reproduction time
+	 * @return reproduction time
+	 */
 	public int getReproductionTime() {
 		return this.reproduction_time;
 	}
 	
+	/**
+	 * Gets reproduction threshold
+	 * @return reproduction threshold
+	 */
 	public int getReproductionThreshold() {
 		return this.reproduction_threshold;
 	}
 	
+	/**
+	 * Sets reproduction threshold
+	 * @param t reproduction threshold
+	 */
 	public void setReproductionThreshold(double t) {
 		this.reproduction_threshold = (int) t;
 	}
 	
+	/**
+	 * Gets current energy
+	 * @return current energy
+	 */
 	public int getEnergy() {
 		return this.current_energy;
 	}
 	
+	/**
+	 * Gets gained energy
+	 * @return gained energy
+	 */
 	public int getGainedEnergy() {
 		return this.gained_energy;
 	}
 	
+	/**
+	 * Sets gained energy
+	 * @param e gained energy
+	 */
 	public void setGainedEnergy(double e) {
 		this.gained_energy = (int) e;
 	}

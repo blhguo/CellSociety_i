@@ -23,10 +23,18 @@ public class OCell extends SegregationSimCell{
 		setDisplayColor();
 	}
 	
+	/**
+	 * Gets threshold value of cell
+	 * @return threshold value of cell
+	 */
 	public double getThreshold() {
 		return this.threshold;
 	}
 	
+	/**
+	 * Sets threshold value of cell
+	 * @param t threshold value of cell
+	 */
 	public void setThreshold(double t) {
 		this.threshold = t;
 	}
