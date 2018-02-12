@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation>
+	<name>game_of_life</name>
+	<title>Game of Life</title>
+	<author>John Horton Conway</author>
+	<cell_shape>square</cell_shape>
+	<cell_xsize>50</cell_xsize>
+	<cell_ysize>50</cell_ysize>
+	<grid_x>400</grid_x>
+	<grid_y>400</grid_y>
+	<neighbourType>all</neighbourType>
+	<edgeType>finite</edgeType>
+	<cell>
+		<type>alive</type>
+		<x>1</x>
+		<y>3</y>
+	</cell>
+
+	<cell>
+		<type>alive</type>
+		<x>2</x>
+		<y>2</y>
+	</cell>
+
+	<cell>
+		<type>alive</type>
+		<x>2</x>
+		<y>3</y>
+	</cell>
+
+	<cell>
+		<type>alive</type>
+		<x>3</x>
+		<y>2</y>
+	</cell>
+
+	<cell>
+		<type>alive</type>
+		<x>3</x>
+		<y>3</y>
+	</cell>
+
+	<cell>
+		<type>alive</type>
+		<x>4</x>
+		<y>2</y>
+	</cell>
+
+</simulation>

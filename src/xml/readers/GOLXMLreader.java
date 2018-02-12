@@ -63,7 +63,7 @@ public class GOLXMLreader extends XMLreader{
 			typeArray = fillEmpty(typeArray);
 			return new GOLSimSetup(simSetup, typeArray);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}	
 		return null;
 	}

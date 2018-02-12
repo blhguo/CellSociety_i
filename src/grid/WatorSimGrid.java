@@ -244,7 +244,7 @@ public class WatorSimGrid extends Grid{
 				}
 			}
 		}
-		map.put("Empty Cells", empty);
+		//map.put("Empty Cells", empty);
 		map.put("Fish Cells", fish);
 		map.put("Shark Cells", shark);
 		return map;

@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation>
+	<name>fire</name>
+	<title>Fire</title>
+	<author>Angela B. Shiflet</author>
+	<cell_shape>square</cell_shape>
+	<cell_xsize>10</cell_xsize>
+	<cell_ysize>10</cell_ysize>
+	<grid_x>400</grid_x>
+	<grid_y>400</grid_y>
+	<neighbourType>cardinal</neighbourType>
+	<edgeType>finite</edgeType>
+	<fireProb>0.5</fireProb>
+	<lightningProb>0.01</lightningProb>
+	<emptyTreeProb>0.01</emptyTreeProb>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>1</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>2</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>3</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>4</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>5</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>6</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>7</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>9</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>10</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>11</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>12</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>13</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>14</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>15</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>16</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>17</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>19</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>20</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>21</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>22</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>23</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>25</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>26</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>27</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>28</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>29</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>30</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>31</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>32</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>34</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>35</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>36</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>37</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>38</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>0</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>1</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>1</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>2</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>2</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>3</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>3</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>4</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>4</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>5</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>5</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>6</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>6</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>7</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>7</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>8</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>8</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>9</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>9</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>10</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>10</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>11</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>fire</type>
+		<x>11</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>11</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>12</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>fire</type>
+		<x>12</x>
+		<y>17</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>12</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>fire</type>
+		<x>13</x>
+		<y>16</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>13</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>13</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>14</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>14</x>
+		<y>16</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>14</x>
+		<y>17</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>14</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>14</x>
+		<y>19</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>14</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>15</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>fire</type>
+		<x>15</x>
+		<y>16</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>15</x>
+		<y>17</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>15</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>15</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>16</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>16</x>
+		<y>17</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>16</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>16</x>
+		<y>19</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>16</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>17</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>17</x>
+		<y>17</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>17</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>17</x>
+		<y>19</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>17</x>
+		<y>20</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>18</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>18</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>18</x>
+		<y>19</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>18</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>19</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>19</x>
+		<y>19</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>19</x>
+		<y>20</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>19</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>20</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>20</x>
+		<y>20</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>20</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>21</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>21</x>
+		<y>19</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>21</x>
+		<y>20</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>21</x>
+		<y>21</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>21</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>22</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>22</x>
+		<y>17</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>22</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>22</x>
+		<y>19</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>22</x>
+		<y>20</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>22</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>23</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>23</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>24</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>24</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>25</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>25</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>26</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>26</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>27</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>28</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>28</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>29</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>30</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>30</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>31</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>31</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>32</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>32</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>33</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>33</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>34</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>34</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>35</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>36</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>36</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>37</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>37</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>38</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>38</x>
+		<y>39</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>0</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>1</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>2</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>3</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>4</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>5</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>6</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>7</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>8</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>9</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>10</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>11</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>12</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>13</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>15</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>16</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>17</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>18</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>19</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>20</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>21</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>22</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>24</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>26</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>27</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>28</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>29</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>30</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>31</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>32</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>33</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>34</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>35</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>37</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>38</y>
+	</cell>
+
+	<cell>
+		<type>empty</type>
+		<x>39</x>
+		<y>39</y>
+	</cell>
+
+</simulation>
