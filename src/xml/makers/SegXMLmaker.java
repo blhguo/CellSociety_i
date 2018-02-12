@@ -8,6 +8,12 @@ import grid.GOLSimGrid;
 import grid.SegregationSimGrid;
 import xml.XMLmaker;
 
+/**
+ * SegXMLmaker - creates segregation XML files for use with project
+ * @author marcusoertle
+ *
+ */
+
 public class SegXMLmaker extends XMLmaker{
 	private final static String FILE = "seg_saved";
 	private final static String TYPE = "segregation";
