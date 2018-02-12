@@ -78,6 +78,7 @@ import xml.readers.WatorXMLreader;
  * Allows for User selected files
  * Double speed simulation, half speed simulation
  * Call next cell layout
+ * 
  */
 
 public class Manager extends Application {
@@ -140,6 +141,8 @@ public class Manager extends Application {
 	private String neighbourType = "all";
 	private String edgeType = "finite";
 	private String shape = "square";
+	
+	
 
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -159,9 +162,12 @@ public class Manager extends Application {
 		animation.getKeyFrames().add(frame);
 		animation.play();
 	}
-
-	// Takes in no parameters, but when called returns user to the menu
-	// Has no return value
+	
+	/**
+	 * @throws Exception
+	 * @Param None
+	 * Sets scene to be the menu scene, and sets stage to that scene
+	 */
 	private void returnMenu() throws Exception {
 		inMenu = true;
 		fileType = 0;
@@ -175,7 +181,12 @@ public class Manager extends Application {
 		TheStage.show();
 	}
 
-	// Handles key input, takes in a keycode and matches it to one of the following, then acts on the simulation. No return value
+	
+	
+	/**
+	 * @param code - an input code from the keyboard
+	 * Handles key input, takes in a keycode and matches it to one of the following, then acts on the simulation. No return value
+	 */
 	private void handleKeyInput(KeyCode code) {
 		if (code == KeyCode.S) {
 			step();
@@ -213,6 +224,10 @@ public class Manager extends Application {
 	}
 	
 	// Computes next "scene", takes in no parameters and returns nothing
+	
+	/**
+	 * Computes next "scene", takes in no parameters and returns nothing
+	 */
 	private void step () {
 		if (!inMenu) {
 			Scene myScene_Buffer;
@@ -228,7 +243,12 @@ public class Manager extends Application {
 			}
 		}
 	}
-	// Calls XML parser and stores the values from the parser
+	
+	/**
+	 * @param file - file that we are trying to read
+	 * Calls XML parser and stores the values from the parser
+
+	 */
 	public void callXMLreader(String file){
 		if(file.equals(myResources.getString(FileS))) {
 			callSegXMLreader(file);
@@ -262,8 +282,11 @@ public class Manager extends Application {
 		}
 	}
 	
-	//this can be refactored
 
+	/**
+	 * @param file - file to be read
+	 * Reads the file, looking for specific parameters based on the type of simulation represented in the file. Each of the following represents a speciic simulation
+	 */
 	public void callGOLXMLreader(String file){
 		GOLXMLreader xml_reader = new GOLXMLreader();
 		GOLSimSetup simInfo = xml_reader.read(file);
@@ -343,8 +366,14 @@ public class Manager extends Application {
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}
-
-	// Sets up scene for tutorial
+	
+	/**
+	 * @param width - width of the scene
+	 * @param height - height of the scene
+	 * @param background - color of background
+	 * @return Scene representing the guide
+	 * Builds the guide for the scene
+	 */
 	private Scene setupGuide(int width, int height, Paint background) {
 		// set all text for guide
 		Text g1 = new Text();
@@ -419,7 +448,16 @@ public class Manager extends Application {
 		return scene;
 	}
 
-	// Sets up scene for the actual simulation
+	
+	/**
+	 * @param width - width of grid (gets updated to represent width of window)
+	 * @param height - height of grid (gets updated to represent height of window)
+	 * @param background - background color
+	 * @param cellArray - Grid object of all cells, passed to Manager by Grid
+	 * @return Scene - represents the scene, including the chart, sliders, and simulation itself
+	 * @throws Exception
+	 * Sets up scene for the actual simulation
+	 */
 	public Scene setupScene (int width, int height, Paint background, Grid cellArray) throws Exception {
 		Map<String, Double[]> MapofParam = cellArray.getCurrentParameters();
 		VBox box = new VBox(GenerateLineChart(cellArray.getNumberOfCells()));
@@ -467,7 +505,15 @@ public class Manager extends Application {
 		return scene;	
 	}
 
-	// Sets up Splash screen/menu
+	/**
+	 * @param width - width of window
+	 * @param height - height of window
+	 * @param background - background color
+	 * @param stage - stage upon which buttons are added
+	 * @return - returns a scene with navigation buttons and options
+	 * @throws Exception
+	 * Sets up menu screen
+	 */
 	public Scene setupMenu (int width, int height, Paint background, Stage stage) throws Exception {
 		VBox splash = new VBox ();
 		splash.setPadding(new Insets(MENU_PAD, MENU_PAD, MENU_PAD, MENU_PAD));
@@ -491,8 +537,12 @@ public class Manager extends Application {
 		Scene scene = new Scene(splash);
 		return scene;
 	}
-
-	// Generates button to click to choose a file
+	
+	/**
+	 * @param s - stage to which button calls changes on
+	 * @return Button - Button with the following effects
+	 * Button selects file
+	 */
 	public Button GenerateFileButton(Stage s) {
 		Button openButton = new Button(myResources.getString("OpenFile"));
 		FileChooser fileChooser = new FileChooser();
@@ -516,8 +566,11 @@ public class Manager extends Application {
 				});
 		return openButton;
 	}
-	// Generates button to start the selected simulation
-	public Button GenerateStartButton(Stage s) {
+	/**
+	 * @param s - stage to which button calls changes on
+	 * @return Button - Button with the following effects
+	 * Button starts sim
+	 */	public Button GenerateStartButton(Stage s) {
 		Button startButton = new Button(myResources.getString("StartCommand"));
 
 		startButton.setOnAction(
@@ -536,8 +589,11 @@ public class Manager extends Application {
 				});
 		return startButton;
 	}
-
-	// Drop down menu to select type of simulation
+		/**
+		 * @param s - stage to which button calls changes on
+		 * @return Button - Button with the following effects
+		 * Button creates choice menu
+		 */
 	public ChoiceBox GenerateSimChoiceBox() {
 		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
 		fileChoiceBox.getItems().add(myResources.getString("DropDown1"));
@@ -572,7 +628,11 @@ public class Manager extends Application {
 		});
 		return fileChoiceBox;
 	}
-
+	/**
+	 * @param s - stage to which button calls changes on
+	 * @return Button - Button with the following effects
+	 * Button generates choice box
+	 */
 	// Drop down menu to select type of simulation
 	public ChoiceBox GenerateNeighbourChoiceBox() {
 		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
@@ -599,8 +659,12 @@ public class Manager extends Application {
 		});
 		return fileChoiceBox;
 	}
-
-	// Drop down menu to select type of simulation
+	/**
+	 * @param s - stage to which button calls changes on
+	 * @return Button - Button with the following effects
+	 * Button selects file
+	 * Drop down menu to select type of simulation
+	*/
 	public ChoiceBox GenerateEdgeChoiceBox() {
 		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
 		fileChoiceBox.getItems().add(myResources.getString("DropDown9"));
@@ -623,7 +687,13 @@ public class Manager extends Application {
 		return fileChoiceBox;
 	}
 
-	// Drop down menu to select type of simulation
+	
+	/**
+	 * @param s - stage to which button calls changes on
+	 * @return Button - Button with the following effects
+	 * Button selects file
+	 * Drop down menu to select type of simulation
+	 */	
 	public ChoiceBox GenerateShapeChoiceBox() {
 		ChoiceBox<String> fileChoiceBox = new ChoiceBox<String>();
 		fileChoiceBox.getItems().add(myResources.getString("DropDown12"));
@@ -645,7 +715,11 @@ public class Manager extends Application {
 		});
 		return fileChoiceBox;
 	}
-	//Generates button to allow saving of current state
+	/**
+	 * @param s - stage to which button calls changes on
+	 * @return Button - Button with the following effects
+	 * Button Generates button to allow saving of current state
+	*/
 	public Button GenerateSaveButton(Grid cellArray, int gridx, int gridy, int cellx, int celly) {
 		Button SaveButton = new Button(myResources.getString("SaveFile"));
 		
@@ -675,7 +749,11 @@ public class Manager extends Application {
 				);
 		return SaveButton;
 	}
-		// Generates button to start the maker scene
+	/**
+	 * @param s - stage to which button calls changes on
+	 * @return Button - Button with the following effects
+	 * Button  Generates button to start the maker scene
+	 * */
 	public Button GenerateMakerButton(Stage s) {
 		Button makerButton = new Button(myResources.getString("MakerButton"));
 
@@ -694,8 +772,11 @@ public class Manager extends Application {
 				});
 		return makerButton;
 	}
-
-	// Generates button that opens the user manual
+	/**
+	 * @param s - stage to which button calls changes on
+	 * @return Button - Button with the following effects
+	 * Button Generates button that opens the user manual
+	 */
 	public Button GenerateGuideButton(Stage s) {
 		Button guideButton = new Button(myResources.getString("Guide"));
 
@@ -723,10 +804,10 @@ public class Manager extends Application {
 
 	/**
 	 * Creates the XMLmaker scene
-	 * @param width
-	 * @param height
-	 * @param background
-	 * @return
+	 * @param width - width of XMLMaker
+	 * @param height - ''
+	 * @param background - ''
+	 * @return Scene - represents the scene which allows the user to build a custom file
 	 */
 	private Scene setupXMLmaker(int width, int height, Paint background) {
 		// make gridpane
@@ -972,11 +1053,11 @@ public class Manager extends Application {
 
 	/**
 	 * Show a message on a grid for the specified time at the given coordinates
-	 * @param grid
-	 * @param message
-	 * @param time
-	 * @param x
-	 * @param y
+	 * @param grid - pane to which message is added
+	 * @param message - string representing error
+	 * @param time - how long to let error last on screen
+	 * @param x - position
+	 * @param y - position
 	 */
 	private void displayMessage(GridPane grid, String message, int time, int x, int y) {
 		Text display = new Text();
@@ -989,6 +1070,14 @@ public class Manager extends Application {
 		ft.play();
 	}
 	// creates a text field to display a message
+	
+	/**
+	 * @param grid - pane to add textfield to
+	 * @param prompt - string representing the prompt
+	 * @param x - position
+	 * @param y - position
+	 * @return Textfield - represents the object we see
+	 */
 	private TextField makeTextField(GridPane grid, String prompt, int x, int y) {
 		final TextField temp = new TextField();
 		temp.setPromptText(prompt);
@@ -1000,6 +1089,13 @@ public class Manager extends Application {
 	}
 
 	// Helper function of setupScene, returns a root with everything needed
+	
+	/**
+	 * @param gridarray - Grid object representing the storage of all information
+	 * @param width - width of each cell
+	 * @param height - height of each cell
+	 * @return Group - represents the actual simulation group of images. 
+	 */
 	public Group CreateRoot(Grid gridarray, int width, int height) {
 		Cell[][] cellArray = gridarray.getCellArray();
 		Group addition = new Group();
@@ -1018,6 +1114,14 @@ public class Manager extends Application {
 		}
 		return addition;
 	}
+	/**
+	 * @param BufferCell - Cell to be added
+	 * @param width - width of cell
+	 * @param height - height of cell
+	 * @param j - position
+	 * @param i - position
+	 * @return Shape - to be added to root
+	 */
 	//Helper function for CreateRoot, generates one rectangular cell
 	private Rectangle GenerateRectangularCell(Cell BufferCell, int width, int height, int i, int j) {
 		Rectangle Image = new Rectangle((width * i + graphbufferW), (height * j), width, height);
@@ -1031,8 +1135,15 @@ public class Manager extends Application {
 		}
 		return Image;
 	}
+	/**
+	 * @param BufferCell - Cell to be added
+	 * @param width - width of cell
+	 * @param height - height of cell
+	 * @param j - position
+	 * @param i - position
+	 * @return Shape - to be added to root
+	 */
 	//Helper function for CreateRoot, generates one hexagonal cell
-	//same as above, switched i and j to reorient as it is in rectangle, not sure if correct
 	private Polygon GenerateHexagonCell(Cell BufferCell, int width, int height, int j, int i) {
 		Polygon Image = new Polygon();
 		Double[] points;
@@ -1068,7 +1179,15 @@ public class Manager extends Application {
 		return Image;
 	}
 	//Helper function for CreateRoot, generates a single triangular cell
-	//swapped i and j in the declaration to re-orient the chart, not sure if correct
+	
+	/**
+	 * @param BufferCell - Cell to be added
+	 * @param width - width of cell
+	 * @param height - height of cell
+	 * @param j - position
+	 * @param i - position
+	 * @return Shape - to be added to root
+	 */
 	private Polygon GenerateTriangleCell(Cell BufferCell, int width, int height, int j, int i) {
 		Polygon Image = new Polygon();
 		Double[] points;
@@ -1098,6 +1217,11 @@ public class Manager extends Application {
 	}
 
 	//Takes in a map of population values and adds them to the lineChart
+	
+	/**
+	 * @param init_map - Map of strings to doubles representing parameter values
+	 * @return LineChart - Plotted data
+	 */
 	private LineChart<Number, Number> GenerateLineChart(Map<String, Number> init_map) {
 		final NumberAxis xAxis = new NumberAxis();
 		final NumberAxis yAxis = new NumberAxis();
@@ -1121,6 +1245,13 @@ public class Manager extends Application {
 		return lineChart;
 	}
 	//Generates slider
+	
+	/**
+	 * @param double1 - min
+	 * @param double2 - max
+	 * @param double3 - current
+	 * @return Slider - conforming to the parameters
+	 */
 	private Slider generateSlider(Double double1, Double double2, Double double3) {
 		Slider slider = new Slider(double1, double2, double3);
 		slider.showTickMarksProperty();
