@@ -383,7 +383,6 @@ public class Manager extends Application {
 		for (String s : MapofParam.keySet()) {
 		    Text text = new Text();
 		    text.setFont(new Font("sans-serif", 10));
-		    text.setText(s);
 			Slider slider = generateSlider(MapofParam.get(s)[0], MapofParam.get(s)[1], MapofParam.get(s)[2]);
 			slider.setOrientation(Orientation.HORIZONTAL);
 			slider.setPrefHeight(SLIDERLENGTH);
@@ -395,8 +394,9 @@ public class Manager extends Application {
 				MapofParam.put(s, doublearray);
 				cellArray.setCurrentParameters(MapofParam);
 				slider.setValue(d);
+				text.setText(s + d);
 			});
-			
+			text.setText(s + " = " + MapofParam.get(s)[2]);
 			box.getChildren().add(slider);
 			box.getChildren().add(text);
 			//sliderArray[index] = slider;
@@ -409,6 +409,7 @@ public class Manager extends Application {
 
 		
 		root.getChildren().add(box);
+		root.getChildren().add(GenerateSaveButton(cellArray, width, height, cell_width, cell_height));
 		
 		
 		
@@ -593,6 +594,40 @@ public class Manager extends Application {
 	}
 
 	// Generates button to start the maker scene
+	
+	public Button GenerateSaveButton(Grid cellArray, int gridx, int gridy, int cellx, int celly) {
+		Button SaveButton = new Button(myResources.getString("SaveFile"));
+		
+		SaveButton.setOnAction(
+				new EventHandler<ActionEvent>() {
+					@Override
+					public void handle(final ActionEvent e) {
+						try {
+							if (cellArray instanceof FireSimGrid) {
+								new FireXMLmaker( (FireSimGrid) cellArray, gridx, gridy, cellx, celly);
+							}
+							else if (cellArray instanceof GOLSimGrid) {
+								new GOLXMLmaker( (GOLSimGrid) cellArray, gridx, gridy, cellx, celly);
+							}
+							else if (cellArray instanceof SegregationSimGrid) {
+								new SegXMLmaker( (SegregationSimGrid) cellArray, gridx, gridy, cellx, celly);
+							}
+							else if (cellArray instanceof WatorSimGrid) {
+								new WatorXMLmaker( (WatorSimGrid) cellArray, gridx, gridy, cellx, celly);
+							}
+						}
+						catch (Exception e1){
+							e1.printStackTrace();
+							System.out.println("exception");
+						}
+						System.out.println("Save sucess");
+					}
+					
+				}
+				);
+		return SaveButton;
+	}
+	
 	public Button GenerateMakerButton(Stage s) {
 		Button makerButton = new Button(myResources.getString("MakerButton"));
 
