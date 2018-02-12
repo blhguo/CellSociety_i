@@ -9,7 +9,7 @@ import grid.SegregationSimGrid;
 import xml.XMLmaker;
 
 public class SegXMLmaker extends XMLmaker{
-	private final static String FILE = "data/seg_saved.xml";
+	private final static String FILE = "seg_saved";
 	private final static String TYPE = "segregation";
 	private final static String SEG_TITLE = "Segregation";
 	private final static String SEG_AUTHOR = "Thomas Schelling";

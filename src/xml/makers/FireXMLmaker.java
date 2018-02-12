@@ -7,7 +7,7 @@ import grid.FireSimGrid;
 import xml.XMLmaker;
 
 public class FireXMLmaker extends XMLmaker{
-	private final static String FILE = "data/fire_saved.xml";
+	private final static String FILE = "fire_saved";
 	private final static String TYPE = "fire";
 	private final static String FIRE_TITLE =  "Fire";
 	private final static String FIRE_AUTHOR =  "Angela B. Shiflet";

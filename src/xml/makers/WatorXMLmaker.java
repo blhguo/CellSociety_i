@@ -8,7 +8,7 @@ import grid.WatorSimGrid;
 import xml.XMLmaker;
 
 public class WatorXMLmaker extends XMLmaker{
-	private final static String FILE = "data/wator_saved.xml";
+	private final static String FILE = "wator_saved";
 	private final static String TYPE = "wator";
 	private final static String WATOR_TITLE =  "Wa-Tor World";
 	private final static String WATOR_AUTHOR =  "A.K. Dewdney";
