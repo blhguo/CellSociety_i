@@ -8,10 +8,12 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 import cell.Cell;
+import cell.sugarsim.AgentCell;
 import grid.FireSimGrid;
 import grid.GOLSimGrid;
 import grid.Grid;
 import grid.SegregationSimGrid;
+import grid.SugarSimGrid;
 import grid.WatorSimGrid;
 import javafx.animation.Animation.Status;
 import javafx.animation.FadeTransition;
@@ -197,6 +199,10 @@ public class Manager extends Application {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+		
+		else if (code == KeyCode.Q) {
+			System.exit(0);
 		}
 	}
 	// Computes next "scene", takes in no parameters and returns nothing
@@ -942,41 +948,41 @@ public class Manager extends Application {
 				/* TODO: Add switch case here to tell which type of cell to generate */	
 				if (shapetype.equals("square")) {
 					addition.getChildren().add(GenerateRectangularCell(cellArray[i][j], width, height, i, j));
-					if (gridarray instanceof SugarSimGrid) {
-						if (cellArray[i][j] instanceof AgentCell) {
-							int i1 = width/2 + width * i + XPADDING + graphbufferW/2;
-							int i2 = height/2 + height * j + YPADDING;
-							addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
-						}
-					}
+//					if (gridarray instanceof SugarSimGrid) {
+//						if (cellArray[i][j] instanceof AgentCell) {
+//							int i1 = width/2 + width * i + XPADDING + graphbufferW/2;
+//							int i2 = height/2 + height * j + YPADDING;
+//							addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
+//						}
+//					}
 				}
 				else if(shapetype.equals("triangle")) {
 					addition.getChildren().add(GenerateTriangleCell(cellArray[i][j], width, height, i, j));
-				if (gridarray instanceof SugarSimGrid) {
-					if (cellArray[i][j] instanceof AgentCell) {
-						int i1 = width * (j + 1) + graphbufferW;
-						int i2 = height * i + height/2;
-						addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
-					}
-				}
+//				if (gridarray instanceof SugarSimGrid) {
+//					if (cellArray[i][j] instanceof AgentCell) {
+//						int i1 = width * (j + 1) + graphbufferW;
+//						int i2 = height * i + height/2;
+//						addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
+//					}
+//				}
 				}
 				else if(shapetype.equals("hexagon")) {
 				
 					addition.getChildren().add(GenerateHexagonCell(cellArray[i][j], width, height, i, j));
-					if (gridarray instanceof SugarSimGrid) {
-						if (cellArray[i][j] instanceof AgentCell) {
-							int i1;
-							//get rid of the following boolean
-							if ((i%2) == 0) {
-								i1 = 3*width/8 + width * j;
-							}
-							else {
-								i1 = 7*width/8 + width * j;
-							}
-							int i2 = height * (i + 1);
-							addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
-						}
-					}
+//					if (gridarray instanceof SugarSimGrid) {
+//						if (cellArray[i][j] instanceof AgentCell) {
+//							int i1;
+//							//get rid of the following boolean
+//							if ((i%2) == 0) {
+//								i1 = 3*width/8 + width * j;
+//							}
+//							else {
+//								i1 = 7*width/8 + width * j;
+//							}
+//							int i2 = height * (i + 1);
+//							addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
+//						}
+//					}
 				}
 			}
 		}
@@ -988,6 +994,9 @@ public class Manager extends Application {
 		Image.setFill(BufferCell.getDisplayColor());
 		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
+		if (BufferCell instanceof AgentCell) {
+			Image.setStroke(Color.GREEN);
+		}
 		return Image;
 	}
 
@@ -1018,8 +1027,11 @@ public class Manager extends Application {
 		}
 		Image.getPoints().addAll(points);
 		Image.setFill(BufferCell.getDisplayColor());
-		Image.setStrokeWidth(0.3);
+		Image.setStrokeWidth(0.5);
 		Image.setStroke(Color.BLACK);
+		if (BufferCell instanceof AgentCell) {
+			Image.setStroke(Color.GREEN);
+		}
 		return Image;
 	}
 
@@ -1044,17 +1056,20 @@ public class Manager extends Application {
 		Image.setFill(BufferCell.getDisplayColor());
 		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
+		if (BufferCell instanceof AgentCell) {
+			Image.setStroke(Color.GREEN);
+		}
 		return Image;
 	}
 	
-	private Circle addCircle(Cell BufferCell, int width, int i, int j) {
-		double radius = width / 2.0;
-		Circle marker = new Circle(i, j, radius);
-		marker.setFill(BufferCell.getDisplayColor());
-		marker.setStrokeWidth(0.3);
-		marker.setStroke(Color.BLACK);
-		return marker;
-	}
+//	private Circle addCircle(Cell BufferCell, int width, int i, int j) {
+//		double radius = width / 2.0;
+//		Circle marker = new Circle(i, j, radius);
+//		marker.setFill(BufferCell.getDisplayColor());
+//		marker.setStrokeWidth(0.3);
+//		marker.setStroke(Color.BLACK);
+//		return marker;
+//	}
 
 	//more efficient way is to make it so that each time you simply add the point to the XYCHart instead of creating an entirely new xy chart, trying to make flexible
 
