@@ -5,25 +5,32 @@ import xml.SimulationSetup;
 public class SugarSimSetup extends SimulationSetup{
 	private int[][] patchSugarArray;
 	private int[][] patchMaxSugarArray;
+	private int[][] tickArray;
 	private String[][] agentArray;
 	private int[][] agentSugarArray;
 	private int[][] agentMetabolismArray;
 	private int[][] agentVisionArray;
+	private int growBackInterval;
+	private int growBackRate;
 	
 	/**
 	 * @see SimulationSetup#SimulationSetup(String n, String t, String a, String s, int xSize, int ySize, int gridX, int gridY)
 	 * @param psA (patchSugarArray)
 	 * @param pMSA (patchMaxSugarArray)
+	 * @param tA (tickArray)
 	 * @param aA (agentArray)
 	 * @param aSA (agentSugarArray)
 	 * @param aMA (agentMetabolismArray)
 	 * @param aVA (agentVisionArray)
 	 */
 	public SugarSimSetup(String n, String t, String a, String s, String nT, String eT, int xSize, int ySize, int gridX, int gridY,
-			int[][]pSA, int[][] pMSA, String[][] aA, int[][] aSA, int[][] aMA, int[][] aVA) {
+			int gBI, int gBR, int[][]pSA, int[][] pMSA, int[][] tA, String[][] aA, int[][] aSA, int[][] aMA, int[][] aVA) {
 		super(n, t, a, s, nT, eT, xSize, ySize, gridX, gridY);
+		growBackInterval = gBI;
+		growBackRate = gBR;
 		patchSugarArray = pSA;
 		patchMaxSugarArray = pMSA;
+		tickArray = tA;
 		agentArray = aA;
 		agentSugarArray = aSA;
 		agentMetabolismArray = aMA;
@@ -37,15 +44,32 @@ public class SugarSimSetup extends SimulationSetup{
 	 * @param typeArray
 	 * @param thresh
 	 */
-	public SugarSimSetup(SimulationSetup simSetup, int[][]pSA, int[][] pMSA, String[][] aA, int[][] aSA, int[][] aMA, int[][] aVA) {
+	public SugarSimSetup(SimulationSetup simSetup, int gBI, int gBR, int[][]pSA, int[][] pMSA, int[][] tA, String[][] aA, int[][] aSA, int[][] aMA, int[][] aVA) {
 		super(simSetup.getName(), simSetup.getTitle(), simSetup.getAuthor(), simSetup.getShape(), simSetup.getNeighbourType(), 
 				simSetup.getEdgeType(), simSetup.getCellX(), simSetup.getCellY(), simSetup.getGridX(), simSetup.getGridY());
+		growBackInterval = gBI;
+		growBackRate = gBR;
 		patchSugarArray = pSA;
 		patchMaxSugarArray = pMSA;
+		tickArray = tA;
 		agentArray = aA;
 		agentSugarArray = aSA;
 		agentMetabolismArray = aMA;
 		agentVisionArray = aVA;
+	}
+	
+	/**
+	 * returns the grow back interval
+	 */
+	public int getGrowBackInterval() {
+		return growBackInterval;
+	}
+	
+	/**
+	 * returns the grow back rate
+	 */
+	public int getGrowBackRate() {
+		return growBackRate;
 	}
 	
 	
@@ -62,6 +86,13 @@ public class SugarSimSetup extends SimulationSetup{
 	 */
 	public int[][] getPatchMaxSugarArray() {
 		return patchMaxSugarArray;
+	}
+	
+	/**
+	 * returns the max sugar of the patches
+	 */
+	public int[][] getPatchTickArray() {
+		return tickArray;
 	}
 	
 	/**
@@ -118,5 +149,7 @@ public class SugarSimSetup extends SimulationSetup{
 		    }
 		    System.out.println("");
 		}
+		System.out.println("Grow back interval = " + growBackInterval);
+		System.out.println("Grow back rate = " + growBackRate);
 	}
 }

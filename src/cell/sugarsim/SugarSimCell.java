@@ -17,6 +17,7 @@ public abstract class SugarSimCell extends Cell{
 		this.sugarGrowBackRate = sugarGBR;
 		this.sugarGrowBackInterval = sugarGBI;
 		this.tick = tick;
+		setDisplayColor();
 	}
 	
 	protected void patchGrowBack() {
@@ -26,6 +27,7 @@ public abstract class SugarSimCell extends Cell{
 				patch_sugar = max_sugar;
 			}
 		}
+		setDisplayColor();
 	}
 	
 	/* (non-Javadoc)
@@ -33,6 +35,11 @@ public abstract class SugarSimCell extends Cell{
 	 */
 	@Override
 	protected void setDisplayColor() {
-		this.display_color = CELLCOLOR;
+		if (max_sugar != 0) {
+			this.display_color = new Color(1.0,0.0,0.0,patch_sugar/max_sugar);
+		}
+		else {
+			this.display_color = new Color(1.0,0.0,0.0,0.0);
+		}
 	}
 }

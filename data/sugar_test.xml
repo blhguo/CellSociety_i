@@ -10,43 +10,54 @@
 	<grid_y>400</grid_y>
 	<neighbourType>all</neighbourType>
 	<edgeType>finite</edgeType>
+	<GrowBackInterval>1</GrowBackInterval>
+	<GrowBackRate>1</GrowBackRate>
+	
 	<agent>
 		<x>0</x>
-		<y>8</y>
-		<sugar>13</sugar>
-		<sugarMetabolism>5</sugarMetabolism>
+		<y>0</y>
+		<sugar>23</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
 		<vision>4</vision>
 	</agent>
 
 	<agent>
-		<x>2</x>
+		<x>0</x>
+		<y>5</y>
+		<sugar>13</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>1</x>
 		<y>2</y>
-		<sugar>13</sugar>
-		<sugarMetabolism>5</sugarMetabolism>
+		<sugar>14</sugar>
+		<sugarMetabolism>6</sugarMetabolism>
 		<vision>4</vision>
 	</agent>
 
 	<agent>
-		<x>2</x>
-		<y>4</y>
-		<sugar>8</sugar>
+		<x>9</x>
+		<y>0</y>
+		<sugar>16</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
+		<vision>4</vision>
+	</agent>
+
+	<agent>
+		<x>9</x>
+		<y>3</y>
+		<sugar>22</sugar>
 		<sugarMetabolism>3</sugarMetabolism>
 		<vision>4</vision>
 	</agent>
 
 	<agent>
-		<x>2</x>
-		<y>6</y>
-		<sugar>21</sugar>
-		<sugarMetabolism>5</sugarMetabolism>
-		<vision>4</vision>
-	</agent>
-
-	<agent>
-		<x>5</x>
-		<y>2</y>
-		<sugar>24</sugar>
-		<sugarMetabolism>2</sugarMetabolism>
+		<x>9</x>
+		<y>4</y>
+		<sugar>15</sugar>
+		<sugarMetabolism>1</sugarMetabolism>
 		<vision>4</vision>
 	</agent>
 
@@ -55,6 +66,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -62,6 +74,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -69,6 +82,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -76,6 +90,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -83,6 +98,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -90,6 +106,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -97,6 +114,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -104,6 +122,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -111,6 +130,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -118,6 +138,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -125,6 +146,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -132,6 +154,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -139,6 +162,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -146,6 +170,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -153,6 +178,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -160,6 +186,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -167,6 +194,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -174,6 +202,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -181,6 +210,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -188,6 +218,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -195,6 +226,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -202,6 +234,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -209,6 +242,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -216,6 +250,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -223,6 +258,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -230,6 +266,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -237,6 +274,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -244,6 +282,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -251,6 +290,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -258,6 +298,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -265,6 +306,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -272,6 +314,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -279,6 +322,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -286,6 +330,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -293,6 +338,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -300,6 +346,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -307,6 +354,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -314,6 +362,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -321,6 +370,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -328,6 +378,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -335,6 +386,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -342,6 +394,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -349,6 +402,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -356,6 +410,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -363,6 +418,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -370,6 +426,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -377,6 +434,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -384,6 +442,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -391,6 +450,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -398,6 +458,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -405,6 +466,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -412,6 +474,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -419,6 +482,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -426,6 +490,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -433,6 +498,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -440,6 +506,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -447,6 +514,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -454,6 +522,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -461,6 +530,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -468,6 +538,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -475,6 +546,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -482,6 +554,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -489,6 +562,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -496,6 +570,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -503,6 +578,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -510,6 +586,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -517,6 +594,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -524,6 +602,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -531,6 +610,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -538,6 +618,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -545,6 +626,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -552,6 +634,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -559,6 +642,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -566,6 +650,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -573,6 +658,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -580,6 +666,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -587,6 +674,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -594,6 +682,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -601,6 +690,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -608,6 +698,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -615,6 +706,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -622,6 +714,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -629,6 +722,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -636,6 +730,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -643,6 +738,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -650,6 +746,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -657,6 +754,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -664,6 +762,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -671,6 +770,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -678,6 +778,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -685,6 +786,7 @@
 		<y>0</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -692,6 +794,7 @@
 		<y>1</y>
 		<sugar>4</sugar>
 		<sugarMax>4</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -699,6 +802,7 @@
 		<y>2</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -706,6 +810,7 @@
 		<y>3</y>
 		<sugar>3</sugar>
 		<sugarMax>3</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -713,6 +818,7 @@
 		<y>4</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -720,6 +826,7 @@
 		<y>5</y>
 		<sugar>2</sugar>
 		<sugarMax>2</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -727,6 +834,7 @@
 		<y>6</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -734,6 +842,7 @@
 		<y>7</y>
 		<sugar>1</sugar>
 		<sugarMax>1</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -741,6 +850,7 @@
 		<y>8</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 	<patch>
@@ -748,6 +858,7 @@
 		<y>9</y>
 		<sugar>0</sugar>
 		<sugarMax>0</sugarMax>
+		<tick>0</tick>
 	</patch>
 
 </simulation>
