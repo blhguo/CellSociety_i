@@ -58,14 +58,6 @@ public class SugarSimGrid extends Grid{
 		return null;
 	}
 	
-	public int[][] getGrowBackRate() {
-		return null;
-	}
-	
-	public int[][] getGrowBackInterval() {
-		return null;
-	}
-	
 	public int[][] getPatchTickArray() {
 		return null;
 	}
