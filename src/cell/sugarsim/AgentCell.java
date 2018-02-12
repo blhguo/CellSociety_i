@@ -19,12 +19,14 @@ public class AgentCell extends SugarSimCell{
 
 	@Override
 	public Cell nextState(List<Cell> neighbors) {
+		patchGrowBack();
+		
 		agent_sugar -= sugarMetabolism;
 		if (agent_sugar <= 0) {
 			return new EmptyCell(this.patch_sugar, this.max_sugar, this.sugarGrowBackRate, this.sugarGrowBackInterval, this.tick);
 		}
 		
 		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 }
