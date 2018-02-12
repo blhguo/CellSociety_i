@@ -17,7 +17,7 @@ import xml.SimSetups.SugarSimSetup;
 
 /**
  * @see XMLreader
- * Extends XMLreader for Segregation simulation type
+ * Extends XMLreader for sugar simulation type
  */
 public class SugarXMLreader extends XMLreader {
 	public SugarSimSetup read(String filename) {
@@ -33,11 +33,20 @@ public class SugarXMLreader extends XMLreader {
 			int numCellsX = (int) simSetup.getGridX() / simSetup.getCellX();
 			int numCellsY = (int) simSetup.getGridY() / simSetup.getCellY();
 
+			NodeList growBackIntervalList = doc.getElementsByTagName("GrowBackInterval");
+			String growBackIntervalString = getStringValue(growBackIntervalList);
+			int growBackInterval = Integer.parseInt(growBackIntervalString);
+			
+			NodeList growBackRateList = doc.getElementsByTagName("GrowBackRate");
+			String growBackRateString = getStringValue(growBackRateList);
+			int growBackRate = Integer.parseInt(growBackRateString);
+			
 			NodeList agentList = doc.getElementsByTagName("agent");
 			NodeList patchList = doc.getElementsByTagName("patch");
 
 			int[][] patchSugarArray = new int[numCellsX][numCellsY];
 			int[][] patchMaxSugarArray = new int[numCellsX][numCellsY];
+			int[][] tickArray = new int[numCellsX][numCellsY];
 			String[][] agentArray = new String[numCellsX][numCellsY];
 			int[][] agentSugarArray = new int[numCellsX][numCellsY];
 			int[][] agentMetabolismArray = new int[numCellsX][numCellsY];
@@ -91,6 +100,7 @@ public class SugarXMLreader extends XMLreader {
 					Element eElement = (Element) nNode;
 					NodeList sugarList = eElement.getElementsByTagName("sugar");
 					NodeList sugarMaxList = eElement.getElementsByTagName("sugarMax");
+					NodeList tickList = eElement.getElementsByTagName("tick");
 					NodeList xList = eElement.getElementsByTagName("x");
 					NodeList yList = eElement.getElementsByTagName("y");
 
@@ -110,13 +120,18 @@ public class SugarXMLreader extends XMLreader {
 					String sugarMaxString = getStringValue(sugarMaxList);
 					int sugarMax = Integer.parseInt(sugarMaxString);
 
+					// get tick
+					String tickString = getStringValue(tickList);
+					int tick = Integer.parseInt(tickString);
+					
 					// add stuff to arrays
 					patchSugarArray[x][y] = sugar;
 					patchMaxSugarArray[x][y] = sugarMax;
+					tickArray[x][y] = tick;
 				}
 			}
 			agentArray = fillEmpty(agentArray);
-			return new SugarSimSetup(simSetup, patchSugarArray, patchMaxSugarArray, 
+			return new SugarSimSetup(simSetup, growBackInterval, growBackRate, patchSugarArray, patchMaxSugarArray, tickArray,
 					agentArray, agentSugarArray, agentMetabolismArray, agentVisionArray);
 		} catch (Exception e) {
 			//e.printStackTrace();
