@@ -33,6 +33,14 @@ public class SugarXMLreader extends XMLreader {
 			int numCellsX = (int) simSetup.getGridX() / simSetup.getCellX();
 			int numCellsY = (int) simSetup.getGridY() / simSetup.getCellY();
 
+			NodeList growBackIntervalList = doc.getElementsByTagName("GrowBackInterval");
+			String growBackIntervalString = getStringValue(growBackIntervalList);
+			int growBackInterval = Integer.parseInt(growBackIntervalString);
+			
+			NodeList growBackRateList = doc.getElementsByTagName("GrowBackRate");
+			String growBackRateString = getStringValue(growBackRateList);
+			int growBackRate = Integer.parseInt(growBackRateString);
+			
 			NodeList agentList = doc.getElementsByTagName("agent");
 			NodeList patchList = doc.getElementsByTagName("patch");
 
@@ -123,7 +131,7 @@ public class SugarXMLreader extends XMLreader {
 				}
 			}
 			agentArray = fillEmpty(agentArray);
-			return new SugarSimSetup(simSetup, patchSugarArray, patchMaxSugarArray, tickArray,
+			return new SugarSimSetup(simSetup, growBackInterval, growBackRate, patchSugarArray, patchMaxSugarArray, tickArray,
 					agentArray, agentSugarArray, agentMetabolismArray, agentVisionArray);
 		} catch (Exception e) {
 			//e.printStackTrace();

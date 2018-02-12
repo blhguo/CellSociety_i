@@ -10,6 +10,9 @@
 	<grid_y>400</grid_y>
 	<neighbourType>all</neighbourType>
 	<edgeType>finite</edgeType>
+	<GrowBackInterval>1</GrowBackInterval>
+	<GrowBackRate>1</GrowBackRate>
+	
 	<agent>
 		<x>0</x>
 		<y>31</y>

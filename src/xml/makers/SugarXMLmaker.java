@@ -25,6 +25,7 @@ public class SugarXMLmaker extends XMLmaker{
 
 	public SugarXMLmaker(String file, String shape, String nT, String eT, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		super(file, TYPE, SUGAR_TITLE, SUGAR_AUTHOR, shape, nT, eT, gx, gy, cx, cy);
+		printSugarHeader(1, 1);
 		double agentNum = PROB * agentProb;
 		for(int i = 0; i < numCellsX; i++){
 			for(int j = 0; j < numCellsY; j++){
@@ -82,9 +83,12 @@ public class SugarXMLmaker extends XMLmaker{
 		int[][] agentSugarArray;
 		int[][] agentMetabolismArray;
 		int[][] agentVisionArray;
+		int growRate = 1;
+		int growInterval = 1;
 		numCellsX = (int) gridx / cellx;
 		numCellsY = (int) gridy / celly; 
 		printFileHeader2();
+		printSugarHeader(growInterval, growRate);
 		String type;
 		int agentSugar;
 		int agentMetabolism;
@@ -133,6 +137,15 @@ public class SugarXMLmaker extends XMLmaker{
 		writer.println("\t" + "\t" + "<sugarMax>" + sugarMax + "</sugarMax>");
 		writer.println("\t" + "\t" + "<tick>" + tick + "</tick>");
 		writer.println("\t" + "</patch>");
+		writer.println("");
+	}
+	
+	/**
+	 * Prints the header for a sugar simulation
+	 */
+	private void printSugarHeader(int growBackInterval, int growBackRate){
+		writer.println("\t" + "<GrowBackInterval>" + growBackInterval + "</GrowBackInterval>");
+		writer.println("\t" + "<GrowBackRate>" + growBackRate + "</GrowBackRate>");
 		writer.println("");
 	}
 }

@@ -13,6 +13,7 @@ import grid.GOLSimGrid;
 import grid.Grid;
 import grid.SegregationSimGrid;
 import grid.WatorSimGrid;
+import grid.SugarSimGrid;
 import javafx.animation.Animation.Status;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
@@ -50,6 +51,7 @@ import javafx.util.Duration;
 import xml.SimSetups.FireSimSetup;
 import xml.SimSetups.GOLSimSetup;
 import xml.SimSetups.SegregationSimSetup;
+import xml.SimSetups.SugarSimSetup;
 import xml.SimSetups.WatorSimSetup;
 import xml.makers.FireXMLmaker;
 import xml.makers.GOLXMLmaker;
@@ -58,6 +60,7 @@ import xml.makers.WatorXMLmaker;
 import xml.readers.FireXMLreader;
 import xml.readers.GOLXMLreader;
 import xml.readers.SegregationXMLreader;
+import xml.readers.SugarXMLreader;
 import xml.readers.WatorXMLreader;
 
 /**
@@ -114,6 +117,7 @@ public class Manager extends Application {
 	private static final String FileW = "FileW";
 	private static final String FileF = "FileF";
 	private static final String FileGOL = "FileGOL";
+	private static final String FileSug = "FileSug";
 	private TextField probcell = null;
 	private TextField probx = null;
 	private TextField probo = null;
@@ -222,6 +226,9 @@ public class Manager extends Application {
 		else if(file.equals(myResources.getString(FileF))) {
 			callFireXMLreader(file);
 		}
+		else if(file.equals(myResources.getString(FileSug))){
+			callSugarXMLreader(file);
+		}
 		else {
 			if(fileType == 0) {
 				callGOLXMLreader(file);
@@ -259,6 +266,22 @@ public class Manager extends Application {
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
 		int simHeight = simInfo.getGridY()/simInfo.getCellY();
 		myGrid = new SegregationSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), simInfo.getEdgeType(), simInfo.getArray(), simInfo.getThreshold());
+		cell_Width = simInfo.getCellX();
+		cell_Height = simInfo.getCellY();
+	}
+	
+	public void callSugarXMLreader(String file){
+		SugarXMLreader xml_reader = new SugarXMLreader();
+		SugarSimSetup simInfo = xml_reader.read(file);
+		width = simInfo.getGridX() + 50;
+		height = simInfo.getGridY() + 20;
+		int simWidth = simInfo.getGridX()/simInfo.getCellX();
+		int simHeight = simInfo.getGridY()/simInfo.getCellY();
+		myGrid = new SugarSimGrid(simWidth, simHeight, simInfo.getShape(), simInfo.getNeighbourType(), 
+				simInfo.getEdgeType(), simInfo.getAgentArray(), simInfo.getPatchSugarArray(), 
+				simInfo.getPatchMaxSugarArray(), simInfo.getGrowBackRate(), simInfo.getGrowBackInterval(), 
+				simInfo.getPatchTickArray(), simInfo.getAgentSugarArray(), simInfo.getAgentMetabolismArray(), 
+				simInfo.getAgentVisionArray());
 		cell_Width = simInfo.getCellX();
 		cell_Height = simInfo.getCellY();
 	}
@@ -495,6 +518,7 @@ public class Manager extends Application {
 		fileChoiceBox.getItems().add(myResources.getString("DropDown2"));
 		fileChoiceBox.getItems().add(myResources.getString("DropDown3"));
 		fileChoiceBox.getItems().add(myResources.getString("DropDown4"));
+		fileChoiceBox.getItems().add(myResources.getString("DropDown15"));
 		fileChoiceBox.getSelectionModel().selectFirst();
 		fileChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value) {	
@@ -513,6 +537,10 @@ public class Manager extends Application {
 				if((int) new_value == 3){
 					fileName = myResources.getString(FileF);
 					fileType = 3;
+				}
+				if((int) new_value == 4){
+					fileName = myResources.getString(FileSug);
+					fileType = 4;
 				}
 			}
 		});
