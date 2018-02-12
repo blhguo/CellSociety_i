@@ -39,8 +39,8 @@ CompSci 308 Cell Society Project
 
 ### In simulations
 * *P* - pauses/plays the simulation
-* *Arrow Up* - double animation speed (maximum speed: 2x)
-* *Arrow Down* - halve animation speed (minimum speed: 0.5x)
+* *D* - double animation speed (No longer has maximum speed, but too fast and you will lose frames because they can't be generated that fast)
+* *A* - halve animation speed (No longer has minimum speed)
 * *S* - Load simulation's next State
 * *M* - return to the menu
 
@@ -63,3 +63,10 @@ CompSci 308 Cell Society Project
 ## Impressions of the project
 * Separation and manipulation of visuals from the application class itself was more difficult than anticipated, with variable accessibility becoming convoluted
 * Much refactoring can be done to Manager.java to clean it up a bit, though not as much as the original target of Visualizer.
+
+## Visuals Decisions
+* Usage of VBox to prevent overlap
+* Declared integers in beginning to shift the simulation itself to accomodate VBox, rather than have simulation in it's own VBox because at the time of simulation implementation, VBoxes weren't necessary
+* Unimplemented Features:
+> - *Allow users to interact with the simulation dynamically to create or change a state at a grid location* : Unimplemented due to time. However, this feature I anticipate to be relatively simple to add. Based of a mouse click's location in the Scene, we can iterate across the Group representing the cells and use boundary checking. A method within Cell would need to be added to cycle to the next cell type, and the Manager would have to edit the grid (represented in code as gridArray) so as to ensure that grid update is working off of the new grid
+> - *Allow users to run multiple simulations at the same time so they can compare the results side by side (i.e., do not use tabs like a browser)* : Unimplemented at this time. Were I to implement it, however, I would add a button to the simulation scene (returned by setupScene) that, when pressed, would open a new window and call setupScene within that new window, thus duplicating the Grid object and all the parameters. That simulation, however, would take it's own, random course as defined by the parameters. As to whether the button interactions would be universal, chances are pause would pause both, etc. due to the implementation of the hardware buttons. However, this depends most on Java's specific interpretation. 
