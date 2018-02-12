@@ -30,7 +30,7 @@ CompSci 308 Cell Society Project
 	* ["data"](https://coursework.cs.duke.edu/CompSci308_2018Spring/cellsociety_team18/tree/master/data) folder in main directory along with associated XML required for running the default simulations
 
 ## Controls
-### Menu
+### Menu - **!!!NOTE!!! The selection from the drop down menu determines how files will be read and what type of custom file will be created.**
 * *Start Selected Simulation* - begins the simulation specified by the drop down menu
 * *Drop down menu* - select a default simulation
 * *Guide* - loads the user guide
@@ -55,7 +55,7 @@ CompSci 308 Cell Society Project
 
 ## Extra features
 * Cells can be squares, triangles, or hexagons.
-* Neighbour formation can be 
+* Neighbour formation can be cardinal, diagonal, 3-next, or all formations.
 * Able to save current state of a simulation and load that state from file
 * Plot of populations with legend and autoscaling added
 * Sliders to vary parameter values, with labels are added. The quantity of which is dynamic according to the type of simulation

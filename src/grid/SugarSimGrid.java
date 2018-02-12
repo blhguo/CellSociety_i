@@ -39,7 +39,7 @@ public class SugarSimGrid extends Grid{
 				}
 			}
 		}
-		map.put("Empty Cells", empty);
+		//map.put("Empty Cells", empty);
 		map.put("Agent Cells", agent);
 		return map;
 	}
@@ -48,6 +48,38 @@ public class SugarSimGrid extends Grid{
 	public String[][] getArray() {
 		getCurrentParameters();
 		return this.cellArray;
+	}
+	
+	public int[][] getPatchSugarArray() {
+		return null;
+	}
+	
+	public int[][] getPatchMaxSugarArray() {
+		return null;
+	}
+	
+	public int[][] getPatchTickArray() {
+		return null;
+	}
+	
+	public int[][] getAgentSugarArray() {
+		return null;
+	}
+	
+	public int[][] getAgentMetabolismArray() {
+		return null;
+	}
+	
+	public int[][] getAgentVisionArray() {
+		return null;
+	}
+	
+	public int getGrowRate() {
+		return 0;
+	}
+	
+	public int getGrowInterval() {
+		return 0;
 	}
 
 	@Override

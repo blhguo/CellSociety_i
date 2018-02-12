@@ -6,6 +6,7 @@ import java.util.Random;
 
 import grid.GOLSimGrid;
 import grid.SegregationSimGrid;
+import grid.SugarSimGrid;
 import xml.XMLmaker;
 
 /**
@@ -23,8 +24,9 @@ public class SugarXMLmaker extends XMLmaker{
 	// sugar specific
 	private double agentProb = 0.05;
 
-	public SugarXMLmaker(String file, String shape, String nT, String eT, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
+	public SugarXMLmaker(String file, String shape, String nT, String eT, int gx, int gy, int cx, int cy, double aP) throws FileNotFoundException, UnsupportedEncodingException{
 		super(file, TYPE, SUGAR_TITLE, SUGAR_AUTHOR, shape, nT, eT, gx, gy, cx, cy);
+		agentProb = aP;
 		printSugarHeader(1, 1);
 		double agentNum = PROB * agentProb;
 		for(int i = 0; i < numCellsX; i++){
@@ -67,7 +69,7 @@ public class SugarXMLmaker extends XMLmaker{
 		closeWriter();
 	}
 
-	public SugarXMLmaker(SegregationSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
+	public SugarXMLmaker(SugarSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		super(FILE, TYPE, SUGAR_TITLE, SUGAR_AUTHOR);
 		gridx = gx;
 		gridy = gy;
@@ -76,15 +78,15 @@ public class SugarXMLmaker extends XMLmaker{
 		shape = grid.getShape();
 		neighbourType = grid.getNeighborArrangement();
 		edgeType = grid.getEdgeType();
-		int[][] patchSugarArray;
-		int[][] patchMaxSugarArray;
-		int[][] patchTickArray;
-		String[][] agentArray;
-		int[][] agentSugarArray;
-		int[][] agentMetabolismArray;
-		int[][] agentVisionArray;
-		int growRate = 1;
-		int growInterval = 1;
+		int[][] patchSugarArray = grid.getPatchSugarArray();
+		int[][] patchMaxSugarArray = grid.getPatchMaxSugarArray();
+		int[][] patchTickArray = grid.getPatchTickArray();
+		String[][] agentArray = grid.getArray();
+		int[][] agentSugarArray = grid.getAgentSugarArray();
+		int[][] agentMetabolismArray = grid.getAgentMetabolismArray();
+		int[][] agentVisionArray = grid.getAgentVisionArray();
+		int growRate = grid.getGrowRate();
+		int growInterval = grid.getGrowInterval();
 		numCellsX = (int) gridx / cellx;
 		numCellsY = (int) gridy / celly; 
 		printFileHeader2();
