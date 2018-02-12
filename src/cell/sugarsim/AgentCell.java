@@ -15,7 +15,27 @@ public class AgentCell extends SugarSimCell{
 		this.sugarMetabolism = sM;
 		this.vision = v;
 	}
+	
+	public void setVision(int v) {
+		this.vision = v;
+	}
+	
+	public void setSugarMetabolism(int sM) {
+		this.sugarMetabolism = sM;
+	}
+	
+	public int getVision() {
+		return this.vision;
+	}
 
+	public int getAgentSugar() {
+		return this.agent_sugar;
+	}
+	
+	public int getSugarMetabolism() {
+		return this.sugarMetabolism;
+	}
+	
 	@Override
 	public Cell nextState(List<Cell> neighbors) {
 		patchGrowBack();
@@ -24,8 +44,6 @@ public class AgentCell extends SugarSimCell{
 		if (agent_sugar <= 0) {
 			return new EmptyCell(this.patch_sugar, this.max_sugar, this.sugarGrowBackRate, this.sugarGrowBackInterval, this.tick);
 		}
-		
-		// TODO Auto-generated method stub
 		return this;
 	}
 }

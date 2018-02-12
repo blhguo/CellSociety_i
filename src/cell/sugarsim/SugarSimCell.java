@@ -19,6 +19,34 @@ public abstract class SugarSimCell extends Cell{
 		setDisplayColor();
 	}
 	
+	public void setSugarGBR(int gbr) {
+		this.sugarGrowBackRate = gbr;
+	}
+	
+	public void setSugarGRI(int gbi) {
+		this.sugarGrowBackInterval = gbi;
+	}
+	
+	public int getPatchSugar() {
+		return this.patch_sugar;
+	}
+	
+	public int getMaxSugar() {
+		return this.max_sugar;
+	}
+	
+	public int getTick() {
+		return this.tick;
+	}
+	
+	public int getSugarGBR() {
+		return this.sugarGrowBackRate;
+	}
+	
+	public int getSugarGBI() {
+		return this.sugarGrowBackInterval;
+	}
+	
 	protected void patchGrowBack() {
 		if (tick%sugarGrowBackInterval == 0) {
 			patch_sugar += sugarGrowBackRate;
