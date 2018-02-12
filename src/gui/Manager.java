@@ -1020,10 +1020,12 @@ public class Manager extends Application {
 	private Rectangle GenerateRectangularCell(Cell BufferCell, int width, int height, int i, int j) {
 		Rectangle Image = new Rectangle((width * i + XPADDING) + graphbufferW/2, (height * j + YPADDING), width, height);
 		Image.setFill(BufferCell.getDisplayColor());
-		Image.setStrokeWidth(0.3);
+		Image.setStrokeWidth(1);
 		Image.setStroke(Color.BLACK);
 		if (BufferCell instanceof AgentCell) {
 			Image.setStroke(Color.GREEN);
+			Image.setStrokeWidth(5);
+
 		}
 		return Image;
 	}
@@ -1055,10 +1057,12 @@ public class Manager extends Application {
 		}
 		Image.getPoints().addAll(points);
 		Image.setFill(BufferCell.getDisplayColor());
-		Image.setStrokeWidth(0.5);
+		Image.setStrokeWidth(1);
 		Image.setStroke(Color.BLACK);
 		if (BufferCell instanceof AgentCell) {
 			Image.setStroke(Color.GREEN);
+			Image.setStrokeWidth(5);
+
 		}
 		return Image;
 	}
@@ -1082,10 +1086,11 @@ public class Manager extends Application {
 		}
 		Image.getPoints().addAll(points);
 		Image.setFill(BufferCell.getDisplayColor());
-		Image.setStrokeWidth(0.3);
+		Image.setStrokeWidth(1);
 		Image.setStroke(Color.BLACK);
 		if (BufferCell instanceof AgentCell) {
 			Image.setStroke(Color.GREEN);
+			Image.setStrokeWidth(5);
 		}
 		return Image;
 	}
