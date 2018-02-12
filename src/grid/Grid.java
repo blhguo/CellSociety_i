@@ -142,5 +142,9 @@ public abstract class Grid {
 	 */
 	public abstract Map<String,Double[]> getCurrentParameters();
 	
+	/**
+	 * Sets various grid parameters with the updated state values
+	 * @param map updated state values
+	 */
 	public abstract void setCurrentParameters(Map<String,Double[]> map);
 }

@@ -25,26 +25,50 @@ public abstract class FireSimCell extends Cell{
 		probGrow = pGrow;
 	}
 	
+	/**
+	 * Gets probability of cell catching on fire
+	 * @return probability of cell catching on fire
+	 */
 	public double getFireProb() {
 		return this.probCatch;
 	}
 	
+	/**
+	 * Sets probability of cell catching on fire
+	 * @param p probability of cell catching on fire
+	 */
 	public void setFireProb(double p) {
 		this.probCatch = p;
 	}
 	
+	/**
+	 * Gets probability of cell struck by lightning
+	 * @return probability of cell struck by lightning
+	 */
 	public double getLightningProb() {
 		return this.probLightning;
 	}
 	
+	/**
+	 * Sets probability of cell struck by lightning
+	 * @param p probability of cell struck by lightning
+	 */
 	public void setLightningProb(double p) {
 		this.probLightning = p;
 	}
 	
+	/**
+	 * Gets probability of tree growing
+	 * @return probability of tree growing
+	 */
 	public double getProbGrow() {
 		return this.probGrow;
 	}
 	
+	/**
+	 * Sets probability of tree growing
+	 * @param p probability of tree growing
+	 */
 	public void setProbGrow(double p) {
 		this.probGrow = p;
 	}

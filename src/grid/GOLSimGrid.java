@@ -86,9 +86,12 @@ public class GOLSimGrid extends Grid{
 		return map;
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#setCurrentParameters(java.util.Map)
+	 */
 	@Override
 	public void setCurrentParameters(Map<String, Double[]> map) {
-		// TODO Auto-generated method stub
+		// GOL Simulation has no parameters to set.
 		
 	}
 }

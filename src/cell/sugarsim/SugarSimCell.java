@@ -3,6 +3,12 @@ package cell.sugarsim;
 import cell.Cell;
 import javafx.scene.paint.Color;
 
+/**
+ * @author Yashas Manjunatha
+ * Abstract class that creates and describes behavior of a cell in the Sugar Simulation.
+ * Create a subclass to introduce a new type of cell in this simulation.
+ * Extends the Cell class.
+ */
 public abstract class SugarSimCell extends Cell{
 	protected int patch_sugar;
 	protected int max_sugar;
@@ -10,6 +16,14 @@ public abstract class SugarSimCell extends Cell{
 	protected int sugarGrowBackInterval;
 	protected int tick;
 	
+	/**
+	 * Creates new Sugar simulation cell.
+	 * @param patch_sugar patch sugar
+	 * @param max_sugar max sugar
+	 * @param sugarGBR grow back rate
+	 * @param sugarGBI grow back interval
+	 * @param tick time
+	 */
 	public SugarSimCell(int patch_sugar, int max_sugar, int sugarGBR, int sugarGBI, int tick) {
 		this.patch_sugar = patch_sugar;
 		this.max_sugar = max_sugar;
@@ -47,6 +61,9 @@ public abstract class SugarSimCell extends Cell{
 		return this.sugarGrowBackInterval;
 	}
 	
+	/**
+	 * Grows back sugar in the patch
+	 */
 	protected void patchGrowBack() {
 		if (tick%sugarGrowBackInterval == 0) {
 			patch_sugar += sugarGrowBackRate;

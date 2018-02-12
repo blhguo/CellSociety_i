@@ -117,6 +117,14 @@ public class WatorSimGrid extends Grid{
 		checkAndReproduce(i, j, currentState, neighbors, nextState);
 	}
 	
+	/**
+	 * Checks if reproducing and does so if required.
+	 * @param i - x location of cell in grid
+	 * @param j - y location of cell in grid
+	 * @param currentState - current state of cell
+	 * @param neighbors - neighbors of the cell
+	 * @param nextState - next state of the cell
+	 */
 	private void checkAndReproduce (int i, int j, WatorSimCell currentState, List<Cell> neighbors, Cell nextState) {
 		if(currentState.isReproducing()) {
 			currentState.resetReproduction();
@@ -133,6 +141,13 @@ public class WatorSimGrid extends Grid{
 		}
 	}
 	
+	/**
+	 * Checks neighbors from empty cells and moves to random empty cell.
+	 * @param i - x location of cell in grid
+	 * @param j - y location of cell in grid
+	 * @param currentState - current state of cell
+	 * @param neighbors - neighbors of the cell
+	 */
 	private void checkAndMoveToEmpty (int i, int j, WatorSimCell currentState, List<Cell> neighbors) {
 		ArrayList<EmptyCell> empty_cells = new ArrayList<>();
 		for(Cell cell:neighbors) {
@@ -259,24 +274,39 @@ public class WatorSimGrid extends Grid{
 		return this.cellArray;
 	}
 	
+	/**
+	 * @return array of reproduction threshold values
+	 */
 	public int[][] getReproductionThreshold() {
 		getCurrentParameters();
 		return this.reproduction;
 	}
 	
+	/**
+	 * @return array of current energy values
+	 */
 	public int[][] getCurrentEnergy() {
 		getCurrentParameters();
 		return this.current_energy;
 	}
 	
+	/**
+	 * @return array of default energy values
+	 */
 	public int[][] getDefaultEnergy() {
 		return this.default_energy;
 	}
 	
+	/**
+	 * @return array of reproduction time values
+	 */
 	public int[][] getReproductionTime(){
 		return this.reproduction_time;
 	}
 	
+	/**
+	 * @return array of gained energy values
+	 */
 	public int[][] getGainedEnergy() {
 		getCurrentParameters();
 		return this.gained_energy;
@@ -331,6 +361,9 @@ public class WatorSimGrid extends Grid{
 		return map;
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#setCurrentParameters(java.util.Map)
+	 */
 	@Override
 	public void setCurrentParameters(Map<String, Double[]> map) {
 		for (int i = 0; i < myGrid.length; i++) {

@@ -122,6 +122,10 @@ public class SegregationSimGrid extends Grid{
 		return this.cellArray;
 	}
 	
+	/**
+	 * Gets threshold values of simulation
+	 * @return double 2d array of threshold values
+	 */
 	public double[][] getThreshold() {
 		getCurrentParameters();
 		return this.threshold;
@@ -160,6 +164,9 @@ public class SegregationSimGrid extends Grid{
 		return map;
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#setCurrentParameters(java.util.Map)
+	 */
 	@Override
 	public void setCurrentParameters(Map<String, Double[]> map) {
 		for (int i = 0; i < myGrid.length; i++) {

@@ -7,6 +7,11 @@ import cell.sugarsim.AgentCell;
 import cell.sugarsim.EmptyCell;
 import cell.sugarsim.SugarSimCell;
 
+/**
+ * @author Yashas Manjunatha
+ * Creates and describes behavior of a Grid for the Sugar Simulation.
+ * Extends the Grid class.
+ */
 public class SugarSimGrid extends Grid{
 	private String[][] cellArray;
 	private int[][] patchSugarArray;
@@ -18,6 +23,23 @@ public class SugarSimGrid extends Grid{
 	private int growRate;
 	private int growInterval;
 
+	/**
+	 * Sets up Sugar Simulation Grid.
+	 * @param width - number of cells in the width of the grid
+	 * @param height - number of cells in the height of the grid
+	 * @param shape - shape of cells
+	 * @param arrangement - neighbor arrangement type
+	 * @param edge_type - edge type
+	 * @param cellArray - array of initial cell types
+	 * @param patch_sugar - patch sugar
+	 * @param max_sugar - max of patch sugar
+	 * @param sugarGBR - sugar grow back rate
+	 * @param sugarGBI - sugar grow back interval
+	 * @param tick - time
+	 * @param agent_sugar - agent sugar value
+	 * @param sugarMetabolism - agent sugar metabolism
+	 * @param vision - agent vision
+	 */
 	public SugarSimGrid(int width, int height, String shape, String arrangement, String edge_type, String[][] cellArray, int[][] patch_sugar, int[][] max_sugar, int sugarGBR, int sugarGBI, int[][] tick, int[][] agent_sugar, int[][] sugarMetabolism, int[][] vision) {
 		super(width, height, shape, arrangement, edge_type);
 		for (int i = 0; i < width; i++) {
@@ -34,6 +56,9 @@ public class SugarSimGrid extends Grid{
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#getNumberOfCells()
+	 */
 	@Override
 	public Map<String, Number> getNumberOfCells() {
 		HashMap<String, Number> map = new HashMap<>();
@@ -53,6 +78,9 @@ public class SugarSimGrid extends Grid{
 		return map;
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#getArray()
+	 */
 	@Override
 	public String[][] getArray() {
 		getCurrentParameters();
@@ -99,6 +127,9 @@ public class SugarSimGrid extends Grid{
 		return this.growInterval;
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#getCurrentParameters()
+	 */
 	@Override
 	public Map<String, Double[]> getCurrentParameters() {
 		HashMap<String, Double[]> map = new HashMap<>();
@@ -145,6 +176,9 @@ public class SugarSimGrid extends Grid{
 		return map;
 	}
 
+	/* (non-Javadoc)
+	 * @see grid.Grid#setCurrentParameters(java.util.Map)
+	 */
 	@Override
 	public void setCurrentParameters(Map<String, Double[]> map) {
 		for (int i = 0; i < myGrid.length; i++) {

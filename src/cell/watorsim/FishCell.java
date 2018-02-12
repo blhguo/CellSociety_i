@@ -44,14 +44,26 @@ public class FishCell extends WatorSimCell{
 		setDisplayColor();
 	}
 	
+	/**
+	 * Gets reproduction time
+	 * @return reproduction time
+	 */
 	public int getReproductionTime() {
 		return this.reproduction_time;
 	}
 	
+	/**
+	 * Gets reproduction threshold
+	 * @return reproduction threshold
+	 */
 	public int getReproductionThreshold() {
 		return this.reproduction_threshold;
 	}
 	
+	/**
+	 * Sets reproduction threshold
+	 * @param t reproduction threshold
+	 */
 	public void setReproductionThreshold(double t) {
 		this.reproduction_threshold = (int) t;
 	}

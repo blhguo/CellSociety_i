@@ -20,6 +20,7 @@ CompSci 308 Cell Society Project
 * [Segregation Simulation Rules] (http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/)
 * [Wator World Simulation Rules] (https://en.wikipedia.org/wiki/Wa-Tor)
 * [Fire Simulation Rules] (http://nifty.stanford.edu/2007/shiflet-fire/)
+* [Sugar Simulation Rules] (https://www2.le.ac.uk/departments/interdisciplinary-science/research/the-sugarscape)
 
 ### Important files
 * [Manager.java](https://coursework.cs.duke.edu/CompSci308_2018Spring/cellsociety_team18/blob/master/src/gui/Manager.java) in package "gui" is used to start the application.
