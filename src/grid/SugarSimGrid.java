@@ -1,8 +1,10 @@
 package grid;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import cell.Cell;
 import cell.sugarsim.AgentCell;
 import cell.sugarsim.EmptyCell;
 import cell.sugarsim.SugarSimCell;
@@ -13,6 +15,7 @@ import cell.sugarsim.SugarSimCell;
  * Extends the Grid class.
  */
 public class SugarSimGrid extends Grid{
+	private Cell[][] nextGrid;
 	private String[][] cellArray;
 	private int[][] patchSugarArray;
 	private int[][] patchMaxSugarArray;
@@ -46,14 +49,67 @@ public class SugarSimGrid extends Grid{
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
 				case "agent": 
-					this.myGrid[i][j] = new AgentCell(patch_sugar[i][j], max_sugar[i][j], sugarGBR, sugarGBI, tick[i][j], agent_sugar[i][j], sugarMetabolism[i][j], vision[i][j]);
+					this.myGrid[i][j] = new AgentCell(i, j, patch_sugar[i][j], max_sugar[i][j], sugarGBR, sugarGBI, tick[i][j], agent_sugar[i][j], sugarMetabolism[i][j], vision[i][j]);
 					break;
 				default: 
-					this.myGrid[i][j] = new EmptyCell(patch_sugar[i][j], max_sugar[i][j], sugarGBR, sugarGBI, tick[i][j]);
+					this.myGrid[i][j] = new EmptyCell(i, j, patch_sugar[i][j], max_sugar[i][j], sugarGBR, sugarGBI, tick[i][j]);
 					break;
 				}
 			}
 		}
+	}
+	
+	/* (non-Javadoc)
+	 * @see grid.Grid#updateGrid()
+	 */
+	@Override
+	public Cell[][] updateGrid() {
+		nextGrid = new Cell[this.myGrid.length][this.myGrid[0].length];
+		for (int i = 0; i < nextGrid.length; i++) {
+			for (int j = 0; j < nextGrid[0].length; j++) {
+				ArrayList<Cell> neighbors = new ArrayList<>();
+				this.addNeighbors(neighbors, myGrid, i , j);
+				Cell nextState = myGrid[i][j].nextState(neighbors);
+				
+				if (myGrid[i][j] instanceof AgentCell && nextState instanceof AgentCell) {
+					ArrayList<EmptyCell> empty_cells = new ArrayList<>();
+					int vision_count = 0;
+					for(Cell cell:neighbors) {
+						if ((cell instanceof EmptyCell) && !((EmptyCell) cell).isOccupied() && vision_count <= ((AgentCell) myGrid[i][j]).getVision()) {
+							empty_cells.add((EmptyCell) cell);
+						}
+					}
+					
+					int max_sugar = 0;
+					for(EmptyCell cell:empty_cells) {
+						if (cell.getPatchSugar() > max_sugar) {
+							max_sugar = cell.getPatchSugar();
+						}
+					}
+					
+					EmptyCell chosen = null;
+					for(EmptyCell cell:empty_cells) {
+						if (cell.getPatchSugar() == max_sugar) {
+							chosen = cell;
+						}
+					}
+					switchCells(chosen, (AgentCell) myGrid[i][j]);
+				} else {
+					nextGrid[i][j] = nextState;
+				}
+				
+			}
+		}
+		myGrid = nextGrid;
+		return nextGrid;
+	}
+
+	private void switchCells(EmptyCell cell, AgentCell agentCell) {
+		System.out.println(" DAFUQ");
+		nextGrid[cell.getX()][cell.getY()] = new AgentCell(cell.getX(), cell.getY(), cell.getPatchSugar(), cell.getMaxSugar(), cell.getSugarGBR(), cell.getSugarGBI(), cell.getTick(), agentCell.getAgentSugar(), agentCell.getSugarMetabolism(), agentCell.getVision());
+		nextGrid[agentCell.getX()][agentCell.getY()] = new EmptyCell(agentCell.getX(), agentCell.getY(), agentCell.getPatchSugar(), agentCell.getMaxSugar(), agentCell.getSugarGBR(), agentCell.getSugarGBI(), agentCell.getTick());
+		((EmptyCell) myGrid[cell.getX()][cell.getY()]).setOccupied(true);
+		((AgentCell) nextGrid[cell.getX()][cell.getY()]).eatSugar();
 	}
 
 	/* (non-Javadoc)

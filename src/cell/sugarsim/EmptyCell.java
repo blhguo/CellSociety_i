@@ -10,6 +10,7 @@ import cell.Cell;
  * Extends SuagrSimCell class.
  */
 public class EmptyCell extends SugarSimCell{
+	private boolean isOccupied;
 
 	/**
 	 * Creates a new empty cell.
@@ -19,8 +20,9 @@ public class EmptyCell extends SugarSimCell{
 	 * @param sugarGBI sugar grow back interval
 	 * @param tick time
 	 */
-	public EmptyCell(int patch_sugar, int max_sugar, int sugarGBR, int sugarGBI, int tick) {
-		super(patch_sugar, max_sugar, sugarGBR, sugarGBI, tick);
+	public EmptyCell(int i, int j, int patch_sugar, int max_sugar, int sugarGBR, int sugarGBI, int tick) {
+		super(i, j, patch_sugar, max_sugar, sugarGBR, sugarGBI, tick);
+		isOccupied = false;
 	}
 
 	/* (non-Javadoc)
@@ -30,5 +32,20 @@ public class EmptyCell extends SugarSimCell{
 	public Cell nextState(List<Cell> neighbors) {
 		patchGrowBack();
 		return this;
+	}
+
+	/**
+	 * @return if the empty cell is occupied by another cell in the next step
+	 */
+	public boolean isOccupied() {
+		return isOccupied;
+	}
+
+	/**
+	 * Sets the value for isOccupied
+	 * @param isOccupied boolean value if cell is occupied by another cell in the next step
+	 */
+	public void setOccupied(boolean isOccupied) {
+		this.isOccupied = isOccupied;
 	}
 }
