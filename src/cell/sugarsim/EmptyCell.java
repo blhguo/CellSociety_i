@@ -13,6 +13,7 @@ public class EmptyCell extends SugarSimCell{
 
 	@Override
 	public Cell nextState(List<Cell> neighbors) {
+		patchGrowBack();
 		return this;
 	}
 }
