@@ -56,6 +56,7 @@ import xml.SimSetups.WatorSimSetup;
 import xml.makers.FireXMLmaker;
 import xml.makers.GOLXMLmaker;
 import xml.makers.SegXMLmaker;
+import xml.makers.SugarXMLmaker;
 import xml.makers.WatorXMLmaker;
 import xml.readers.FireXMLreader;
 import xml.readers.GOLXMLreader;
@@ -131,6 +132,7 @@ public class Manager extends Application {
 	private TextField probfire = null;
 	private TextField problight = null;
 	private TextField probnewtree = null;
+	private TextField agentProb = null;
 	private String neighbourType = "all";
 	private String edgeType = "finite";
 	private String shape = "square";
@@ -710,6 +712,9 @@ public class Manager extends Application {
 			problight = makeTextField(grid, myResources.getString("LightProbField"), 1, 2);
 			probnewtree = makeTextField(grid, myResources.getString("NewTreeProbField"), 1, 3);
 		}
+		else if(fileType == 4){
+			agentProb = makeTextField(grid, myResources.getString("AgentProbField"), 1, 1);
+		}
 		Button menu = GenButton(grid, myResources.getString("MenuButton"), 0, 0);
 		menu.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -747,6 +752,7 @@ public class Manager extends Application {
 				double probfireval = 0.5;
 				double problightval = 0.01;
 				double probnewtreeval = 0.01;
+				double agentprobval = 0.05;
 				String filename = file.getText();
 				
 				// filename error handling
@@ -755,7 +761,7 @@ public class Manager extends Application {
 					displayMessage(grid, myResources.getString("MakerError6"), 3, 0,11);
 				}
 				else if(filename.equals("game_of_life") || filename.equals("segregation") 
-						|| filename.equals("wator") || filename.equals("fire")) {
+						|| filename.equals("wator") || filename.equals("fire") || filename.equals("sugar")) {
 					isError = true;
 					displayMessage(grid, myResources.getString("MakerError7"), 3, 0,12);
 				}
@@ -855,7 +861,20 @@ public class Manager extends Application {
 							new FireXMLmaker(filename, shape, neighbourType, edgeType, gridxval, gridyval, cellxval, cellyval, probfireval, problightval, probnewtreeval);
 							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
 						}	
-					}	
+					}
+					else if(fileType == 4){
+						try {
+							agentprobval = Double.parseDouble(agentProb.getText());
+						} catch(NumberFormatException ea) {
+							displayMessage(grid, myResources.getString("MakerError9"), 3, 0, 10);
+							isError = true;
+							//ea.printStackTrace();
+						}
+						if(!isError) {
+							new SugarXMLmaker(filename, shape, neighbourType, edgeType, gridxval, gridyval, cellxval, cellyval, agentprobval);
+							displayMessage(grid, filename + ".xml created!", 3, 1, 8);
+						}	
+					}
 				} catch (FileNotFoundException e1) {
 					displayMessage(grid, myResources.getString("MakerError"), 3, 0, 9);
 					//e1.printStackTrace();
