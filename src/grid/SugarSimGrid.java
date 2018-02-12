@@ -9,16 +9,16 @@ import cell.sugarsim.EmptyCell;
 public class SugarSimGrid extends Grid{
 	private String[][] cellArray;
 
-	public SugarSimGrid(int width, int height, String shape, String arrangement, String edge_type, String[][] cellArray, int[][] patch_sugar, int[][] max_sugar, int[][] sugarGBR, int[][] sugarGBI, int[][] tick, int[][] agent_sugar, int[][] sugarMetabolism, int[][] vision) {
+	public SugarSimGrid(int width, int height, String shape, String arrangement, String edge_type, String[][] cellArray, int[][] patch_sugar, int[][] max_sugar, int sugarGBR, int sugarGBI, int[][] tick, int[][] agent_sugar, int[][] sugarMetabolism, int[][] vision) {
 		super(width, height, shape, arrangement, edge_type);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {
 				case "agent": 
-					this.myGrid[i][j] = new AgentCell(patch_sugar[i][j], max_sugar[i][j], sugarGBR[i][j], sugarGBI[i][j], tick[i][j], agent_sugar[i][j], sugarMetabolism[i][j], vision[i][j]);
+					this.myGrid[i][j] = new AgentCell(patch_sugar[i][j], max_sugar[i][j], sugarGBR, sugarGBI, tick[i][j], agent_sugar[i][j], sugarMetabolism[i][j], vision[i][j]);
 					break;
 				default: 
-					this.myGrid[i][j] = new EmptyCell(patch_sugar[i][j], max_sugar[i][j], sugarGBR[i][j], sugarGBI[i][j], tick[i][j]);
+					this.myGrid[i][j] = new EmptyCell(patch_sugar[i][j], max_sugar[i][j], sugarGBR, sugarGBI, tick[i][j]);
 					break;
 				}
 			}

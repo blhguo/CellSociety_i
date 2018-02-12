@@ -14,7 +14,6 @@ public class AgentCell extends SugarSimCell{
 		this.agent_sugar = agent_s;
 		this.sugarMetabolism = sM;
 		this.vision = v;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
