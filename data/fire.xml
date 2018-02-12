@@ -12,7 +12,7 @@
 	<lightningProb>0.01</lightningProb>
 	<emptyTreeProb>0.01</emptyTreeProb>
 	<neighbourType>cardinal</neighbourType>
-	<edgeType>infinite</edgeType>
+	<edgeType>finite</edgeType>
 
 	<cell>
 		<type>empty</type>

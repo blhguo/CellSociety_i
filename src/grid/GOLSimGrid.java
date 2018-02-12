@@ -20,8 +20,8 @@ public class GOLSimGrid extends Grid{
 	 * @param height - number of cells in the height of the grid
 	 * @param cellArray - array of initial cell types
 	 */
-	public GOLSimGrid(int width, int height, String shape, String[][] cellArray) {
-		super(width, height, shape, "all");
+	public GOLSimGrid(int width, int height, String shape, String arrangement, String edge_type, String[][] cellArray) {
+		super(width, height, shape, arrangement, edge_type);
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				switch (cellArray[i][j]) {

@@ -100,9 +100,9 @@ public class WatorSimSetup extends SimulationSetup{
 	public void printInfo() {
 		super.printInfo();
 		System.out.println("cellArray = ");
-		for(int i = 0; i<cellArray[1].length; i++)
+		for(int i = 0; i<cellArray[0].length; i++)
 		{
-		    for(int j = 0; j<cellArray[0].length; j++)
+		    for(int j = 0; j<cellArray.length; j++)
 		    {
 		        System.out.print(cellArray[j][i]);
 		        System.out.print(" ");
@@ -110,9 +110,9 @@ public class WatorSimSetup extends SimulationSetup{
 		    System.out.println("");
 		}
 		System.out.println("reproduction = ");
-		for(int i = 0; i<reproductionArray[1].length; i++)
+		for(int i = 0; i<reproductionArray[0].length; i++)
 		{
-		    for(int j = 0; j<reproductionArray[0].length; j++)
+		    for(int j = 0; j<reproductionArray.length; j++)
 		    {
 		        System.out.print(reproductionArray[j][i]);
 		        System.out.print(" ");
@@ -120,9 +120,9 @@ public class WatorSimSetup extends SimulationSetup{
 		    System.out.println("");
 		}
 		System.out.println("gained energy = ");
-		for(int i = 0; i<gainedEnergyArray[1].length; i++)
+		for(int i = 0; i<gainedEnergyArray[0].length; i++)
 		{
-		    for(int j = 0; j<gainedEnergyArray[0].length; j++)
+		    for(int j = 0; j<gainedEnergyArray.length; j++)
 		    {
 		        System.out.print(gainedEnergyArray[j][i]);
 		        System.out.print(" ");
@@ -130,9 +130,9 @@ public class WatorSimSetup extends SimulationSetup{
 		    System.out.println("");
 		}
 		System.out.println("energy = ");
-		for(int i = 0; i<energyArray[1].length; i++)
+		for(int i = 0; i<energyArray[0].length; i++)
 		{
-		    for(int j = 0; j<energyArray[0].length; j++)
+		    for(int j = 0; j<energyArray.length; j++)
 		    {
 		        System.out.print(energyArray[j][i]);
 		        System.out.print(" ");
@@ -140,9 +140,9 @@ public class WatorSimSetup extends SimulationSetup{
 		    System.out.println("");
 		}
 		System.out.println("current energy = ");
-		for(int i = 0; i<currentEnergyArray[1].length; i++)
+		for(int i = 0; i<currentEnergyArray[0].length; i++)
 		{
-		    for(int j = 0; j<currentEnergyArray[0].length; j++)
+		    for(int j = 0; j<currentEnergyArray.length; j++)
 		    {
 		        System.out.print(currentEnergyArray[j][i]);
 		        System.out.print(" ");
@@ -150,9 +150,9 @@ public class WatorSimSetup extends SimulationSetup{
 		    System.out.println("");
 		}
 		System.out.println("current reproduction = ");
-		for(int i = 0; i<currentReproductionArray[1].length; i++)
+		for(int i = 0; i<currentReproductionArray[0].length; i++)
 		{
-		    for(int j = 0; j<currentReproductionArray[0].length; j++)
+		    for(int j = 0; j<currentReproductionArray.length; j++)
 		    {
 		        System.out.print(currentReproductionArray[j][i]);
 		        System.out.print(" ");

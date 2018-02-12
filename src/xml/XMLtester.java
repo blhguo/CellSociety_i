@@ -12,6 +12,7 @@ public class XMLtester {
 	private final static String SEGREGATION = "data/segregation.xml";
 	private final static String WATOR = "data/wator.xml";
 	private final static String FIRE =  "data/fire.xml";
+	private final static String SUGAR = "data/sugar_test.xml";
 	
 	/**
 	 * Start the program.
@@ -29,7 +30,9 @@ public class XMLtester {
 		//String fileName = SEGREGATION;
 		//String fileName = WATOR;
 		//String fileName = FIRE;
-		String fileName = "data/testshape.xml";
+		//String fileName = SUGAR;
+		String fileName = "data/gol_saved.xml";
+		
 		
 		if(fileName.equals(SEGREGATION)) {
 			SegregationXMLreader xml_reader = new SegregationXMLreader();
@@ -48,6 +51,12 @@ public class XMLtester {
 			FireSimSetup simInfo = xml_reader.read(fileName);
 			simInfo.printInfo();
 			//new FireXMLmaker("fire_test", "square", "all", "finite", 400, 400, 10, 10, 0.5, 0.01, 0.01);
+		}
+		else if(fileName.equals(SUGAR)) {
+			SugarXMLreader xml_reader = new SugarXMLreader();
+			SugarSimSetup simInfo = xml_reader.read(fileName);
+			simInfo.printInfo();
+			new SugarXMLmaker("sugar_test", "square", "all", "finite", 400, 400, 40, 40);
 		}
 		else {
 			GOLXMLreader xml_reader = new GOLXMLreader();

@@ -28,22 +28,26 @@ public abstract class Grid {
 	 * @param shape
 	 * @param arrangement
 	 */
-	public Grid (int width, int height, String shape, String arrangement) {
+	public Grid (int width, int height, String shape, String arrangement, String edge_type) {
 		myWidth = width;
 		myHeight = height;
 		myGrid = new Cell[myWidth][myHeight];
 		this.cell_shape = shape;
 		this.neighbor_arrangement = arrangement;
-		neighbors_object = new Neighbors(cell_shape, neighbor_arrangement, "");
+		this.edge_type = edge_type;
+		neighbors_object = new Neighbors(cell_shape, neighbor_arrangement, edge_type, this);
 	}
 	
-	public Grid (int width, int height) {
-		this(width, height, "square", "cardinal");
-	}
-	
-	public Grid (int width, int height, String shape) {
-		this(width, height, shape, "cardinal");
-	}
+	/*protected void extendGrid() {
+		myWidth += 2;
+		myHeight += 2;
+		Cell[][] newGrid = new Cell[myWidth][myHeight];
+		for (int i = 1; i < myWidth-1; i++) {
+			for (int j = 1; j < myHeight-1; j++) {
+				newGrid[i][j] = myGrid[i-1][j-1];
+			}
+		}
+	}*/
 	
 	public String getNeighborArrangement() {
 		return this.neighbor_arrangement;

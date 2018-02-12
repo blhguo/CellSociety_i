@@ -10,11 +10,13 @@ public class Neighbors {
 	private String edge_type;
 	private int myWidth;
 	private int myHeight;
+	private Grid myGrid;
 	
-	public Neighbors(String shape, String arrangement, String edge_type) {
+	public Neighbors(String shape, String arrangement, String edge_type, Grid grid) {
 		this.shape = shape;
 		this.arrangement = arrangement;
 		this.edge_type = edge_type;
+		this.myGrid = grid;
 	}
 	
 	/**
@@ -37,9 +39,6 @@ public class Neighbors {
 			case "triangle":
 				chooseTriangleNeighborOrienation(neighbors, grid, i, j);
 				break;
-			default:
-				chooseSquareNeighborOrienation(neighbors, grid, i, j);
-				break;
 		}
 	}
 	
@@ -52,9 +51,6 @@ public class Neighbors {
 				square_diagonal(neighbors, grid, i, j);
 				break;
 			case "all":
-				square_all(neighbors, grid, i, j);
-				break;
-			default:
 				square_all(neighbors, grid, i, j);
 				break;
 		}
@@ -72,164 +68,101 @@ public class Neighbors {
 	}
 	
 	private void hexagon_all (List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-2,j)) {
-			neighbors.add(grid[i-2][j]);
-		}
-		if (inGrid(i+2,j)) {
-			neighbors.add(grid[i+2][j]);
-		}
+		checkEdgeTypeAndAdd(neighbors, grid, i-2,j);
+		checkEdgeTypeAndAdd(neighbors, grid, i+2,j);
 		if (i%2 == 0) {
-			if (inGrid(i-1,j-1)) {
-				neighbors.add(grid[i-1][j-1]);
-			}
-			if (inGrid(i+1,j-1)) {
-				neighbors.add(grid[i+1][j-1]);
-			}
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j-1);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j-1);
 		} else {
-			if (inGrid(i-1,j+1)) {
-				neighbors.add(grid[i-1][j+1]);
-			}
-			if (inGrid(i+1,j+1)) {
-				neighbors.add(grid[i+1][j+1]);
-			}
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j+1);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j+1);
 		}
-		if (inGrid(i-1,j)) {
-			neighbors.add(grid[i-1][j]);
-		}
-		if (inGrid(i+1,j)) {
-			neighbors.add(grid[i+1][j]);
-		}
+		checkEdgeTypeAndAdd(neighbors, grid, i-1,j);
+		checkEdgeTypeAndAdd(neighbors, grid, i+1,j);
 	}
 	
 	private void triangle_three (List<Cell> neighbors, Cell[][] grid, int i, int j) {
 		if (i%2 == j%2) {
-			if (inGrid(i+1,j)) {
-				neighbors.add(grid[i+1][j]);
-			}
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j);
 		} else {
-			if (inGrid(i-1,j)) {
-				neighbors.add(grid[i-1][j]);
-			}
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j);
 		}
-		if (inGrid(i,j-1)) {
-			neighbors.add(grid[i][j-1]);
-		}
-		if (inGrid(i,j+1)) {
-			neighbors.add(grid[i][j+1]);
-		}
+		checkEdgeTypeAndAdd(neighbors, grid, i,j-1);
+		checkEdgeTypeAndAdd(neighbors, grid, i,j+1);
 	}
 	
 	private void triangle_all(List<Cell> neighbors, Cell[][] grid, int i, int j) {
+		checkEdgeTypeAndAdd(neighbors, grid, i,j-2);
+		checkEdgeTypeAndAdd(neighbors, grid, i,j-1);
+		checkEdgeTypeAndAdd(neighbors, grid, i,j+1);
+		checkEdgeTypeAndAdd(neighbors, grid, i,j+2);
+		
 		if (i%2 == j%2) {
-			if (inGrid(i-1,j-1)) {
-				neighbors.add(grid[i-1][j-1]);
-			}
-			if (inGrid(i-1,j)) {
-				neighbors.add(grid[i-1][j]);
-			}
-			if (inGrid(i-1,j+1)) {
-				neighbors.add(grid[i-1][j+1]);
-			}
-			if (inGrid(i,j-2)) {
-				neighbors.add(grid[i][j-2]);
-			}
-			if (inGrid(i,j-1)) {
-				neighbors.add(grid[i][j-1]);
-			}
-			if (inGrid(i,j+1)) {
-				neighbors.add(grid[i][j+1]);
-			}
-			if (inGrid(i,j+2)) {
-				neighbors.add(grid[i][j+2]);
-			}
-			if (inGrid(i+1,j-2)) {
-				neighbors.add(grid[i+1][j-2]);
-			}
-			if (inGrid(i+1,j-1)) {
-				neighbors.add(grid[i+1][j-1]);
-			}
-			if (inGrid(i+1,j)) {
-				neighbors.add(grid[i+1][j]);
-			}
-			if (inGrid(i+1,j+1)) {
-				neighbors.add(grid[i+1][j+1]);
-			}
-			if (inGrid(i+1,j+2)) {
-				neighbors.add(grid[i+1][j+2]);
-			}
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j-1);
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j);
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j+1);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j-2);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j-1);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j+1);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j+2);
 		} else {
-			if (inGrid(i-1,j-2)) {
-				neighbors.add(grid[i-1][j-2]);
-			}
-			if (inGrid(i-1,j-1)) {
-				neighbors.add(grid[i-1][j-1]);
-			}
-			if (inGrid(i-1,j)) {
-				neighbors.add(grid[i-1][j]);
-			}
-			if (inGrid(i-1,j+1)) {
-				neighbors.add(grid[i-1][j+1]);
-			}
-			if (inGrid(i-1,j+2)) {
-				neighbors.add(grid[i-1][j+2]);
-			}
-			if (inGrid(i,j-2)) {
-				neighbors.add(grid[i][j-2]);
-			}
-			if (inGrid(i,j-1)) {
-				neighbors.add(grid[i][j-1]);
-			}
-			if (inGrid(i,j+1)) {
-				neighbors.add(grid[i][j+1]);
-			}
-			if (inGrid(i,j+2)) {
-				neighbors.add(grid[i][j+2]);
-			}
-			if (inGrid(i+1,j-1)) {
-				neighbors.add(grid[i+1][j-1]);
-			}
-			if (inGrid(i+1,j)) {
-				neighbors.add(grid[i+1][j]);
-			}
-			if (inGrid(i+1,j-1)) {
-				neighbors.add(grid[i+1][j-1]);
-			}
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j-2);
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j-1);
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j);
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j+1);
+			checkEdgeTypeAndAdd(neighbors, grid, i-1,j+2);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j-1);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j);
+			checkEdgeTypeAndAdd(neighbors, grid, i+1,j-1);
 		}
 	}
 	
 	private void square_cardinal(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-1,j)) {
-			neighbors.add(grid[i-1][j]);
-		}
-		if (inGrid(i+1,j)) {
-			neighbors.add(grid[i+1][j]);
-		}
-		if (inGrid(i,j-1)) {
-			neighbors.add(grid[i][j-1]);
-		}
-		if (inGrid(i,j+1)) {
-			neighbors.add(grid[i][j+1]);
-		}
+		checkEdgeTypeAndAdd(neighbors, grid, i-1,j);
+		checkEdgeTypeAndAdd(neighbors, grid, i+1,j);
+		checkEdgeTypeAndAdd(neighbors, grid, i,j-1);
+		checkEdgeTypeAndAdd(neighbors, grid, i,j+1);
 	}
 	
 	private void square_diagonal(List<Cell> neighbors, Cell[][] grid, int i, int j) {
-		if (inGrid(i-1,j-1)) {
-			neighbors.add(grid[i-1][j-1]);
-		}
-		if (inGrid(i+1,j+1)) {
-			neighbors.add(grid[i+1][j+1]);
-		}
-		if (inGrid(i+1,j-1)) {
-			neighbors.add(grid[i+1][j-1]);
-		}
-		if (inGrid(i-1,j+1)) {
-			neighbors.add(grid[i-1][j+1]);
-		}
+		checkEdgeTypeAndAdd(neighbors, grid, i-1,j-1);
+		checkEdgeTypeAndAdd(neighbors, grid, i+1,j+1);
+		checkEdgeTypeAndAdd(neighbors, grid, i+1,j-1);
+		checkEdgeTypeAndAdd(neighbors, grid, i-1,j+1);
 	}
 	
 	private void square_all(List<Cell> neighbors, Cell[][] grid, int i, int j) {
 		square_cardinal(neighbors, grid, i, j);
 		square_diagonal(neighbors, grid, i, j);
+	}
+	
+	private void checkEdgeTypeAndAdd (List<Cell> neighbors, Cell[][] grid, int x, int y) {
+		switch(edge_type) {
+		case "finite":
+			if (inGrid(x,y)) {
+				neighbors.add(grid[x][y]);
+			}
+			break;
+		case "infinite":
+			//if (!inGrid(x,y))
+				//myGrid.extendGrid();
+		case "toroidal":
+			if (x < 0) {
+				x += grid.length;
+			}
+			if (y < 0) {
+				y += grid[0].length;
+			}
+			if (x >= grid.length) {
+				x -= grid.length;
+			}
+			if (y >= grid[0].length) {
+				y -= grid[0].length;
+			}
+			neighbors.add(grid[x][y]);
+			break;
+		}
 	}
 	
 	/**

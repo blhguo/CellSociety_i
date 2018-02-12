@@ -8,8 +8,14 @@ import cell.Cell;
 import grid.GOLSimGrid;
 import xml.XMLmaker;
 
+/**
+ * GOLXMLmaker - creates GOL XML files for use with project
+ * @author marcusoertle
+ *
+ */
+
 public class GOLXMLmaker extends XMLmaker{
-	private final static String FILE = "data/gol_saved.xml";
+	private final static String FILE = "gol_saved";
 	private final static String TYPE = "game_of_life";
 	private final static String GOL_TITLE = "Game of Life";
 	private final static String GOL_AUTHOR = "John Horton Conway";
@@ -36,6 +42,16 @@ public class GOLXMLmaker extends XMLmaker{
 		closeWriter();
 	}
 	
+	/**
+	 * Alternative inputs for GOLXMLmaker
+	 * @param grid
+	 * @param gx
+	 * @param gy
+	 * @param cx
+	 * @param cy
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
 	public GOLXMLmaker(GOLSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		super(FILE, TYPE, GOL_TITLE, GOL_AUTHOR);
 		gridx = gx;
@@ -43,10 +59,8 @@ public class GOLXMLmaker extends XMLmaker{
 		cellx = cx;
 		celly = cy;
 		shape = grid.getShape();
-		//neighbourType = grid.getNeighborArrangement();
-		//edgeType = grid.getEdgeType();
-		neighbourType = "all";
-		edgeType = "finite";
+		neighbourType = grid.getNeighborArrangement();
+		edgeType = grid.getEdgeType();
 		numCellsX = (int) gridx / cellx;
 		numCellsY = (int) gridy / celly;
 		printFileHeader2();

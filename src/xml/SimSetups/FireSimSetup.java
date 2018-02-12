@@ -80,9 +80,9 @@ public class FireSimSetup extends SimulationSetup{
 	public void printInfo() {
 		super.printInfo();
 		System.out.println("cellArray = ");
-		for(int i = 0; i<cellArray[1].length; i++)
+		for(int i = 0; i<cellArray[0].length; i++)
 		{
-		    for(int j = 0; j<cellArray[0].length; j++)
+		    for(int j = 0; j<cellArray.length; j++)
 		    {
 		        System.out.print(cellArray[j][i]);
 		        System.out.print(" ");
