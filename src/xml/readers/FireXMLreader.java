@@ -85,9 +85,9 @@ public class FireXMLreader extends XMLreader{
 	@Override
 	protected String[][] fillEmpty(String[][] typeArray) {
 		String empty = "tree";
-		for(int i = 0; i<typeArray[0].length; i++)
+		for(int i = 0; i<typeArray.length; i++)
 		{
-			for(int j = 0; j<typeArray[1].length; j++)
+			for(int j = 0; j<typeArray[0].length; j++)
 			{
 				if(typeArray[i][j] == null) {
 					typeArray[i][j] = empty;

@@ -39,6 +39,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -79,6 +80,10 @@ public class Manager extends Application {
 
 	int width;
 	int height;
+	int initialW;
+	int initialH;
+	int initialCW;
+	int initialCH;
 	Grid myGrid;
 	int cell_Width;
 	int cell_Height;
@@ -238,10 +243,16 @@ public class Manager extends Application {
 			//TODO throw error if not one of those shapes^^
 		}
 	}
+	
+	//this can be refactored
 
 	public void callGOLXMLreader(String file){
 		GOLXMLreader xml_reader = new GOLXMLreader();
 		GOLSimSetup simInfo = xml_reader.read(file);
+		initialW = simInfo.getGridX();
+		initialH = simInfo.getGridY();
+		initialCW = simInfo.getCellX();
+		initialCH = simInfo.getCellY();
 		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
@@ -254,6 +265,10 @@ public class Manager extends Application {
 	public void callSegXMLreader(String file){
 		SegregationXMLreader xml_reader = new SegregationXMLreader();
 		SegregationSimSetup simInfo = xml_reader.read(file);
+		initialW = simInfo.getGridX();
+		initialH = simInfo.getGridY();
+		initialCW = simInfo.getCellX();
+		initialCH = simInfo.getCellY();
 		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
@@ -266,6 +281,10 @@ public class Manager extends Application {
 	public void callWatorXMLreader(String file){
 		WatorXMLreader xml_reader = new WatorXMLreader();
 		WatorSimSetup simInfo = xml_reader.read(file);
+		initialW = simInfo.getGridX();
+		initialH = simInfo.getGridY();
+		initialCW = simInfo.getCellX();
+		initialCH = simInfo.getCellY();
 		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
@@ -278,6 +297,10 @@ public class Manager extends Application {
 	public void callFireXMLreader(String file){
 		FireXMLreader xml_reader = new FireXMLreader();
 		FireSimSetup simInfo = xml_reader.read(file);
+		initialW = simInfo.getGridX();
+		initialH = simInfo.getGridY();
+		initialCW = simInfo.getCellX();
+		initialCH = simInfo.getCellY();
 		width = simInfo.getGridX() + 50;
 		height = simInfo.getGridY() + 20;
 		int simWidth = simInfo.getGridX()/simInfo.getCellX();
@@ -365,15 +388,15 @@ public class Manager extends Application {
 	// Sets up scene for the actual simulation
 	public Scene setupScene (int width, int height, Paint background, Grid cellArray) throws Exception {
 		shapetype = cellArray.getShape();
-		int cell_width = (int) (width - 20) / cellArray.getCellArray()[0].length;
-		int cell_height = (int) (height - 20) / cellArray.getCellArray()[1].length;
+		int cell_width = (int) (width - 20) / cellArray.getCellArray().length;
+		int cell_height = (int) (height - 20) / cellArray.getCellArray()[0].length;
 		if ((width + graphbufferW/2.0) < 800) {
 			width = 800 - graphbufferW/2;
 		}
 		if (height < (graphbufferH)) {
 			height = graphbufferH;
 		}
-		Group root = new Group (CreateRoot(cellArray.getCellArray(), cell_width, cell_height));		
+		Group root = new Group (CreateRoot(cellArray, cell_width, cell_height));		
 		Map<String, Double[]> MapofParam = cellArray.getCurrentParameters();
 		
 		VBox box = new VBox(GenerateLineChart(cellArray.getNumberOfCells()));
@@ -409,7 +432,7 @@ public class Manager extends Application {
 
 		
 		root.getChildren().add(box);
-		root.getChildren().add(GenerateSaveButton(cellArray, width, height, cell_width, cell_height));
+		root.getChildren().add(GenerateSaveButton(cellArray, initialW, initialH, initialCW, initialCH));
 		
 		
 		
@@ -911,13 +934,22 @@ public class Manager extends Application {
 	}
 
 	// Helper function of setupScene, returns a root with everything needed
-	public Group CreateRoot(Cell[][] cellArray, int width, int height) {
+	public Group CreateRoot(Grid gridarray, int width, int height) {
+		Cell[][] cellArray = gridarray.getCellArray();
 		Group addition = new Group();
-		for (int i = 0; i < cellArray[0].length; i++) {
-			for (int j = 0; j < cellArray[1].length; j++) {
+		for (int i = 0; i < cellArray.length; i++) {
+			for (int j = 0; j < cellArray[0].length; j++) {
 				/* TODO: Add switch case here to tell which type of cell to generate */	
-				if (shapetype.equals("square"))
+				if (shapetype.equals("square")) {
 					addition.getChildren().add(GenerateRectangularCell(cellArray[i][j], width, height, i, j));
+					if (gridarray instanceof SugarSimGrid) {
+						if (cellArray[i][j] instanceof AgentCell) {
+							int i1 = width/2 + width * i + XPADDING + graphbufferW/2;
+							int i2 = height/2 + height * j + YPADDING;
+							addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
+						}
+					}
+				}
 				else if(shapetype.equals("triangle"))
 					addition.getChildren().add(GenerateTriangleCell(cellArray[i][j], width, height, i, j));
 				else if(shapetype.equals("hexagon"))
@@ -990,6 +1022,15 @@ public class Manager extends Application {
 		Image.setStrokeWidth(0.3);
 		Image.setStroke(Color.BLACK);
 		return Image;
+	}
+	
+	private Circle addCircle(Cell BufferCell, int width, int i, int j) {
+		double radius = width / 2.0;
+		Circle marker = new Circle(i, j, radius);
+		marker.setFill(BufferCell.getDisplayColor());
+		marker.setStrokeWidth(0.3);
+		marker.setStroke(Color.BLACK);
+		return marker;
 	}
 
 	//more efficient way is to make it so that each time you simply add the point to the XYCHart instead of creating an entirely new xy chart, trying to make flexible
