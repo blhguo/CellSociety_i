@@ -950,11 +950,34 @@ public class Manager extends Application {
 						}
 					}
 				}
-				else if(shapetype.equals("triangle"))
+				else if(shapetype.equals("triangle")) {
 					addition.getChildren().add(GenerateTriangleCell(cellArray[i][j], width, height, i, j));
-				else if(shapetype.equals("hexagon"))
+				if (gridarray instanceof SugarSimGrid) {
+					if (cellArray[i][j] instanceof AgentCell) {
+						int i1 = width * (j + 1) + graphbufferW;
+						int i2 = height * i + height/2;
+						addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
+					}
+				}
+				}
+				else if(shapetype.equals("hexagon")) {
+				
 					addition.getChildren().add(GenerateHexagonCell(cellArray[i][j], width, height, i, j));
-
+					if (gridarray instanceof SugarSimGrid) {
+						if (cellArray[i][j] instanceof AgentCell) {
+							int i1;
+							//get rid of the following boolean
+							if ((i%2) == 0) {
+								i1 = 3*width/8 + width * j;
+							}
+							else {
+								i1 = 7*width/8 + width * j;
+							}
+							int i2 = height * (i + 1);
+							addition.getChildren().add(addCircle(cellArray[i][j], width, i1, i2));
+						}
+					}
+				}
 			}
 		}
 		return addition;
