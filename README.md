@@ -52,6 +52,7 @@ CompSci 308 Cell Society Project
 ## Known bugs
 * Occasionally, closing the simulation window results in a second window popping up, with the simulation continuing as if it had not been closed.
 * Slider's often cannot be slid quickly enough; constant minute changes to slider value can cause problems, suggested to click a position on the slider bar rather an slide to said position.
+* Moving the slider all the way to one side in some simulations causes errors (but will not crash the program).
 
 ## Extra features
 * Cells can be squares, triangles, or hexagons.
