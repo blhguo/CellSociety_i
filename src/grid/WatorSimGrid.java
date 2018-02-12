@@ -230,13 +230,13 @@ public class WatorSimGrid extends Grid{
 	@Override
 	public Map<String, Number> getNumberOfCells() {
 		HashMap<String, Number> map = new HashMap<>();
-		int empty = 0;
+		//int empty = 0;
 		int fish = 0;
 		int shark = 0;
 		for (int i = 0; i < myGrid.length; i++) {
 			for (int j = 0; j < myGrid[0].length; j++) {
 				if (myGrid[i][j] instanceof EmptyCell) {
-					empty++;
+					//empty++;
 				} else if (myGrid[i][j] instanceof FishCell) {
 					fish++;
 				} else if (myGrid[i][j] instanceof SharkCell) {
