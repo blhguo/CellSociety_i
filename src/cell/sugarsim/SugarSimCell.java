@@ -1,8 +1,10 @@
 package cell.sugarsim;
 
 import cell.Cell;
+import javafx.scene.paint.Color;
 
 public abstract class SugarSimCell extends Cell{
+	private static final Color CELLCOLOR = Color.ORANGE;
 	protected int patch_sugar;
 	protected int max_sugar;
 	protected int sugarGrowBackRate;
@@ -26,9 +28,11 @@ public abstract class SugarSimCell extends Cell{
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see cell.Cell#setDisplayColor()
+	 */
 	@Override
 	protected void setDisplayColor() {
-		// TODO Auto-generated method stub
-		
+		this.display_color = CELLCOLOR;
 	}
 }
