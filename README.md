@@ -35,6 +35,7 @@ CompSci 308 Cell Society Project
 * *Drop down menu* - select a default simulation
 * *Guide* - loads the user guide
 * *Open a file...* - choose custom file, **will be treated as whatever type XML file is selected in drop down menu**
+* *Create a custom file* - allows the user to build their own simulation from within the application
 
 ### In simulations
 * *P* - pauses/plays the simulation
@@ -45,16 +46,20 @@ CompSci 308 Cell Society Project
 
 ## Assumptions
 * Input XML file will exactly follow the requested format, otherwise they will not load.
-* Simulation scene is a 2D square array
+* Simulation scene should only be a triangle, square, or hexagon, with no combinations of them.
 * Only simulations available are "Game of Life", "Fire", "Wator World", and "Segregation", and "Sugar Scape"
 
 ## Known bugs
 * Occasionally, closing the simulation window results in a second window popping up, with the simulation continuing as if it had not been closed.
-* 
+* Slider's often cannot be slid quickly enough; constant minute changes to slider value can cause problems, suggested to click a position on the slider bar rather an slide to said position.
 
 ## Extra features
 * Cells can be squares, triangles, or hexagons.
 * Neighbour formation can be 
+* Able to save current state of a simulation and load that state from file
+* Plot of populations with legend and autoscaling added
+* Sliders to vary parameter values, with labels are added. The quantity of which is dynamic according to the type of simulation
 
 ## Impressions of the project
 * Separation and manipulation of visuals from the application class itself was more difficult than anticipated, with variable accessibility becoming convoluted
+* Much refactoring can be done to Manager.java to clean it up a bit, though not as much as the original target of Visualizer.
