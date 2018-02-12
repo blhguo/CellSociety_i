@@ -672,6 +672,13 @@ public class Manager extends Application {
 		return temp;
 	}
 
+	/**
+	 * Creates the XMLmaker scene
+	 * @param width
+	 * @param height
+	 * @param background
+	 * @return
+	 */
 	private Scene setupXMLmaker(int width, int height, Paint background) {
 		// make gridpane
 		GridPane grid = new GridPane();
@@ -685,12 +692,16 @@ public class Manager extends Application {
 		final TextField gridy = makeTextField(grid, myResources.getString("GridYField"), 0, 3);
 		final TextField cellx = makeTextField(grid, myResources.getString("CellXField"), 0, 4);
 		final TextField celly = makeTextField(grid, myResources.getString("CellYField"), 0, 5);
+		
+		// add choiceboxes
 		final ChoiceBox neighbourChoiceBox = GenerateNeighbourChoiceBox();
 		final ChoiceBox edgeChoiceBox = GenerateEdgeChoiceBox();
 		final ChoiceBox shapeChoiceBox = GenerateShapeChoiceBox();
 		grid.add(neighbourChoiceBox, 0, 7);
 		grid.add(edgeChoiceBox, 0, 8);
 		grid.add(shapeChoiceBox, 0, 6);
+		
+		// add simulation specific text fields
 		if(fileType == 0) {
 			probcell = makeTextField(grid, myResources.getString("CellProbField"), 1, 1);
 		}
@@ -715,6 +726,8 @@ public class Manager extends Application {
 		else if(fileType == 4){
 			agentProb = makeTextField(grid, myResources.getString("AgentProbField"), 1, 1);
 		}
+		
+		// add menu button
 		Button menu = GenButton(grid, myResources.getString("MenuButton"), 0, 0);
 		menu.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -728,7 +741,8 @@ public class Manager extends Application {
 				}
 			}
 		});
-
+		
+		// add create button
 		Button create = GenButton(grid, myResources.getString("CreateButton"), 1, 0);
 		create.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -782,6 +796,7 @@ public class Manager extends Application {
 					displayMessage(grid, myResources.getString("MakerError8"), 3, 0, 13);
 				}
 
+				// parsing error checking
 				try {
 					gridxval = Integer.parseInt(gridx.getText());
 					gridyval = Integer.parseInt(gridy.getText());
@@ -799,6 +814,7 @@ public class Manager extends Application {
 					displayMessage(grid, myResources.getString("MakerError1"), 3, 0, 9);
 				}
 
+				// specific files parsing error handling
 				try {
 					if(fileType == 0) {
 						try {
@@ -887,8 +903,10 @@ public class Manager extends Application {
 				//}
 			}
 		});
+		
 		// create a place to see the shapes
 		Scene scene = new Scene(grid, width, height, background);
+		
 		// set what happens on key press
 		scene.setOnKeyPressed(ex -> {
 			// return to menu scene
@@ -904,6 +922,14 @@ public class Manager extends Application {
 		return scene;
 	}
 
+	/**
+	 * Show a message on a grid for the specified time at the given coordinates
+	 * @param grid
+	 * @param message
+	 * @param time
+	 * @param x
+	 * @param y
+	 */
 	private void displayMessage(GridPane grid, String message, int time, int x, int y) {
 		Text display = new Text();
 		grid.add(display,x,y);
