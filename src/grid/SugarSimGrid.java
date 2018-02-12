@@ -105,7 +105,6 @@ public class SugarSimGrid extends Grid{
 	}
 
 	private void switchCells(EmptyCell cell, AgentCell agentCell) {
-		System.out.println(" DAFUQ");
 		nextGrid[cell.getX()][cell.getY()] = new AgentCell(cell.getX(), cell.getY(), cell.getPatchSugar(), cell.getMaxSugar(), cell.getSugarGBR(), cell.getSugarGBI(), cell.getTick(), agentCell.getAgentSugar(), agentCell.getSugarMetabolism(), agentCell.getVision());
 		nextGrid[agentCell.getX()][agentCell.getY()] = new EmptyCell(agentCell.getX(), agentCell.getY(), agentCell.getPatchSugar(), agentCell.getMaxSugar(), agentCell.getSugarGBR(), agentCell.getSugarGBI(), agentCell.getTick());
 		((EmptyCell) myGrid[cell.getX()][cell.getY()]).setOccupied(true);
