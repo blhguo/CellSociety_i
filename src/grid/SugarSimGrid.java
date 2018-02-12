@@ -52,8 +52,8 @@ public class SugarSimGrid extends Grid{
 
 	@Override
 	public Map<String, Double[]> getCurrentParameters() {
-		// TODO Auto-generated method stub
-		return null;
+		HashMap<String, Double[]> map = new HashMap<>();
+		return map;
 	}
 
 	@Override
