@@ -57,6 +57,7 @@ CompSci 308 Cell Society Project
 * Cells can be squares, triangles, or hexagons.
 * Neighbour formation can be cardinal, diagonal, 3-next, or all formations.
 * Able to save current state of a simulation and load that state from file
+* Custom file maker option on menu
 * Plot of populations with legend and autoscaling added
 * Sliders to vary parameter values, with labels are added. The quantity of which is dynamic according to the type of simulation
 
@@ -70,3 +71,8 @@ CompSci 308 Cell Society Project
 * Unimplemented Features:
 > - *Allow users to interact with the simulation dynamically to create or change a state at a grid location* : Unimplemented due to time. However, this feature I anticipate to be relatively simple to add. Based of a mouse click's location in the Scene, we can iterate across the Group representing the cells and use boundary checking. A method within Cell would need to be added to cycle to the next cell type, and the Manager would have to edit the grid (represented in code as gridArray) so as to ensure that grid update is working off of the new grid
 > - *Allow users to run multiple simulations at the same time so they can compare the results side by side (i.e., do not use tabs like a browser)* : Unimplemented at this time. Were I to implement it, however, I would add a button to the simulation scene (returned by setupScene) that, when pressed, would open a new window and call setupScene within that new window, thus duplicating the Grid object and all the parameters. That simulation, however, would take it's own, random course as defined by the parameters. As to whether the button interactions would be universal, chances are pause would pause both, etc. due to the implementation of the hardware buttons. However, this depends most on Java's specific interpretation. 
+
+## Possible Improvements
+* Color, size of each individual cell, etc, could all be added easily to the XML setup in a similar way that grid type, neighbour type, and shape werer added.
+* Initial configurations could be configured by total number of cells instead of percentages by having a counter instead of a Java Random object.
+* More extensive error checking for inputs files. As of now, there is very extensive error checking for file creation to ensure that the file will actually be usable. For loading files, the program will ignore files that it can't load (it will not crash though).
