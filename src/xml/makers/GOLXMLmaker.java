@@ -8,6 +8,12 @@ import cell.Cell;
 import grid.GOLSimGrid;
 import xml.XMLmaker;
 
+/**
+ * GOLXMLmaker - creates GOL XML files for use with project
+ * @author marcusoertle
+ *
+ */
+
 public class GOLXMLmaker extends XMLmaker{
 	private final static String FILE = "gol_saved";
 	private final static String TYPE = "game_of_life";
@@ -36,6 +42,16 @@ public class GOLXMLmaker extends XMLmaker{
 		closeWriter();
 	}
 	
+	/**
+	 * Alternative inputs for GOLXMLmaker
+	 * @param grid
+	 * @param gx
+	 * @param gy
+	 * @param cx
+	 * @param cy
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
 	public GOLXMLmaker(GOLSimGrid grid, int gx, int gy, int cx, int cy) throws FileNotFoundException, UnsupportedEncodingException{
 		super(FILE, TYPE, GOL_TITLE, GOL_AUTHOR);
 		gridx = gx;

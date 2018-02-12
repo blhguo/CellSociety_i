@@ -66,9 +66,9 @@ public class SegregationSimSetup extends SimulationSetup{
 		    System.out.println("");
 		}
 		System.out.println("threshold = ");
-		for(int i = 0; i<threshold[1].length; i++)
+		for(int i = 0; i<threshold[0].length; i++)
 		{
-		    for(int j = 0; j<threshold[0].length; j++)
+		    for(int j = 0; j<threshold.length; j++)
 		    {
 		        System.out.print(threshold[j][i]);
 		        System.out.print(" ");

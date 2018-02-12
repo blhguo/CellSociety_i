@@ -30,7 +30,9 @@ public class XMLtester {
 		//String fileName = SEGREGATION;
 		//String fileName = WATOR;
 		//String fileName = FIRE;
-		String fileName = SUGAR;
+		//String fileName = SUGAR;
+		String fileName = "data/gol_saved.xml";
+		
 		
 		if(fileName.equals(SEGREGATION)) {
 			SegregationXMLreader xml_reader = new SegregationXMLreader();
