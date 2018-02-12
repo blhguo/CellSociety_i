@@ -15,6 +15,8 @@ public abstract class SugarSimCell extends Cell{
 	protected int sugarGrowBackRate;
 	protected int sugarGrowBackInterval;
 	protected int tick;
+	protected int myX;
+	protected int myY;
 	
 	/**
 	 * Creates new Sugar simulation cell.
@@ -24,13 +26,23 @@ public abstract class SugarSimCell extends Cell{
 	 * @param sugarGBI grow back interval
 	 * @param tick time
 	 */
-	public SugarSimCell(int patch_sugar, int max_sugar, int sugarGBR, int sugarGBI, int tick) {
+	public SugarSimCell(int i, int j, int patch_sugar, int max_sugar, int sugarGBR, int sugarGBI, int tick) {
+		this.myX = i;
+		this.myY = j;
 		this.patch_sugar = patch_sugar;
 		this.max_sugar = max_sugar;
 		this.sugarGrowBackRate = sugarGBR;
 		this.sugarGrowBackInterval = sugarGBI;
 		this.tick = tick;
 		setDisplayColor();
+	}
+	
+	public int getX() {
+		return this.myX;
+	}
+	
+	public int getY() {
+		return this.myY;
 	}
 	
 	public void setSugarGBR(int gbr) {

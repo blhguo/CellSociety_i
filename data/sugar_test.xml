@@ -8,7 +8,7 @@
 	<cell_ysize>40</cell_ysize>
 	<grid_x>400</grid_x>
 	<grid_y>400</grid_y>
-	<neighbourType>all</neighbourType>
+	<neighbourType>cardinal</neighbourType>
 	<edgeType>finite</edgeType>
 	<GrowBackInterval>1</GrowBackInterval>
 	<GrowBackRate>1</GrowBackRate>

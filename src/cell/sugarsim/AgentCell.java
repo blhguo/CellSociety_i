@@ -25,11 +25,19 @@ public class AgentCell extends SugarSimCell{
 	 * @param sM sugar metabolism
 	 * @param v vision
 	 */
-	public AgentCell(int patch_sugar, int max_sugar, int sugarGBR, int sugarGBI, int tick, int agent_s, int sM, int v) {
-		super(patch_sugar, max_sugar, sugarGBR, sugarGBI, tick);
+	public AgentCell(int i, int j, int patch_sugar, int max_sugar, int sugarGBR, int sugarGBI, int tick, int agent_s, int sM, int v) {
+		super(i, j, patch_sugar, max_sugar, sugarGBR, sugarGBI, tick);
 		this.agent_sugar = agent_s;
 		this.sugarMetabolism = sM;
 		this.vision = v;
+	}
+	
+	/**
+	 * Eats the sugar at current patch
+	 */
+	public void eatSugar() {
+		this.agent_sugar += this.patch_sugar;
+		this.patch_sugar = 0;
 	}
 	
 	/**
@@ -76,7 +84,7 @@ public class AgentCell extends SugarSimCell{
 		
 		agent_sugar -= sugarMetabolism;
 		if (agent_sugar <= 0) {
-			return new EmptyCell(this.patch_sugar, this.max_sugar, this.sugarGrowBackRate, this.sugarGrowBackInterval, this.tick);
+			return new EmptyCell(this.getX(), this.getY(), this.patch_sugar, this.max_sugar, this.sugarGrowBackRate, this.sugarGrowBackInterval, this.tick);
 		}
 		return this;
 	}
