@@ -11,12 +11,15 @@
     * Additionally, to add a new simulation, a new Cell subclass and a new Grid subclass must be created. In the Grid subclass, the initialization call for the object must be defined taking in the various parameters of the simulation. Additionally, certain abstract methods need to be implemented in the Grid subclass that describe the specific parameters and types of cells in the simulation.
     * To add new types of cells to a simulation, first, an abstract Cell subclass must be created that is the abstract cell of the simulation and holds parameter information and simulation logic common to all cells in the simulation (or of the patches below cells).
     * Then, create new subclass of the previously created abstract class for that simulation cell for every type of cell in the simulation. Certain abstract methods must be implemented including providing the display color of the cell and the updating logic for the cell according to the simulation rules.
- * New Shapes:
+
+* New Shapes:
     * If other shapes are desired, the creation of a new Helper Method for "CreateRoot" inside Manager.java is recommended, with the switch case within "CreateRoot" updated as well. Note that adding a new shape requires that the shapes be regular and able to gaplessly span the entire simulation. For example, regular octagons cannot consistently span a grid without the use of squares. 
     * If a combination of shapes is used or desired, much more extensive and robust shape generation code is needed (in order to determine which shape to generate and where). In addition, the addition of a new shape requires new scaling methods for that shape specifically to ensure that it fits within the designated area. In addition, should a new shape be desired, it may become necessary to redefine what a cell's set of neighbors is.
     * Should new shapes be added, changes to the way "nextState" interacts with neighbors may also become necessary, depending on the intended performance or result of the simulation. 
- * Click to dynamically adjust cells:
+
+* Click to dynamically adjust cells:
      * In order to implement this feature, one must, on mouse click, ascertain where that mouse has clicked. Then, additional methods must be made available to the Manager class in either the Cell or Grid abstract class in order to selectively adjust and cycle through various Cell states and set them. These methods would likely be implemented within subclass of Cell or subclasses of Grid because the visualizer is not aware of what types of cells it is printing to the screen, nor is it aware of the possible cell types there are. 
+
 * New Neighbor Arrangements:
     * In order to implement different neighbor arrangements, the Neighbor class would need to be updated. All that would need to be done is create a new method that adds the neighbor arrangement of a cell to a list of cells, and update the proper switch case with the keyword for the neighbor arrangement.
 
